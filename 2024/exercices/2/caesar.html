@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>César</h1>
+<p><img alt="Chiffrement de César" src="https://cs50.harvard.edu/x/2024/psets/2/caesar/cipher.jpg" /></p>
+<h2>Problème à résoudre</h2>
+<p>On suppose que César (oui, celui-là même) utilisait pour "crypter" (c'est-à-dire dissimuler de manière réversible) des messages confidentiels, en décalant chaque lettre d'un certain nombre de positions. Par exemple, il pouvait écrire A à la place de B, B à la place de C, C à la place de D, ..., et en faisant le tour de l'alphabet, Z à la place de A. C'est ainsi que pour dire BONJOUR à quelqu'un, César pouvait écrire CPOPGJ. À la réception de tels messages, les destinataires devaient les "décrypter" en décalant les lettres en sens inverse du même nombre de positions.</p>
+<p>Le secret de ce "cryptosystème" reposait sur le fait que seuls César et les destinataires connaissaient un secret, le nombre de places dont César avait décalé ses lettres (par exemple, 1). Ce n'est pas particulièrement sûr selon les normes modernes, mais bon, si vous êtes peut-être le premier au monde à le faire, c'est assez sûr !</p>
+<p>Un texte non crypté est généralement appelé <em>texte clair</em>. Un texte crypté est généralement appelé <em>texte chiffré</em>. Et le secret utilisé s'appelle une <em>clé</em>.</p>
+<p>Pour être clair, voici comment le cryptage de "BONJOUR" avec une clé de (1) donne "CPOPGJ" :</p>
+<table>
+<thead>
+<tr>
+<th>Texte clair</th>
+<th><code>B</code></th>
+<th><code>O</code></th>
+<th><code>N</code></th>
+<th><code>J</code></th>
+<th><code>O</code></th>
+<th><code>U</code></th>
+<th><code>R</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+ Clé</td>
+<td>(1\)</td>
+<td>(1\)</td>
+<td>(1\)</td>
+<td>(1\)</td>
+<td>(1\)</td>
+<td>(1\)</td>
+<td>(1\)</td>
+</tr>
+<tr>
+<td>= Texte chiffré</td>
+<td><code>C</code></td>
+<td><code>P</code></td>
+<td><code>O</code></td>
+<td><code>P</code></td>
+<td><code>G</code></td>
+<td><code>J</code></td>
+<td><code>S</code></td>
+</tr>
+</tbody>
+</table>
+<p>Plus formellement, l'algorithme de César (c'est-à-dire le chiffrement) crypte les messages en "faisant pivoter" chaque lettre de (k) positions. Plus formellement, si (p) est un texte clair (c'est-à-dire un message non crypté), (p_i) est le (i^{ième}) caractère de (p), et (k) est une clé secrète (c'est-à-dire un entier non négatif), alors chaque lettre, (c_i), du texte chiffré, (c), est calculée comme suit :</p>
+<p>\[c_i = (p_i + k)\space\%\space26\]</p>
+<p>où \(\%\space26\) signifie ici "reste de la division par 26". Cette formule donne peut-être l'impression que le chiffrement est plus compliqué qu'il ne l'est, mais ce n'est en fait qu'une manière concise d'exprimer l'algorithme avec précision. En effet, pour faciliter la discussion, pensez à A (ou a) comme (0), B (ou b) comme (1), …, H (ou h) comme (7), I (ou i) comme (8), …, et Z (ou z) comme (25). Supposons que César veuille dire "Salut" à quelqu'un en toute confidentialité en utilisant, cette fois, une clé, (k), de 3. Son texte clair, (p), est donc "Salut", dans lequel le premier caractère de son texte clair, (p_0), est "S" (c'est-à-dire 18), et le deuxième caractère de son texte clair, (p_1), est "a" (c'est-à-dire 0). Le premier caractère de son texte chiffré, (c_0), est donc "V", et le deuxième caractère de son texte chiffré, (c_1), est donc "d". C'est logique ?</p>
+<p>Dans un fichier appelé <code>caesar.c</code> dans un dossier appelé <code>caesar</code>, écrivez un programme qui vous permet de crypter des messages en utilisant le chiffrement de César. Au moment où l'utilisateur exécute le programme, il doit décider, en fournissant un argument en ligne de commande, quelle doit être la clé du message secret qu'il fournira au moment de l'exécution. Nous ne devons pas nécessairement supposer que la clé de l'utilisateur va être un nombre ; bien que vous puissiez supposer que, si c'est un nombre, ce sera un entier positif.</p>
+<h2>Démonstration</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-JnlhDTjc264WfGSoNxc0hsjEY" src="https://asciinema.org/a/JnlhDTjc264WfGSoNxc0hsjEY.js"></script>
+
+<h2>Spécifications</h2>
+<p>Concevez et implémentez un programme, <code>caesar</code>, qui crypte les messages en utilisant le chiffrement de César.</p>
+<ul>
+<li>Implémentez votre programme dans un fichier appelé <code>caesar.c</code> dans un répertoire appelé <code>caesar</code>.</li>
+<li>Votre programme doit accepter un seul argument de ligne de commande, un entier non négatif. Appelons-le (k) pour simplifier.</li>
+<li>Si votre programme est exécuté sans aucun argument de ligne de commande ou avec plus d'un argument de ligne de commande, votre programme doit imprimer un message d'erreur de votre choix (avec <code>printf</code>) et retourner de <code>main</code> une valeur de <code>1</code> (qui tend à signifier une erreur) immédiatement.</li>
+<li>Si l'un des caractères de l'argument de ligne de commande n'est pas un chiffre décimal, votre programme doit imprimer le message <code>Usage : ./caesar clé</code> et retourner de <code>main</code> une valeur de <code>1</code>.</li>
+<li>Ne supposez pas que (k) sera inférieur ou égal à 26. Votre programme doit fonctionner pour toutes les valeurs entières non négatives de (k) inférieures à (2^{31} - 26). En d'autres termes, vous n'avez pas à vous inquiéter si votre programme finit par planter si l'utilisateur choisit une valeur de (k) trop grande ou presque trop grande pour être contenue dans un <code>int</code>. (Rappel : un <code>int</code> peut déborder.) Mais, même si (k) est supérieur à (26), les caractères alphabétiques dans l'entrée de votre programme doivent rester des caractères alphabétiques dans la sortie de votre programme. Par exemple, si (k) est (27), <code>A</code> ne doit pas devenir <code>\</code> même si <code>\</code> est à (27) positions de <code>A</code> en ASCII, selon <a href="https://www.asciitable.com/">asciitable.com</a> ; <code>A</code> doit devenir <code>B</code>, car <code>B</code> est à (27) positions de <code>A</code>, à condition de faire le tour de <code>Z</code> à <code>A</code>.</li>
+<li>Votre programme doit sortir <code>texte clair :</code> (avec deux espaces mais sans retour à la ligne) et ensuite demander à l'utilisateur une <code>chaîne</code> de texte clair (en utilisant <code>get_string</code>).</li>
+<li>Votre programme doit sortir <code>texte chiffré :</code> (avec un espace mais sans retour à la ligne) suivi du texte chiffré correspondant au texte clair, chaque caractère alphabétique du texte clair étant "décalé" de <em>k</em> positions ; les caractères non alphabétiques doivent être sortis inchangés.</li>
+<li>Votre programme doit préserver la casse : les lettres majuscules, bien que décalées, doivent rester des lettres majuscules ; les lettres minuscules, bien que décalées, doivent rester des lettres minuscules.</li>
+<li>Après avoir sorti le texte chiffré, vous devez imprimer un retour à la ligne. Votre programme doit ensuite quitter en retournant <code>0</code> depuis <code>main</code>.</li>
+</ul>
+<h2>Conseils</h2>
+<p>Comment commencer ? Abordons ce problème étape par étape.</p>
+<h3>Pseudo-code</h3>
+<p>Tout d'abord, essayez d'écrire une fonction <code>main</code> dans <code>caesar.c</code> qui implémente le programme en utilisant uniquement du pseudo-code, même si vous n'êtes pas (encore !) sûr de savoir comment l'écrire en code réel.</p>
+<p>Il y a plusieurs façons de le faire, voici donc une seule façon !</p>
+<pre><code>  int main(int argc, string argv[])
+  {
+      // Assurez-vous que le programme a été exécuté avec un seul argument de ligne de commande
+
+      // Assurez-vous que chaque caractère de argv[1] est un chiffre
+
+      // Convertissez argv[1] d'une `string` en un `int`
+
+      // Demandez à l'utilisateur le texte clair
+
+      // Pour chaque caractère du texte clair :
+
+          // Faites pivoter le caractère s'il s'agit d'une lettre
+  }
+</code></pre>
+<p>Vous pouvez modifier votre propre pseudo-code après avoir vu le nôtre ici, mais ne le copiez/collez pas simplement dans</p>
+<h3>Comptage des arguments de la ligne de commande</h3>
+<p>Quel que soit votre pseudo-code, commençons par n'écrire que le code C qui vérifie si le programme a été exécuté avec un seul argument de ligne de commande avant d'ajouter des fonctionnalités supplémentaires.</p>
+<p>Plus précisément, modifiez <code>main</code> dans <code>caesar.c</code> de telle manière que, si l'utilisateur ne fournit aucun argument de ligne de commande, ou deux ou plus, la fonction imprime <code>"Utilisation : ./caesar clé\n"</code> puis renvoie <code>1</code>, ce qui ferme le programme. Si l'utilisateur fournit exactement un argument de ligne de commande, le programme ne doit rien imprimer et simplement renvoyer <code>0</code>. Le programme doit donc se comporter comme indiqué ci-dessous :</p>
+<pre><code>  $ ./caesar
+  Utilisation : ./caesar clé
+
+
+  $ ./caesar 1 2 3
+  Utilisation : ./caesar clé
+
+
+  $ ./caesar 1
+</code></pre>
+<h4>Astuces</h4>
+<ul>
+<li>Rappelez-vous que vous pouvez imprimer à l'aide de <code>printf</code>.</li>
+<li>Rappelez-vous qu'une fonction peut renvoyer une valeur avec <code>return</code>.</li>
+<li>Rappelez-vous que <code>argc</code> contient le nombre d'arguments de ligne de commande passés à un programme, plus le nom du programme.</li>
+</ul>
+<h3>Vérification de la clé</h3>
+<p>Maintenant que votre programme (espérons-le !) accepte l'entrée comme prescrit, passons à une autre étape.</p>
+<p>Ajoutez à <code>caesar.c</code>, sous <code>main</code>, une fonction appelée, par exemple, <code>only_digits</code> qui prend une <code>chaîne</code> comme argument et renvoie <code>true</code> si cette <code>chaîne</code> ne contient que des chiffres, de <code>0</code> à <code>9</code>, sinon elle renvoie <code>false</code>. Veillez à ajouter également le prototype de la fonction au-dessus de <code>main</code>.</p>
+<h4>Astuces</h4>
+<ul>
+<li>
+<p>Vous voudrez probablement un prototype comme :
+  bool only_digits(string s);</p>
+<p>Et n'oubliez pas d'inclure <code>cs50.h</code> en haut de votre fichier, afin que le compilateur reconnaisse <code>string</code> (et <code>bool</code>).</p>
+</li>
+<li>
+<p>Rappelez-vous qu'une chaîne de caractères n'est qu'un tableau de <code>char</code>.</p>
+</li>
+<li>Rappelez-vous que <code>strlen</code>, déclarée dans <code>string.h</code>, calcule la longueur d'une <code>chaîne</code>.</li>
+<li>Vous pouvez trouver <code>isdigit</code>, déclarée dans <code>ctype.h</code>, utile, selon <a href="https://manual.cs50.io/">manual.cs50.io</a>. Mais notez qu'elle ne vérifie qu'un seul <code>char</code> à la fois !</li>
+</ul>
+<p>Modifiez ensuite <code>main</code> de telle sorte qu'elle appelle <code>only_digits</code> sur <code>argv[1]</code>. Si cette fonction renvoie <code>false</code>, alors <code>main</code> doit imprimer <code>"Utilisation : ./caesar clé\n"</code> et renvoyer <code>1</code>. Sinon, <code>main</code> doit simplement renvoyer <code>0</code>. Le programme doit donc se comporter comme indiqué ci-dessous :</p>
+<pre><code>  $ ./caesar 42
+
+
+  $ ./caesar banane
+  Utilisation : ./caesar clé
+</code></pre>
+<h3>Utilisation de la clé</h3>
+<p>Modifiez maintenant <code>main</code> de telle manière qu'elle convertisse <code>argv[1]</code> en un <code>int</code>. Vous pouvez trouver <code>atoi</code>, déclarée dans <code>stdlib.h</code>, utile, selon <a href="https://manual.cs50.io/">manual.cs50.io</a>. Utilisez ensuite <code>get_string</code> pour demander à l'utilisateur du texte brut avec <code>"texte en clair : "</code>.</p>
+<p>Implémentez ensuite une fonction appelée, par exemple, <code>rotate</code>, qui prend un <code>char</code> en entrée ainsi qu'un <code>int</code>, et qui fait pivoter ce <code>char</code> d'autant de positions s'il s'agit d'une lettre (c'est-à-dire alphabétique), en bouclant de <code>Z</code> à <code>A</code> (et de <code>z</code> à <code>a</code>) si nécessaire. Si le <code>char</code> n'est pas une lettre, la fonction doit renvoyer le même <code>char</code> inchangé.</p>
+<h4>Astuces</h4>
+<ul>
+<li>
+<p>Vous voudrez probablement un prototype comme :
+  char rotate(char c, int n);</p>
+<p>Un appel de fonction comme
+rotate('A', 1)</p>
+<p>ou même
+rotate('A', 27)</p>
+<p>devrait donc renvoyer <code>'B'</code>. Et un appel de fonction comme
+rotate('!', 13)</p>
+<p>devrait renvoyer <code>'!'</code>.</p>
+</li>
+<li>
+<p>Rappelez-vous que vous pouvez explicitement « convertir » un <code>char</code> en un <code>int</code> avec <code>(int)</code>, et un <code>int</code> en un <code>char</code> avec <code>(char)</code>. Vous pouvez également le faire implicitement en traitant simplement l'un comme l'autre.</p>
+</li>
+<li>Vous voudrez probablement soustraire la valeur ASCII de <code>'A'</code> à toutes les lettres majuscules, afin de traiter <code>'A'</code> comme <code>0</code>, <code>'B'</code> comme <code>1</code>, etc., tout en effectuant l'arithmétique. Puis ajoutez-le à nouveau lorsque vous en avez terminé avec le même.</li>
+<li>Vous voudrez probablement soustraire la valeur ASCII de <code>'a'</code> à toutes les lettres minuscules, afin de traiter <code>'a'</code> comme <code>0</code>, <code>'b'</code> comme <code>1</code>, etc., tout en effectuant l'arithmétique. Puis ajoutez-le à nouveau lorsque vous en avez terminé avec le même.</li>
+<li>Vous pouvez trouver d'autres fonctions déclarées dans <code>ctype.h</code> utiles, selon <a href="https://manual.cs50.io/">manual.cs50.io</a>.</li>
+<li>Vous trouverez probablement <code>%</code> utile pour « boucler » arithmétiquement d'une valeur comme <code>25</code> à <code>0</code>.</li>
+</ul>
+<p>Modifiez ensuite <code>main</code> de telle sorte qu'elle imprime <code>"texte chiffré : "</code> puis itère sur chaque <code>char</code> dans le texte brut de l'utilisateur, en appelant <code>rotate</code> sur chacun, et en imprimant la valeur renvoyée.</p>
+<h4>Astuces</h4>
+<ul>
+<li>Rappelez-vous que <code>printf</code> peut imprimer un <code>char</code> en utilisant <code>%c</code>.</li>
+<li>Si vous ne voyez aucune sortie lorsque vous appelez <code>printf</code>, c'est probablement parce que vous imprimez des caractères en dehors de la plage ASCII valide de 0 à 127. Essayez d'imprimer temporairement les caractères sous forme de nombres (en utilisant <code>%i</code> au lieu de <code>%c</code>) pour voir quelles valeurs vous imprimez !</li>
+</ul>
+<h2>Procédure pas à pas</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/V2uusmv2wxI?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Comment tester</h2>
+<h3>Exactitude</h3>
+<p>Dans votre terminal, exécutez la commande ci-dessous pour vérifier l'exactitude de votre travail.</p>
+<pre><code>  check50 cs50/problems/2024/x/caesar
+</code></pre>
+<h4>Comment utiliser <code>debug50</code></h4>
+<p>Vous souhaitez exécuter <code>debug50</code> ? Vous pouvez le faire comme suit, après avoir compilé votre code avec succès avec <code>make</code>,</p>
+<pre><code>  debug50 ./caesar KEY
+</code></pre>
+<p>où <code>KEY</code> est la clé que vous donnez comme argument de ligne de commande à votre programme. Notez que l'exécution</p>
+<pre><code>  debug50 ./caesar
+</code></pre>
+<p>fera (idéalement !) s'arrêter votre programme en demandant une clé à l'utilisateur.</p>
+<h3>Style</h3>
+<p>Exécutez la commande ci-dessous pour évaluer le style de votre code à l'aide de <code>style50</code>.</p>
+<pre><code>  style50 caesar.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<p>Dans votre terminal, exécutez la commande ci-dessous pour soumettre votre travail :</p>
+<pre><code>  submit50 cs50/problems/2024/x/caesar
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

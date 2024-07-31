@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Mario</h1>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/cWOkHQXw0JQ?modestbranding=0&amp;rel=0&amp;showinfo=0&amp;start=11"></iframe></div>
+
+<h2>Problème à résoudre</h2>
+<p>Vers le début du monde 1-1 dans Super Mario Bros de Nintendo, Mario doit sauter par-dessus des pyramides de blocs adjacentes, comme indiqué ci-dessous.</p>
+<p><img alt="capture d'écran de Mario sautant par-dessus des pyramides adjacentes" src="https://cs50.harvard.edu/x/2024/psets/1/mario/more/pyramids.png" /></p>
+<p>Dans un fichier nommé <code>mario.c</code> dans un dossier nommé <code>mario-more</code>, implémentez un programme en C qui recrée cette pyramide, en utilisant des dièses (<code>#</code>) pour les briques, comme ci-dessous :</p>
+<pre><code>     #  #
+    ##  ##
+   ###  ###
+  ####  ####
+</code></pre>
+<p>Et permet à l'utilisateur de décider la hauteur des pyramides en lui demandant d'abord un <code>int</code> positif compris entre 1 et 8, inclus.</p>
+<h4>Exemples</h4>
+<p>Voici comment le programme pourrait fonctionner si l'utilisateur saisit <code>`8</code> lorsqu'on lui demande :</p>
+<pre><code>  $ ./mario
+  Height: 8
+         #  #
+        ##  ##
+       ###  ###
+      ####  ####
+     #####  #####
+    ######  ######
+   #######  #######
+  ########  ########
+</code></pre>
+<p>Voici comment le programme pourrait fonctionner si l'utilisateur saisit <code>4</code> lorsqu'on lui demande :</p>
+<pre><code>  $ ./mario
+  Height: 4
+     #  #
+    ##  ##
+   ###  ###
+  ####  ####
+</code></pre>
+<p>Voici comment le programme pourrait fonctionner si l'utilisateur saisit <code>2</code> lorsqu'on lui demande :</p>
+<pre><code>  $ ./mario
+  Height: 2
+   #  #
+  ##  ##
+</code></pre>
+<p>Et voici comment le programme pourrait fonctionner si l'utilisateur saisit <code>1</code> lorsqu'on lui demande :</p>
+<pre><code>  $ ./mario
+  Height: 1
+  #  #
+</code></pre>
+<p>Si l'utilisateur ne saisit pas en fait un nombre entier positif compris entre 1 et 8, inclus, lorsqu'on lui demande, le programme doit lui redemander jusqu'à ce qu'il coopère :</p>
+<pre><code>  $ ./mario
+  Height: -1
+  Height: 0
+  Height: 42
+  Height: 50
+  Height: 4
+     #  #
+    ##  ##
+   ###  ###
+  ####  ####
+</code></pre>
+<p>Notez que la largeur de « l'écart » entre les pyramides adjacentes est égale à la largeur de deux dièses, quelle que soit la hauteur des pyramides.</p>
+<h3>Procédure</h3>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/FzN9RAjYG_Q?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h3>Comment tester votre code</h3>
+<p>Votre code fonctionne-t-il comme prescrit lorsque vous saisissez :</p>
+<ul>
+<li><code>-1</code> (ou autres nombres négatifs) ?</li>
+<li><code>0</code> ?</li>
+<li><code>1</code> à <code>8</code> ?</li>
+<li><code>9</code> ou autres nombres positifs ?</li>
+<li>des lettres ou des mots ?</li>
+<li>aucune entrée du tout, lorsque vous appuyez uniquement sur Entrée ?</li>
+</ul>
+<p>Vous pouvez également exécuter ce qui suit pour évaluer l'exactitude de votre code à l'aide de <code>check50</code>. Toutefois, veillez à le compiler et à le tester vous-même !</p>
+<h3>Correction</h3>
+<p>Dans votre terminal, exécutez ce qui suit pour vérifier l'exactitude de votre travail.</p>
+<pre><code>  check50 cs50/problems/2024/x/mario/more
+</code></pre>
+<h3>Style</h3>
+<p>Exécutez ce qui suit pour évaluer le style de votre code à l'aide de <code>style50</code>.</p>
+<pre><code>  style50 mario.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<p>Dans votre terminal, exécutez ce qui suit pour soumettre votre travail.</p>
+<pre><code>  submit50 cs50/problems/2024/x/mario/more
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

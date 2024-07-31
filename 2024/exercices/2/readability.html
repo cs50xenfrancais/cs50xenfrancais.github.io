@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Lisibilité</h2>
+<p><img alt="Couverture de Charlotte's Web" src="https://cs50.harvard.edu/x/2024/psets/2/readability/charlottes_web.jpg" /></p>
+<h2>Problème à résoudre</h2>
+<p>D'après <a href="https://www.scholastic.com/teachers/teaching-tools/collections/guided-reading-book-lists-for-every-level.html">Scholastic</a>, <em>Charlotte’s Web</em> de E.B. White se situe entre le niveau de lecture d'un élève de CE2 et de CM2, et <em>The Giver</em> de Lois Lowry entre le niveau de lecture d'un élève de sixième et de terminale. Mais que signifie qu'un livre soit à un niveau de lecture particulier ?</p>
+<p>Eh bien, dans de nombreux cas, un expert humain peut lire un livre et décider pour quelle classe (c'est-à-dire quelle année d'école) il pense que le livre est le plus approprié. Mais un algorithme pourrait aussi probablement le déterminer !</p>
+<p>Dans un fichier nommé <code>readability.c</code> dans un dossier nommé <code>readability</code>, vous allez implémenter un programme qui calcule le niveau scolaire approximatif nécessaire pour comprendre un texte. Votre programme doit imprimer en sortie « Niveau X » où « X » est le niveau scolaire calculé, arrondi à l'entier le plus proche. Si le niveau scolaire est 16 ou plus (équivalent ou supérieur à un niveau de lecture d'étudiant en deuxième cycle), votre programme doit sortir « Niveau 16+ » au lieu de donner le numéro d'index exact. Si le niveau scolaire est inférieur à 1, votre programme doit générer en sortie « Avant le niveau 1 ».</p>
+<h2>Démo</h2>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-2YTPtsNbRP2p4bD4drEjHaoRj" src="https://asciinema.org/a/2YTPtsNbRP2p4bD4drEjHaoRj.js"></script>
+
+<h2>Contexte</h2>
+<p>Alors, quels sont les traits caractéristiques des niveaux de lecture supérieurs ? Eh bien, les mots plus longs sont probablement corrélés à des niveaux de lecture plus élevés. De même, les phrases plus longues sont probablement également en corrélation avec des niveaux de lecture plus élevés.</p>
+<p>Un certain nombre de « tests de lisibilité » ont été développés au fil des ans qui définissent des formules pour calculer le niveau de lecture d'un texte. L'un de ces tests de lisibilité est l'<em>indice Coleman-Liau</em>. L'indice Coleman-Liau d'un texte est conçu pour sortir le niveau scolaire (américain) nécessaire pour comprendre un texte. La formule est</p>
+<pre><code>  indice = 0,0588 * L - 0,296 * S - 15,8
+</code></pre>
+<p>où <code>L</code> est le nombre moyen de lettres pour 100 mots dans le texte, et <code>S</code> est le nombre moyen de phrases pour 100 mots dans le texte.</p>
+<h2>Conseils</h2>
+<h3>Écrivez du code que vous savez compiler</h3>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;math.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+
+  }
+</code></pre>
+<p>Notez que vous avez maintenant inclus quelques fichiers d'en-tête qui vous donneront accès à des fonctions qui pourraient vous aider à résoudre ce problème.</p>
+<h3>Écrivez du pseudocode avant d'écrire plus de code</h3>
+<p>Si vous n'êtes pas sûr de savoir comment résoudre le problème lui-même, décomposez-le en problèmes plus petits que vous pouvez probablement résoudre en premier. Par exemple, ce problème n'est en réalité qu'une poignée de problèmes :</p>
+<ol>
+<li>Demandez à l'utilisateur du texte</li>
+<li>Comptez le nombre de lettres, de mots et de phrases dans le texte</li>
+<li>Calculez l'indice Coleman-Liau</li>
+<li>Imprimez le niveau scolaire</li>
+</ol>
+<p>Écrivons du pseudocode sous forme de commentaires pour vous rappeler de faire exactement cela :</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;math.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      // Demandez à l'utilisateur du texte
+
+      // Comptez le nombre de lettres, de mots et de phrases dans le texte
+
+      // Calculez l'indice Coleman-Liau
+
+      // Imprimez le niveau scolaire
+  }
+</code></pre>
+<h3>Conversion du pseudo-code en code</h3>
+<p>Tout d'abord, réfléchissez à la façon dont vous pourriez inviter l'utilisateur à saisir du texte. Rappelez-vous que <code>get_string</code>, une fonction de la bibliothèque CS50, peut inviter l'utilisateur à saisir une chaîne.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;math.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      // Invitez l'utilisateur à saisir du texte
+      string text = get_string("Texte : ");
+
+      // Comptez le nombre de lettres, de mots et de phrases dans le texte
+
+      // Calculez l'index de Coleman-Liau
+
+      // Imprimez le niveau de classe
+  }
+</code></pre>
+<p>Maintenant que vous avez recueilli les données de l'utilisateur, vous pouvez commencer à les analyser. Tout d'abord, essayez de compter le nombre de lettres dans le texte. Considérez les lettres comme des caractères alphabétiques majuscules ou minuscules, et non comme des caractères de ponctuation, des chiffres ou d'autres symboles.</p>
+<p>Une façon d'aborder ce problème est de créer une fonction appelée <code>count_letters</code> qui prend une chaîne, <code>text</code>, comme entrée, puis renvoie le nombre de lettres dans ce texte sous la forme d'un <code>int</code>.</p>
+<pre><code>  int count_letters(string text)
+  {
+      // Renvoie le nombre de lettres dans text
+  }
+</code></pre>
+<p>Vous devrez écrire votre propre code pour compter le nombre de lettres dans le texte. Mais quelqu'un de plus expérimenté que vous a peut-être déjà écrit une fonction pour déterminer si un caractère est alphabétique. C'est une bonne occasion d'utiliser le <a href="https://manual.cs50.io/">manuel CS50</a>, une collection d'explications sur les fonctions courantes de la bibliothèque standard C.</p>
+<p>Vous pouvez intégrer <code>count_letters</code> dans le code que vous avez déjà écrit, comme suit.</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;math.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int count_letters(string text);
+
+  int main(void)
+  {
+      // Invitez l'utilisateur à saisir du texte
+      string text = get_string("Texte : ");
+
+      // Comptez le nombre de lettres, de mots et de phrases dans le texte
+      int letters = count_letters(text);
+
+      // Calculez l'index de Coleman-Liau
+
+      // Imprimez le niveau de classe
+  }
+
+  int count_letters(string text)
+  {
+      // Renvoie le nombre de lettres dans text
+  }
+</code></pre>
+<p>Ensuite, écrivez une fonction pour compter les mots.</p>
+<pre><code>  int count_words(string text)
+  {
+      // Renvoie le nombre de mots dans text
+  }
+</code></pre>
+<p>Pour les besoins de ce problème, nous considérerons que toute séquence de caractères séparée par un espace est un mot (donc un mot composé comme « beau-frère » doit être considéré comme un mot, et non trois). Vous pouvez supposer qu'une phrase :</p>
+<ul>
+<li>contiendra au moins un mot ;</li>
+<li>ne commencera ni ne se terminera par un espace ;</li>
+<li>ne contiendra pas plusieurs espaces d'affilée.</li>
+</ul>
+<p>Dans ces hypothèses, vous pourriez être en mesure de trouver une relation entre le nombre de mots et le nombre d'espaces. Bien entendu, vous pouvez essayer une solution qui tolérera plusieurs espaces entre les mots ou même aucun mot !</p>
+<p>Vous pouvez maintenant intégrer <code>count_words</code> dans votre programme comme suit :</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;math.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int count_letters(string text);
+  int count_words(string text);
+
+  int main(void)
+  {
+      // Invitez l'utilisateur à saisir du texte
+      string text = get_string("Texte : ");
+
+      // Comptez le nombre de lettres, de mots et de phrases dans le texte
+      int letters = count_letters(text);
+      int words = count_words(text);
+
+      // Calculez l'index de Coleman-Liau
+
+      // Imprimez le niveau de classe
+  }
+
+  int count_letters(string text)
+  {
+      // Renvoie le nombre de lettres dans text
+  }
+
+  int count_words(string text)
+  {
+      // Renvoie le nombre de mots dans text
+  }
+</code></pre>
+<p>Enfin, écrivez une fonction pour compter les phrases. Vous pouvez considérer toute séquence de caractères se terminant par un <code>.</code>, un <code>!</code> ou un <code>?</code> comme une phrase.</p>
+<pre><code>  int count_sentences(string text)
+  {
+      // Renvoie le nombre de phrases dans text
+  }
+</code></pre>
+<p>Vous pouvez intégrer <code>count_sentences</code> dans votre programme comme suit :</p>
+<pre><code>  #include &lt;ctype.h&gt;
+  #include &lt;cs50.h&gt;
+  #include &lt;math.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int count_letters(string text);
+  int count_words(string text);
+  int count_sentences(string text);
+
+  int main(void)
+  {
+      // Demandez à l'utilisateur s'il souhaite obtenir du texte
+      string text = get_string("Texte : ");
+
+      // Comptez le nombre de lettres, de mots et de phrases dans le texte
+      int letters = count_letters(text);
+      int words = count_words(text);
+      int sentences = count_sentences(text);
+
+      // Calculez l'indice de lisibilité Coleman-Liau
+
+      // Imprimez le niveau scolaire
+  }
+
+  int count_letters(string text)
+  {
+      // Renvoyez le nombre de lettres dans le texte
+  }
+
+  int count_words(string text)
+  {
+      // Renvoyez le nombre de mots dans le texte
+  }
+
+  int count_sentences(string text)
+  {
+      // Renvoyez le nombre de phrases dans le texte
+  }
+</code></pre>
+<p>Enfin, calculez l'indice Coleman-Liau et imprimez le niveau scolaire correspondant.</p>
+<ul>
+<li>Souvenez-vous que l'indice Coleman-Liau est calculé à l'aide de la formule : <code>index = 0,0588 * L - 0,296 * S - 15,8</code></li>
+<li><code>L</code> est le nombre moyen de lettres pour 100 mots dans le texte : il s'agit du nombre de lettres divisé par le nombre de mots, multiplié par 100.</li>
+<li><code>S</code> est le nombre moyen de phrases pour 100 mots dans le texte : il s'agit du nombre de phrases divisé par le nombre de mots, multiplié par 100.</li>
+<li>Vous souhaiterez arrondir le résultat au nombre entier le plus proche, en rappelant que <code>round</code> est déclarée dans <code>math.h</code>, conformément à : <a href="https://manual.cs50.io/">manual.cs50.io</a>.</li>
+<li>Rappelez-vous que, lorsque vous divisez des valeurs de type <code>int</code> en C, le résultat sera également un <code>int</code>, et que tout reste (c.-à-d., les chiffres après la virgule décimale) sera ignoré. En d'autres termes, le résultat sera « tronqué ». Vous pouvez convertir une ou plusieurs de vos valeurs en <code>float</code> avant d'effectuer une division lors du calcul de <code>L</code> et <code>S</code> !</li>
+</ul>
+<p>Si l'indice résultant est supérieur ou égal à 16 (équivalent ou supérieur au niveau de lecture d'un étudiant en licence), votre programme doit afficher « Niveau 16+ » au lieu d'un indice numérique exact. Si l'indice est inférieur à 1, votre programme doit afficher « Avant le niveau 1 ».</p>
+<h2>Procédure pas à pas</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/AOVyZEh9zgE?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Comment tester</h2>
+<p>Exécutez votre programme sur les textes suivants pour vérifier que vous obtenez le niveau scolaire spécifié. Veillez à ne copier que le texte, sans espaces supplémentaires.</p>
+<ul>
+<li><code>Un poisson. Deux poissons. Poisson rouge. Poisson bleu.</code> (Avant le niveau 1)</li>
+<li><code>Les souhaitez-vous ici ou là ? Je ne les voudrais ni ici ni là. Je ne les voudrais nulle part.</code> (Niveau 2)</li>
+<li><code>Félicitations ! Aujourd'hui, c'est votre jour. Vous êtes parti pour des endroits formidables ! Vous êtes parti, en route !</code> (Niveau 3)</li>
+<li><code>Harry Potter était un garçon très inhabituel à bien des égards. D'abord, il détestait les vacances d'été plus que toute autre période de l'année. Par ailleurs, il avait vraiment envie de faire ses devoirs, mais était obligé de les faire en secret, dans le silence de la nuit. Et il se trouvait qu'il était aussi un sorcier.</code> (Niveau 5)</li>
+<li><code>Dans mes jeunes années, plus vulnérables, mon père m'a donné quelques conseils que je n'ai cessé de méditer depuis.</code> (Niveau 7)</li>
+<li><code>Alice commençait à trouver très fatigant de rester assise près de sa sœur sur la berge, et de n'avoir rien à faire : une ou deux fois, elle avait jeté un coup d'œil dans le livre que sa sœur lisait, mais il n'y avait ni images ni conversations dedans ; « Et à quoi bon un livre », pensa Alice, « sans images ni conversations ? »</code> (Niveau 8)</li>
+<li><code>Alors qu'il avait presque treize ans, mon frère Jem s'est cassé le bras au niveau du coude. Quand il a guéri, et que les craintes de Jem de ne plus jamais pouvoir jouer au football ont été apaisées, il s'est rarement complexé à propos de sa blessure. Son bras gauche était un peu plus court que le droit ; quand il se tenait debout ou qu'il marchait, le dos de sa main formait un angle droit avec son corps, son pouce était parallèle à sa cuisse.</code> (Niveau 8)</li>
+<li><code>Il y a plus de choses au paradis et sur Terre, Horatio, que ce dont rêve votre philosophie.</code> (Niveau 9)</li>
+<li><code>C'était une journée froide et ensoleillée d'avril, et les horloges sonnaient les treize heures. Winston Smith, son menton enfoui dans sa poitrine pour essayer d'échapper au vent vil, se glissa rapidement dans les portes vitrées de Victory Mansions, mais pas assez vite pour empêcher un tourbillon de poussière crasseuse d'entrer avec lui.</code> (Niveau 10)</li>
+<li><code>Une grande partie des problèmes de calcul implique la détermination des propriétés de graphes, de digraphes, d'entiers, de tableaux d'entiers, de familles finies d'ensembles finis, de formules booléennes et d'éléments d'autres domaines dénombrables.</code> (Niveau 16+)</li>
+</ul>
+<h3>Justesse</h3>
+<p>Dans votre terminal, exécutez la commande ci-dessous pour vérifier la justesse de votre travail.</p>
+<pre><code>  check50 cs50/problems/2024/x/readability
+</code></pre>
+<h3>Style</h3>
+<p>Exécutez la commande ci-dessous pour évaluer le style de votre code à l'aide de <code>style50</code>.</p>
+<pre><code>  style50 readability.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<p>Dans votre terminal, exécutez la commande ci-dessous pour soumettre votre travail.</p>
+<pre><code>  submit50 cs50/problems/2024/x/readability
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

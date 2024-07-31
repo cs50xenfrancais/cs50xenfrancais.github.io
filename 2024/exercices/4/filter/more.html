@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Filtre</h1>
+<p><img alt="Harvard Yard avec Détection des Bords" src="https://cs50.harvard.edu/x/2024/psets/4/filter/more/yard-edges.bmp" /></p>
+<h2>Problème à Résoudre</h2>
+<p>Le moyen le plus simple de représenter une image est peut-être d'utiliser une grille de pixels (c'est-à-dire de points), chacun pouvant être d'une couleur différente. Pour les images en noir et blanc, nous avons donc besoin de 1 bit par pixel, car 0 pourrait représenter le noir et 1 pourrait représenter le blanc, comme indiqué ci-dessous.</p>
+<p><img alt="un bitmap simple" src="https://cs50.harvard.edu/x/2024/psets/4/filter/more/bitmap.png" /></p>
+<p>En ce sens, une image n'est-elle qu'un bitmap (c'est-à-dire une carte de bits) ? Pour les images plus colorées, vous avez simplement besoin de plus de bits par pixel. Un format de fichier (comme <a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP</a>, <a href="https://en.wikipedia.org/wiki/JPEG">JPEG</a> ou <a href="https://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>) qui prend en charge la "couleur 24 bits" utilise 24 bits par pixel. (BMP prend en charge les couleurs 1, 4, 8, 16, 24 et 32 bits.)</p>
+<p>Un BMP 24 bits utilise 8 bits pour indiquer la quantité de rouge dans la couleur d'un pixel, 8 bits pour indiquer la quantité de vert dans la couleur d'un pixel et 8 bits pour indiquer la quantité de bleu dans la couleur d'un pixel. Si vous avez déjà entendu parler de la couleur RVB, eh bien, vous l'avez : rouge, vert, bleu.</p>
+<p>Si les valeurs R, V et B d'un pixel dans un BMP sont, par exemple, <code>0xff</code>, <code>0x00</code> et <code>0x00</code> en hexadécimal, ce pixel est purement rouge, car <code>0xff</code> (également connu sous le nom <code>255</code> en décimal) implique "beaucoup de rouge", tandis que <code>0x00</code> et <code>0x00</code> impliquent respectivement "pas de vert" et "pas de bleu". Dans ce problème, vous manipulerez ces valeurs R, V et B de pixels individuels, créant ainsi vos propres filtres d'image.</p>
+<p>Dans un fichier appelé <code>helpers.c</code> dans un dossier appelé <code>filter-more</code>, écrivez un programme pour appliquer des filtres aux BMP.</p>
+<h2>Démonstration</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-DC5vtWOatmXC3Ff825YxHE0CZ" src="https://asciinema.org/a/DC5vtWOatmXC3Ff825YxHE0CZ.js"></script>
+
+<h2>Code de distribution</h2>
+<p>Pour ce problème, vous étendrez les fonctionnalités du code fourni par l'équipe de CS50.</p>
+<p>Connectez-vous à <a href="https://cs50.dev/">cs50.dev</a>, cliquez sur votre fenêtre de terminal et exécutez <code>cd</code> seul. Vous devriez constater que l'invite de votre fenêtre de terminal ressemble à celle-ci :</p>
+<pre><code>  $
+</code></pre>
+<p>Exécutez ensuite :</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/4/filter-more.zip
+</code></pre>
+<p>afin de télécharger un ZIP nommé <code>filter-more.zip</code> dans votre espace de code.</p>
+<p>Exécutez ensuite :</p>
+<pre><code>  unzip filter-more.zip
+</code></pre>
+<p>pour créer un dossier appelé <code>filter-more</code>. Vous n'avez plus besoin du fichier ZIP, vous pouvez donc exécuter :</p>
+<pre><code>  rm filter-more.zip
+</code></pre>
+<p>et répondre par « y » suivi de Entrée à l'invite pour supprimer le fichier ZIP que vous avez téléchargé.</p>
+<p>Tapez maintenant :</p>
+<pre><code>  cd filter-more
+</code></pre>
+<p>suivi de Entrée pour vous déplacer dans (c'est-à-dire ouvrir) ce répertoire. Votre invite devrait maintenant ressembler à celle-ci :</p>
+<pre><code>  filter-more/ $
+</code></pre>
+<p>Exécutez <code>ls</code> seul, et vous devriez voir quelques fichiers : <code>bmp.h</code>, <code>filter.c</code>, <code>helpers.h</code>, <code>helpers.c</code> et <code>Makefile</code>. Vous devriez également voir un dossier appelé <code>images</code> avec quatre fichiers BMP. Si vous rencontrez des problèmes, suivez à nouveau ces mêmes étapes et voyez si vous pouvez déterminer où vous vous êtes trompé !</p>
+<h2>Contexte</h2>
+<h3>Un peu (mappage de bits) plus technique</h3>
+<p>N'oubliez pas qu'un fichier est juste une séquence de bits, arrangés d'une certaine façon. Un fichier BMP 24 bits n'est donc essentiellement qu'une séquence de bits, dont (presque) tous les 24 représentent la couleur d'un pixel. Mais un fichier BMP contient également des « métadonnées », des informations telles que la hauteur et la largeur d'une image. Ces métadonnées sont stockées au début du fichier sous la forme de deux structures de données généralement appelées « en-têtes », à ne pas confondre avec les fichiers d'en-tête C. (D'ailleurs, ces en-têtes ont évolué au fil du temps. Ce problème utilise la dernière version du format BMP de Microsoft, 4.0, qui a fait ses débuts avec Windows 95.)</p>
+<p>Le premier de ces en-têtes, appelé <code>BITMAPFILEHEADER</code>, a une longueur de 14 octets. (Rappelons que 1 octet équivaut à 8 bits.) Le second de ces en-têtes, appelé <code>BITMAPINFOHEADER</code>, a une longueur de 40 octets. Immédiatement après ces en-têtes se trouve le bitmap réel : un tableau d'octets, dont les triplets représentent la couleur d'un pixel. Cependant, BMP stocke ces triplets à l'envers (c'est-à-dire comme BGR), avec 8 bits pour le bleu, suivis de 8 bits pour le vert, suivis de 8 bits pour le rouge. (Certains BMP stockent également le bitmap entier à l'envers, avec la rangée supérieure d'une image à la fin du fichier BMP. Mais nous avons stocké les BMP de cet ensemble de problèmes comme décrit ici, avec la rangée supérieure de chaque bitmap en premier et la rangée inférieure en dernier.) En d'autres termes, si nous devions convertir le smiley 1 bit ci-dessus en un smiley 24 bits, en remplaçant le noir par du rouge, un BMP 24 bits stockerait ce bitmap comme suit, où <code>0000ff</code> signifie rouge et <code>ffffff</code> signifie blanc ; nous avons surligné en rouge toutes les instances de <code>0000ff</code>.</p>
+<p><img alt="sourire rouge" src="https://cs50.harvard.edu/x/2024/psets/4/filter/more/red_smile.png" /></p>
+<p>Parce que nous avons présenté ces bits de gauche à droite, de haut en bas, en 8 colonnes, vous pouvez réellement voir le smiley rouge si vous prenez du recul.</p>
+<p>Pour être clair, rappelez-vous qu'un chiffre hexadécimal représente 4 bits. En conséquence, <code>ffffff</code> en hexadécimal signifie en réalité <code>111111111111111111111111</code> en binaire.</p>
+<p>Notez que vous pouvez représenter un bitmap sous la forme d'un tableau de pixels à 2 dimensions : où l'image est un tableau de lignes, chaque ligne est un tableau de pixels. En effet, c'est ainsi que nous avons choisi de représenter les images bitmap dans ce problème.</p>
+<h3>Filtrage d'image</h3>
+<p>Que signifie filtrer une image ? On peut considérer le filtrage d'une image comme la prise des pixels d'une image originale, et la modification de chaque pixel de telle sorte qu'un effet particulier soit apparent dans l'image résultante.</p>
+<h4>Niveaux de gris</h4>
+<p>Un filtre courant est le filtre « niveaux de gris », où on prend une image et on veut la convertir en noir et blanc. Comment cela fonctionne-t-il ?</p>
+<p>Rappelons que si les valeurs rouge, verte et bleue sont toutes définies à <code>0x00</code> (hexadécimal pour <code>0</code>), alors le pixel est noir. Et si toutes les valeurs sont définies à <code>0xff</code> (hexadécimal pour <code>255</code>), alors le pixel est blanc. Tant que les valeurs rouge, verte et bleue sont toutes égales, le résultat sera des nuances de gris variables le long du spectre noir et blanc, avec des valeurs plus élevées signifiant des nuances plus claires (plus proches du blanc) et des valeurs plus faibles signifiant des nuances plus foncées (plus proches du noir).</p>
+<p>Donc, pour convertir un pixel en niveaux de gris, il suffit de s'assurer que les valeurs rouge, verte et bleue sont toutes de la même valeur. Mais comment savoir quelle valeur leur donner ? Eh bien, il est probablement raisonnable de s'attendre à ce que si les valeurs rouge, verte et bleue d'origine étaient toutes assez élevées, la nouvelle valeur devrait également être assez élevée. Et si les valeurs originales étaient toutes faibles, alors la nouvelle valeur devrait également être faible.</p>
+<p>En fait, pour s'assurer que chaque pixel de la nouvelle image a toujours la même luminosité ou la même obscurité que l'ancienne image, on peut prendre la moyenne des valeurs rouge, verte et bleue pour déterminer quelle nuance de gris donner au nouveau pixel.</p>
+<p>Si vous appliquez cela à chaque pixel de l'image, le résultat sera une image convertie en niveaux de gris.</p>
+<h4>Réflexion</h4>
+<p>Certains filtres peuvent également déplacer les pixels. La réflexion d'une image, par exemple, est un filtre où l'image résultante est ce que vous obtiendriez en plaçant l'image originale devant un miroir. Ainsi, tous les pixels du côté gauche de l'image doivent se retrouver sur la droite, et vice versa.</p>
+<p>Notez que tous les pixels originaux de l'image originale seront toujours présents dans l'image réfléchie, c'est juste que ces pixels peuvent avoir été réarrangés pour être à un autre endroit de l'image.</p>
+<h4>Flou</h4>
+<p>Il y a plusieurs façons de créer l'effet de flou ou d'adoucissement d'une image. Pour ce problème, nous allons utiliser le « flou gaussien », qui fonctionne en prenant chaque pixel et, pour chaque valeur de couleur, en lui donnant une nouvelle valeur en faisant la moyenne des valeurs de couleur des pixels voisins.</p>
+<p>Considérez la grille de pixels suivante, où nous avons numéroté chaque pixel.</p>
+<p><img alt="Une grille de pixels" src="https://cs50.harvard.edu/x/2024/psets/4/filter/more/grid.png" /></p>
+<p>La nouvelle valeur de chaque pixel serait la moyenne des valeurs de tous les pixels qui se trouvent dans une ligne et une colonne de l'image originale (formant une boîte de 3x3). Par exemple, chacune des valeurs de couleur du pixel 6 serait obtenue en faisant la moyenne des valeurs de couleur d'origine des pixels 1, 2, 3, 5, 6, 7, 9, 10 et 11 (notez que le pixel 6 lui-même est inclus dans la moyenne). De même, les valeurs de couleur du pixel 11 seraient obtenues en faisant la moyenne des valeurs de couleur des pixels 6, 7, 8, 10, 11, 12, 14, 15 et 16.</p>
+<p>Pour un pixel situé sur le bord ou dans le coin, comme le pixel 15, on chercherait toujours tous les pixels situés dans une ligne et une colonne : dans ce cas, les pixels 10, 11, 12, 14, 15 et 16.</p>
+<h4>Arêtes</h4>
+<p>Dans les algorithmes d'intelligence artificielle pour le traitement d'images, il est souvent utile de détecter les arêtes dans une image : des lignes dans l'image qui créent une frontière entre un objet et un autre. Une façon d'obtenir cet effet est d'appliquer l'opérateur de <a href="https://fr.wikipedia.org/wiki/Op%C3%A9rateur_de_Sobel">Sobel</a> à l'image.</p>
+<p>Tout comme le flou d'image, la détection des arêtes fonctionne également en prenant chaque pixel et en le modifiant en fonction de la grille 3x3 des pixels qui entourent ce pixel. Mais au lieu de simplement prendre la moyenne des neuf pixels, l'opérateur de Sobel calcule la nouvelle valeur de chaque pixel en prenant une somme pondérée des valeurs des pixels environnants. Et puisque les arêtes entre les objets peuvent se produire dans une direction verticale et une direction horizontale, vous calculerez en fait deux sommes pondérées : une pour détecter les arêtes dans la direction x et une pour détecter les arêtes dans la direction y. En particulier, vous utiliserez les deux « noyaux » suivants :</p>
+<p><img alt="Noyaux de Sobel" src="https://cs50.harvard.edu/x/2024/psets/4/filter/more/sobel.png" /></p>
+<p>Comment interpréter ces noyaux ? En bref, pour chacune des trois valeurs de couleur de chaque pixel, nous calculerons deux valeurs <code>Gx</code> et <code>Gy</code>. Pour calculer <code>Gx</code> pour la valeur du canal rouge d'un pixel, par exemple, nous prendrons les valeurs rouges d'origine des neuf pixels qui forment une boîte 3x3 autour du pixel, nous les multiplierons chacune par la valeur correspondante dans le noyau <code>Gx</code>, et nous prendrons la somme des valeurs résultantes.</p>
+<p>Pourquoi ces valeurs particulières pour le noyau ? Dans la direction <code>Gx</code>, par exemple, nous multiplions les pixels à droite du pixel cible par un nombre positif, et les pixels à gauche du pixel cible par un nombre négatif. Lorsque nous prenons la somme, si les pixels de droite ont une couleur similaire à celle des pixels de gauche, le résultat sera proche de 0 (les nombres s'annulent). Mais si les pixels de droite sont très différents des pixels de gauche, alors la valeur résultante sera très positive ou très négative, indiquant un changement de couleur qui est probablement le résultat d'une frontière entre des objets. Et un argument similaire est valable pour le calcul des arêtes dans la direction <code>y</code>.</p>
+<p>À l'aide de ces noyaux, nous pouvons générer une valeur <code>Gx</code> et <code>Gy</code> pour chacun des canaux rouge, vert et bleu d'un pixel. Mais chaque canal ne peut prendre qu'une seule valeur, pas deux : nous avons donc besoin d'un moyen de combiner <code>Gx</code> et <code>Gy</code> en une seule valeur. L'algorithme du filtre de Sobel combine <code>Gx</code> et <code>Gy</code> en une valeur finale en calculant la racine carrée de <code>Gx^2 + Gy^2</code>. Et puisque les valeurs de canal ne peuvent prendre que des valeurs entières de 0 à 255, assurez-vous que la valeur résultante soit arrondie à l'entier le plus proche et plafonnée à 255 !</p>
+<p>Et que faire des pixels au bord ou dans le coin de l'image ? Il existe de nombreuses façons de gérer les pixels au bord, mais pour les besoins de ce problème, nous vous demanderons de traiter l'image comme si elle était entourée d'une bordure noire pleine de 1 pixel : par conséquent, essayer d'accéder à un pixel au-delà du bord de l'image doit être traité comme un pixel noir plein (valeurs de 0 pour chaque rouge, vert et bleu). Cela ignorera effectivement ces pixels de nos calculs de <code>Gx</code> et <code>Gy</code>.</p>
+<h2>Spécification</h2>
+<p>Implémentez les fonctions dans <code>helpers.c</code> de telle sorte qu'un utilisateur puisse appliquer des filtres de niveaux de gris, de réflexion, de flou ou de détection de contours à ses images.</p>
+<ul>
+<li>La fonction <code>grayscale</code> doit prendre une image et la transformer en une version noir et blanc de la même image.</li>
+<li>La fonction <code>reflect</code> doit prendre une image et la refléter horizontalement.</li>
+<li>La fonction <code>blur</code> doit prendre une image et la transformer en une version floutée (effet « box-blur ») de la même image.</li>
+<li>La fonction <code>edges</code> doit prendre une image et mettre en évidence les contours entre les objets, selon l'opérateur de Sobel.</li>
+</ul>
+<p>Vous ne devez modifier aucune des signatures des fonctions, ni aucun autre fichier que <code>helpers.c</code>.</p>
+<h2>Compréhension</h2>
+<p>Examinons maintenant certains des fichiers qui vous ont été fournis en tant que code de distribution pour comprendre ce qu'ils contiennent.</p>
+<h3><code>bmp.h</code></h3>
+<p>Ouvrez <code>bmp.h</code> (en double-cliquant dessus dans le navigateur de fichiers) et examinez-le.</p>
+<p>Vous verrez les définitions des en-têtes que nous avons mentionnés (<code>BITMAPINFOHEADER</code> et <code>BITMAPFILEHEADER</code>). En outre, ce fichier définit <code>BYTE</code>, <code>DWORD</code>, <code>LONG</code> et <code>WORD</code>, des types de données que l'on trouve généralement dans le monde de la programmation Windows. Notez qu'ils sont simplement des alias pour des éléments primitifs que vous connaissez (probablement) déjà. Il semble que <code>BITMAPFILEHEADER</code> et <code>BITMAPINFOHEADER</code> utilisent ces types.</p>
+<p>Surtout, ce fichier définit également une <code>struct</code> appelée <code>RGBTRIPLE</code> qui, tout simplement, « encapsule » trois octets : un bleu, un vert et un rouge (l'ordre, rappelons-nous, dans lequel nous nous attendons à trouver des triplets RVB sur le disque).</p>
+<p>Pourquoi ces <code>struct</code> sont-elles utiles ? Eh bien, rappelez-vous qu'un fichier est simplement une séquence d'octets (ou, en fin de compte, de bits) sur le disque. Mais ces octets sont généralement ordonnés de telle manière que les premiers représentent quelque chose, les suivants représentent autre chose, etc. Les « formats de fichiers » existent parce que le monde a normalisé ce que les octets signifient. Maintenant, nous pourrions simplement lire un fichier à partir du disque dans la RAM comme un grand tableau d'octets. Et nous pourrions simplement nous rappeler que l'octet à <code>array[i]</code> représente une chose, tandis que l'octet à <code>array[j]</code> représente autre chose. Mais pourquoi ne pas donner des noms à certains de ces octets afin que nous puissions les récupérer plus facilement de la mémoire ? C'est précisément ce que les <code>struct</code> dans <code>bmp.h</code> nous permettent de faire. Plutôt que de considérer un fichier comme une longue séquence d'octets, nous pouvons le considérer comme une séquence de <code>struct</code>.</p>
+<h3><code>filter.c</code></h3>
+<p>Maintenant, ouvrons <code>filter.c</code>. Ce fichier a déjà été écrit pour vous, mais voici quelques points importants à noter :</p>
+<p>Premièrement, notez la définition de <code>filters</code> à la ligne 10. Cette chaîne indique au programme quels sont les arguments de ligne de commande autorisés pour le programme : <code>b</code>, <code>e</code>, <code>g</code> et <code>r</code>. Chacun d'eux spécifie un filtre différent que nous pouvons appliquer à nos images : flou, détection des contours, niveaux de gris et réflexion.</p>
+<p>Les lignes suivantes ouvrent un fichier image, s'assurent qu'il s'agit bien d'un fichier BMP et lisent toutes les informations sur les pixels dans un tableau 2D appelé <code>image</code>.</p>
+<p>Faites défiler jusqu'à l'instruction <code>switch</code> qui commence à la ligne 101. Notez que, selon le <code>filter</code> que nous avons choisi, une fonction différente est appelée : si l'utilisateur choisit le filtre <code>b</code>, le programme appelle la fonction <code>blur</code> ; si <code>e</code>, alors <code>edges</code> est appelée ; si <code>g</code>, alors <code>grayscale</code> est appelée ; et si <code>r</code>, alors <code>reflect</code> est appelée. Notez également que chacune de ces fonctions prend comme arguments la hauteur de l'image, la largeur de l'image et le tableau 2D de pixels.</p>
+<p>Voici les fonctions que vous allez (bientôt !) implémenter. Comme vous pouvez l'imaginer, l'objectif est que chacune de ces fonctions modifie le tableau 2D de pixels de manière à ce que le filtre souhaité soit appliqué à l'image.</p>
+<p>Les lignes restantes du programme prennent l'image <code>image</code> résultante et l'écrivent dans un nouveau fichier image.</p>
+<h3><code>helpers.h</code></h3>
+<p>Ensuite, regardez <code>helpers.h</code>. Ce fichier est assez court et fournit simplement les prototypes de fonctions pour les fonctions que vous avez vues précédemment.</p>
+<p>Ici, notez que chaque fonction prend un tableau 2D appelé <code>image</code> comme argument, où <code>image</code> est un tableau de <code>height</code> lignes, et chaque ligne est elle-même un autre tableau de <code>width</code> <code>RGBTRIPLE</code>. Donc, si <code>image</code> représente l'image entière, alors <code>image[0]</code> représente la première ligne, et <code>image[0][0]</code> représente le pixel dans le coin supérieur gauche de l'image.</p>
+<h3><code>helpers.c</code></h3>
+<p>Maintenant, ouvrez <code>helpers.c</code>. C'est ici que l'implémentation des fonctions déclarées dans <code>helpers.h</code> appartient. Mais notez que, pour l'instant, les implémentations sont manquantes ! Cette partie est à vous.</p>
+<h3><code>Makefile</code></h3>
+<p>Enfin, examinons <code>Makefile</code>. Ce fichier spécifie ce qui doit se produire lorsque nous exécutons une commande de terminal comme <code>make filter</code>. Alors que les programmes que vous avez peut-être écrits auparavant étaient confinés à un seul fichier, <code>filter</code> semble utiliser plusieurs fichiers : <code>filter.c</code> et <code>helpers.c</code>. Nous devrons donc indiquer à <code>make</code> comment compiler ce fichier.</p>
+<p>Essayez de compiler <code>filter</code> vous-même en allant à votre terminal et en exécutant :</p>
+<pre><code>  $ make filter
+</code></pre>
+<p>Ensuite, vous pouvez exécuter le programme en exécutant :</p>
+<pre><code>  $ ./filter -g images/yard.bmp out.bmp
+</code></pre>
+<p>qui prend l'image dans <code>images/yard.bmp</code> et génère une nouvelle image appelée <code>out.bmp</code> après avoir fait passer les pixels dans la fonction <code>grayscale</code>. <code>grayscale</code> ne fait encore rien, donc l'image de sortie devrait ressembler à la cour d'origine.</p>
+<h2>Astuces</h2>
+<ul>
+<li>Les valeurs des composants <code>rgbtRed</code>, <code>rgbtGreen</code> et <code>rgbtBlue</code> d'un pixel sont toutes des entiers, alors assurez-vous d'arrondir tout nombre à virgule flottante à l'entier le plus proche lorsque vous l'assignez à une valeur de pixel !</li>
+</ul>
+<h2>Procédure pas à pas</h2>
+<p><strong>Veuillez noter qu'il y a 5 vidéos dans cette playlist.</strong></p>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/vsOsctDernw?modestbranding=0&amp;rel=0&amp;showinfo=1&amp;list=PLhQjrBD2T382OwvMbZuaMGtD9wZkhnhYj"></iframe></div>
+
+<h2>Comment tester</h2>
+<p>Assurez-vous de tester tous vos filtres sur les exemples de fichiers bitmap fournis !</p>
+<h3>Correction</h3>
+<pre><code>  check50 cs50/problems/2024/x/filter/more
+</code></pre>
+<h3>Style</h3>
+<pre><code>  style50 helpers.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/filter/more
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

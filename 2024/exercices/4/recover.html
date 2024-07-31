@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Récupérer</h1>
+<p><img alt="Image récupérée" src="https://cs50.harvard.edu/x/2024/psets/4/recover/recovered_image.png" /></p>
+<h2>Problème à résoudre</h2>
+<p>En prévision de ce problème, nous avons passé ces derniers jours à prendre des photos sur le campus, qui ont toutes été sauvegardées sur un appareil photo numérique au format JPEG sur une carte mémoire. Malheureusement, nous les avons toutes supprimées par erreur ! Heureusement, dans le monde de l'informatique, « supprimé » tend à ne pas vraiment signifier « supprimé », mais plutôt « oublié ». Même si l'appareil photo insiste sur le fait que la carte est maintenant vide, nous sommes presque sûrs que ce n'est pas tout à fait vrai. En effet, nous espérons (ou plutôt, nous attendons !) que vous puissiez écrire un programme qui récupère les photos pour nous !</p>
+<p>Dans un fichier appelé <code>recover.c</code> dans un dossier appelé <code>recover</code>, écrivez un programme pour récupérer les JPEG d'une carte mémoire.</p>
+<h2>Code de distribution</h2>
+<p>Pour ce problème, vous étendrez la fonctionnalité du code qui vous a été fourni par le personnel de CS50.</p>
+<p>Connectez-vous à <a href="https://cs50.dev/">cs50.dev</a>, cliquez sur votre fenêtre de terminal et exécutez <code>cd</code> par lui-même. Vous devriez constater que l'invite de votre fenêtre de terminal ressemble à ceci :</p>
+<pre><code>  $
+</code></pre>
+<p>Exécutez ensuite</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/4/recover.zip
+</code></pre>
+<p>afin de télécharger un fichier ZIP appelé <code>recover.zip</code> dans votre espace de codes.</p>
+<p>Puis exécutez</p>
+<pre><code>  unzip recover.zip
+</code></pre>
+<p>pour créer un dossier appelé <code>recover</code>. Vous n'avez plus besoin du fichier ZIP, vous pouvez donc exécuter</p>
+<pre><code>  rm recover.zip
+</code></pre>
+<p>et répondre par « y » suivi de Entrée à l'invite pour supprimer le fichier ZIP que vous avez téléchargé.</p>
+<p>Tapez maintenant</p>
+<pre><code>  cd recover
+</code></pre>
+<p>suivi de Entrée pour vous déplacer dans (c'est-à-dire ouvrir) ce répertoire. Votre invite devrait maintenant ressembler à ceci :</p>
+<pre><code>  recover/ $
+</code></pre>
+<p>Exécutez <code>ls</code> par lui-même, et vous devriez voir deux fichiers : <code>recover.c</code> et <code>card.raw</code>.</p>
+<h2>Contexte</h2>
+<p>Même si les JPEG sont plus complexes que les BMP, ils ont des « signatures », des motifs d'octets qui peuvent les distinguer des autres formats de fichiers. Plus précisément, les trois premiers octets des JPEG sont</p>
+<pre><code>  0xff 0xd8 0xff
+</code></pre>
+<p>du premier octet au troisième octet, de gauche à droite. Le quatrième octet, quant à lui, est soit <code>0xe0</code>, <code>0xe1</code>, <code>0xe2</code>, <code>0xe3</code>, <code>0xe4</code>, <code>0xe5</code>, <code>0xe6</code>, <code>0xe7</code>, <code>0xe8</code>, <code>0xe9</code>, <code>0xea</code>, <code>0xeb</code>, <code>0xec</code>, <code>0xed</code>, <code>0xee</code>, ou <code>0xef</code>. En d'autres termes, les quatre premiers bits du quatrième octet sont <code>1110</code>.</p>
+<p>Il est probable que si vous trouvez ce motif de quatre octets sur un support connu pour stocker des photos (par exemple, ma carte mémoire), ils délimitent le début d'un JPEG. Pour être juste, vous pouvez rencontrer ces motifs sur certains disques purement par hasard, donc la récupération de données n'est pas une science exacte.</p>
+<p>Heureusement, les appareils photo numériques ont tendance à stocker les photos de manière contiguë sur les cartes mémoire, de sorte que chaque photo est stockée immédiatement après la photo prise précédemment. En conséquence, le début d'un JPEG délimite généralement la fin d'un autre. Cependant, les appareils photo numériques initialisent souvent les cartes avec un système de fichiers FAT dont la « taille de bloc » est de 512 octets (B). Cela implique que ces appareils photo n'écrivent sur ces cartes qu'en unités de 512 B. Une photo de 1 Mo (c'est-à-dire 1 048 576 B) occupe donc 1 048 576 ÷ 512 = 2 048 « blocs » sur une carte mémoire. Mais il en est de même pour une photo qui est, disons, un octet plus petite (c'est-à-dire 1 048 575 B) ! L'espace gaspillé sur le disque est appelé « espace libre ». Les enquêteurs en criminalistique examinent souvent l'espace libre pour y trouver des restes de données suspectes.</p>
+<p>Ces détails impliquent que vous, l'enquêteur, pouvez probablement écrire un programme qui parcourt une copie de ma carte mémoire, à la recherche des signatures des JPEG. Chaque fois que vous trouvez une signature, vous pouvez ouvrir un nouveau fichier en écriture et commencer à le remplir avec des octets provenant de ma carte mémoire, en ne fermant ce fichier qu'une fois que vous avez rencontré une autre signature. De plus, plutôt que de lire les octets de ma carte mémoire un par un, vous pouvez en lire 512 à la fois dans une mémoire tampon, pour des raisons d'efficacité. Grâce à FAT, vous pouvez avoir confiance que les signatures des JPEG seront « alignées sur les blocs ». Autrement dit, vous n'avez besoin de rechercher ces signatures que dans les quatre premiers octets d'un bloc.</p>
+<p>Bien sûr, il faut se rendre compte que les JPEG peuvent s'étendre sur des blocs contigus. Sinon, aucun JPEG ne pourrait être plus grand que 512 B. Mais le dernier octet d'un JPEG peut ne pas tomber à la toute fin d'un bloc. Rappelez-vous la possibilité d'espace libre. Mais ne vous inquiétez pas. Comme cette carte mémoire était toute neuve lorsque j'ai commencé à prendre des photos, il y a de fortes chances qu'elle ait été « remise à zéro » (c'est-à-dire remplie de 0) par le fabricant, dans ce cas, tout espace libre sera rempli de 0. Ce n'est pas grave si ces 0 de fin se retrouvent dans les JPEG que vous récupérez ; ils devraient toujours être visibles.</p>
+<p>Maintenant, je n'ai qu'une seule carte mémoire, mais vous êtes nombreux ! C'est pourquoi je suis allé de l'avant et j'ai créé une « image légale » de la carte, en stockant son contenu, octet par octet, dans un fichier appelé <code>card.raw</code>. Pour que vous ne perdiez pas de temps à parcourir des millions de 0 inutilement, je n'ai imagé que les premiers mégaoctets de la carte mémoire. Mais vous devriez finalement constater que l'image contient 50 JPEG.</p>
+<h2>Spécification</h2>
+<p>Implémentez un programme appelé <code>recover</code> qui récupère les JPEG à partir d'une image légale.</p>
+<ul>
+<li>Implémentez votre programme dans un fichier appelé <code>recover.c</code> dans un répertoire appelé <code>recover</code>.</li>
+<li>Votre programme doit accepter exactement un argument de ligne de commande, le nom d'une image légale à partir de laquelle récupérer les JPEG.</li>
+<li>Si votre programme n'est pas exécuté avec exactement un argument de ligne de commande, il doit rappeler à l'utilisateur l'utilisation correcte, et <code>main</code> doit renvoyer <code>1</code>.</li>
+<li>Si l'image légale ne peut pas être ouverte en lecture, votre programme doit en informer l'utilisateur et <code>main</code> doit renvoyer <code>1</code>.</li>
+<li>Les fichiers que vous générez doivent chacun être nommés <code>###.jpg</code>, où <code>###</code> est un nombre décimal à trois chiffres, commençant par <code>000</code> pour la première image et en augmentant ainsi.</li>
+<li>Votre programme, s'il utilise <code>malloc</code>, ne doit pas fuir de mémoire.</li>
+</ul>
+<h2>Astuces</h2>
+<h3>Écrivez un peu de pseudo-code avant d'écrire plus de code</h3>
+<p>Si vous ne savez pas comment résoudre le problème général, décomposez-le en problèmes plus petits que vous pouvez probablement résoudre en premier. Par exemple, ce problème n'est en réalité qu'une poignée de problèmes :</p>
+<ol>
+<li>Accepter un seul argument de ligne de commande : le nom d'une carte mémoire</li>
+<li>Ouvrir la carte mémoire</li>
+<li>Tant qu'il reste des données à lire sur la carte mémoire<pre><code>1. Créer des JPEG à partir des données
+</code></pre>
+</li>
+</ol>
+<p>Écrivons un peu de pseudo-code comme commentaires pour vous rappeler de faire exactement cela :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(int argc, char *argv[])
+  {
+      // Accepter un seul argument de ligne de commande
+
+      // Ouvrir la carte mémoire
+
+      // Tant qu'il reste des données à lire sur la carte mémoire
+
+          // Créer des JPEG à partir des données
+  }
+</code></pre>
+<h3>Convertir le pseudo-code en code</h3>
+<p>Tout d’abord, réfléchissez à la manière d’accepter un seul argument de ligne de commande. Si l’utilisateur utilise le programme de façon incorrecte, vous devez lui indiquer la bonne façon de l’utiliser.</p>
+<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(int argc, char *argv[])
+  {
+      // Accepter un seul argument de ligne de commande
+      if (argc != 2)
+      {
+          printf("Usage: ./recover FILE\n");
+          return 1;
+      }
+
+      // Ouvrir la carte mémoire
+
+      // Tant qu’il y a des données à lire sur la carte mémoire
+
+          // Créer des fichiers JPEG à partir des données
+  }
+</code></pre>
+<p>Maintenant que vous avez vérifié que l’utilisation est correcte, vous pouvez ouvrir la carte mémoire. N’oubliez pas que vous pouvez ouvrir <code>card.raw</code> par programmation avec <code>fopen</code>, comme ci-dessous.</p>
+<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(int argc, char *argv[])
+  {
+      // Accepter un seul argument de ligne de commande
+      if (argc != 2)
+      {
+          printf("Usage: ./recover FILE\n");
+          return 1;
+      }
+
+      // Ouvrir la carte mémoire
+      FILE *card = fopen(argv[1], "r");
+
+      // Tant qu’il y a des données à lire sur la carte mémoire
+
+          // Créer des fichiers JPEG à partir des données
+  }
+</code></pre>
+<p>Vous devez bien sûr vérifier que le fichier a été ouvert correctement ! Si ce n’est pas le cas, informez-en l’utilisateur et quittez le programme : nous vous laissons cette partie.</p>
+<p>Ensuite, votre programme doit lire les données de la carte que vous avez ouverte, jusqu’à ce qu’il n’y ait plus de données à lire. En cours de route, votre programme doit récupérer chacun des fichiers JPEG de <code>card.raw</code>, en stockant chacun d’eux sous forme de fichier distinct dans votre répertoire de travail actuel.</p>
+<p>Réfléchissez d’abord à la manière de lire <code>card.raw</code> en profondeur. Rappelez-vous que, pour lire des données à partir d’un fichier, vous devez stocker temporairement ces données dans un « tampon ». Et rappelez-vous également que <code>card.raw</code> stocke les données dans des blocs de 512 octets. Par conséquent, vous voudrez probablement créer un tampon de 512 octets pour stocker des blocs de données au fur et à mesure que vous les lisez de manière séquentielle. Une façon de procéder est d’utiliser le type <code>uint8_t</code> de <code>stdint.h</code>, qui stocke exactement 8 bits (1 octet). Le type est appelé <code>uint8_t</code> puisqu’il stocke un entier non signé/positif/non négatif qui nécessite 8 bits d’espace (c’est-à-dire un octet).</p>
+<pre><code>  #include &lt;stdint.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(int argc, char *argv[])
+  {
+      // Accepter un seul argument de ligne de commande
+      if (argc != 2)
+      {
+          printf("Usage: ./recover FILE\n");
+          return 1;
+      }
+
+      // Ouvrir la carte mémoire
+      FILE *card = fopen(argv[1], "r");
+
+      // Créer un tampon pour un bloc de données
+      uint8_t buffer[512];
+
+      // Tant qu’il y a des données à lire sur la carte mémoire
+
+          // Créer des fichiers JPEG à partir des données
+  }
+</code></pre>
+<p>Cependant, ce n’est probablement pas la meilleure idée d’utiliser 512 comme un <a href="../../../shorts/magic_numbers/">« nombre magique »</a> ici. Il y a des chances que vous puissiez encore améliorer cette conception !</p>
+<p>Maintenant, réfléchissez à la manière de lire les données de la carte mémoire. Selon sa <a href="https://man.cs50.io/3/fread">page de manuel</a>, <code>fread</code> renvoie le nombre d’octets qu’il a lus, auquel cas il devrait renvoyer soit <code>512</code> soit <code>0</code>, étant donné que <code>card.raw</code> contient un certain nombre de blocs de 512 octets. Afin de lire chaque bloc de <code>card.raw</code>, après l’avoir ouvert avec <code>fopen</code>, il devrait suffire d’utiliser une boucle comme celle-ci.</p>
+<pre><code>  #include &lt;stdint.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(int argc, char *argv[])
+  {
+      // Accepter un seul argument de ligne de commande
+      if (argc != 2)
+      {
+          printf("Usage: ./recover FILE\n");
+          return 1;
+      }
+
+      // Ouvrir la carte mémoire
+      FILE *card = fopen(argv[1], "r");
+
+      // Créer un tampon pour un bloc de données
+      uint8_t buffer[512];
+
+      // Tant qu’il y a des données à lire sur la carte mémoire
+      while (fread(buffer, 1, 512, card) == 512)
+      {
+          // Créer des fichiers JPEG à partir des données
+
+      }
+  }
+</code></pre>
+<p>De cette façon, dès que <code>fread</code> renvoie <code>0</code> (qui est en fait <code>false</code>), votre boucle se termine.</p>
+<p>Enfin, c’est à vous de déterminer comment créer par programmation des fichiers JPEG au fur et à mesure que vous continuez à lire <code>card.raw</code>. Pour cela, vous trouverez peut-être utile la <a href="#procédure pas à pas">procédure pas à pas</a> ci-dessous.</p>
+<p>N’oubliez pas que votre programme doit numéroter les fichiers qu’il génère en les nommant chacun <code>###.jpg</code>, où <code>###</code> est un nombre décimal à trois chiffres à partir de <code>000</code>. Liez-vous d’amitié avec <a href="https://man.cs50.io/3/sprintf"><code>sprintf</code></a> et notez que <code>sprintf</code> stocke une chaîne formatée à un emplacement en mémoire. Étant donné le format <code>###.jpg</code> prescrit pour le nom de fichier d’un fichier JPEG, combien d’octets devez-vous allouer pour cette chaîne ? (N’oubliez pas le caractère NUL !)</p>
+<p>Pour vérifier si les fichiers JPEG que votre programme renvoie sont corrects, double-cliquez simplement dessus et jetez un œil ! Si chaque photo apparaît intacte, votre opération a probablement réussi !</p>
+<p>Et bien sûr, n’oubliez pas de <code>fclose</code> chaque fichier que vous avez ouvert avec <code>fopen</code> !</p>
+<h3>Gardez votre répertoire de travail propre</h3>
+<p>Il y a de fortes chances que les fichiers JPEG que la première ébauche de votre code renvoie ne soient pas corrects. (Si vous les ouvrez et ne voyez rien, ils ne sont probablement pas corrects !) Exécutez la commande ci-dessous pour supprimer tous les fichiers JPEG dans votre répertoire de travail actuel.</p>
+<pre><code>  rm *.jpg
+</code></pre>
+<p>Si vous préférez ne pas être invité à confirmer chaque suppression, exécutez plutôt la commande ci-dessous.</p>
+<pre><code>  rm -f *.jpg
+</code></pre>
+<p>Soyez simplement prudent avec ce commutateur <code>-f</code>, car il « force » la suppression sans vous le demander.</p>
+<h2>Procédure pas à pas</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/ooL0r_8N9ms?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Comment tester</h2>
+<h3>Exécuter le programme</h3>
+<pre><code>  ./recover card.raw
+</code></pre>
+<h3>Correctness</h3>
+<pre><code>  check50 cs50/problems/2024/x/recover
+</code></pre>
+<h3>Style</h3>
+<pre><code>  style50 recover.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/recover
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

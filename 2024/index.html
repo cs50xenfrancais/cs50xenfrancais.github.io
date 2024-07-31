@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Bienvenue</h1>
+<p>Voici CS50, l'introduction de l'Université d'Harvard aux entreprises intellectuelles de l'informatique et à l'art de la programmation, pour les concentrateurs et non-concentrateurs, avec ou sans expérience de programmation antérieure. (Les deux tiers des étudiants de CS50 n'ont jamais suivi de cours de CS auparavant.) Ce cours vous apprend à résoudre des problèmes, avec ou sans code, en mettant l'accent sur l'exactitude, la conception et le style. Les sujets abordés comprennent la pensée computationnelle, l'abstraction, les algorithmes, les structures de données et l'informatique en général. Des ensembles de problèmes inspirés des arts, des sciences humaines, des sciences sociales et des sciences. Plus que vous apprendre à programmer dans un langage, ce cours vous apprend à programmer fondamentalement et à vous apprendre de nouveaux langages en fin de compte. Le cours commence par un langage traditionnel mais omniprésent appelé C qui sous-tend les nouveaux langages d'aujourd'hui, grâce auquel vous apprendrez non seulement les fonctions, les variables, les conditionnels, les boucles, et plus encore, mais aussi comment les ordinateurs eux-mêmes fonctionnent sous le capot, la mémoire et tout. Le cours passe ensuite à Python, un langage de plus haut niveau que vous comprendrez d'autant plus grâce à C. Vers la fin du trimestre, le cours introduit SQL, grâce auquel vous pouvez stocker des données dans des bases de données, ainsi que HTML, CSS et JavaScript, grâce auxquels vous pouvez créer des applications Web et mobiles. Le cours aboutit à un projet final.</p>
+<details>
+    <summary>Regarder une introduction</summary>
+    <div class="ratio ratio-16x9" data-video="">
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/3oFAJtFE8YU?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe>
+    </div>
+</details>
+
+<h2>Comment suivre ce cours</h2>
+<p>Même si vous n'êtes pas étudiant à Harvard, vous êtes invités à « suivre » ce cours gratuitement via cet OpenCourseWare en parcourant les onze <a href="semaines/">semaines</a> de matériel du cours. Pour chaque semaine, suivez ce flux de travail :</p>
+<pre class="mermaid" style="background-color: white">
+    flowchart TD
+        A[Regarder la conférence] --> |recommandé|B[Regarder la section]
+        A --> D
+        B --> |recommandé|C[Regarder les courts métrages]
+        B --> D[Soumettre l'ensemble de problèmes]
+        C --> D
+</pre>
+
+<p>Puis soumettez le <a href="projet/">projet final</a> du cours.</p>
+<p>Pour soumettre les <a href="psets/">ensembles de problèmes</a> et le <a href="projet/">projet final</a> du cours afin d'obtenir des commentaires, assurez-vous de <a href="https://courses.edx.org/register">créer un compte edX</a>, si vous ne l'avez pas déjà fait. Posez des questions en cours de route via l'une des <a href="communautés/">communautés</a> du cours !</p>
+<ul>
+<li>Si vous êtes intéressé par un <a href="https://www.edx.org/verified-certificate">certificat vérifié</a> d'<a href="https://www.edx.org/">edX</a>, inscrivez-vous plutôt sur <a href="https://cs50.edx.org/">cs50.edx.org</a>.</li>
+<li>Si vous êtes intéressé par un <a href="https://www.edx.org/professional-certificate">certificat professionnel</a> d'<a href="https://www.edx.org/">edX</a><ul>
+<li>en développement Web, inscrivez-vous plutôt sur <a href="https://cs50.edx.org/programs/web">cs50.edx.org/programs/web</a>.</li>
+<li>en intelligence artificielle, inscrivez-vous plutôt sur <a href="https://cs50.edx.org/programs/ai">cs50.edx.org/programs/ai</a>.</li>
+<li>en programmation Python, inscrivez-vous plutôt sur <a href="https://cs50.edx.org/programs/python">cs50.edx.org/programs/python</a>.</li>
+<li>en développement de jeux, inscrivez-vous plutôt sur <a href="https://cs50.edx.org/programs/games">cs50.edx.org/programs/games</a>.</li>
+</ul>
+</li>
+<li>Si vous êtes intéressé par le <a href="https://extension.harvard.edu/for-students/student-policies-conduct/transfer-credits-accreditation/">transfert de crédits et l'accréditation</a> de la <a href="https://www.extension.harvard.edu/">Harvard Extension School</a>, inscrivez-vous plutôt sur <a href="https://web.dce.harvard.edu/extension/csci/e/50">web.dce.harvard.edu/extension/csci/e/50</a>.</li>
+<li>Si vous êtes intéressé par le <a href="https://summer.harvard.edu/academic-opportunities-support/policies-and-regulations/academic-policies/transfer-credit-accreditation/">transfert de crédits et l'accréditation</a> de la <a href="https://www.summer.harvard.edu/">Harvard Summer School</a>, inscrivez-vous plutôt sur <a href="https://web.dce.harvard.edu/summer/csci/s/50">web.dce.harvard.edu/summer/csci/s/50</a>.</li>
+</ul>
+<h2>Comment enseigner ce cours</h2>
+<p>Si vous êtes enseignant, vous êtes invités à adopter ou à adapter ces documents pour votre propre cours, selon la <a href="licence/">licence</a>.</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Syllabus</h2>
+<p>Introduction aux entreprises intellectuelles des sciences informatiques et à l'art de la programmation. Ce cours enseigne aux étudiants comment penser de manière algorithmique et résoudre des problèmes efficacement. Les sujets comprennent l'abstraction, les algorithmes, les structures de données, l'encapsulation, la gestion des ressources, la sécurité, l'ingénierie logicielle et la programmation Web. Les langages comprennent C, Python, SQL plus HTML, CSS et JavaScript. Des séries de problèmes inspirés des arts, des sciences humaines, des sciences sociales et des sciences. Le cours culmine avec un projet final. Conçu pour les concentrateurs et les non-concentrateurs, avec ou sans expérience préalable en programmation. Les deux tiers des étudiants de CS50 n'ont jamais pris de CS auparavant. Parmi les objectifs généraux de ce cours figurent : inspirer les étudiants à explorer des eaux inconnues, sans crainte de l'échec, créer une expérience intensive et partagée, accessible à tous les étudiants, et construire une communauté parmi les étudiants.</p>
+<h2>Attentes</h2>
+<p>Il est attendu que vous :
+-soumettiez dix séries de problèmes, et
+-soumettiez un projet final.</p>
+<h2>Certificats</h2>
+<p>CS50x est gratuit, et vous êtes invités à soumettre les dix séries de problèmes et le projet final du cours pour un retour automatisé. Cependant, pour être éligible à un <a href="https://www.edx.org/verified-certificate">certificat vérifié</a> d'edX, vous devez recevoir une note satisfaisante (au moins 70 %) pour chaque problème que vous soumettez dans le cadre de l'une des dix séries de problèmes du cours ainsi que pour le projet final du cours.</p>
+<p>Les problèmes sont évalués selon des axes de correction (comme déterminé par un programme appelé <code>check50</code>) et de style (comme déterminé par un programme appelé <code>style50</code>), avec des scores généralement calculés comme 3 × correction + 1 × style.</p>
+<h2>Livres</h2>
+<p>Aucun livre n'est requis ou recommandé pour ce cours. Cependant, vous pourriez trouver les livres ci-dessous intéressants. Sachez que des ressources gratuites, voire supérieures, peuvent être trouvées sur le site Web du cours.</p>
+<p><em>Hacker's Delight</em>, deuxième édition<br />
+Henry S. Warren Jr.<br />
+Pearson Education, 2013<br />
+ISBN : 0-321-84268-5</p>
+<p><em>How Computers Work</em>, dixième édition<br />
+Ron White<br />
+Que Publishing, 2014<br />
+ISBN : 0-7897-4984-X</p>
+<p><em>Programming in C</em>, quatrième édition<br />
+Stephen G. Kochan<br />
+Pearson Education, 2015<br />
+ISBN : 0-321-77641-0</p>
+<h2>Cours</h2>
+<p>Les cours du programme introduisent les concepts de chaque semaine.</p>
+<h2>Procédures pas à pas</h2>
+<p>Intégrées aux séries de problèmes se trouvent des « procédures pas à pas », des vidéos qui offrent des orientations sur la façon de commencer et d'aborder les problèmes.</p>
+<h2>Séries de problèmes</h2>
+<p>Les séries de problèmes sont des devoirs de programmation. CS50x n'a pas de date limite pour les séries de problèmes. Vous pouvez y travailler et les soumettre à votre rythme. Cependant, pour être éligible à un certificat vérifié d'edX, vous devez soumettre (et recevoir une note d'au moins 70 %) tous les problèmes dans les séries de problèmes avant le 31 décembre 2024.</p>
+<h2>Projet final</h2>
+<p>Le point culminant de ce cours est son projet final. Le projet final est l'occasion pour vous de mettre à profit vos nouvelles connaissances en programmation et de développer votre propre logiciel. Tant que votre projet s'inspire des leçons de ce cours, la nature de votre projet dépend entièrement de vous. Vous pouvez mettre en œuvre votre projet dans n'importe quel(s) langage(s). Vous êtes invités à utiliser d'autres infrastructures que CS50 Codespace. Tout ce que nous vous demandons, c'est de construire quelque chose qui vous intéresse, de résoudre un problème réel, d'avoir un impact sur votre communauté ou de changer le monde. Efforcez-vous de créer quelque chose qui survive à ce cours.</p>
+<p>Dans la mesure où le développement de logiciels est rarement un effort individuel, vous pouvez collaborer avec un ou deux camarades de classe pour ce projet final. Il va sans dire qu'il est attendu que chaque étudiant d'un tel groupe contribue équitablement à la conception et à la mise en œuvre du projet de ce groupe. De plus, il est attendu que la portée du projet d'un groupe de deux ou trois personnes soit respectivement le double ou le triple de celle d'un projet typique d'une personne. Un projet d'une personne, sachez-le, devrait entraîner plus de temps et d'efforts que ce qui est requis pour chacune des séries de problèmes du cours. Bien que trois étudiants au maximum puissent concevoir et mettre en œuvre un projet donné, vous êtes invités à solliciter des conseils auprès d'autres personnes, tant que vous respectez la politique du cours concernant l'honnêteté académique.</p>
+<p>CS50x n'a pas de date limite pour le projet final. Vous pouvez y travailler et le soumettre à votre rythme. Cependant, pour être éligible à un certificat vérifié d'edX, vous devez le soumettre (et recevoir une note d'au moins 70 %) avant le 31 décembre 2024.</p>
+<h2>Honnêteté académique</h2>
+<p>Veuillez consulter <a href="../honesty/">Honnêteté académique</a> pour les directives.</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

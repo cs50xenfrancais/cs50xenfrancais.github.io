@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Films</h1>
+<p><img alt="Logo d'IMDb" src="https://cs50.harvard.edu/x/2024/psets/7/movies/imdb.png" /></p>
+<h2>Problème à résoudre</h2>
+<p>Un fichier appelé <code>movies.db</code> vous est fourni, une base de données SQLite qui stocke des données de <a href="https://www.imdb.com/">IMDb</a> sur les films, les personnes qui les ont réalisés et joués, et leurs notes. Écrivez des requêtes SQL pour répondre à des questions sur cette base de données de films.</p>
+<h2>Démo</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-uPWDqSe0NjjqXLF3qxzpsMnfv" src="https://asciinema.org/a/uPWDqSe0NjjqXLF3qxzpsMnfv.js"></script>
+
+<h2>Prise en main</h2>
+<p>Pour ce problème, vous utiliserez une base de données fournie par le personnel de CS50.</p>
+<p>Connectez-vous à <a href="https://cs50.dev/">cs50.dev</a>, cliquez sur votre fenêtre de terminal et exécutez <code>cd</code> seul. Vous devriez constater que l'invite de votre fenêtre de terminal ressemble à ceci :</p>
+<pre><code>  $
+</code></pre>
+<p>Ensuite, exécutez :</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/7/movies.zip
+</code></pre>
+<p>afin de télécharger un ZIP appelé <code>movies.zip</code> dans votre espace de codage.</p>
+<p>Puis, exécutez :</p>
+<pre><code>  unzip movies.zip
+</code></pre>
+<p>pour créer un dossier appelé <code>movies</code>. Vous n'avez plus besoin du fichier ZIP, vous pouvez donc exécuter :</p>
+<pre><code>  rm movies.zip
+</code></pre>
+<p>et répondre par « y » suivi de Entrée à l'invite pour supprimer le fichier ZIP que vous avez téléchargé.</p>
+<p>Maintenant, tapez :</p>
+<pre><code>  cd movies
+</code></pre>
+<p>suivi de Entrée pour vous déplacer dans (c'est-à-dire pour ouvrir) ce répertoire. Votre invite doit maintenant ressembler à ceci :</p>
+<pre><code>  movies/ $
+</code></pre>
+<p>Exécutez <code>ls</code> seul, et vous devriez voir 13 fichiers .sql, ainsi que <code>movies.db</code>.</p>
+<p>Si vous rencontrez des problèmes, suivez à nouveau ces mêmes étapes et voyez si vous pouvez déterminer où vous vous êtes trompé !</p>
+<h2>Spécification</h2>
+<p>Pour chacun des problèmes suivants, vous devez écrire une seule requête SQL qui renvoie les résultats spécifiés par chaque problème. Votre réponse doit prendre la forme d'une seule requête SQL, bien que vous puissiez imbriquer d'autres requêtes dans votre requête. Vous <strong>ne devez pas</strong> faire de suppositions sur les <code>id</code> de films ou de personnes particuliers : vos requêtes doivent être exactes même si l'<code>id</code> d'un film ou d'une personne en particulier est différent. Enfin, chaque requête doit renvoyer uniquement les données nécessaires pour répondre à la question : si le problème vous demande uniquement d'indiquer les titres des films, par exemple, alors votre requête ne doit pas également indiquer l'année de sortie de chaque film.</p>
+<p>Vous pouvez vérifier les résultats de vos requêtes par rapport à <a href="https://www.imdb.com/">IMDb</a> lui-même, mais sachez que les notes sur le site Web peuvent différer de celles de <code>movies.db</code>, car davantage de votes ont pu être exprimés depuis que nous avons téléchargé les données !</p>
+<ol>
+<li>Dans <code>1.sql</code>, écrivez une requête SQL pour lister les titres de tous les films sortis en 2008.
+    - Votre requête doit générer un tableau avec une seule colonne pour le titre de chaque film.</li>
+<li>Dans <code>2.sql</code>, écrivez une requête SQL pour déterminer l'année de naissance d'Emma Stone.
+    - Votre requête doit générer un tableau avec une seule colonne et une seule ligne (sans compter l'en-tête) contenant l'année de naissance d'Emma Stone.
+    - Vous pouvez supposer qu'il n'y a qu'une seule personne dans la base de données portant le nom d'Emma Stone.</li>
+<li>Dans <code>3.sql</code>, écrivez une requête SQL pour lister les titres de tous les films dont la date de sortie est égale ou supérieure à 2018, par ordre alphabétique.
+    - Votre requête doit générer un tableau avec une seule colonne pour le titre de chaque film.
+    - Les films sortis en 2018 doivent être inclus, ainsi que les films dont les dates de sortie sont futures.</li>
+<li>Dans <code>4.sql</code>, écrivez une requête SQL pour déterminer le nombre de films avec une note IMDb de 10,0.
+    - Votre requête doit générer un tableau avec une seule colonne et une seule ligne (sans compter l'en-tête) contenant le nombre de films avec une note de 10,0.</li>
+<li>Dans <code>5.sql</code>, écrivez une requête SQL pour lister les titres et les années de sortie de tous les films Harry Potter, dans l'ordre chronologique.
+    - Votre requête doit générer un tableau avec deux colonnes, une pour le titre de chaque film et une pour l'année de sortie de chaque film.
+    - Vous pouvez supposer que le titre de tous les films Harry Potter commencera par les mots « Harry Potter », et que si le titre d'un film commence par les mots « Harry Potter », il s'agit d'un film Harry Potter.</li>
+<li>Dans <code>6.sql</code>, écrivez une requête SQL pour déterminer la note moyenne de tous les films sortis en 2012.
+    - Votre requête doit générer un tableau avec une seule colonne et une seule ligne (sans compter l'en-tête) contenant la note moyenne.</li>
+<li>Dans <code>7.sql</code>, écrivez une requête SQL pour lister tous les films sortis en 2010 et leurs notes, par ordre décroissant de note. Pour les films ayant la même note, classez-les par ordre alphabétique selon leur titre.
+    - Votre requête doit générer un tableau avec deux colonnes, une pour le titre de chaque film et une pour la note de chaque film.
+    - Les films qui n'ont pas de notes ne doivent pas être inclus dans le résultat.</li>
+<li>Dans <code>8.sql</code>, écrivez une requête SQL pour lister les noms de toutes les personnes qui ont joué dans Toy Story.
+    - Votre requête doit générer un tableau avec une seule colonne pour le nom de chaque personne.
+    - Vous pouvez supposer qu'il n'y a qu'un seul film dans la base de données intitulé Toy Story.</li>
+<li>Dans <code>9.sql</code>, écrivez une requête SQL pour lister les noms de toutes les personnes qui ont joué dans un film sorti en 2004, classés par année de naissance.
+    - Votre requête doit générer un tableau avec une seule colonne pour le nom de chaque personne.
+    - Les personnes nées la même année peuvent être répertoriées dans n'importe quel ordre.
+    - Vous n'avez pas à vous soucier des personnes dont l'année de naissance n'est pas indiquée, tant que celles qui ont une année de naissance sont répertoriées dans l'ordre.
+    - Si une personne est apparue dans plusieurs films en 2004, elle ne doit apparaître dans vos résultats qu'une seule fois.</li>
+<li>Dans <code>10.sql</code>, écrivez une requête SQL pour lister les noms de toutes les personnes ayant réalisé un film ayant reçu une note d'au moins 9,0.
+    - Votre requête doit générer un tableau avec une seule colonne pour le nom de chaque personne.
+    - Si une personne a réalisé plus d'un film ayant reçu une note d'au moins 9,0, elle ne doit apparaître dans vos résultats qu'une seule fois.</li>
+<li>Dans <code>11.sql</code>, écrivez une requête SQL pour lister les titres des cinq films les mieux notés (par ordre) dans lesquels Chadwick Boseman a joué, en commençant par le mieux noté.
+    - Votre requête doit générer un tableau avec une seule colonne pour le titre de chaque film.
+    - Vous pouvez supposer qu'il n'y a qu'une seule personne dans la base de données portant le nom de Chadwick Boseman.</li>
+<li>Dans <code>12.sql</code>, écrivez une requête SQL pour lister les titres de tous les films dans lesquels Bradley Cooper et Jennifer Lawrence ont joué.
+    - Votre requête doit générer un tableau avec une seule colonne pour le titre de chaque film.
+    - Vous pouvez supposer qu'il n'y a qu'une seule personne dans la base de données portant le nom de Bradley Cooper.
+    - Vous pouvez supposer qu'il n'y a qu'une seule personne dans la base de données portant le nom de Jennifer Lawrence.</li>
+<li>Dans <code>13.sql</code>, écrivez une requête SQL pour lister les noms de toutes les personnes qui ont joué dans un film dans lequel Kevin Bacon a également joué.
+    - Votre requête doit générer un tableau avec une seule colonne pour le nom de chaque personne.
+    - Il peut y avoir plusieurs personnes nommées Kevin Bacon dans la base de données. N'oubliez de sélectionner que le Kevin Bacon né en 1958.
+    - Kevin Bacon lui-même ne doit pas</li>
+</ol>
+<h2>Conseils</h2>
+<h3>Comprendre le schéma de <code>movies.db</code></h3>
+<p>À chaque fois que vous utilisez une nouvelle base de données, il est préférable de commencer par comprendre son <em>schéma</em>. Dans une fenêtre de terminal, exécutez <code>sqlite3 movies.db</code> pour commencer à exécuter des requêtes sur la base de données.</p>
+<p>Tout d'abord, lorsque <code>sqlite3</code> vous invite à fournir une requête, tapez <code>.schema</code> et appuyez sur entrée. Cela affichera les instructions <code>CREATE TABLE</code> qui ont été utilisées pour générer chacune des tables de la base de données. En examinant ces instructions, vous pouvez identifier les colonnes présentes dans chaque table.</p>
+<p>Notez que la table <code>movies</code> a une colonne <code>id</code> qui identifie de manière unique chaque film, ainsi que des colonnes pour le <code>titre</code> d'un film et l'<code>année</code> de sortie du film. La table <code>people</code> a également une colonne <code>id</code>, ainsi que des colonnes pour chaque <code>nom</code> de personne et son année de <code>naissance</code>.</p>
+<p>Les notes de film, quant à elles, sont stockées dans la table <code>ratings</code>. La première colonne de la table est <code>movie_id</code> : une clé étrangère qui référence l'<code>id</code> de la table <code>movies</code>. Le reste de la ligne contient des données sur la <code>note</code> de chaque film et le nombre de <code>votes</code> que le film a reçu sur IMDb.</p>
+<p>Enfin, les tables <code>stars</code> et <code>directors</code> correspondent à des personnes aux films dans lesquels ils ont joué ou réalisé. (Seules les vedettes et les réalisateurs <a href="https://www.imdb.com/interfaces/">principaux</a> sont inclus.) Chaque table ne comporte que deux colonnes : <code>movie_id</code> et <code>person_id</code>, qui font respectivement référence à un film et à une personne spécifiques.</p>
+<p>Le défi qui vous attend est d'écrire des requêtes SQL pour répondre à différentes questions en sélectionnant des données dans une ou plusieurs de ces tables.</p>
+<h3>Stylez vos requêtes de manière cohérente</h3>
+<p>Consultez <a href="https://www.sqlstyle.guide/">sqlstyle.guide</a> pour obtenir des conseils sur le bon style en SQL, en particulier lorsque vos requêtes deviennent plus complexes !</p>
+<h3>Répertorier les titres de tous les films sortis en 2008</h3>
+<p>Rappelez-vous que vous pouvez sélectionner une (ou plusieurs) colonnes d'une base de données à l'aide de <code>SELECT</code>, comme dans l'exemple ci-dessous,</p>
+<pre><code>  SELECT colonne0, colonne1 FROM table ;
+</code></pre>
+<p>où <code>colonne0</code> est le titre d'une colonne et <code>colonne1</code> le titre d'une autre.</p>
+<p>Et rappelez-vous que vous pouvez filtrer les lignes renvoyées dans une requête avec le mot-clé <code>WHERE</code>, suivi d'une condition. Vous pouvez également utiliser <code>=</code>, <code>&gt;</code>, <code>&lt;</code> et <a href="https://www.w3schools.com/sql/sql_operators.asp">d'autres opérateurs</a>.</p>
+<pre><code>  SELECT colonne FROM table
+  WHERE condition ;
+</code></pre>
+<p>Consultez <a href="https://www.w3schools.com/sql/sql_ref_keywords.asp">cette référence des mots-clés SQL</a> pour une syntaxe SQL qui peut vous être utile !</p>
+<h3>Déterminer l'année de naissance d'Emma Stone</h3>
+<p>Rappelez-vous qu'une clause <code>WHERE</code> peut évaluer des conditions non seulement avec des nombres, mais aussi avec des chaînes.</p>
+<h3>Répertorier les titres de tous les films dont la date de sortie est postérieure ou égale à 2018, par ordre alphabétique</h3>
+<p>Essayez de diviser cette requête en deux étapes. D'abord, trouvez les films dont la date de sortie est en 2018 ou après. Ensuite, mettez les titres de ces films par ordre alphabétique.</p>
+<p>Pour trouver les films dont la date de sortie est en 2018 ou après, rappelez-vous qu'une condition en SQL prend en charge l'utilisation de nombreux <a href="https://www.w3schools.com/sql/sql_operators.asp">opérateurs de comparaison</a> courants, notamment <code>&gt;=</code> pour « supérieur ou égal à ». Vérifiez si votre requête renvoie le nombre correct de films, conformément à <a href="#comment-tester">Comment tester</a>.</p>
+<p>Enfin, triez les résultats de la requête par ordre alphabétique par titre. Rappelez-vous que <code>ORDER BY</code> peut trier les données par une colonne dans vos résultats, comme dans l'exemple ci-dessous.</p>
+<pre><code>  ...
+  ORDER BY colonne ;
+</code></pre>
+<h3>Déterminer le nombre de films avec une note IMDb de 10,0</h3>
+<p>Notez que cette question ne vous demande pas les films <em>individuels</em> ayant une note de 10,0, mais le <em>nombre</em> de films ayant une telle note. En d'autres termes, vous devez collecter (« agréger ») les résultats de votre requête en un seul nombre (le nombre de lignes). Rappelez-vous que SQL prend en charge une « fonction d'agrégation » appelée <code>COUNT</code>, que vous pouvez utiliser sur une colonne comme dans l'exemple ci-dessous.</p>
+<pre><code>  SELECT COUNT(colonne)
+  FROM table ;
+</code></pre>
+<h3>Répertorier les titres et les années de sortie de tous les films Harry Potter, par ordre chronologique</h3>
+<p>Pour cette requête, vous voudrez probablement utiliser le mot-clé <code>LIKE</code> de SQL. Rappelez-vous que <code>LIKE</code> peut utiliser des « caractères génériques », tels que <code>%</code>, qui correspondent à n'importe quel caractère (ou séquence de celui-ci).</p>
+<pre><code>  SELECT colonne0, colonne1
+  FROM table
+  WHERE colonne1 LIKE motif ;
+</code></pre>
+<h3>Déterminer la note moyenne de tous les films sortis en 2012</h3>
+<p>Voici un autre exemple de requête dans laquelle vous devez agréger des données. Considérez la fonction d'agrégation <code>AVG</code> de SQL, pour calculer une moyenne.</p>
+<p>Tenez également compte du fait que cette requête utilise des données stockées dans deux tables distinctes : <code>ratings</code> et <code>movies</code>. Rappelez-vous que, tant qu'une table a une clé étrangère qui correspond à une colonne d'une autre table, vous pouvez combiner deux tables à l'aide du mot-clé <code>JOIN</code> de SQL. Pour utiliser le mot-clé <code>JOIN</code>, vous devez spécifier la table que vous souhaitez joindre et la colonne par laquelle le faire.</p>
+<pre><code>  SELECT colonne0
+  FROM table0
+  JOIN table1 ON table0.colonne1 = table1.colonne2
+</code></pre>
+<h3>Lister tous les films sortis en 2010 et leurs notes, par ordre décroissant de note</h3>
+<p>Rappelez-vous que <code>ORDER BY</code> ne doit pas toujours trier par ordre croissant. Vous pouvez spécifier que vos résultats soient triés par ordre <em>décroissant</em> en ajoutant <code>DESC</code>.</p>
+<pre><code>  ...
+  ORDER BY colonne DESC ;
+</code></pre>
+<h3>Énumérez les noms de toutes les personnes ayant joué dans Toy Story</h3>
+<p>Lorsque vous voyez une requête plus complexe comme celle-ci, il est préférable de la diviser en morceaux plus petits. En fin de compte, votre requête devrait aboutir à une liste de noms, comme indiqué ci-dessous.</p>
+<p>-- Sélectionner les noms
+SELECT name
+FROM people
+WHERE ...</p>
+<p>Mais quelle est la meilleure façon de trouver les noms de ceux qui ont joué dans Toy Story ? Observez que la table <code>people</code> n’a pas cette information (mais la table <code>stars</code> peut l’avoir !). En effet, la table <code>stars</code> combine deux colonnes, <code>person_id</code> et <code>movie_id</code> : toute personne avec un <code>person_id</code> associé à l’<code>id</code> du film Toy Story a joué dans Toy Story.</p>
+<p>-- Sélectionner les noms
+SELECT name
+FROM people
+WHERE ...</p>
+<p>-- Sélectionner les ID de personne
+SELECT person_id
+FROM stars
+WHERE movie_id = ...</p>
+<p>Une étape naturelle suivante consiste donc à trouver l’ID du film Toy Story.</p>
+<p>-- Sélectionner les noms
+SELECT name
+FROM people
+WHERE ...</p>
+<p>-- Sélectionner les ID de personne
+SELECT person_id
+FROM stars
+WHERE movie_id = ...</p>
+<p>-- Trouver l’ID de Toy Story
+SELECT id
+FROM movies
+WHERE title = 'Toy Story' ;</p>
+<p>Bien sûr, vous avez actuellement écrit trois requêtes <em>distinctes</em>. Mais remarquez que certaines requêtes (les deux premières) seraient complètes en incluant les résultats de la requête directement en dessous d’elles. Le processus d’élaboration d’une requête qui dépend des résultats d’une « sous-requête » est appelé requêtes « imbriquées ». C’est un bon indice, mais voici une façon d’imbriquer les requêtes ci-dessus !</p>
+<p>-- Sélectionner les noms
+SELECT name
+FROM people
+WHERE id IN
+(
+ -- Sélectionner les ID de personne
+SELECT person_id
+FROM stars
+WHERE movie_id = (</p>
+<p>-- Trouver l’ID de Toy Story
+SELECT id
+FROM movies
+WHERE title = 'Toy Story'
+)
+) ;</p>
+<h3>Énumérez les noms de toutes les personnes ayant joué dans un film sorti en 2004, triés par année de naissance</h3>
+<p>Observez que cette requête, comme la précédente, vous oblige à utiliser des données de plusieurs tables. Rappelez-vous que vous pouvez « imbriquer » des requêtes en SQL, ce qui vous permet de décomposer une requête plus grande en plus petites. Vous pourriez peut-être écrire des requêtes pour ...</p>
+<ol>
+<li>Trouver les ID des films sortis en 2004
+2. Trouver les ID des personnes ayant joué dans ces films
+3. Trouver les noms des personnes avec ces ID de personnes</li>
+</ol>
+<p>Ensuite, essayez d’imbriquer ces requêtes pour arriver à une requête unique qui renvoie toutes les personnes ayant joué dans un film sorti en 2004. Réfléchissez à la façon dont vous pourriez ensuite classer les résultats de votre requête.</p>
+<h3>Énumérez les noms de toutes les personnes ayant réalisé un film avec une note d’au moins 9,0</h3>
+<p>Observez que cette requête, comme la précédente, vous oblige à utiliser des données de plusieurs tables. Rappelez-vous que vous pouvez « imbriquer » des requêtes en SQL, ce qui vous permet de décomposer une requête plus grande en plus petites. Vous pourriez peut-être écrire des requêtes pour ...</p>
+<ol>
+<li>Trouver les ID des films avec une note d’au moins 9,0</li>
+<li>Trouver les ID des personnes qui ont réalisé ces films</li>
+<li>Trouver les noms des personnes avec ces ID de personnes</li>
+</ol>
+<p>Ensuite, essayez d’imbriquer ces requêtes pour arriver à une requête unique qui renvoie les noms de toutes les personnes ayant réalisé un film avec une note d’au moins 9,0.</p>
+<h3>Énumérez les titres des cinq films les mieux notés (dans l’ordre) dans lesquels Chadwick Boseman a joué, en commençant par le mieux noté</h3>
+<p>Observez que cette requête, comme la précédente, vous oblige à utiliser des données de plusieurs tables. Rappelez-vous que vous pouvez « imbriquer » des requêtes en SQL, ce qui vous permet de décomposer une requête plus grande en plus petites. Vous pourriez peut-être écrire des requêtes pour ...</p>
+<ol>
+<li>Trouver l’ID de Chadwick Boseman
+2. Trouver les ID des films associés à l’ID de Chadwick Boseman
+3. Trouver les titres des films avec ces ID de films</li>
+</ol>
+<p>Ensuite, essayez d’imbriquer ces requêtes pour arriver à une requête unique qui renvoie les titres des films de Chadwick Boseman.</p>
+<p>À partir de là, vous devrez déterminer les notes de ces titres et trier ces titres par note, dans l’ordre décroissant. Réfléchissez à la façon dont vous pourriez combiner une table pertinente (probablement <code>notes</code> !) et trier les résultats par une colonne pertinente.</p>
+<p>Enfin, consultez le mot-clé de SQL <a href="https://www.sqlitetutorial.net/sqlite-limit/"><code>LIMIT</code></a> qui renverra les \(n\) premières lignes d’une requête.</p>
+<h3>Listez les titres de tous les films dans lesquels à la fois Bradley Cooper et Jennifer Lawrence ont joué</h3>
+<p>Notez que cette requête, comme la précédente, vous demande d'utiliser des données depuis plusieurs tables. Rappelez-vous que vous pouvez "imbriquer" des requêtes en SQL, ce qui vous permet de diviser une longue requête en plus petites. Vous pouvez peut-être écrire des requêtes pour :</p>
+<ol>
+<li>Trouver l'ID de Bradley Cooper</li>
+<li>Trouver l'ID de Jennifer Lawrence</li>
+<li>Trouver les ID des films associés à l'ID de Bradley Cooper</li>
+<li>Trouver les ID des films associés à l'ID de Jennifer Lawrence</li>
+<li>Trouver les titres de films à partir des ID de films associés à <em>à la fois</em> Bradley Cooper et Jennifer Lawrence</li>
+</ol>
+<p>Puis, essayez d'imbriquer ces requêtes pour parvenir à une seule requête qui renvoie les films dans lesquels ont joué à la fois Bradley Cooper et Jennifer Lawrence.</p>
+<p>Rappelez-vous que vous pouvez construire des conditions complexes en SQL en utilisant <code>AND</code> ou <code>OR</code>.</p>
+<h3>Listez les noms de toutes les personnes qui ont joué dans un film dans lequel Kevin Bacon a également joué</h3>
+<p>Notez que cette requête, comme la précédente, vous demande d'utiliser des données depuis plusieurs tables. Rappelez-vous que vous pouvez "imbriquer" des requêtes en SQL, ce qui vous permet de diviser une longue requête en plus petites. Vous pouvez peut-être écrire des requêtes pour :</p>
+<ol>
+<li>Trouver l'ID de Kevin Bacon (celui né en 1958 !)</li>
+<li>Trouver les ID des films associés à l'ID de Kevin Bacon</li>
+<li>Trouver les ID des personnes associées à ces ID de films</li>
+<li>Trouver les noms des personnes avec ces ID de personnes</li>
+</ol>
+<p>Puis, essayez d'imbriquer ces requêtes pour parvenir à une seule requête qui renvoie les noms de toutes les personnes qui ont joué dans un film dans lequel a également joué Kevin Bacon. <strong>Gardez à l'esprit que vous voudrez exclure Kevin Bacon lui-même des résultats !</strong></p>
+<h2>Procédure détaillée</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/v5_A3giDlQs?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Utilisation</h2>
+<p>Pour tester vos requêtes dans VS Code, vous pouvez interroger la base de données en exécutant</p>
+<pre><code>  $ cat nom_fichier.sql | sqlite3 .movies.db
+</code></pre>
+<p>où <code>nom_fichier.sql</code> est le fichier contenant votre requête SQL.</p>
+<p>Vous pouvez aussi exécuter</p>
+<pre><code>  $ cat nom_fichier.sql | sqlite3 .movies.db &gt; sortie.txt
+</code></pre>
+<p>pour rediriger le résultat de la requête vers un fichier texte appelé <code>sortie.txt</code>. (Cela peut être utile pour vérifier le nombre de lignes renvoyées par votre requête !)</p>
+<h2>Comment tester</h2>
+<p>Bien que <code>check50</code> soit disponible pour ce problème, nous vous encourageons à tester vous-même votre code pour chacun des éléments suivants. Vous pouvez exécuter <code>sqlite3 .movies.db</code> pour exécuter des requêtes supplémentaires sur la base de données pour vous assurer que votre résultat est correct.</p>
+<p>Si vous utilisez la base de données <code>movies.db</code> fournie dans la distribution de cet ensemble de problèmes, vous devriez constater que</p>
+<ul>
+<li>L'exécution de <code>1.sql</code> renvoie une table avec 1 colonne et 10 276 lignes.</li>
+<li>L'exécution de <code>2.sql</code> renvoie une table avec 1 colonne et 1 ligne.</li>
+<li>L'exécution de <code>3.sql</code> renvoie une table avec 1 colonne et 110 014 lignes.</li>
+<li>L'exécution de <code>4.sql</code> renvoie une table avec 1 colonne et 1 ligne.</li>
+<li>L'exécution de <code>5.sql</code> renvoie une table avec 2 colonnes et 11 lignes.</li>
+<li>L'exécution de <code>6.sql</code> renvoie une table avec 1 colonne et 1 ligne.</li>
+<li>L'exécution de <code>7.sql</code> renvoie une table avec 2 colonnes et 7 192 lignes.</li>
+<li>L'exécution de <code>8.sql</code> renvoie une table avec 1 colonne et 4 lignes.</li>
+<li>L'exécution de <code>9.sql</code> renvoie une table avec 1 colonne et 19 325 lignes.</li>
+<li>L'exécution de <code>10.sql</code> renvoie une table avec 1 colonne et 3 854 lignes.</li>
+<li>L'exécution de <code>11.sql</code> renvoie une table avec 1 colonne et 5 lignes.</li>
+<li>L'exécution de <code>12.sql</code> renvoie une table avec 1 colonne et 4 lignes.</li>
+<li>L'exécution de <code>13.sql</code> renvoie une table avec 1 colonne et 182 lignes.</li>
+</ul>
+<p>Notez que le nombre de lignes n'inclut pas les lignes d'en-tête qui affichent uniquement les noms de colonnes.</p>
+<p>Si votre requête renvoie un nombre de lignes légèrement différent de la sortie attendue, assurez-vous que vous gérez correctement les doublons ! Pour les requêtes qui demandent une liste de noms, aucune personne ne doit être listée deux fois, mais deux personnes différentes portant le même nom doivent chacune être listées.</p>
+<h3>Exactitude</h3>
+<pre><code>  check50 cs50/problems/2024/x/movies
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/movies
+</code></pre>
+<h2>Remerciements</h2>
+<p>Informations fournies par IMDb (<a href="https://www.imdb.com">imdb.com</a>). Utilisées avec autorisation.</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

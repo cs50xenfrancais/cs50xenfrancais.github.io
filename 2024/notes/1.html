@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Leçon 1</h2>
+<ul>
+<li><a href="#c">C</a></li>
+<li><a href="#hello-world">hello, world</a></li>
+<li><a href="#compilateurs">Compilateurs</a></li>
+<li><a href="#chaîne">Chaîne de caractères</a></li>
+<li><a href="#blocs-scratch-en-c">Blocs Scratch en C</a></li>
+<li><a href="#types-formats-opérateurs">Types, formats, opérateurs</a></li>
+<li><a href="#autres-exemples">Autres exemples</a><ul>
+<li><a href="#écrans">Écrans</a></li>
+</ul>
+</li>
+<li><a href="#mémoire-imprécision-et-dépassement">Mémoire, imprécision, et dépassement</a></li>
+</ul>
+<h2>C</h2>
+<ul>
+<li>
+<p>Aujourd'hui, nous allons apprendre un nouveau langage, <strong>C</strong> : un langage de programmation qui possède toutes les fonctionnalités de Scratch et plus encore, mais peut-être un peu moins convivial puisqu'il est uniquement en texte :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      printf("hello, world\n");
+  }
+</code></pre>
+<ul>
+<li>Bien que les mots soient nouveaux, les idées sont exactement les mêmes que les blocs « lorsque le drapeau vert est cliqué » et « dire (hello, world) » dans Scratch :
+  <img alt="bloc intitulé 'lorsque le drapeau vert est cliqué', bloc intitulé 'dire (hello, world)'" src="https://cs50.harvard.edu/x/2020/notes/1/when_green_flag.png" /></li>
+</ul>
+</li>
+<li>
+<p>Bien que cryptique, n'oubliez pas que 2/3 des étudiants de CS50 n'ont jamais suivi de CS auparavant, alors ne soyez pas intimidé ! Et bien qu'au début, pour emprunter une expression du MIT, essayer d'absorber tous ces nouveaux concepts puisse vous donner l'impression de boire à même une bouche d'incendie, soyez assuré qu'à la fin du semestre, nous aurons acquis les compétences et l'expérience nécessaires pour apprendre et appliquer ces concepts.</p>
+</li>
+<li>Nous pouvons comparer de nombreuses constructions en C avec des blocs que nous avons déjà vus et utilisés dans Scratch. La syntaxe est bien moins importante que les principes, auxquels nous avons déjà été initiés.</li>
+</ul>
+<h2>bonjour, le monde</h2>
+<ul>
+<li>
+<p>Le bloc « quand le drapeau vert est cliqué » dans Scratch démarre le programme principal ; le clic sur le drapeau vert déclenche l'exécution du bon jeu de blocs ci-dessous. En C, la première ligne pour le même est « int main(vide) », que nous apprendrons plus en détail au cours des prochaines semaines, suivie d'une accolade ouvrante « { » et d'une accolade fermante « } », englobant tout ce qui devrait être dans le programme.</p>
+<pre><code>  int main(vide)
+  {
+
+  }
+</code></pre>
+</li>
+<li>
+<p>Le bloc « dire (bonjour, le monde) » est une fonction, et correspond à « printf("bonjour, le monde"); ». En C, la fonction pour imprimer quelque chose à l'écran est « printf », où « f » signifie « format », ce qui signifie que nous pouvons formater la chaîne imprimée de différentes manières. Ensuite, nous utilisons des parenthèses pour transmettre ce que nous voulons imprimer. Nous devons utiliser des guillemets doubles pour encadrer notre texte afin qu'il soit compris comme du texte, et enfin, nous ajoutons un point-virgule « ; » pour terminer cette ligne de code.</p>
+</li>
+<li>
+<p>Pour que notre programme fonctionne, nous avons également besoin d'une autre ligne en haut, une ligne d'en-tête « #include <stdio.h> » qui définit la fonction « printf » que nous voulons utiliser. Quelque part sur notre ordinateur, il existe un fichier, « stdio.h », qui inclut le code qui nous permet d'accéder à la fonction « printf », et la ligne « #include » indique à l'ordinateur d'inclure ce fichier dans notre programme.</p>
+</li>
+<li>
+<p>Pour écrire notre premier programme en Scratch, nous avons ouvert le site Web de Scratch. De la même manière, nous utiliserons le [bac à sable CS50] (https://sandbox.cs50.io/) pour commencer à écrire et à exécuter du code de la même manière. Le bac à sable CS50 est un environnement virtuel basé sur le cloud avec les bibliothèques et les outils déjà installés pour écrire des programmes dans différentes langues. En haut, il y a un simple éditeur de code, dans lequel nous pouvons taper du texte. Ci-dessous, nous avons une fenêtre de terminal, dans laquelle nous pouvons taper des commandes :<br />
+  ![deux panneaux, le haut intitulé hello.c, le bas intitulé Terminal] (https://cs50.harvard.edu/x/2020/notes/1/cs50_sandbox.png)</p>
+</li>
+<li>
+<p>Nous taperons notre code précédent dans la partie supérieure, après avoir utilisé le signe « + » pour créer un nouveau fichier appelé « hello.c » :<br />
+  ![bonjour, le monde dans l'éditeur] (https://cs50.harvard.edu/x/2020/notes/1/editor.png)</p>
+</li>
+<li>
+<p>Nous terminons le fichier de notre programme par « .c » par convention, pour indiquer qu'il est destiné à un programme C. Notez que notre code est coloré, de sorte que certaines choses sont plus visibles.</p>
+</li>
+</ul>
+<h2>Compilateurs</h2>
+<ul>
+<li>Une fois que nous avons enregistré le code que nous avons écrit, qui est appelé <strong>code source</strong>, nous devons le convertir en <strong>code machine</strong>, des instructions binaires que l'ordinateur comprend directement.</li>
+<li>Nous utilisons un programme appelé <strong>compilateur</strong> pour compiler notre code source en code machine.</li>
+<li>Pour ce faire, nous utilisons le panneau <strong>Terminal</strong>, qui dispose d'une <strong>invite de commande</strong>. Le <code>$</code> à gauche est une invite, après laquelle nous pouvons taper des commandes.<ul>
+<li>Nous tapons <code>clang hello.c</code> (où <code>clang</code> signifie « langages C », un compilateur écrit par un groupe de personnes). Mais avant d'appuyer sur Entrée, nous cliquons sur l'icône de dossier en haut à gauche de CS50 Sandbox. Nous voyons notre fichier, <code>hello.c</code>. Nous appuyons donc sur Entrée dans la fenêtre du terminal et voyons que nous avons maintenant un autre fichier, appelé <code>a.out</code> (abréviation de « sortie d'assemblage »). À l'intérieur de ce fichier se trouve le code de notre programme, en binaire. Nous pouvons maintenant taper <code>./a.out</code> dans l'invite du terminal pour exécuter le programme <code>a.out</code> dans notre dossier actuel. Nous venons d'écrire, de compiler et d'exécuter notre premier programme !</li>
+</ul>
+</li>
+</ul>
+<h2>Chaîne de caractères</h2>
+<ul>
+<li>
+<p>Cependant, après avoir exécuté notre programme, nous voyons <code>hello, world$</code>, avec la nouvelle invite sur la même ligne que notre sortie. Il s'avère que nous devons spécifier précisément que nous avons besoin d'une nouvelle ligne après notre programme, nous pouvons donc mettre à jour notre code pour inclure un caractère de nouvelle ligne spécial, <code>\n</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      printf("hello, world\n");
+  }
+</code></pre>
+<ul>
+<li>Maintenant, nous devons penser à recompiler notre programme avec <code>clang hello.c</code> avant de pouvoir exécuter cette nouvelle version.</li>
+</ul>
+</li>
+<li>
+<p>La ligne 2 de notre programme est intentionnellement vide puisque nous voulons démarrer une nouvelle section de code, un peu comme on commence de nouveaux paragraphes dans les essais. Ce n'est pas strictement nécessaire pour que notre programme s'exécute correctement, mais cela aide les humains à lire plus facilement des programmes plus longs.</p>
+</li>
+<li>Nous pouvons également changer le nom de notre programme de <code>a.out</code> à autre chose. Nous pouvons passer des <strong>arguments de ligne de commande</strong>, ou des options supplémentaires, aux programmes dans le terminal, en fonction de ce que le programme est écrit pour comprendre. Par exemple, nous pouvons taper <code>clang -o hello hello.c</code>, et <code>-o hello</code> indique au programme <code>clang</code> d'enregistrer la sortie compilée en tant que <code>hello</code>. Ensuite, nous pouvons simplement exécuter <code>./hello</code>.</li>
+<li>
+<p>Dans notre invite de commande, nous pouvons exécuter d'autres commandes, comme <code>ls</code> (liste), qui affiche les fichiers dans notre dossier actuel :</p>
+<pre><code>  $ ls
+  a.out* hello* hello.c
+</code></pre>
+<ul>
+<li>L'astérisque, <code>*</code>, indique que ces fichiers sont exécutables, ou qu'ils peuvent être exécutés par notre ordinateur.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons utiliser la commande <code>rm</code> (supprimer) pour supprimer un fichier :</p>
+<pre><code>  $ rm a.out
+  rm: supprimer le fichier régulier 'a.out' ?
+</code></pre>
+<ul>
+<li>Nous pouvons taper <code>y</code> ou <code>yes</code> pour confirmer, et utiliser à nouveau <code>ls</code> pour voir qu'il a effectivement disparu.</li>
+</ul>
+</li>
+<li>
+<p>Maintenant, essayons d'obtenir des informations de l'utilisateur, comme nous l'avons fait dans Scratch lorsque nous voulions dire « bonjour, David » :<br />
+<img alt="Capture d'écran de blocs « demander quel est votre nom ? et attendre », « dire joindre bonjour, réponse »" src="https://cs50.harvard.edu/x/2020/notes/1/ask_say_join.png" /></p>
+<pre><code>  string answer = get_string("What's your name?\n");
+  printf("hello, %s\n", answer);
+</code></pre>
+<ul>
+<li>Tout d'abord, nous avons besoin d'une <strong>chaîne de caractères</strong>, ou d'un morceau de texte (plus précisément, zéro ou plusieurs caractères dans une séquence entre guillemets doubles, comme <code>""</code>, <code>"ba"</code> ou "bananes"), que nous pouvons demander à l'utilisateur, avec la fonction <code>get_string</code>. Nous passons l'invite, ou ce que nous voulons demander à l'utilisateur, à la fonction avec <code>"What is your name?\n"</code> entre parenthèses. Sur la gauche, nous voulons créer une variable, <code>answer</code>, dont la valeur sera ce que l'utilisateur saisit. (Le signe égal <code>=</code> définit la valeur de droite à gauche.) Enfin, le type de variable que nous voulons est <code>string</code>, nous précisons donc cela à gauche de <code>answer</code>.</li>
+<li>Ensuite, à l'intérieur de la fonction <code>printf</code>, nous voulons la valeur de <code>answer</code> dans ce que nous imprimons en retour. Nous utilisons un espace réservé pour notre variable de chaîne, <code>%s</code>, dans la phrase que nous voulons imprimer, comme <code>"hello, %s\n"</code>, puis nous donnons à <code>printf</code> un autre argument, ou une option, pour lui dire que nous voulons que la variable <code>answer</code> soit remplacé.</li>
+</ul>
+</li>
+<li>
+<p>Si nous avons fait une erreur, comme écrire <code>printf("hello, world"\n);</code> avec <code>\n</code> en dehors des guillemets doubles pour notre chaîne, nous verrons une erreur de notre compilateur :</p>
+<pre><code>  $ clang -o hello hello.c
+  hello.c:5:26: error: expected ')'
+      printf("hello, world"\n);
+                           ^
+  hello.c:5:11: note: to match this '('
+      printf("hello, world"\n);
+            ^
+  1 error generated.
+</code></pre>
+<ul>
+<li>La première ligne de l'erreur nous dit de regarder <code>hello.c</code>, ligne 5, colonne 26, où le compilateur attendait une parenthèse fermante, au lieu d'une barre oblique inverse.</li>
+</ul>
+</li>
+<li>
+<p>Pour simplifier les choses (du moins pour le début), nous inclurons une bibliothèque, ou un ensemble de code, de CS50. La bibliothèque nous fournit le type de variable <code>string</code>, la fonction <code>get_string</code>, et plus encore. Il suffit d'écrire une ligne en haut pour <code>inclure</code> le fichier <code>cs50.h</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string name = get_string("What's your name?\n");
+      printf("hello, name\n");
+  }
+</code></pre>
+</li>
+<li>
+<p>Créons donc un nouveau fichier, <code>string.c</code>, avec ce code :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string name = get_string("What's your name?\n");
+      printf("hello, %s\n", name);
+  }
+</code></pre>
+</li>
+<li>
+<p>Maintenant, si nous essayons de compiler ce code, nous obtenons de nombreuses erreurs. Parfois, une erreur signifie que le compilateur commence alors à interpréter le code correct de manière incorrecte, générant plus d'erreurs qu'il n'y en a réellement. Nous commençons donc par notre première erreur :</p>
+<pre><code>  $ clang -o string string.c
+  string.c:5:5: error: use of undeclared identifier 'string'; did you mean 'stdin'?
+    string name = get_string("What's your name?\n");
+    ^~~~~~
+    stdin
+  /usr/include/stdio.h:135:25: note: 'stdin' declared here
+  extern struct _IO_FILE *stdin;          /* Standard input stream.  */
+</code></pre>
+<ul>
+<li>Nous ne voulions pas dire <code>stdin</code> (« entrée standard ») au lieu de <code>string</code>, donc ce message d'erreur n'était pas utile. En fait, nous devons importer un autre fichier qui définit le type <code>string</code> (en réalité une roue d'entraînement de CS50, comme nous le découvrirons dans les semaines à venir).</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons donc inclure un autre fichier, <code>cs50.h</code>, qui inclut également la fonction <code>get_string</code>, entre autres.</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string name = get_string("What's your name?\n");
+      printf("hello, %s\n", name);
+  }
+</code></pre>
+</li>
+<li>
+<p>Maintenant, lorsque nous essayons de compiler notre programme, nous n'avons qu'une seule erreur :</p>
+<pre><code>  $ clang -o string string.c
+  /tmp/string-aca94d.o: In function `main':
+  string.c:(.text+0x19): undefined reference to `get_string'
+  clang-7: error: linker command failed with exit code 1 (use -v to see invocation)
+</code></pre>
+<ul>
+<li>Il s'avère que nous devons également indiquer à notre compilateur d'ajouter notre fichier de bibliothèque CS50 spécial, avec <code>clang -o string string.c -lcs50</code>, avec <code>-l</code> pour « lier ».</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons même faire abstraction de cela et simplement taper <code>make string</code>. Nous voyons que, par défaut dans le bac à sable CS50, <code>make</code> utilise <code>clang</code> pour compiler notre code à partir de <code>string.c</code> en <code>string</code>, avec tous les arguments, ou drapeaux, nécessaires transmis.</p>
+</li>
+</ul>
+<h2>Blocs Scratch en C</h2>
+<ul>
+<li>
+<p>Le bloc “mettre [compteur] à (0)” crée une variable ; en C, nous écririons <code>int compteur = 0 ;</code>, où <code>int</code> précise que notre variable est un nombre entier :<br />
+<img alt="bloc nommé 'mettre compteur à (0)'" src="https://cs50.harvard.edu/x/2020/notes/1/set_counter_to_0.png" /></p>
+</li>
+<li>
+<p>“incrémenter [compteur] de (1)” équivaut en C à <code>compteur = compteur + 1 ;</code>. (En C, le symbole <code>=</code> n’est pas un signe d’égalité, comme dans une équation où <code>compteur</code> serait égal à <code>compteur + 1</code>. Au lieu de cela, <code>=</code> est un opérateur d’affectation qui signifie « copier la valeur de droite dans la valeur de gauche ».) Et remarquez que nous n’avons plus besoin de préciser <code>int</code>, car nous supposons que nous avons déjà spécifié auparavant que <code>compteur</code> est un <code>int</code>, doté d’une valeur existante. Nous pouvons également écrire <code>compteur += 1 ;</code> ou <code>compteur++ ;</code> qui sont tous deux du « sucre syntaxique », à savoir des raccourcis qui ont le même effet avec moins de caractères à taper.<br />
+<img alt="bloc nommé 'incrémenter compteur de (1)'" src="https://cs50.harvard.edu/x/2020/notes/1/change_counter_by_1.png" /></p>
+</li>
+<li>
+<p>Une condition correspondrait à :<br />
+<img alt="bloc nommé 'si &lt; (x) &lt; (y) &gt; alors', qui contient un bloc nommé 'dire (x est inférieur à y)'" src="https://cs50.harvard.edu/x/2020/notes/1/if_x_y.png" /></p>
+<pre><code>  if (x &lt; y)
+  {
+      printf("x est inférieur à y\n");
+  }
+</code></pre>
+<ul>
+<li>Remarquez qu’en C nous utilisons les caractères <code>{</code> et <code>}</code> (ainsi que l’indentation) pour indiquer comment les lignes de code doivent être imbriquées.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons également avoir des conditions if-else :<br />
+<img alt="bloc nommé 'si &lt; (x) &lt; (y) &gt; alors', qui contient un bloc nommé 'dire (x est inférieur à y)', qui contient également un bloc 'sinon', contenant un bloc nommé 'dire (x n'est pas inférieur à y)'" src="https://cs50.harvard.edu/x/2020/notes/1/if_else.png" /></p>
+<pre><code>  if (x &lt; y)
+  {
+      printf("x est inférieur à y\n");
+  }
+  else
+  {
+      printf("x n'est pas inférieur à y\n");
+  }
+</code></pre>
+<ul>
+<li>Remarquez que les lignes de code qui ne constituent pas elles-mêmes une action (<code>if...</code> et les accolades) ne se terminent pas par un point-virgule.</li>
+</ul>
+</li>
+<li>
+<p>Et même <code>else if</code> :
+  <img alt="bloc nommé 'si &lt; (x) &lt; (y) &gt; alors', qui contient un bloc nommé 'dire (x est inférieur à y)', qui contient également un bloc 'sinon', à l'intérieur duquel se trouve un bloc imbriqué nommé 'si &lt; (x) &gt; (y) &gt; alors', contenant un bloc nommé 'dire (x est supérieur à y)', qui contient également un bloc 'sinon', à l'intérieur duquel se trouve un bloc nommé 'si &lt; (x) = (y) &gt; alors', contenant un bloc nommé 'dire (x est égal à y)'" src="https://cs50.harvard.edu/x/2020/notes/1/if_else_if.png" /></p>
+<pre><code>  if (x &lt; y)
+  {
+      printf("x est inférieur à y\n");
+  }
+  else if (x &gt; y)
+  {
+      printf("x est supérieur à y\n");
+  }
+  else if (x == y)
+  {
+      printf("x est égal à y\n");
+  }
+</code></pre>
+<ul>
+<li>Remarquez que pour comparer deux valeurs en C, nous utilisons <code>==</code>, soit deux signes égal.</li>
+<li>Et logiquement, nous n’avons pas besoin du <code>if (x == y)</code> dans la condition finale, car c’est le seul cas restant et nous pouvons simplement dire <code>else</code>.</li>
+</ul>
+</li>
+<li>
+<p>Les boucles peuvent être écrites comme suit :<br />
+<img alt="bloc nommé 'pour toujours', qui contient un bloc nommé 'dire (bonjour, monde)'" src="https://cs50.harvard.edu/x/2020/notes/1/forever.png" /></p>
+<pre><code>  while (true)
+  {
+      printf("bonjour, monde\n");
+  }
+</code></pre>
+<ul>
+<li>Le mot-clé <code>while</code> nécessite également une condition, nous utilisons donc <code>true</code> comme expression booléenne pour nous assurer que notre boucle fonctionnera indéfiniment. Notre programme vérifiera si l’expression est évaluée à <code>true</code> (ce qui sera toujours le cas ici), puis exécutera les lignes à l’intérieur des accolades. Ensuite, il répétera cette opération jusqu’à ce que l’expression ne soit plus vraie (ce qui ne changera pas dans ce cas).</li>
+</ul>
+</li>
+<li>
+<p>Nous pourrions faire quelque chose un certain nombre de fois avec <code>while</code> :<br />
+<img alt="bloc nommé 'répéter (50)', qui contient un bloc nommé 'dire (bonjour, monde)'" src="https://cs50.harvard.edu/x/2020/notes/1/repeat.png" /></p>
+<pre><code>  int i = 0;
+  while (i &lt; 50)
+  {
+      printf("bonjour, monde\n");
+      i++;
+  }
+</code></pre>
+<ul>
+<li>Nous créons une variable <code>i</code> et la définissons sur 0. Ensuite, tant que <code>i &lt; 50</code>, nous exécutons des lignes de code, et nous ajoutons 1 à <code>i</code> après chaque exécution.</li>
+<li>Les accolades autour des deux lignes à l’intérieur de la boucle <code>while</code> indiquent que ces lignes se répéteront, et nous pouvons ajouter des lignes à notre programme après si nous le souhaitons.</li>
+</ul>
+</li>
+<li>
+<p>Pour effectuer la même répétition, nous pouvons plus couramment utiliser le mot-clé <code>for</code> :</p>
+<pre><code>  for (int i = 0; i &lt; 50; i++)
+  {
+      printf("bonjour, monde\n");
+  }
+</code></pre>
+<ul>
+<li>Encore une fois, nous créons d’abord une variable nommée <code>i</code> et la définissons sur 0. Ensuite, nous vérifions que <code>i &lt; 50</code> à chaque fois que nous atteignons le début de la boucle, avant d’exécuter le code à l’intérieur. Si cette expression est vraie, alors nous exécutons le code à l’intérieur. Enfin, après avoir exécuté le code à l’intérieur, nous utilisons <code>i++</code> pour ajouter un à <code>i</code> et la boucle se répète.</li>
+</ul>
+</li>
+</ul>
+<h2>Types, formats, operateurs</h2>
+<ul>
+<li>On peut utiliser d'autres types pour nos variables :<ul>
+<li><code>bool</code>, une expression booléenne de valeur <code>true</code> ou <code>false</code></li>
+<li><code>char</code>, un seul caractère comme <code>a</code> ou <code>2</code></li>
+<li><code>double</code>, une valeur à virgule flottante avec encore plus de chiffres</li>
+<li><code>float</code>, une valeur à virgule flottante, ou un nombre réel avec une valeur décimale</li>
+<li><code>int</code>, des entiers jusqu'à une certaine taille, ou nombre de bits</li>
+<li><code>long</code>, des entiers avec plus de bits, ce qui leur permet de compter plus haut</li>
+<li><code>string</code>, une chaîne de caractères</li>
+</ul>
+</li>
+<li>Et la bibliothèque CS50 dispose des fonctions correspondantes pour obtenir des entrées de différents types :<ul>
+<li><code>get_char</code></li>
+<li><code>get_double</code></li>
+<li><code>get_float</code></li>
+<li><code>get_int</code></li>
+<li><code>get_long</code></li>
+<li><code>get_string</code></li>
+</ul>
+</li>
+<li>Pour <code>printf</code> aussi, il existe différents espaces réservés pour chaque type :<ul>
+<li><code>%c</code> pour les caractères</li>
+<li><code>%f</code> pour les flottants, doubles</li>
+<li><code>%i</code> pour les entiers</li>
+<li><code>%li</code> pour les longs</li>
+<li><code>%s</code> pour les chaînes</li>
+</ul>
+</li>
+<li>Et il existe des opérateurs mathématiques que nous pouvons utiliser :<ul>
+<li><code>+</code> pour l'addition</li>
+<li><code>-</code> pour la soustraction</li>
+<li><code>*</code> pour la multiplication</li>
+<li><code>/</code> pour la division</li>
+<li><code>%</code> pour le reste</li>
+</ul>
+</li>
+</ul>
+<h1>Plus d'exemples</h1>
+<ul>
+<li>Pour chacun de ces exemples, vous pouvez cliquer sur les <a href="../../weeks/1/">liens du bac à sable</a> pour lancer et modifier vos propres copies.</li>
+<li>
+<p>Dans <code>int.c</code>, nous récupérons et affichons un entier :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int age = get_int("Quel âge avez-vous ?\n");
+      int jours = age * 365;
+      printf("Vous avez au moins %i jours.\n", jours);
+  }
+</code></pre>
+<ul>
+<li>Notez que nous utilisons <code>%i</code> pour afficher un entier.</li>
+<li>Nous pouvons maintenant lancer <code>make int</code> et lancer notre programme avec <code>./int</code>.</li>
+<li>
+<p>Nous pouvons combiner des lignes et supprimer la variable <code>jours</code> avec :</p>
+<pre><code>  int age = get_int("Quel âge avez-vous ?\n");
+  printf("Vous avez au moins %i jours.\n", age * 365);
+</code></pre>
+</li>
+<li>
+<p>Ou même tout combiner sur une ligne :</p>
+<pre><code>  printf("Vous avez au moins %i jours.\n", get_int("Quel âge avez-vous ?\n") * 365);
+</code></pre>
+</li>
+<li>
+<p>Cependant, si une ligne devient trop longue ou trop compliquée, il peut être préférable de conserver deux ou trois lignes pour plus de lisibilité.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Dans <code>float.c</code>, nous pouvons récupérer des nombres décimaux (ce qu'on appelle des valeurs à virgule flottante en informatique, parce que la virgule décimale peut « flotter » entre les chiffres, en fonction du nombre ):</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      float prix = get_float("Quel est le prix ?\n");
+      printf("Votre total est de %f.\n", prix * 1,0625);
+  }
+</code></pre>
+<ul>
+<li>Maintenant, si nous compilons et lançons notre programme, nous verrons un prix affiché avec la taxe.</li>
+<li>Nous pouvons spécifier le nombre de chiffres imprimés après la virgule décimale avec un espace réservé tel que <code>%.2f</code> pour deux chiffres après la virgule décimale.</li>
+</ul>
+</li>
+<li>
+<p>Avec <code>parity.c</code>, nous pouvons vérifier si un nombre est pair ou impair :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int n = get_int("n : ");
+
+      if (n % 2 == 0)
+      {
+          printf("pair\n");
+      }
+      else
+      {
+          printf("impair\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Avec l'opérateur <code>%</code> (modulo), nous pouvons obtenir le reste de <code>n</code> après sa division par 2. Si le reste est 0, nous savons que <code>n</code> est pair. Sinon, nous savons que <code>n</code> est impair.</li>
+<li>De plus, des fonctions comme <code>get_int</code> de la bibliothèque CS50 effectuent une vérification des erreurs, où seules les entrées de l'utilisateur correspondant au type que nous voulons sont acceptées.</li>
+</ul>
+</li>
+<li>
+<p>Dans <code>conditions.c</code>, nous transformons les extraits de conditions précédents en un programme :</p>
+<pre><code>  // Conditions et opérateurs relationnels
+
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Demander à l'utilisateur de saisir x
+      int x = get_int("x : ");
+
+      // Demander à l'utilisateur de saisir y
+      int y = get_int("y : ");
+
+      // Comparer x et y
+      if (x &lt; y)
+      {
+          printf("x est inférieur à y\n");
+      }
+      else if (x &gt; y)
+      {
+          printf("x est supérieur à y\n");
+      }
+      else
+      {
+          printf("x est égal à y\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Les lignes commençant par <code>//</code> sont des commentaires ou des notes pour les humains que le compilateur ignorera.</li>
+<li>Pour que David compile et exécute ce programme dans son bac à sable, il devait d'abord exécuter <code>cd src1</code> dans le terminal. Cela change le répertoire, ou dossier, en celui dans lequel il a enregistré tous les fichiers sources du cours. Ensuite, il pouvait exécuter <code>make conditions</code> et <code>./conditions</code>. Avec <code>pwd</code>, il peut voir qu'il se trouve dans un dossier <code>src1</code> (à l'intérieur d'autres dossiers). Et <code>cd</code> tout seul, sans arguments, nous ramènera à notre dossier par défaut dans le bac à sable.</li>
+</ul>
+</li>
+<li>
+<p>Dans <code>agree.c</code>, nous pouvons demander à l'utilisateur de confirmer ou d'infirmer quelque chose :</p>
+<pre><code>  // Opérateurs logiques
+
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Demander à l'utilisateur d'accepter
+      char c = get_char("Êtes-vous d'accord ?\n");
+
+      // Vérifier si l'utilisateur est d'accord
+      if (c == 'Y' || c == 'y')
+      {
+          printf("D'accord.\n");
+      }
+      else if (c == 'N' || c == 'n')
+      {
+          printf("Pas d'accord.\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Nous utilisons deux barres verticales, <code>||</code>, pour indiquer un « ou » logique, indiquant que l'une ou l'autre expression peut être vraie pour que la condition soit suivie.</li>
+<li>Et si aucune des expressions n'est vraie, rien ne se passera puisque notre programme n'a pas de boucle.</li>
+</ul>
+</li>
+<li>
+<p>Mettons en oeuvre le programme de toux depuis la semaine 0 :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      printf("toux\n");
+      printf("toux\n");
+      printf("toux\n");
+  }
+</code></pre>
+</li>
+<li>
+<p>Nous pourrions utiliser une boucle <code>for</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      for (int i = 0; i &lt; 3; i++)
+      {
+          printf("toux\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Par convention, les programmeurs ont tendance à commencer à compter à 0, ainsi <code>i</code> aura le valeurs <code>0</code>, <code>1</code> et <code>2</code> avant de s'arrêter, pour un total de trois itérations. Nous pourrions également écrire <code>for (int i = 1; i &lt;= 3; i++)</code> pour le même effet final.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons déplacer la ligne <code>printf</code> vers sa propre fonction:</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  void toux(void);
+
+  int main(void)
+  {
+      for (int i = 0; i &lt; 3; i++)
+      {
+          toux();
+      }
+  }
+
+  void toux(void)
+  {
+      printf("toux\n");
+  }
+</code></pre>
+<ul>
+<li>Nous déclarons une nouvelle fonction avec <code>void toux(void);</code>, avant que notre fonction <code>main</code> ne l'appelle. Le compilateur C lit notre code de haut en bas, nous devons donc lui indiquer que la fonction <code>toux</code> existe, avant que nous l'utilisions. Puis, après notre fonction <code>main</code>, nous pouvons implémenter la fonction <code>toux</code>. De cette façon, le compilateur sait que la fonction existe, et nous pouvons garder notre fonction <code>main</code> près du début.</li>
+<li>Et notre fonction <code>toux</code> ne prend aucune entrée, nous avons donc <code>toux(void)</code>.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons abstraire d'avantage <code>toux</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  void toux(int n);
+
+  int main(void)
+  {
+      toux(3);
+  }
+
+  void toux(int n)
+  {
+      for (int i = 0; i &lt; n; i++)
+      {
+          printf("toux\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Maintenant, quand nous voulons afficher "toux" un certain nombre de fois, nous pouvons simplement appeler la même fonction. Notez qu'avec <code>void toux(int n)</code>, nous indiquons que la fonction <code>toux</code> prend en entrée un <code>int</code>, auquel nous nous référons comme <code>n</code>. Et à l'intérieur de <code>toux</code>, nous utilisons <code>n</code> dans notre boucle <code>for</code> pour afficher "toux" le bon nombre de fois.</li>
+</ul>
+</li>
+<li>
+<p>Regardons <code>positive.c</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int get_positive_int(void);
+
+  int main(void)
+  {
+      int i = get_positive_int();
+      printf("%i\n", i);
+  }
+
+  // Demander à l'utilisateur un entier positif
+  int get_positive_int(void)
+  {
+      int n;
+      do
+      {
+          n = get_int("%s", "Entier positif : ");
+      }
+      while (n &lt; 1);
+      return n;
+  }
+</code></pre>
+<ul>
+<li>La bibliothèque CS50 n'a pas de fonction <code>get_positive_int</code>, mais nous pouvons en écrire une nous-mêmes. Notre fonction <code>int get_positive_int(void)</code> demande à l'utilisateur un <code>int</code> et retourne cet <code>int</code>, que notre fonction <code>main</code> stocke comme <code>i</code>. Dans <code>get_positive_int</code>, nous initialisons une variable, <code>int n</code>, sans encore lui assigner de valeur. Puis, nous avons une nouvelle construction, <code>do ... while</code>, qui fait quelque chose <em>en premier</em>, puis vérifie une condition, et répète cela jusqu'à ce que la condition ne soit plus vraie.</li>
+<li>Une fois que la boucle se termine parce qu'on a un <code>n</code> qui n'est pas <code>&lt; 1</code>, on peut le retourner avec le mot-clé <code>return</code>. Et de retour dans notre fonction <code>main</code>, on peut définir <code>int i</code> sur cette valeur.</li>
+</ul>
+</li>
+</ul>
+<h2>Écrans</h2>
+<ul>
+<li>
+<p>Nous pourrions avoir besoin d'un programme qui imprime une partie d'écran d'un jeu vidéo comme Super Mario Bros. Dans <code>mario0.c</code>, nous avons :</p>
+<pre><code>  // Affiche une ligne de 4 points d'interrogation
+
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      printf("????\n");
+  }
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons demander à l'utilisateur un nombre de points d'interrogation, puis les imprimer avec <code>mario2.c</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int n;
+      do
+      {
+          n = get_int("Largeur : ");
+      }
+      while (n &lt; 1);
+      for (int i = 0; i &lt; n; i++)
+      {
+          printf("?");
+      }
+      printf("\n");
+  }
+</code></pre>
+</li>
+<li>
+<p>Et nous pouvons imprimer un ensemble bidimensionnel de blocs avec <code>mario8.c</code> :</p>
+<pre><code>  // Affiche une grille de briques n-par-n avec une boucle
+
+  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int n;
+      do
+      {
+          n = get_int("Taille : ");
+      }
+      while (n &lt; 1);
+      for (int i = 0; i &lt; n; i++)
+      {
+          for (int j = 0; j &lt; n; j++)
+          {
+              printf("#");
+          }
+          printf("\n");
+      }
+  }
+</code></pre>
+</li>
+<li>
+<p>Notez que nous avons deux boucles imbriquées, où la boucle externe utilise <code>i</code> pour tout faire à l'intérieur <code>n</code> fois, et la boucle interne utilise <code>j</code>, une variable différente, pour faire quelque chose <code>n</code> fois pour chacune de <em>ces</em> fois. En d'autres termes, la boucle externe imprime <code>n</code> « lignes » ou lignes, et la boucle interne imprime <code>n</code> « colonnes » ou caractères <code>#</code> dans chaque ligne.</p>
+</li>
+<li>
+<p>D'autres exemples non abordés en cours sont disponibles sous « Code source » pour <a href="../../weeks/1/">Semaine 1</a>.</p>
+</li>
+</ul>
+<h1>Mémoire, imprécision et dépassement de capacité</h1>
+<ul>
+<li>Notre ordinateur possède une mémoire, dans des puces de matériel appelées RAM, mémoire à accès aléatoire. Nos programmes utilisent cette RAM pour stocker des données pendant leur exécution, mais cette mémoire est finie. Donc, avec un nombre fini de bits, nous ne pouvons pas représenter tous les nombres possibles (dont il existe un nombre infini). Ainsi, notre ordinateur dispose d'un certain nombre de bits pour chaque flottant et entier, et doit arrondir à une valeur décimale donnée à un certain moment.</li>
+<li>
+<p>Avec <code>floats.c</code>, nous pouvons voir ce qui se passe lorsque nous utilisons des flottants :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Invite l'utilisateur à saisir x
+      float x = get_float("x: ");
+
+      // Invite l'utilisateur à saisir y
+      float y = get_float("y: ");
+
+      // Effectue une division
+      printf("x / y = %.50f\n", x / y);
+  }
+</code></pre>
+<ul>
+<li>Avec <code>%50f</code>, nous pouvons spécifier le nombre de décimales affichées.</li>
+<li>
+<p>Hum, maintenant nous obtenons …</p>
+<pre><code>  x: 1
+  y: 10
+  x / y = 0.10000000149011611938476562500000000000000000000000
+</code></pre>
+</li>
+<li>
+<p>Il s'avère que cela s'appelle <strong>l'imprécision en virgule flottante</strong>, où nous n'avons pas assez de bits pour stocker toutes les valeurs possibles, de sorte que l'ordinateur doit stocker la valeur la plus proche possible de 1 divisé par 10.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons voir un problème similaire dans <code>overflow.c</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;unistd.h&gt;
+
+  int main(void)
+  {
+      for (int i = 1; ; i *= 2)
+      {
+          printf("%i\n", i);
+          sleep(1);
+      }
+  }
+</code></pre>
+<ul>
+<li>Dans notre boucle <code>pour</code>, nous définissons <code>i</code> sur <code>1</code> et le multiplions par <code>*= 2</code>. (Et nous allons continuer à le faire indéfiniment, donc il n'y a pas de condition que nous vérifions.)</li>
+<li>Nous utilisons également la fonction <code>sleep</code> de <code>unistd.h</code> pour permettre à notre programme de faire une pause à chaque fois.</li>
+<li>
+<p>Maintenant, lorsque nous exécutons ce programme, nous voyons le nombre augmenter de plus en plus, jusqu'à :</p>
+<pre><code>  1073741824
+  overflow.c:6:25: erreur d'exécution: dépassement d'entier signé: 1073741824 * 2 ne peut pas être représenté dans le type 'int'
+  -2147483648
+  0
+  0
+  ...
+</code></pre>
+</li>
+<li>
+<p>Il s'avère que notre programme a reconnu qu'un entier signé (un entier avec un signe positif ou négatif) ne pouvait pas stocker cette prochaine valeur et a imprimé une erreur. Ensuite, puisqu'il essayait de le doubler quand même, <code>i</code> est devenu un nombre négatif, puis 0.</p>
+</li>
+<li>Ce problème est appelé <strong>dépassement de capacité d'entier</strong>, où un entier ne peut être que si grand avant de manquer de bits et de « déborder ». Nous pouvons imaginer ajouter 1 à 999 en décimal. Le dernier chiffre devient 0, nous reportons le 1 pour que le chiffre suivant devienne 0, et nous obtenons 1000. Mais si nous n'avions que trois chiffres, nous nous retrouverions avec 000 car il n'y a pas de place pour mettre le 1 final !</li>
+</ul>
+</li>
+<li>
+<p>Le problème Y2K est survenu parce que de nombreux programmes stockaient l'année civile avec seulement deux chiffres, comme 98 pour 1998 et 99 pour 1999. Mais à l'approche de l'an 2000, les programmes auraient stocké 00, ce qui entraînerait une confusion entre les années 1900 et 2000.</p>
+</li>
+<li>Un avion Boeing 787 avait également un bug où un compteur dans le générateur débordait après un certain nombre de jours de fonctionnement continu, car le nombre de secondes de fonctionnement ne pouvait plus être stocké dans ce compteur.</li>
+<li>Donc, nous avons vu quelques problèmes qui peuvent survenir, mais maintenant nous comprenons pourquoi et comment les éviter.</li>
+<li>Avec le problème de la semaine, nous utiliserons le CS50 Lab, basé sur le CS50 Sandbox, pour écrire quelques programmes avec des procédures pas à pas pour nous guider.</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

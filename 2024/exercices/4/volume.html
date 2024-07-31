@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Volume</h1>
+<p><img alt="WAV file waveform" src="https://cs50.harvard.edu/x/2024/psets/4/volume/wav_file.png" /></p>
+<h2>Problème à résoudre</h2>
+<p>Les fichiers <a href="https://docs.fileformat.com/audio/wav/">WAV</a> sont un format de fichier courant pour représenter l'audio. Les fichiers WAV stockent l'audio sous forme d'une séquence "d'échantillons" : des nombres qui représentent la valeur d'un signal audio à un moment donné. Les fichiers WAV commencent par un "en-tête" de 44 octets qui contient des informations sur le fichier lui-même, notamment la taille du fichier, le nombre d'échantillons par seconde et la taille de chaque échantillon. Après l'en-tête, le fichier WAV contient une séquence d'échantillons, chacun étant un seul entier de 2 octets (16 bits) représentant le signal audio à un moment donné.</p>
+<p>Ajuster la valeur de chaque échantillon par un facteur donné a pour effet de modifier le volume de l'audio. Multiplier chaque valeur d'échantillon par 2,0, par exemple, aura pour effet de doubler le volume de l'audio d'origine. Multiplier chaque échantillon par 0,5, quant à lui, aura pour effet de réduire le volume de moitié.</p>
+<p>Dans un fichier appelé <code>volume.c</code> dans un dossier appelé <code>volume</code>, écrivez un programme pour modifier le volume d'un fichier audio.</p>
+<h2>Démo</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-mc2hPhYDt1spoMjlqNMuqC4Uc" src="https://asciinema.org/a/mc2hPhYDt1spoMjlqNMuqC4Uc.js"></script>
+
+<h2>Code de distribution</h2>
+<p>Pour ce problème, vous étendrez les fonctionnalités du code fourni par l'équipe de CS50.</p>
+<p>Connectez-vous à <a href="https://cs50.dev/">cs50.dev</a>, cliquez sur votre fenêtre de terminal et exécutez <code>cd</code> seul. Vous devriez constater que l'invite de votre fenêtre de terminal ressemble à ce qui suit :</p>
+<pre><code>  $
+</code></pre>
+<p>Ensuite, exécutez</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/4/volume.zip
+</code></pre>
+<p>afin de télécharger un ZIP appelé <code>volume.zip</code> dans votre espace de code.</p>
+<p>Puis exécutez</p>
+<pre><code>  unzip volume.zip
+</code></pre>
+<p>pour créer un dossier appelé <code>volume</code>. Vous n'avez plus besoin du fichier ZIP, vous pouvez donc exécuter</p>
+<pre><code>  rm volume.zip
+</code></pre>
+<p>et répondre par « y », puis Entrée à l'invite de commande pour supprimer le fichier ZIP que vous avez téléchargé.</p>
+<p>Maintenant, tapez</p>
+<pre><code>  cd volume
+</code></pre>
+<p>suivi de la touche Entrée pour vous déplacer dans (c'est-à-dire ouvrir) ce répertoire. Votre invite devrait maintenant ressembler à ce qui suit.</p>
+<pre><code>  volume/ $
+</code></pre>
+<p>Si tout s'est bien passé, vous devez exécuter</p>
+<pre><code>  ls
+</code></pre>
+<p>et voir un fichier nommé <code>volume.c</code>. L'exécution de <code>code volume.c</code> devrait ouvrir le fichier dans lequel vous taperez votre code pour cette série de problèmes. Sinon, revenez sur vos pas et essayez de déterminer où vous vous êtes trompé !</p>
+<h2>Détails de l'implémentation</h2>
+<p>Terminez l'implémentation de <code>volume.c</code>, de sorte qu'il modifie le volume d'un fichier son par un facteur donné.</p>
+<ul>
+<li>Le programme doit accepter trois arguments en ligne de commande. Le premier est <code>input</code>, qui représente le nom du fichier audio original. Le deuxième est <code>output</code>, qui représente le nom du nouveau fichier audio qui doit être généré. Le troisième est <code>factor</code>, qui est le montant par lequel le volume du fichier audio d'origine doit être ajusté.<ul>
+<li>Par exemple, si <code>factor</code> est <code>2,0</code>, votre programme doit doubler le volume du fichier audio dans <code>input</code> et enregistrer le nouveau fichier audio généré dans <code>output</code>.</li>
+</ul>
+</li>
+<li>Votre programme doit d'abord lire l'en-tête du fichier d'entrée et écrire l'en-tête dans le fichier de sortie.</li>
+<li>Votre programme doit ensuite lire le reste des données du fichier WAV, un échantillon de 16 bits (2 octets) à la fois. Votre programme doit multiplier chaque échantillon par le <code>factor</code> et écrire le nouvel échantillon dans le fichier de sortie.<ul>
+<li>Vous pouvez supposer que le fichier WAV utilisera des valeurs signées de 16 bits comme échantillons. En pratique, les fichiers WAV peuvent avoir un nombre variable de bits par échantillon, mais nous supposerons des échantillons de 16 bits pour ce problème.</li>
+</ul>
+</li>
+<li>Votre programme, s'il utilise <code>malloc</code>, ne doit pas fuir de mémoire.</li>
+</ul>
+<h2>Conseils</h2>
+<h3>Comprenez le code dans <code>volume.c</code></h3>
+<p>Notez d'abord que <code>volume.c</code> est déjà configuré pour recevoir trois arguments en ligne de commande, <code>input</code>, <code>output</code> et <code>factor</code>.</p>
+<ul>
+<li><code>main</code> prend à la fois un <code>int</code>, <code>argc</code>, et un tableau de <code>char *</code> (chaînes !), <code>argv</code>.</li>
+<li>Si <code>argc</code>, le nombre d'arguments en ligne de commande, y compris le programme lui-même, n'est pas égal à 4, le programme imprimera son utilisation appropriée et quittera avec le code de statut 1.<pre><code>    int main(int argc, char \*argv[])
+    {
+        // Vérifier les arguments en ligne de commande
+        if (argc != 4)
+        {
+            printf("Usage : ./volume input.wav output.wav factor\n");
+            return 1;
+        }
+
+        // ...
+    }
+</code></pre>
+</li>
+</ul>
+<p>Ensuite, <code>volume.c</code> utilise <a href="https://manual.cs50.io/3/fopen"><code>fopen</code></a> pour ouvrir les deux fichiers fournis en arguments en ligne de commande.</p>
+<ul>
+<li>Il est recommandé de vérifier si le résultat de l'appel de <code>fopen</code> est <code>NULL</code>. Si c'est le cas, le fichier n'a pas été trouvé ou n'a pas pu être ouvert.<pre><code>    // Ouvrir les fichiers et déterminer le facteur d'ajustement
+    FILE *input = fopen(argv[1], "r");
+    if (input == NULL)
+    {
+        printf("Impossible d'ouvrir le fichier.\n");
+        return 1;
+    }
+
+    FILE *output = fopen(argv[2], "w");
+    if (output == NULL)
+    {
+        printf("Impossible d'ouvrir le fichier.\n");
+        return 1;
+    }
+</code></pre>
+</li>
+</ul>
+<p>Plus tard, ces fichiers sont fermés avec <code>fclose</code>. Chaque fois que vous appelez <code>fopen</code>, vous devez appeler <code>fclose</code> plus tard !</p>
+<pre><code>      // Fermer les fichiers
+      fclose(input);
+      fclose(output);
+</code></pre>
+<p>Cependant, avant de fermer les fichiers, notez que nous avons quelques TODO.</p>
+<pre><code>      // TODO : Copier l'en-tête du fichier d'entrée vers le fichier de sortie
+
+      // TODO : Lire les échantillons du fichier d'entrée et écrire les données mises à jour dans le fichier de sortie
+</code></pre>
+<p>Il y a de fortes chances que vous ayez besoin de connaître le facteur par lequel ajuster le volume, d'où la raison pour laquelle <code>volume.c</code> convertit déjà le troisième argument en ligne de commande en <code>float</code> pour vous !</p>
+<pre><code>      float factor = atof(argv[3]);
+</code></pre>
+<h3>Copier l'en-tête WAV du fichier d'entrée vers le fichier de sortie</h3>
+<p>Votre première TODO est de copier l'en-tête du fichier WAV depuis <code>input</code> et de l'écrire dans <code>output</code>. Tout d'abord, vous devez en apprendre plus sur quelques types de données spéciaux.</p>
+<p>Jusqu'ici, nous avons vu un certain nombre de types différents en C, dont <code>int</code>, <code>bool</code>, <code>char</code>, <code>double</code>, <code>float</code> et <code>long</code>. Cependant, à l'intérieur d'un fichier d'en-tête appelé <code>stdint.h</code>, figurent les déclarations d'un certain nombre d'autres types qui nous permettent de définir très précisément la taille (en bits) et le signe (positif ou négatif) d'un nombre entier. Deux types en particulier nous seront utiles lorsque nous travaillerons avec des fichiers WAV :</p>
+<ul>
+<li><code>uint8_t</code> est un type qui stocke un nombre entier non signé de 8 bits (d'où <code>8</code> !) (c'est-à-dire non négatif) (d'où <code>uint</code> !). Nous pouvons traiter chaque octet de l'en-tête d'un fichier WAV comme une valeur <code>uint8_t</code>.</li>
+<li><code>int16_t</code> est un type stockant un nombre entier de 16 bits signé (c'est-à-dire positif ou négatif). Nous pouvons traiter chaque échantillon audio d'un fichier WAV comme une valeur <code>int16_t</code>.</li>
+</ul>
+<p>Vous souhaiterez probablement créer un tableau d'octets pour stocker les données de l'en-tête du fichier WAV que vous lirez depuis le fichier d'entrée. En utilisant le type <code>uint8_t</code> pour représenter un octet, vous pouvez créer un tableau de <code>n</code> octets pour votre en-tête avec une syntaxe comme :</p>
+<pre><code>  uint8_t header[n];
+</code></pre>
+<p>en remplaçant <code>n</code> par le nombre d'octets. Vous pouvez ensuite utiliser <code>header</code> comme argument pour <a href="https://manual.cs50.io/3/fread"><code>fread</code></a> ou <a href="https://manual.cs50.io/3/fwrite"><code>fwrite</code></a> pour lire depuis ou écrire dans l'en-tête.</p>
+<p>Souvenez-vous que l'en-tête d'un fichier WAV fait toujours exactement 44 octets. Notez que <code>volume.c</code> définit déjà une variable pour vous, nommée <code>HEADER_SIZE</code>, qui est égale au nombre d'octets dans l'en-tête.</p>
+<p>Ce qui suit est un assez gros indice, mais voici comment vous pourriez accomplir cette TODO !</p>
+<pre><code>  // Copier l'en-tête du fichier d'entrée vers le fichier de sortie
+  uint8_t header[HEADER_SIZE];
+  fread(header, HEADER_SIZE, 1, input);
+  fwrite(header, HEADER_SIZE, 1, output);
+</code></pre>
+<h3>Écrire les données mises à jour dans le fichier de sortie</h3>
+<p>Votre TODO suivante est de lire les échantillons depuis <code>input</code>, mettre à jour ces échantillons et écrire les échantillons mis à jour dans <code>output</code>. Lors de la lecture de fichiers, il est courant de créer un « tampon » dans lequel stocker temporairement les données. Là, vous pouvez modifier les données et, une fois qu'elles sont prêtes, écrire les données du tampon dans un nouveau fichier.</p>
+<p>Souvenez-vous que nous pouvons utiliser le type <code>int16_t</code> pour représenter un échantillon d'un fichier WAV. Pour stocker un échantillon audio, vous pouvez donc créer une variable tampon avec une syntaxe comme :</p>
+<pre><code>  // Créer un tampon pour un échantillon unique
+  int16_t buffer;
+</code></pre>
+<p>Avec un tampon pour les échantillons en place, vous pouvez maintenant y lire des données, un échantillon à la fois. Essayez d'utiliser <code>fread</code> pour cette tâche ! Vous pouvez utiliser <code>&amp;buffer</code>, l'adresse de <code>buffer</code>, comme argument pour <code>fread</code> ou <code>fwrite</code> afin de lire depuis ou écrire dans le tampon. (Souvenez-vous que l'opérateur <code>&amp;</code> est utilisé pour obtenir l'adresse de la variable.)</p>
+<pre><code>  // Créer un tampon pour un échantillon unique
+  int16_t buffer;
+
+  // Lire un échantillon unique dans le tampon
+  fread(&amp;buffer, sizeof(int16_t), 1, input)
+</code></pre>
+<p>Maintenant, pour augmenter (ou diminuer) le volume d'un échantillon, il vous suffit de le multiplier par un certain facteur.</p>
+<pre><code>  // Créer un tampon pour un échantillon unique
+  int16_t buffer;
+
+  // Lire un échantillon unique dans le tampon
+  fread(&amp;buffer, sizeof(int16_t), 1, input)
+
+  // Mettre à jour le volume de l'échantillon
+  buffer *= factor;
+</code></pre>
+<p>Et enfin, vous pouvez écrire cet échantillon mis à jour dans <code>output</code> :</p>
+<pre><code>  // Créer un tampon pour un échantillon unique
+  int16_t buffer;
+
+  // Lire un échantillon unique depuis input dans le tampon
+  fread(&amp;buffer, sizeof(int16_t), 1, input)
+
+  // Mettre à jour le volume de l'échantillon
+  buffer *= factor;
+
+  // Écrire l'échantillon mis à jour dans un nouveau fichier
+  fwrite(&amp;buffer, sizeof(int16_t), 1, output);
+</code></pre>
+<p>Il n'y a qu'un seul problème : vous devrez continuer à lire un échantillon dans votre tampon, mettre à jour son volume et écrire l'échantillon mis à jour dans le fichier de sortie tant qu'il reste des échantillons à lire.</p>
+<ul>
+<li>Heureusement, en fonction de sa documentation, <code>fread</code> renverra le nombre d'éléments de données correctement lus. Vous pourriez trouver utile de vérifier cela pour savoir quand vous avez atteint la fin du fichier !</li>
+<li>Gardez à l'esprit qu'il n'y a aucune raison pour laquelle vous ne puissiez pas appeler <code>fread</code> à l'intérieur d'une condition de boucle <code>while</code>. Par exemple, vous pourriez passer un appel à <code>fread</code> correspondant à ce qui suit :<pre><code>    while (fread(...))
+    {
+
+    }
+</code></pre>
+</li>
+</ul>
+<p>C'est presque une solution, mais regardez ce qui suit pour une manière efficace de résoudre ce problème :</p>
+<pre><code>  // Créer un tampon pour un échantillon unique
+  int16_t buffer;
+
+  // Lire un échantillon unique depuis input dans le tampon tant qu'il reste des échantillons à lire
+  while (fread(&amp;buffer, sizeof(int16_t), 1, input) != 0)
+  {
+      // Mettre à jour le volume de l'échantillon
+      buffer *= factor;
+
+      // Écrire l'échantillon mis à jour dans un nouveau fichier
+      fwrite(&amp;buffer, sizeof(int16_t), 1, output);
+  }
+</code></pre>
+<p>Comme la version de C que vous utilisez traite les valeurs non nulles comme <code>true</code> et les valeurs nulles comme <code>false</code>, vous pouvez simplifier la syntaxe ci-dessus de la manière suivante :</p>
+<pre><code>  // Créer un tampon pour un échantillon unique
+  int16_t buffer;
+
+  // Lire un échantillon unique depuis input dans le tampon tant qu'il reste des échantillons à lire
+  while (fread(&amp;buffer, sizeof(int16_t), 1, input))
+  {
+      // Mettre à jour le volume de l'échantillon
+      buffer *= factor;
+
+      // Écrire l'échantillon mis à jour dans un nouveau fichier
+      fwrite(&amp;buffer, sizeof(int16_t), 1, output);
+  }
+</code></pre>
+<h2>Description pas à pas</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/LiGhjz9ColQ?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<details><summary>Vous ne savez pas comment résoudre ? </summary><div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/-rtZkTAK2gg?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div></details>
+
+<h2>Comment tester</h2>
+<p>Le programme doit se comporter selon les exemples suivants.</p>
+<pre><code>  $ ./volume input.wav output.wav 2.0
+</code></pre>
+<p>Lorsque vous écoutez <code>output.wav</code> (par exemple en faisant un Ctrl-clic sur <code>output.wav</code> dans l'explorateur de fichiers, en choisissant <strong>Télécharger</strong>, puis en ouvrant le fichier dans un lecteur audio sur votre ordinateur), il doit être deux fois plus fort que <code>input.wav</code> !</p>
+<pre><code>  $ ./volume input.wav output.wav 0.5
+</code></pre>
+<p>Lorsque vous écoutez <code>output.wav</code>, il doit être deux fois moins fort que <code>input.wav</code> !</p>
+<h3>Exactitude</h3>
+<pre><code>  check50 cs50/problems/2024/x/volume
+</code></pre>
+<h3>Style</h3>
+<pre><code>  style50 volume.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/volume
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

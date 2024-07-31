@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Leçon 2</h2>
+<ul>
+<li><a href="#compiling">Compilation</a></li>
+<li><a href="#debugging">Débogage</a></li>
+<li><a href="#help50-et-printf">help50 et printf</a></li>
+<li><a href="#debug50">debug50</a></li>
+<li><a href="#check50-et-style50">check50 et style50</a></li>
+<li><a href="#types-de-données">Types de données</a></li>
+<li><a href="#mémoire">Mémoire</a></li>
+<li><a href="#tableaux">Tableaux</a></li>
+<li><a href="#chaînes">Chaînes</a></li>
+<li><a href="#arguments-de-ligne-de-commande">Arguments de ligne de commande</a></li>
+<li><a href="#lisibilité">Lisibilité</a></li>
+<li><a href="#cryptage">Cryptage</a></li>
+</ul>
+<h2>Compilation</h2>
+<ul>
+<li>La dernière fois, nous avons appris à écrire notre premier programme en C. Nous avons appris la syntaxe de la fonction <code>main</code> dans notre programme, la fonction <code>printf</code> pour imprimer dans un terminal, comment créer des chaînes avec des guillemets doubles et comment inclure <code>stdio.h</code> pour la fonction <code>printf</code>.</li>
+<li>Ensuite, nous l'avons compilé avec <code>clang hello.c</code> pour pouvoir exécuter <code>./a.out</code> (le nom par défaut), puis <code>clang -o hello hello.c</code> (en transmettant un argument de ligne de commande pour le nom de la sortie) pour pouvoir exécuter <code>./hello</code>.</li>
+<li>Si nous avons voulu utiliser la bibliothèque de CS50, via <code>#include &lt;cs50.h&gt;</code>, pour les chaînes et la fonction <code>get_string</code>, nous avons également dû ajouter un indicateur : <code>clang -o hello hello.c -lcs50</code>. L'indicateur <code>-l</code> relie le fichier <code>cs50</code>, qui est déjà installé dans le bac à sable CS50 et comprend des prototypes ou des définitions de chaînes et de <code>get_string</code> (entre autres) auxquels notre programme peut ensuite se référer et les utiliser.</li>
+<li>Nous écrivons notre code source en C, mais nous devons le compiler en code machine, en binaire, avant que nos ordinateurs puissent l'exécuter.<ul>
+<li><code>clang</code> est le compilateur et <code>make</code> est un utilitaire qui nous aide à exécuter <code>clang</code> sans avoir à indiquer toutes les options manuellement.</li>
+</ul>
+</li>
+<li>La « compilation » du code source en code machine est en réalité constituée d'étapes plus petites :<ul>
+<li>Prétraitement</li>
+<li>Compilation</li>
+<li>Assemblage</li>
+<li>Liaison</li>
+</ul>
+</li>
+<li>Le <strong>prétraitement</strong> implique l'examen des lignes qui commencent par un <code>#</code>, comme <code>#include</code>, avant tout autre chose. Par exemple, <code>#include &lt;cs50.h&gt;</code> indiquera à <code>clang</code> de rechercher d'abord ce fichier d'en-tête, car il contient le contenu que nous souhaitons inclure dans notre programme. Ensuite, <code>clang</code> remplacera essentiellement le contenu de ces fichiers d'en-tête dans notre programme.</li>
+<li>
+<p>Par exemple …</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string name = get_string("Name: ");
+      printf("hello, %s\n", name);
+  }
+</code></pre>
+</li>
+<li>
+<p>… sera prétraité en :</p>
+<pre><code>  string get_string(string prompt);
+  int printf(const char *format, ...);
+
+  int main(void)
+  {
+      string name = get_string("Name: ");
+      printf("hello, %s\n", name);
+  }
+</code></pre>
+</li>
+<li>
+<p>La <strong>compilation</strong> prend notre code source, en C, et le convertit en code assembleur, qui ressemble à ceci :</p>
+<pre><code>  ...
+  main:                         # @main
+      .cfi_startproc
+  # BB#0:
+      pushq    %rbp
+  .Ltmp0:
+      .cfi_def_cfa_offset 16
+  .Ltmp1:
+      .cfi_offset %rbp, -16
+      movq    %rsp, %rbp
+  .Ltmp2:
+      .cfi_def_cfa_register %rbp
+      subq    $16, %rsp
+      xorl    %eax, %eax
+      movl    %eax, %edi
+      movabsq    $.L.str, %rsi
+      movb    $0, %al
+      callq    get_string
+      movabsq    $.L.str.1, %rdi
+      movq    %rax, -8(%rbp)
+      movq    -8(%rbp), %rsi
+      movb    $0, %al
+      callq    printf
+      ...
+</code></pre>
+<ul>
+<li>Ces instructions sont de plus bas niveau et se rapprochent des instructions binaires qu'un processeur d'ordinateur peut directement comprendre. Elles fonctionnent généralement sur des octets eux-mêmes, par opposition à des abstractions comme les noms de variables.</li>
+</ul>
+</li>
+<li>
+<p>L'étape suivante consiste à prendre le code assembleur et à le traduire en instructions binaires en l'<strong>assemblant</strong>. Les instructions en binaire sont appelées <strong>code machine</strong>, qu'un processeur d'ordinateur peut exécuter directement.</p>
+</li>
+<li>La dernière étape est la <strong>liaison</strong>, où le contenu des bibliothèques précédemment compilées que nous souhaitons lier, comme <code>cs50.c</code>, sont réellement combinées avec le binaire de notre programme. Nous nous retrouvons donc avec un fichier binaire, <code>a.out</code> ou <code>hello</code>, qui est la version compilée de <code>hello.c</code>, <code>cs50.c</code> et <code>printf.c</code>.</li>
+</ul>
+<h2>Débogage</h2>
+<ul>
+<li>Les bogues sont des erreurs involontaires qui surviennent dans les programmes. Le débogage est le processus de recherche et de correction de ces bogues.</li>
+</ul>
+<h2>help50 et printf</h2>
+<ul>
+<li>
+<p>Supposons que nous ayons écrit ce programme, <code>buggy0.c</code> :</p>
+<pre><code>  int main(void)
+  {
+      printf("hello, world\n");
+  }
+</code></pre>
+<ul>
+<li>Lorsque nous essayons de <code>make</code> ce programme, nous voyons une erreur (en rouge) indiquant que nous déclarons implicitement la fonction de bibliothèque <code>printf</code>. Nous ne comprenons pas vraiment cette erreur. Nous pouvons donc exécuter <code>help50 make buggy0</code>. Cela nous indiquera en fin de compte que nous avons peut-être oublié d’écrire <code>#include &lt;stdio.h&gt;</code>, qui contient <code>printf</code>.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons réessayer avec <code>buggy1.c</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string name = get_string("What's your name?\n");
+      printf("hello, %s\n", name);
+  }
+</code></pre>
+<ul>
+<li>De nombreuses erreurs s’affichent, et même la première ne semble pas avoir beaucoup de sens. Nous pouvons donc à nouveau exécuter <code>help50 make buggy1</code>. Cela nous indiquera que nous avons besoin de <code>cs50.h</code> car <code>string</code> n’est pas défini.</li>
+</ul>
+</li>
+<li>
+<p>Pour effacer la fenêtre du terminal (afin de ne voir que la sortie de ce que nous voulons exécuter ensuite), nous pouvons appuyer sur <code>control + L</code> ou taper <code>clear</code> comme commande dans la fenêtre du terminal.</p>
+</li>
+<li>
+<p>Examinons <code>buggy2.c</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      for (int i = 0; i &lt;= 10; i++)
+      {
+          printf("#\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>
+<p>Hmm, nous avions l’intention de ne voir que 10 <code>#</code>, mais il y en a 11. Si nous ne savions pas quel était le problème (car notre programme se compile sans aucune erreur, et nous avons maintenant une erreur logique), nous pourrions ajouter une autre ligne d’impression pour nous aider :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      for (int i = 0; i &lt;= 10; i++)
+      {
+          printf("i est maintenant %i : ", i);
+          printf("#\n");
+      }
+  }
+</code></pre>
+</li>
+<li>
+<p>Maintenant, nous voyons que <code>i</code> a commencé à 0 et a continué jusqu’à 10, mais nous devrions l’arrêter lorsqu’il est à 10, avec <code>i &lt; 10</code> au lieu de <code>i &lt;= 10</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>debug50</h2>
+<ul>
+<li>Aujourd'hui, nous allons également jeter un œil à CS50 IDE, qui est comme le bac à sable de CS50, mais avec plus de fonctionnalités. C'est un environnement de développement en ligne, avec un éditeur de code et une fenêtre de terminal, mais aussi des outils pour le débogage et la collaboration :
+  <img alt="fenêtre de navigateur avec CS50 IDE, éditeur de code sur le dessus avec buggy2.c, fenêtre de terminal en bas" src="https://cs50.harvard.edu/x/2020/notes/2/cs50_ide.png" /></li>
+<li>Dans CS50 IDE, nous aurons un autre outil, <code>debug50</code>, pour nous aider à déboguer les programmes.</li>
+<li>Nous allons ouvrir <code>buggy2.c</code> et essayer de <code>faire buggy2</code>. Mais nous avons enregistré <code>buggy2.c</code> dans un dossier appelé <code>src2</code>, nous devons donc exécuter <code>cd src2</code> pour changer notre répertoire vers le bon. Le terminal de CS50 IDE nous rappellera dans quel répertoire nous sommes, avec une invite comme <code>~/src/ $</code>. (Le <code>~</code> indique le répertoire par défaut, ou le répertoire home.)</li>
+<li>Au lieu d'utiliser <code>printf</code>, nous pouvons également déboguer notre programme de manière interactive. Nous pouvons ajouter un <em>point d'arrêt</em>, ou un indicateur pour une ligne de code où le débogueur doit interrompre notre programme. Par exemple, on peut cliquer à gauche de la ligne 5 de notre code, un cercle rouge apparaîtra :
+  <img alt="éditeur de code avec une icône rouge à côté de la ligne 5 du code" src="https://cs50.harvard.edu/x/2020/notes/2/breakpoint.png" /></li>
+<li>Maintenant, si on exécute <code>debug50 ./buggy2</code>, on verra le panneau de débogage s'ouvrir à droite :
+  <img alt="panneau du débogueur avec commandes, variables" src="https://cs50.harvard.edu/x/2020/notes/2/debugger_panel.png" /></li>
+<li>On voit que la variable que nous avons créée, <code>i</code>, est dans la section <code>Variables locales</code>, et qu'elle a une valeur de <code>0</code>.</li>
+<li>Notre point d'arrêt a interrompu notre programme après la ligne 5, juste avant la ligne 7, car c'est la première ligne de code qui peut être exécutée. Pour continuer, nous avons quelques commandes dans le panneau du débogueur. Le triangle bleu continuera notre programme jusqu'à ce que nous atteignions un autre point d'arrêt ou la fin de notre programme. La flèche courbe à sa droite va « passer outre » la ligne, l'exécuter et interrompre notre programme juste après.</li>
+<li>Nous utiliserons donc la flèche courbe pour exécuter la ligne suivante et voir ce qui change après. Nous sommes à la ligne <code>printf</code>, et en appuyant à nouveau sur la flèche courbe, nous voyons un seul <code>#</code> imprimé dans notre fenêtre de terminal. Avec un autre clic sur la flèche, nous voyons la valeur de <code>i</code> sur la droite changer à <code>1</code>. Et nous pouvons continuer à cliquer sur la flèche pour regarder notre programme s'exécuter, une ligne à la fois.</li>
+<li>Pour quitter le débogueur, on peut appuyer sur <code>ctrl + C</code> pour arrêter le programme.</li>
+<li>Nous pouvons gagner beaucoup de temps à l'avenir en investissant un peu maintenant pour apprendre à utiliser <code>debug50</code> !</li>
+</ul>
+<h2>check50 et style50</h2>
+<ul>
+<li>Nous pouvons exécuter une commande comme <code>check50 cs50/problems/hello</code>, où <code>check50</code> est un programme qui suivra les instructions identifiées par l'argument <code>cs50/problems/hello</code> pour télécharger, exécuter et tester notre programme sur les serveurs de CS50. Cela vérifiera l'exactitude de notre programme.<ul>
+<li>Lors de l'écriture de logiciels dans le monde réel, les développeurs écrivent généralement leurs propres tests pour s'assurer que leur code fonctionne comme prévu, d'autant plus que des fonctionnalités sont ajoutées au même code.</li>
+</ul>
+</li>
+<li><code>style50</code> est un autre programme qui vérifiera notre code pour des problèmes esthétiques, comme les espaces, de sorte que notre code soit plus lisible et maintenable. Par exemple, il se peut que notre indentation soit manquante. Et le <a href="https://cs50.readthedocs.io/style/c/">guide de style</a> inclura davantage d'explications sur ce que nous attendons.</li>
+<li>Nous pouvons même utiliser le débogage du canard en caoutchouc, une méthode où nous expliquons ce que nous essayons de faire à un canard en caoutchouc, de sorte que nous réalisions ce que nous essayons de faire et ce que nous devons corriger.</li>
+<li>Nous voulons également écrire notre code avec une bonne conception, où nous résolvons non seulement le problème correctement, mais aussi bien, où nous faisons des choix raisonnables quant à la façon dont notre programme s'exécute et faisons des compromis entre le temps, le coût de développement et la mémoire.</li>
+</ul>
+<h2>Types de données</h2>
+<ul>
+<li>En C, nous avons différents types de variables que nous pouvons utiliser pour stocker des données :<ul>
+<li>bool 1 octet</li>
+<li>char 1 octet</li>
+<li>int 4 octets</li>
+<li>float 4 octets</li>
+<li>long 8 octets</li>
+<li>double 8 octets</li>
+<li>string ? octets</li>
+</ul>
+</li>
+<li>Chacun de ces types occupe un certain nombre d'octets par variable que nous créons, et les tailles ci-dessus sont celles que le bac à sable, l'IDE et très probablement votre ordinateur utilisent pour chaque type en C.</li>
+</ul>
+<h2>Mémoire</h2>
+<ul>
+<li>À l'intérieur de nos ordinateurs, nous avons des puces appelées RAM, mémoire à accès aléatoire, qui stockent des données pour une utilisation à court terme. Nous pourrions enregistrer un programme ou un fichier sur notre disque dur (ou notre disque SSD) pour un stockage à long terme, mais lorsque nous l'ouvrons, il est d'abord copié dans la RAM. Bien que la RAM soit beaucoup plus petite et temporaire (jusqu'à ce que l'alimentation soit coupée), elle est beaucoup plus rapide.</li>
+<li>On peut penser aux octets stockés dans la RAM comme s'ils étaient dans une grille :<br />
+<img alt="puce d'ordinateur avec grille superposée" src="https://cs50.harvard.edu/x/2020/notes/2/ram.png" /><ul>
+<li>En réalité, il y a des millions ou des milliards d'octets par puce.</li>
+</ul>
+</li>
+<li>En C, lorsque nous créons une variable de type <code>char</code>, qui sera de taille un octet, elle sera physiquement stockée dans l'une de ces cases de la RAM. Un entier, avec 4 octets, prendra quatre de ces cases.</li>
+<li>Et chacune de ces cases est étiquetée avec un numéro, ou une adresse, de 0 à 1, à 2, etc.</li>
+</ul>
+<h2>Tableaux</h2>
+<ul>
+<li>
+<p>Disons que nous voulions stocker trois variables :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      char c1 = 'H';
+      char c2 = 'I';
+      char c3 = '!';
+      printf("%c %c %c\n", c1, c2, c3);
+  }
+</code></pre>
+<ul>
+<li>Notez que nous utilisons des guillemets simples pour indiquer un caractère littéral, et des guillemets doubles pour plusieurs caractères ensemble dans une chaîne.</li>
+<li>Nous pouvons compiler et exécuter ceci, pour voir <code>H I !</code>.</li>
+</ul>
+</li>
+<li>
+<p>Et nous savons que les caractères ne sont que des nombres, donc si nous changeons le formatage de notre chaîne pour être <code>printf("%i %i %i\n", c1, c2, c3);</code>, nous pouvons voir les valeurs numériques de chaque caractère imprimé : <code>72 73 33</code>.</p>
+<ul>
+<li>Nous pouvons convertir explicitement, ou caster, chaque caractère en un int avant de l’utiliser, avec <code>(int) c1</code>, mais notre compilateur peut le faire implicitement pour nous.</li>
+</ul>
+</li>
+<li>Et en mémoire, on peut avoir trois cases, étiquetées « c1 », « c2 » et « c3 » d’une certaine manière, chacune représentant un octet binaire avec les valeurs de chaque variable.</li>
+<li>
+<p>Regardons <code>scores0.c</code>:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Scores
+      int score1 = 72;
+      int score2 = 73;
+      int score3 = 33;
+
+      // Print average
+      printf("Average: %i\n", (score1 + score2 + score3) / 3);
+  }
+</code></pre>
+<ul>
+<li>Nous pouvons imprimer la moyenne de trois nombres, mais maintenant nous devons créer une variable pour chaque score que nous voulons inclure, et nous ne pouvons pas les utiliser facilement plus tard.</li>
+</ul>
+</li>
+<li>
+<p>Il s’avère qu’en mémoire, nous pouvons stocker des variables les unes après les autres, dos à dos. Et en C, une liste de variables stockées, les unes après les autres dans un bloc contigu de mémoire, est appelée un <strong>tableau</strong>.</p>
+</li>
+<li>Par exemple, nous pouvons utiliser <code>int scores[3];</code> pour déclarer un tableau de 3 entiers.</li>
+<li>
+<p>Et nous pouvons assigner et utiliser des variables dans un tableau avec :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Scores
+      int scores[3];
+      scores[0] = 72;
+      scores[1] = 73;
+      scores[2] = 33;
+
+      // Print average
+      printf("Average: %i\n", (scores[0] + scores[1] + scores[2]) / 3);
+  }
+</code></pre>
+<ul>
+<li>Notez que les tableaux sont indexés à zéro, ce qui signifie que le premier élément, ou valeur, a l’index 0.</li>
+</ul>
+</li>
+<li>
+<p>Et nous avons répété la valeur 3, représentant la longueur de notre tableau, à deux endroits différents. Nous pouvons donc utiliser une constante, ou une valeur fixe, pour indiquer qu’elle doit toujours être la même aux deux endroits :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  const int N = 3;
+
+  int main(void)
+  {
+      // Scores
+      int scores[N];
+      scores[0] = 72;
+      scores[1] = 73;
+      scores[2] = 33;
+
+      // Print average
+      printf("Average: %i\n", (scores[0] + scores[1] + scores[2]) / N);
+  }
+</code></pre>
+<ul>
+<li>Nous pouvons utiliser le mot-clé <code>const</code> pour dire au compilateur que la valeur de <code>N</code> ne doit jamais être modifiée par notre programme. Et par convention, nous placerons notre déclaration de variable en dehors de la fonction <code>main</code> et mettrons son nom en majuscule, ce qui n’est pas nécessaire pour le compilateur, mais qui montre aux autres humains que cette variable est une constante et la rend facile à voir depuis le début.</li>
+</ul>
+</li>
+<li>
+<p>Avec un tableau, nous pouvons collecter nos scores dans une boucle, et y accéder plus tard dans une boucle également :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  float average(int length, int array[]);
+
+  int main(void)
+  {
+      // Get number of scores
+      int n = get_int("Scores:  ");
+
+      // Get scores
+      int scores[n];
+      for (int i = 0; i &lt; n; i++)
+      {
+          scores[i] = get_int("Score %i: ", i + 1);
+      }
+
+      // Print average
+      printf("Average: %.1f\n", average(n, scores));
+  }
+
+  float average(int length, int array[])
+  {
+      int sum = 0;
+      for (int i = 0; i &lt; length; i++)
+      {
+          sum += array[i];
+      }
+      return (float) sum / (float) length;
+  }
+</code></pre>
+<ul>
+<li>Tout d’abord, nous demandons à l’utilisateur le nombre de scores qu’il a, créons un tableau avec suffisamment d’entiers pour le nombre de scores qu’il a, et utilisons une boucle pour collecter tous les scores.</li>
+<li>Ensuite, nous écrivons une fonction d’assistance, <code>average</code>, pour renvoyer un <code>float</code> ou une valeur décimale. Nous passerons la longueur et un tableau de <code>int</code> (qui peut être de n’importe quelle taille), et utiliserons une autre boucle dans notre fonction d’assistance pour additionner les valeurs dans une somme. Nous utilisons <code>(float)</code> pour caster à la fois <code>sum</code> et <code>length</code> en floats, donc le résultat que nous obtenons en divisant les deux est aussi un float.</li>
+<li>Enfin, lorsque nous imprimons le résultat obtenu, nous utilisons <code>%.1f</code> pour n’afficher qu’une décimale.</li>
+</ul>
+</li>
+<li>
+<p>En mémoire, notre tableau est maintenant stocké comme ceci, où chaque valeur occupe non pas un mais quatre octets :
+  <img alt="grille avec 72 étiqueté score1, 73 étiqueté score2, 33 étiqueté score3, chacun occupant quatre cases, et de nombreuses cases vides suivent" src="https://cs50.harvard.edu/x/2020/notes/2/memory_with_array.png" /></p>
+</li>
+</ul>
+<h2>Strings</h2>
+<ul>
+<li>Les strings sont en fait simplement des tableaux de caractères. Si nous avons une string <code>s</code>, chaque caractère peut être accédé avec <code>s[0]</code>, <code>s[1]</code>, et ainsi de suite.
+- Et il s'avère qu'une string se termine par un caractère spécial, ‘\0’, ou un octet avec tous les bits à 0. Ce caractère est appelé caractère nul, ou caractère terminateur nul. Nous avons donc en réalité besoin de quatre octets pour stocker notre string "HI!" :<br />
+<img alt=" Grille avec H étiqueté s[0], I étiqueté s[1], ! étiqueté s[2], \0 étiqueté s[3], chacun prenant une case et de nombreuses autres cases vides sont à la suite" src="https://cs50.harvard.edu/x/2020/notes/2/memory_with_string.png" /></li>
+<li>
+<p>Voyons maintenant à quoi peuvent ressembler quatre strings dans un tableau :</p>
+<pre><code>  string noms[4] ;
+  noms[0] = "EMMA" ;
+  noms[1] = "RODRIGO" ;
+  noms[2] = "BRIAN" ;
+  noms[3] = "DAVID" ;
+
+  printf("%s\n", noms[0]) ;
+  printf("%c%c%c%c\n", noms[0][0], noms[0][1], noms[0][2], noms[0][3]) ;
+</code></pre>
+<ul>
+<li>Nous pouvons imprimer la première valeur de <code>noms</code> sous forme de string ou récupérer la première string et obtenir chaque caractère individuel dans cette string en utilisant <code>[]</code> à nouveau. (Nous pouvons considérer cela comme <code>(noms[0])[0]</code>, bien que nous n’en ayons pas besoin les parenthèses.)</li>
+<li>Et bien que nous sachions que le prénom avait quatre caractères, <code>printf</code> a probablement utilisé une boucle pour regarder chaque caractère de la string, les imprimant un à la fois jusqu'à atteindre le caractère nul qui marque la fin de la string. Et en fait, nous pouvons imprimer <code>noms[0][4]</code> sous forme d’<code>int</code> avec <code>%i</code>, et voir un <code>0</code> s’afficher.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons visualiser chaque caractère avec sa propre étiquette en mémoire :<br />
+<img alt=" Grille avec E étiqueté noms[0][0], M étiqueté noms[0][1], etc. jusqu'à noms[3][5] avec un \0, chacun prenant une case et des cases vides suivent" src="https://cs50.harvard.edu/x/2020/notes/2/memory_with_string_array.png" /></p>
+</li>
+<li>
+<p>Nous pouvons essayer d'expérimenter avec <code>string0.c</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      string s = get_string("Entrée : ");
+      printf("Sortie : ");
+      for (int i = 0; i &lt; strlen(s); i++)
+      {
+          printf("%c", s[i]);
+      }
+      printf("\n");
+  }
+</code></pre>
+<ul>
+<li>Nous pouvons utiliser la condition <code>s[i] != '\0'</code>, où nous pouvons vérifier le caractère actuel et l’imprimer uniquement s’il ne s’agit pas du caractère nul.</li>
+<li>Nous pouvons également utiliser la longueur de la string, mais nous avons d’abord besoin d’une nouvelle bibliothèque, <code>string.h</code>, pour <code>strlen</code>, qui nous indique la longueur d’une string.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons améliorer la conception de notre programme. <code>string0</code> était un peu inefficace, car nous vérifions la longueur de la string, après que chaque caractère est imprimé, dans notre condition. Mais comme la longueur de la string ne change pas, nous pouvons vérifier la longueur de la string une fois :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      string s = get_string("Entrée : ");
+      printf("Sortie :\n");
+      for (int i = 0, n = strlen(s); i &lt; n; i++)
+      {
+          printf("%c\n", s[i]);
+      }
+  }
+</code></pre>
+<ul>
+<li>Maintenant, au début de notre boucle, nous initialisons une variable <code>i</code> et <code>n</code>, et mémorisons la longueur de notre string dans <code>n</code>. Ensuite, nous pouvons vérifier les valeurs à chaque fois, sans avoir à calculer réellement la longueur de la string.
+- Et nous avons effectivement eu besoin d’un peu plus de mémoire pour <code>n</code>, mais cela nous fait gagner du temps en n’ayant pas à vérifier la longueur de la string à chaque fois.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons maintenant combiner ce que nous avons vu pour écrire un programme capable de mettre en majuscules des lettres :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      string s = get_string("Avant : ");
+      printf("Après :  ");
+      for (int i = 0, n = strlen(s); i &lt; n; i++)
+      {
+          if (s[i] &gt;= 'a' &amp;&amp; s[i] &lt;= 'z')
+          {
+              printf("%c", s[i] - 32);
+          }
+          else
+          {
+              printf("%c", s[i]);
+          }
+      }
+      printf("\n");
+  }
+</code></pre>
+<ul>
+<li>Tout d'abord, nous obtenons une chaîne <code>s</code>. Ensuite, pour chaque caractère dans la chaîne, s'il est en minuscule (sa valeur est entre celle de <code>a</code> et <code>z</code>), nous le convertissons en majuscule. Sinon, nous l'imprimons simplement.</li>
+<li>Nous pouvons convertir une lettre minuscule en son équivalent en majuscule en soustrayant la différence entre leurs valeurs ASCII. (Nous savons que les lettres minuscules ont une valeur ASCII plus élevée que les lettres majuscules, et la différence est commodément la même entre les mêmes lettres, nous pouvons donc soustraire cette différence pour obtenir une lettre majuscule à partir d'une lettre minuscule.)</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons utiliser les <a href="https://man.cs50.io/"><strong>pages de manuel</strong></a>, ou le manuel du programmeur, pour trouver les fonctions de bibliothèque que nous pouvons utiliser pour accomplir la même chose :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;ctype.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      string s = get_string("Avant : ");
+      printf("Après :  ");
+      for (int i = 0, n = strlen(s); i &lt; n; i++)
+      {
+          printf("%c", toupper(s[i]));
+      }
+      printf("\n");
+  }
+</code></pre>
+<ul>
+<li>En recherchant dans les pages du manuel, nous voyons <code>toupper()</code> est une fonction, entre autres, d'une bibliothèque appelée <code>ctype</code>, que nous pouvons utiliser.</li>
+</ul>
+</li>
+</ul>
+<h2>Arguments de ligne de commande</h2>
+<ul>
+<li>Nous avons utilisé des programmes tels que <code>make</code> et <code>clang</code>, qui prennent des mots supplémentaires après leur nom sur la ligne de commande. Il s’avère que nos propres programmes peuvent également prendre des <strong>arguments de ligne de commande</strong>.</li>
+<li>
+<p>Dans <code>argv.c</code>, nous modifions l’apparence de notre fonction <code>main</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(int argc, string argv[])
+  {
+      if (argc == 2)
+      {
+          printf("bonjour, %s\n", argv[1]);
+      }
+      else
+      {
+          printf("bonjour, le monde\n");
+      }
+  }
+</code></pre>
+<ul>
+<li><code>argc</code> et <code>argv</code> sont deux variables que notre fonction <code>main</code> reçoit désormais lorsque notre programme est exécuté depuis la ligne de commande. <code>argc</code> est le nombre d’arguments ou le nombre d’arguments, et <code>argv</code> est un tableau de chaînes qui sont les arguments. Et le premier argument, <code>argv [0]</code>, est le nom de notre programme (le premier mot tapé, comme <code>./hello</code>). Dans cet exemple, nous vérifions si nous avons deux arguments et, le cas échéant, nous affichons le second.</li>
+<li>Par exemple, si nous exécutons <code>./argv David</code>, nous obtiendrons <code>bonjour, David</code> imprimé, puisque nous avons tapé <code>David</code> comme deuxième mot dans notre commande.</li>
+</ul>
+</li>
+<li>
+<p>Il s’avère que nous pouvons indiquer les erreurs dans notre programme en renvoyant une valeur depuis notre fonction <code>main</code> (comme indiqué par l’<code>int</code> avant notre fonction <code>main</code>). Par défaut, notre fonction <code>main</code> renvoie <code>0</code> pour indiquer que rien ne s’est mal passé, mais nous pouvons écrire un programme pour renvoyer une valeur différente :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(int argc, string argv[])
+  {
+      if (argc != 2)
+      {
+          printf("argument de ligne de commande manquant\n");
+          return 1;
+      }
+      printf("bonjour, %s\n", argv[1]);
+      return 0;
+  }
+</code></pre>
+<ul>
+<li>La valeur de retour de <code>main</code> dans notre programme est appelée code de sortie.</li>
+</ul>
+</li>
+<li>
+<p>Au fur et à mesure que nous écrivons des programmes plus complexes, des codes d’erreur comme celui-ci peuvent nous aider à déterminer ce qui s’est mal passé, même si ce n’est pas visible ou significatif pour l’utilisateur.</p>
+</li>
+</ul>
+<h2>Lisibilité</h2>
+<ul>
+<li>Maintenant que nous savons utiliser des chaînes de caractères dans nos programmes, nous pouvons analyser des paragraphes de texte pour évaluer leur niveau de lisibilité, sur la base de facteurs tels que la longueur et la complexité des mots et des phrases.</li>
+</ul>
+<h2>Cryptage</h2>
+<ul>
+<li>Si nous voulons envoyer un message à quelqu'un, nous pouvons vouloir le <strong>crypter</strong>, ou le brouiller en quelque sorte, pour qu'il soit difficile à lire pour les autres. Le message original, ou l'entrée de notre algorithme, est appelé <strong>texte en clair</strong>, et le message crypté, ou la sortie, est appelé <strong>texte chiffré</strong>.</li>
+<li>Un message comme <code>JE SUIS LA !</code> pourrait être converti en ASCII, <code>72 73 33</code>. Mais n'importe qui pourrait le reconvertir en lettres.</li>
+<li>Un algorithme de cryptage nécessite généralement une autre entrée, en plus du texte en clair. Une <strong>clé</strong> est nécessaire, et parfois ce n'est qu'un nombre qui est gardé secret. Avec la clé, le texte en clair peut être converti, via un algorithme, en texte chiffré, et vice versa.</li>
+<li>Par exemple, si nous voulions envoyer un message comme <code>JE SUIS LA !</code>, nous pouvons d'abord le convertir en ASCII : <code>72 73 33</code>. Ensuite, nous pouvons le crypter avec une clé de seulement <code>1</code> et un algorithme simple, où nous ajoutons simplement la clé à chaque valeur : <code>74 77 80 87 70 90 80 86</code>. Alors, quelqu'un qui reconvertit cet ASCII en texte verra <code>JF TOV LA !</code>. Pour décrypter ce message, quelqu'un devra connaître la clé.</li>
+<li>Nous appliquerons ces concepts dans notre ensemble de problèmes !</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

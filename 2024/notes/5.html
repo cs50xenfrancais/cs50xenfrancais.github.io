@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Séance 5</h1>
+<ul>
+<li><a href="#pointers">Pointeurs</a></li>
+<li><a href="#resizing-arrays">Redimensionnement de tableaux</a></li>
+<li><a href="#data-structures">Structures de données</a></li>
+<li><a href="#linked-lists">Listes chaînées</a></li>
+<li><a href="#more-data-structures">Autres structures de données</a></li>
+</ul>
+<h2>Pointeurs</h2>
+<ul>
+<li>La dernière fois, nous avons appris les pointeurs, <code>malloc</code>, et d’autres outils utiles pour travailler avec la mémoire.</li>
+<li>
+<p>Révisons ce bout de code :</p>
+<pre><code>  int main(void)
+  {
+      int *x;
+      int *y;
+
+      x = malloc(sizeof(int));
+
+      *x = 42;
+      *y = 13;
+  }
+</code></pre>
+<ul>
+<li>Ici, les deux premières lignes de code dans notre fonction <code>main</code> déclarent deux pointeurs, <code>x</code> et <code>y</code>. Puis, nous allouons assez de mémoire pour un <code>int</code> avec <code>malloc</code>, et stockons l’adresse retournée par <code>malloc</code> dans <code>x</code>.</li>
+<li>Avec <code>*x = 42;</code>, nous allons à l’adresse pointée par <code>x</code> et y stockons la valeur <code>42</code> à cet emplacement.</li>
+<li>
+<p>La dernière ligne, cependant, est boguée, puisque nous ne savons pas quelle est la valeur de <code>y</code>, puisque nous ne lui avons jamais attribué de valeur. À la place, nous pouvons écrire :</p>
+<pre><code>  y = x;
+  *y = 13;
+</code></pre>
+<ul>
+<li>Et ceci fera pointer <code>y</code> sur le même emplacement que <code>x</code>, et ensuite attribuera la valeur <code>13</code> à cet emplacement.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nous jetons un œil à un court clip, <a href="https://www.youtube.com/watch?v=3uLKjb973HU">Pointer Fun with Binky</a>, qui explique aussi ce bout de code de manière animée !</p>
+</li>
+</ul>
+<h2>Redimensionnement de tableaux</h2>
+<ul>
+<li>Au cours de la semaine 2, nous avons appris sur les tableaux, où nous pouvions stocker le même type de valeur dans une liste, côte à côte. Mais nous devons déclarer la taille des tableaux lorsque nous les créons, et lorsque nous voulons augmenter la taille du tableau, la mémoire qui l'entoure peut être occupée par d'autres données.</li>
+<li>Une solution pourrait être d'allouer plus de mémoire dans une zone plus grande qui est libre, et d'y déplacer notre tableau, où il a plus d'espace. Mais nous devrons copier notre tableau, ce qui devient une opération avec un temps d'exécution de <em>O</em>(<em>n</em>), car nous devons copier chacun des <em>n</em> éléments dans un tableau.</li>
+<li>
+<p>Nous pourrions écrire un programme comme celui qui suit, pour le faire dans le code :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(void)
+  {
+      // Ici, nous allouons suffisamment de mémoire pour accueillir trois entiers, et notre variable
+      // list pointera vers le premier entier.
+      int *list = malloc(3 * sizeof(int));
+      // Nous devrions vérifier que nous avons correctement alloué de la mémoire, car malloc pourrait
+      // ne pas obtenir suffisamment de mémoire libre.
+      if (list == NULL)
+      {
+          return 1;
+      }
+
+      // Avec cette syntaxe, le compilateur effectuera l'arithmétique des pointeurs pour nous, et
+      // calculera l'octet en mémoire auquel list[0], list[1] et list[2] sont mappés,
+      // puisque les entiers font 4 octets.
+      list[0] = 1;
+      list[1] = 2;
+      list[2] = 3;
+
+      // Maintenant, si nous voulons redimensionner notre tableau pour accueillir 4 entiers, nous allons essayer d'allouer
+      // suffisamment de mémoire pour eux, et utiliser temporairement tmp pour pointer vers le premier :
+      int *tmp = malloc(4 * sizeof(int));
+      if (tmp == NULL)
+      {
+          return 1;
+      }
+
+      // Maintenant, nous copions les entiers de l'ancien tableau dans le nouveau tableau ...
+      for (int i = 0; i &lt; 3; i++)
+      {
+          tmp[i] = list[i];
+      }
+
+      // ... et ajoutons le quatrième entier :
+      tmp[3] = 4;
+
+      // Nous devrions libérer la mémoire d'origine pour list, c'est pourquoi nous avons besoin d'une
+      // variable temporaire pour pointer vers le nouveau tableau ...
+      free(list);
+
+      // ... et maintenant nous pouvons définir notre variable list pour qu'elle pointe vers le nouveau tableau que
+      // tmp indique :
+      list = tmp;
+
+      // Maintenant, nous pouvons imprimer le nouveau tableau :
+      for (int i = 0; i &lt; 4; i++)
+      {
+          printf("%i\n", list[i]);
+      }
+
+      // Et enfin, libérer la mémoire du nouveau tableau.
+      free(list);
+  }
+</code></pre>
+</li>
+<li>
+<p>Il s'avère qu'il existe en fait une fonction utile, <code>realloc</code>, qui réallouera de la mémoire :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  int main(void)
+  {
+      int *list = malloc(3 * sizeof(int));
+      if (list == NULL)
+      {
+          return 1;
+      }
+
+      list[0] = 1;
+      list[1] = 2;
+      list[2] = 3;
+
+      // Ici, nous donnons à realloc notre tableau d'origine sur lequel list pointe, et il
+      // renverra une nouvelle adresse pour un nouveau tableau, avec les anciennes données copiées :
+      int *tmp = realloc(list, 4 * sizeof(int));
+      if (tmp == NULL)
+      {
+          return 1;
+      }
+      // Maintenant, tout ce que nous avons à faire est de mémoriser l'emplacement du nouveau tableau :
+      list = tmp;
+
+      list[3] = 4;
+
+      for (int i = 0; i &lt; 4; i++)
+      {
+          printf("%i\n", list[i]);
+      }
+
+      free(list);
+  }
+</code></pre>
+</li>
+</ul>
+<h2>Structures de données</h2>
+<ul>
+<li>Les <strong>Structures de données</strong> sont des structures de programmation qui nous permettent de stocker des informations selon différentes dispositions, dans la mémoire de notre ordinateur.</li>
+<li>Pour construire une structure de données, nous allons utiliser quelques outils que nous avons vu :<ul>
+<li><code>struct</code> pour créer des types de données personnalisés</li>
+<li><code>.</code> pour accéder aux propriétés d'une structure</li>
+<li><code>*</code> pour aller à une adresse en mémoire pointée par un pointeur</li>
+</ul>
+</li>
+</ul>
+<h2>Listes chaînées</h2>
+<ul>
+<li>
+<p>Avec une <strong>liste chaînée</strong>, nous pouvons stocker une liste de valeurs qui peut facilement être étendue en stockant des valeurs dans différentes parties de la mémoire :</p>
+<p><img alt="grille représentant la mémoire, avec trois boîtes étiquetées avec des boîtes vides entre elles, chacune étiquetée 1 0x123, 2 0x456, et 3 0x789" src="https://cs50.harvard.edu/x/2020/notes/5/linked_list.png" /></p>
+<ul>
+<li>C’est différent d’un tableau car nos valeurs ne sont plus les unes à côté des autres en mémoire.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons lier notre liste ensemble en allouant, pour chaque élément, suffisamment de mémoire pour la valeur que nous voulons stocker, et pour l’adresse de l’élément suivant :</p>
+<p><img alt="trois cases, chacune divisée en deux et étiquetée (1 0x123 et 0x456), (2 0x456 et 0x789), et (3 0x789 et NULL)" src="https://cs50.harvard.edu/x/2020/notes/5/linked_list_with_addresses.png" /></p>
+<ul>
+<li>Au fait, <code>NUL</code> fait référence à <code>\0</code>, un caractère qui termine une chaîne de caractères, et <code>NULL</code> fait référence à une adresse de tous les zéros, ou un pointeur nul que nous pouvons considérer comme pointant vers nulle part.</li>
+</ul>
+</li>
+<li>
+<p>Contrairement à ce que nous pouvons faire avec des tableaux, nous n’avons plus accès aléatoire aux éléments d’une liste chaînée. Par exemple, nous ne pouvons plus accéder au 5e élément de la liste en calculant où il se trouve, en temps constant. (Sachant que les tableaux stockent les éléments bout à bout, nous pouvons ajouter 1, ou 4, ou la taille de notre élément, pour calculer les adresses.) Au lieu de cela, nous devons suivre le pointeur de chaque élément, un à la fois. Et nous devons allouer deux fois plus de mémoire que nécessaire auparavant pour chaque élément.</p>
+</li>
+<li>
+<p>En code, nous pouvons créer notre propre structure appelée <code>node</code> (comme un nœud d’un graphe en mathématiques), et nous devons stocker à la fois un <code>int</code> et un pointeur vers le prochain <code>node</code> appelé <code>next</code> :</p>
+<pre><code>  typedef struct node
+  {
+      int number;
+      struct node *next;
+  }
+  node;
+</code></pre>
+<ul>
+<li>Nous commençons cette structure par <code>typedef struct node</code> de sorte que nous puissions faire référence à un <code>node</code> à l’intérieur de notre structure.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons construire une liste chaînée en code en commençant par notre structure. Tout d’abord, nous allons vouloir nous souvenir d’une liste vide, nous pouvons donc utiliser le pointeur null : <code>node *list = NULL;</code>.</p>
+</li>
+<li>
+<p>Pour ajouter un élément, nous aurons d’abord besoin d’allouer de la mémoire pour un nœud et de définir ses valeurs :</p>
+<pre><code>  node *n = malloc(sizeof(node));
+  // Nous voulons nous assurer que malloc a réussi à obtenir de la mémoire pour nous :
+  if (n != NULL)
+  {
+      // Cela équivaut à (*n).number, où nous allons d'abord au nœud pointé
+      // par n, puis définissons la propriété number. En C, nous pouvons également
+      // utiliser cette notation de flèche :
+      n-&gt;number = 2;
+      // Ensuite, nous devons stocker un pointeur vers le nœud suivant de notre liste,
+      // mais le nouveau nœud ne pointera vers rien (pour l’instant) :
+      n-&gt;next = NULL;
+  }
+</code></pre>
+</li>
+<li>
+<p>Maintenant, notre liste peut pointer vers ce nœud : <code>list = n;</code> :</p>
+<p><img alt="une case étiquetée liste avec une flèche vers l’extérieur pointant vers deux cases connectées, une avec 2 et une vide)" src="https://cs50.harvard.edu/x/2020/notes/5/list_with_one_node.png" /></p>
+</li>
+<li>
+<p>Pour ajouter à la liste, nous allons créer un nouveau nœud de la même manière, peut-être avec la valeur 4. Mais maintenant, nous devons mettre à jour le pointeur dans notre premier nœud pour qu’il y pointe.</p>
+</li>
+<li>
+<p>Étant donné que notre pointeur <code>list</code> pointe uniquement vers le premier nœud (et nous ne pouvons pas être sûrs que la liste ne comporte qu’un seul nœud), nous devons « suivre les miettes de pain » et suivre le pointeur suivant de chaque nœud :</p>
+<pre><code>  // Créer un pointeur temporaire vers ce que pointe list
+  node *tmp = list;
+  // Tant que le nœud a un pointeur suivant ...
+  while (tmp-&gt;next != NULL)
+  {
+      // ... définir le temporaire au nœud suivant
+      tmp = tmp-&gt;next;
+  }
+  // Maintenant, tmp pointe vers le dernier nœud de notre liste, et nous pouvons mettre
+  // à jour son pointeur suivant pour qu'il pointe vers notre nouveau nœud.
+</code></pre>
+</li>
+<li>
+<p>Si nous voulons insérer un nœud au début de notre liste chaînée, nous devons soigneusement mettre à jour notre nœud pour qu’il pointe vers celui qui le suit, avant de mettre à jour la liste. Sinon, nous perdrons le reste de notre liste :</p>
+<pre><code>  // Ici, nous insérons un nœud au début de la liste, nous voulons donc que son
+  // pointeur suivant pointe vers la liste d'origine, avant de pointer la liste vers
+  // n :
+  n-&gt;next = list;
+  list = n;
+</code></pre>
+</li>
+<li>
+<p>Et pour insérer un nœud au milieu de notre liste, nous pouvons parcourir la liste, en suivant chaque élément un à la fois, en comparant ses valeurs et en modifiant également avec soin les pointeurs <code>next</code>.</p>
+</li>
+<li>
+<p>Avec quelques volontaires sur scène, nous simulons une liste, chaque volontaire agissant comme la variable <code>list</code> ou un nœud. Au fur et à mesure que nous insérons des nœuds dans la liste, nous avons besoin d’un pointeur temporaire pour suivre la liste et nous assurer de ne perdre aucune partie de notre liste. Notre liste chaînée ne pointe que vers le premier nœud de notre liste, nous ne pouvons donc regarder qu'un nœud à la fois, mais nous pouvons allouer dynamiquement plus de mémoire au fur et à mesure que nous devons agrandir notre liste.</p>
+</li>
+<li>
+<p>Désormais, même si notre liste chaînée est triée, le temps de recherche sera de <em>O</em>(<em>n</em>), car nous devons parcourir chaque nœud afin de vérifier ses valeurs et nous ne savons pas où se situe le milieu de notre liste.</p>
+</li>
+<li>Nous pouvons combiner tous nos fragments de code en un programme complet :<pre><code>  #include &lt;stdio.h&gt;
+  #include &lt;stdlib.h&gt;
+
+  // Représente un nœud
+  typedef struct node
+  {
+      int number;
+      struct node *next;
+  }
+  node;
+
+  int main(void)
+  {
+      // Liste de taille 0, qui ne pointe initialement vers rien
+      node *list = NULL;
+
+      // Ajouter un nombre à la liste
+      node *n = malloc(sizeof(node));
+      if (n == NULL)
+      {
+          return 1;
+      }
+      n-&gt;number = 1;
+      n-&gt;next = NULL;
+      // Nous créons notre premier nœud, y stockons la valeur 1 et laissons le pointeur suivant pointer vers rien. Ensuite, notre variable de liste peut y pointer.
+      list = n;
+
+      // Ajouter un nombre à la liste
+      n = malloc(sizeof(node));
+      if (n == NULL)
+      {
+          return 1;
+      }
+      n-&gt;number = 2;
+      n-&gt;next = NULL;
+      // Maintenant, nous allons à notre premier nœud pointé par list, et nous définissons le pointeur suivant pour qu'il pointe vers notre nouveau nœud, ajoutant ainsi celui-ci à la fin de la liste :
+      list-&gt;next = n;
+
+      // Ajouter un nombre à la liste
+      n = malloc(sizeof(node));
+      if (n == NULL)
+      {
+          return 1;
+      }
+      n-&gt;number = 3;
+      n-&gt;next = NULL;
+      // Nous pouvons suivre plusieurs nœuds avec cette syntaxe, en utilisant le pointeur suivant encore et encore pour ajouter notre troisième nouveau nœud à la fin de la liste :
+      list-&gt;next-&gt;next = n;
+      // Normalement, nous voudrions toutefois une boucle et une variable temporaire pour ajouter un nouveau nœud à notre liste.
+
+      // Imprimer la liste
+      // Ici, nous pouvons itérer sur tous les nœuds de notre liste avec une variable temporaire. Tout d'abord, nous avons un pointeur temporaire, tmp, qui pointe vers la liste. Ensuite, notre condition pour continuer est que tmp ne soit pas NULL. Enfin, nous mettons à jour tmp sur le pointeur suivant :
+      for (node *tmp = list; tmp != NULL; tmp = tmp-&gt;next)
+      {
+          // Dans le nœud, nous imprimerons simplement le nombre stocké :
+          printf("%i\n", tmp-&gt;number);
+      }
+
+      // Libérer la liste
+      // Comme nous libérons chaque nœud au fur et à mesure, nous allons utiliser une boucle while et suivrons le pointeur suivant de chaque nœud avant de le libérer. Toutefois, nous verrons cela plus en détail dans le problème n° 5.
+      while (list != NULL)
+      {
+          node *tmp = list-&gt;next;
+          free(list);
+          list = tmp;
+      }
+  }
+</code></pre>
+</li>
+</ul>
+<h2>Plus de structures de données</h2>
+<ul>
+<li>Un <strong>arbre</strong> est une autre structure de données où chaque nœud pointe vers deux autres nœuds, un à gauche (avec une valeur plus petite) et un à droite (avec une valeur plus grande) :
+  <img alt="arbre avec le nœud 4 au centre en haut, flèche gauche vers 3 en bas, flèche droite vers 6 en bas ; 2 a une flèche gauche vers 1 en bas, flèche droite vers 3 en bas ; 6 a une flèche gauche vers 5 en bas, flèche droite vers 7 en bas" src="https://cs50.harvard.edu/x/2020/notes/5/binary_search_tree.png" /><ul>
+<li>Notez qu'il y a maintenant deux dimensions dans cette structure de données, où certains nœuds sont à des « niveaux » différents des autres. Et nous pouvons imaginer l'implémenter avec une version plus complexe d'un nœud dans une liste chaînée, où chaque nœud n'a pas un mais deux pointeurs, un vers la valeur au « milieu de la moitié gauche » et un vers la valeur au « milieu de la moitié droite ». Et tous les éléments à gauche d'un nœud sont plus petits, et tous les éléments à droite sont plus grands.</li>
+<li>Ceci est appelé un arbre de recherche binaire parce que chaque nœud a au plus deux enfants, ou nœuds vers lesquels il pointe, et un arbre de recherche parce qu'il est trié d'une manière qui nous permet de rechercher correctement.</li>
+<li>Et comme une liste chaînée, nous voudrons garder un pointeur juste au début de la liste, mais dans ce cas, nous voulons pointer vers la racine, ou nœud central supérieur de l'arbre (le 4).</li>
+</ul>
+</li>
+<li>
+<p>Maintenant, nous pouvons facilement faire une recherche binaire, et puisque chaque nœud pointe vers un autre, nous pouvons également insérer des nœuds dans l'arbre sans avoir à les déplacer tous comme nous aurions à le faire dans un tableau. La recherche récursive de cet arbre ressemblerait à ceci :</p>
+<pre><code>  typedef struct node
+  {
+      int number;
+      struct node *left;
+      struct node *right;
+  } node;
+
+  // Ici, *tree est un pointeur vers la racine de notre arbre.
+  bool search(node *tree)
+  {
+      // Nous avons besoin d'un cas de base, si l'arbre courant (ou une partie de l'arbre) est NULL,
+      // pour renvoyer faux :
+      if (tree == NULL)
+      {
+          return false;
+      }
+      // Maintenant, selon que le nombre dans le nœud courant est plus grand ou plus petit,
+      // on peut simplement regarder le côté gauche ou droit de l'arbre :
+      else if (50 &lt; tree-&gt;number)
+      {
+          return search(tree-&gt;left);
+      }
+      else if (50 &gt; tree-&gt;number)
+      {
+          return search(tree-&gt;right);
+      }
+      // Sinon, le nombre doit être égal à celui que nous recherchons :
+      else {
+          return true;
+      }
+  }
+</code></pre>
+</li>
+<li>
+<p>Le temps d'exécution pour rechercher dans un arbre est <em>O</em>(log <em>n</em>), et l'insertion de nœuds tout en maintenant l'arbre équilibré est également <em>O</em>(log <em>n</em>). En dépensant un peu plus de mémoire et de temps pour maintenir l'arbre, nous avons maintenant gagné en rapidité pour les recherches par rapport à une liste chaînée simple.</p>
+</li>
+<li>Une structure de données avec un temps de recherche presque constant est une <strong>table de hachage</strong>, qui est une combinaison d'un tableau et d'une liste chaînée. Nous avons un tableau de listes chaînées, et chaque liste chaînée dans le tableau contient des éléments d'une certaine catégorie. Par exemple, dans le monde réel, nous pourrions avoir beaucoup de badges nominaux, et nous pourrions les trier en 26 compartiments, chacun étiqueté avec une lettre de l'alphabet, afin de pouvoir trouver les badges en regardant simplement dans un compartiment.</li>
+<li>Nous pouvons implémenter cela dans une table de hachage avec un tableau de 26 pointeurs, chacun pointant vers une liste chaînée pour une lettre de l'alphabet :<br />
+<img alt="tableau vertical avec 26 cases, la première avec une flèche pointant vers une case étiquetée Albus, la deuxième vide, la troisième avec une flèche pointant vers une case étiquetée Cedric... la septième avec une flèche pointant vers une case étiquetée Ginny avec une flèche de cette case pointant vers une case étiquetée George..." src="https://cs50.harvard.edu/x/2020/notes/5/hash_table.png" /></li>
+<li>Étant donné que nous avons un accès aléatoire avec les tableaux, nous pouvons ajouter des éléments rapidement et aussi indexer rapidement dans un compartiment.</li>
+<li>Un compartiment peut contenir plusieurs valeurs correspondantes, nous utiliserons donc une liste chaînée pour stocker toutes les valeurs horizontalement. (Nous appelons cela une collision, lorsque deux valeurs correspondent d'une certaine manière.)</li>
+<li>Cela s'appelle une table de hachage parce que nous utilisons une fonction de hachage, qui prend une entrée et la mappe dans un compartiment où elle doit aller. Dans notre exemple, la fonction de hachage se contente de regarder la première lettre du nom, donc elle pourrait retourner <code>0</code> pour "Albus" et <code>25</code> pour "Zacharias".</li>
+<li>Mais dans le pire des cas, tous les noms pourraient commencer par la même lettre, donc nous pourrions nous retrouver avec l'équivalent d'une seule liste chaînée. Nous pourrions examiner les deux premières lettres et allouer suffisamment de compartiments pour 26*26 valeurs hachées possibles, ou même les trois premières lettres, et maintenant nous aurions besoin de 26*26*26 compartiments. Mais nous pourrions encore avoir un pire cas où toutes nos valeurs commencent par les mêmes trois caractères, donc le temps d'exécution pour la recherche est <em>O</em>(<em>n</em>). En pratique, cependant, nous pouvons nous rapprocher de <em>O</em>(1) si nous avons à peu près autant de compartiments que de valeurs possibles, surtout si nous avons une fonction de hachage idéale, où nous pouvons trier nos entrées dans des compartiments uniques.</li>
+<li>Nous pouvons utiliser une autre structure de données appelée <strong>trie</strong> (se prononce comme “try”, et est l'abréviation de “retrieval”) :<br />
+<img alt="tableau avec les lettres de A à Z en 26 éléments, avec H pointant vers un autre tableau contenant toutes les 26 lettres. Le A et le E de ce tableau pointent chacun vers deux tableaux supplémentaires de toutes les 26 lettres, et cela continue dans un arbre jusqu'à ce que les tableaux les plus bas n'aient qu'une seule lettre marquée comme valide" src="https://cs50.harvard.edu/x/2020/notes/5/trie.png" /><ul>
+<li>Imaginez que nous voulons stocker un dictionnaire de mots de manière efficace et être capable d'accéder à chacun d'eux en temps constant. Un trie est comme un arbre, mais chaque nœud est un tableau. Chaque tableau contiendra chaque lettre, de A à Z. Pour chaque mot, la première lettre pointera vers un tableau, où la lettre suivante valide pointera vers un autre tableau, et ainsi de suite, jusqu'à ce que nous atteignions quelque chose indiquant la fin d'un mot valide. Si notre mot n'est pas dans le trie, alors l'un des tableaux ne contiendra pas de pointeur ou de caractère de terminaison pour notre mot. Maintenant, même si notre structure de données contient beaucoup de mots, le temps de recherche sera juste la longueur du mot que nous recherchons, et cela pourrait être un maximum fixe donc nous avons <em>O</em>(1) pour la recherche et l'insertion. Le coût pour cela, cependant, est 26 fois plus de mémoire que ce dont nous avons besoin pour chaque caractère.</li>
+</ul>
+</li>
+<li>Il existe des constructions encore plus complexes, les <strong>structures de données abstraites</strong>, où nous utilisons nos blocs de construction de tableaux, listes chaînées, tables de hachage et tries pour implémenter une solution à un problème donné.</li>
+<li>Par exemple, une structure de données abstraite est une <strong>queue</strong>, où nous voulons pouvoir ajouter des valeurs et en supprimer dans un ordre premier entré, premier sorti (FIFO). Pour ajouter une valeur, nous pourrions l’enfiler, et pour en retirer une, nous la décongestionnerions. Et nous pouvons l'implémenter avec un tableau que nous redimensionnons à mesure que nous ajoutons des éléments, ou une liste chaînée où nous ajoutons des valeurs à la fin.</li>
+<li>Une structure de données “opposée” serait une <strong>pile</strong>, où les éléments les plus récemment ajoutés (empilés) sont supprimés (dépilés) en premier, dans un ordre dernier entré, premier sorti (LIFO). Notre boîte de réception d'e-mails est une pile, où nos e-mails les plus récents sont en haut.</li>
+<li>Un autre exemple est un <strong>dictionnaire</strong>, où nous pouvons mapper des clés à des valeurs, ou des chaînes à des valeurs, et nous pouvons en implémenter un avec une table de hachage où un mot est associé à d'autres informations (comme sa définition ou son sens).</li>
+<li>Nous jetons un œil à <a href="https://www.youtube.com/watch?v=2wM6_PuBIxY">“Jack Learns the Facts About Queues and Stacks”</a>, une animation sur ces structures de données.</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Substitution</h1>
+<h2>Problème à résoudre</h2>
+<p>Dans un chiffrement par substitution, nous « chiffrons » (c'est-à-dire que nous dissimulons de manière réversible) un message en remplaçant chaque lettre par une autre lettre. Pour ce faire, nous utilisons une <em>clé</em> : dans ce cas, un mappage de chacune des lettres de l'alphabet à la lettre à laquelle elle doit correspondre lorsque nous la chiffrons. Pour « déchiffrer » le message, le destinataire du message doit connaître la clé afin de pouvoir inverser le processus : traduire le texte chiffré (généralement appelé <em>ciphertext</em>) en message d'origine (généralement appelé <em>plaintext</em>).</p>
+<p>Une clé, par exemple, peut être la chaîne <code>NQXPOMAFTRHLZGECYJIUWSKDVB</code>. Cette clé de 26 caractères signifie que <code>A</code> (la première lettre de l'alphabet) doit être convertie en <code>N</code> (le premier caractère de la clé), <code>B</code> (la deuxième lettre de l'alphabet) doit être convertie en <code>Q</code> (le deuxième caractère de la clé), et ainsi de suite.</p>
+<p>Un message comme <code>HELLO</code>, serait alors chiffré en <code>FOLLE</code>, en remplaçant chacune des lettres selon le mappage déterminé par la clé.</p>
+<p>Dans un fichier appelé <code>substitution.c</code> dans un dossier appelé <code>substitution</code>, créez un programme qui vous permet de chiffrer des messages à l'aide d'un chiffrement par substitution. Au moment où l'utilisateur exécute le programme, il doit décider, en fournissant un argument de ligne de commande, quelle doit être la clé du message secret qu'il fournira à l'exécution.</p>
+<h2>Démo</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-HWzT4fngSv4KtdNFgfgpdLxZY" src="https://asciinema.org/a/HWzT4fngSv4KtdNFgfgpdLxZY.js"></script>
+
+<h2>Spécification</h2>
+<p>Concevez et implémentez un programme, <code>substitution</code>, qui chiffre des messages à l'aide d'un chiffrement par substitution.</p>
+<ul>
+<li>Implémentez votre programme dans un fichier appelé <code>substitution.c</code> dans un répertoire appelé <code>substitution</code>.</li>
+<li>Votre programme doit accepter un seul argument de ligne de commande, la clé à utiliser pour la substitution. La clé elle-même doit être insensible à la casse, donc le fait qu'un caractère dans la clé soit en majuscules ou en minuscules ne doit pas affecter le comportement de votre programme.</li>
+<li>Si votre programme est exécuté sans aucun argument de ligne de commande ou avec plus d'un argument de ligne de commande, votre programme doit imprimer un message d'erreur de votre choix (avec <code>printf</code>) et renvoyer immédiatement de <code>main</code> une valeur de <code>1</code> (qui a tendance à signifier une erreur).</li>
+<li>Si la clé est invalide (car elle ne contient pas 26 caractères, qu'elle contient un caractère qui n'est pas un caractère alphabétique ou qu'elle ne contient pas chaque lettre exactement une fois), votre programme doit imprimer un message d'erreur de votre choix (avec <code>printf</code>) et renvoyer immédiatement de <code>main</code> une valeur de <code>1</code>.</li>
+<li>Votre programme doit générer <code>plaintext:</code> (sans nouvelle ligne), puis demander à l'utilisateur une <code>string</code> de texte brut (en utilisant <code>get_string</code>).</li>
+<li>Votre programme doit générer <code>ciphertext:</code> (sans nouvelle ligne) suivi du texte chiffré correspondant au texte brut, chaque caractère alphabétique du texte brut étant remplacé par le caractère correspondant dans le texte chiffré ; les caractères non alphabétiques doivent être générés inchangés.</li>
+<li>Votre programme doit conserver la casse : les lettres majuscules doivent rester des lettres majuscules ; les lettres minuscules doivent rester des lettres minuscules.</li>
+<li>Après avoir généré le texte chiffré, vous devez imprimer une nouvelle ligne. Votre programme doit alors quitter en renvoyant <code>0</code> à partir de <code>main</code>.</li>
+</ul>
+<p>Vous trouverez peut-être utile une ou plusieurs fonctions déclarées dans <code>ctype.h</code>, par <a href="https://manual.cs50.io/">manual.cs50.io</a>.</p>
+<h2>Procédure pas à pas</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/cXAoZAsgxJ4?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Comment tester</h2>
+<h3>Justesse</h3>
+<p>Dans votre terminal, exécutez ce qui suit pour vérifier la justesse de votre travail.</p>
+<pre><code>  check50 cs50/problems/2024/x/substitution
+</code></pre>
+<h4>Comment utiliser <code>debug50</code></h4>
+<p>Vous cherchez à exécuter <code>debug50</code> ? Vous pouvez le faire comme suit, après avoir compilé votre code avec succès avec <code>make</code>,</p>
+<pre><code>  debug50 ./substitution KEY
+</code></pre>
+<p>où <code>KEY</code> est la clé que vous donnez comme argument de ligne de commande à votre programme. Notez que l'exécution</p>
+<pre><code>  debug50 ./substitution
+</code></pre>
+<p>va (idéalement !) mettre fin à votre programme en invitant l'utilisateur à saisir une clé.</p>
+<h3>Style</h3>
+<p>Exécutez ce qui suit pour évaluer le style de votre code à l'aide de <code>style50</code>.</p>
+<pre><code>  style50 substitution.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<p>Dans votre terminal, exécutez ce qui suit pour soumettre votre travail.</p>
+<pre><code>  submit50 cs50/problems/2024/x/substitution
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

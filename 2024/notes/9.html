@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Lecture 9</h2>
+<ul>
+<li><a href="#welcome">Bienvenue !</a></li>
+<li><a href="#static-to-dynamic">Statique vers Dynamique</a></li>
+<li><a href="#flask">Flask</a></li>
+<li><a href="#layout">Mise en page</a></li>
+<li><a href="#post">POST</a></li>
+<li><a href="#frosh-ims">Frosh IMs</a></li>
+<li><a href="#flask-and-sql">Flask et SQL</a></li>
+<li><a href="#session">Session</a></li>
+<li><a href="#store">Store</a></li>
+<li><a href="#api">API</a></li>
+<li><a href="#json">JSON</a></li>
+<li><a href="#summing-up">Résumé</a></li>
+</ul>
+<h2>Bienvenue !</h2>
+<ul>
+<li>Au cours des semaines précédentes, vous avez appris de nombreux langages de programmation, techniques et stratégies.</li>
+<li>En effet, ce cours a été bien moins un <em>cours C</em> ou <em>Python</em> qu'un <em>cours de programmation</em>, afin que vous puissiez suivre les futures tendances.</li>
+<li>Ces dernières semaines, vous avez appris <em>comment apprendre</em> à programmer.</li>
+<li>Aujourd’hui, nous allons passer du HTML et CSS au CSS, à SQL, à Python et à JavaScript pour que vous puissiez créer vos propres applications Web.</li>
+</ul>
+<h2>Statique vers Dynamique</h2>
+<ul>
+<li>Jusqu’à présent, tout le HTML que vous avez vu était préécrit et statique.</li>
+<li>Dans le passé, lorsque vous visitiez une page, le navigateur téléchargeait une page HTML que vous pouviez consulter.</li>
+<li>Les pages dynamiques font référence à la capacité de Python et des langages similaires à créer des fichiers HTML à la volée. Par conséquent, vous pouvez avoir des pages Web générées par des options sélectionnées par votre utilisateur.</li>
+<li>Vous avez déjà utilisé <code>http-server</code> pour fournir vos pages Web. Aujourd’hui, nous allons utiliser un nouveau serveur qui peut analyser une adresse Web et exécuter des actions en fonction de l’URL fournie.</li>
+</ul>
+<h2>Flask</h2>
+<ul>
+<li><em>Flask</em> est une bibliothèque tierce qui vous permet d’héberger des applications Web à l’aide du cadre Flask dans Python.</li>
+<li>Vous pouvez exécuter flask en exécutant <code>flask run</code>.</li>
+<li>Pour ce faire, vous aurez besoin d’un fichier appelé <code>app.py</code> et d’un dossier appelé <code>templates</code>.</li>
+<li>
+<p>Pour commencer, créez un dossier appelé <code>templates</code> et créez un fichier appelé <code>index.html</code> avec le code suivant :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;hello&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          hello, {{ name }}
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Remarquez le double <code>{{ name }}</code> qui est un espace réservé pour quelque chose qui sera fourni plus tard par notre serveur Flask.</p>
+</li>
+<li>
+<p>Ensuite, dans le même dossier que le dossier <code>templates</code>, créez un fichier appelé <code>app.py</code> et ajoutez le code suivant :</p>
+<pre><code>  # Salue l'utilisateur
+
+  from flask import Flask, render_template, request
+
+  app = Flask(__name__)
+
+  @app.route("/")
+  def index():
+      return render_template("index.html", name=request.args.get("name", "world"))
+</code></pre>
+<p>Remarquez que ce code définit <code>app</code> comme l’application Flask. Ensuite, il définit la route <code>/</code> de <code>app</code> comme renvoyant le contenu de <code>index.html</code> avec l’argument <code>name</code>. Par défaut, la fonction <code>request.args.get</code> recherchera le <code>name</code> fourni par l’utilisateur. Si aucun nom n’est fourni, il choisira par défaut <code>world</code>.</p>
+</li>
+<li>
+<p>Enfin, ajoutez un fichier final dans le même dossier que <code>app.py</code> appelé <code>requirements.txt</code> qui ne comporte qu'une seule ligne de code :</p>
+<pre><code>  Flask
+</code></pre>
+<p>Notez que seul <code>Flask</code> apparaît dans ce fichier.</p>
+</li>
+<li>
+<p>Vous pouvez exécuter ce fichier en saisissant <code>flask run</code> dans la fenêtre du terminal. Si Flask ne s'exécute pas, assurez-vous que la syntaxe de chacun des fichiers ci-dessus est correcte. De plus, si Flask ne s'exécute pas, assurez-vous que vos fichiers sont organisés comme suit :</p>
+<pre><code>  /templates
+      index.html
+  app.py
+  requirements.txt
+</code></pre>
+<p>Une fois que l'exécution est lancée, vous serez invité à cliquer sur un lien. Une fois que vous accédez à cette page Web, essayez d'ajouter <code>?name=[Votre nom]</code> à l'URL de base dans la barre d'URL de votre navigateur.</p>
+</li>
+<li>
+<p>En améliorant notre programme, nous savons que la plupart des utilisateurs ne saisissent pas d'arguments dans la barre d'adresse. Au lieu de cela, les programmeurs comptent sur les utilisateurs pour remplir des formulaires sur des pages Web. En conséquence, nous pouvons modifier index.html comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;hello&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;form action="/greet" method="get"&gt;
+              &lt;input autocomplete="off" autofocus name="name" placeholder="Name" type="text"&gt;
+              &lt;button type="submit"&gt;Greet&lt;/button&gt;
+          &lt;/form&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez qu'un formulaire est maintenant créé qui prend le nom de l'utilisateur, puis le transmet à une route appelée <code>/greet</code>.</p>
+</li>
+<li>
+<p>De plus, nous pouvons modifier <code>app.py</code> comme suit :</p>
+<pre><code>  # Ajoute un formulaire, une deuxième route
+
+  from flask import Flask, render_template, request
+
+  app = Flask(__name__)
+
+  @app.route("/")
+  def index():
+      return render_template("index.html")
+
+  @app.route("/greet")
+  def greet():
+      return render_template("greet.html", name=request.args.get("name", "world"))
+</code></pre>
+<p>Notez que le chemin d'accès par défaut affiche un formulaire permettant à l'utilisateur de saisir son nom. La route <code>/greet</code> transmet le <code>nom</code> à cette page Web.</p>
+</li>
+<li>
+<p>Pour finaliser cette implémentation, vous aurez besoin d'un autre modèle pour <code>greet.html</code> comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;hello&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          hello, {{ name }}
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que cette route affichera désormais le message d'accueil à l'utilisateur, suivi de son nom.</p>
+</li>
+</ul>
+<h2>Disposition</h2>
+<ul>
+<li>Nos deux pages Web, <code>index.html</code> et <code>greet.html</code>, possèdent en grande partie les mêmes données. Ne serait-il pas appréciable de permettre au corps d'être unique, mais de copier la même disposition de page en page ?</li>
+<li>
+<p>Tout d'abord, créez un nouveau modèle appelé <code>layout.html</code> et écrivez le code suivant :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;hello&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          {% block body %}{% endblock %}
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que <code>{% block body %}{% endblock %}</code> permet l'insertion d'un autre code provenant d'autres fichiers HTML.</p>
+</li>
+<li>
+<p>Ensuite, modifiez votre <code>index.html</code> comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+
+      &lt;form action="/greet" method="post"&gt;
+          &lt;input autocomplete="off" autofocus name="name" placeholder="Name" type="text"&gt;
+          &lt;button type="submit"&gt;Greet&lt;/button&gt;
+      &lt;/form&gt;
+
+  {% endblock %}
+</code></pre>
+<p>Notez que la ligne <code>{% extends "layout.html" %}</code> indique au serveur où obtenir la disposition de cette page. Puis, <code>{% block body %}{% endblock %}</code> indique quel code insérer dans <code>layout.html</code>.</p>
+</li>
+<li>
+<p>Enfin, modifiez <code>greet.html</code> comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      hello, {{ name }}
+  {% endblock %}
+</code></pre>
+<p>Remarquez comme ce code est plus court et concis.</p>
+</li>
+</ul>
+<h2>POST</h2>
+<ul>
+<li>Vous pouvez imaginer des scénarios où il n'est pas sûr d'utiliser <code>get</code>, car les noms d'utilisateur et les mots de passe apparaîtront dans l'URL.</li>
+<li>
+<p>Nous pouvons utiliser la méthode <code>post</code> pour résoudre ce problème en modifiant <code>app.py</code> comme suit :</p>
+<pre><code>  # Bascule vers POST
+
+  from flask import Flask, render_template, request
+
+  app = Flask(__name__)
+
+  @app.route("/")
+  def index():
+      return render_template("index.html")
+
+  @app.route("/greet", methods=["POST"])
+  def greet():
+      return render_template("greet.html", name=request.form.get("name", "world"))
+</code></pre>
+<p>Remarquez que <code>POST</code> est ajouté à la route <code>/greet</code> et que nous utilisons <code>request.form.get</code> plutôt que <code>request.args.get</code>.</p>
+</li>
+<li>
+<p>Cela indique au serveur de rechercher <em>plus en profondeur</em> dans l'enveloppe virtuelle et de ne pas dévoiler les éléments dans <code>post</code> dans l'URL.</p>
+</li>
+<li>
+<p>Néanmoins, ce code peut être amélioré en utilisant une seule route pour <code>get</code> et <code>post</code>. Pour ce faire, modifiez <code>app.py</code> comme suit :</p>
+<pre><code>  # Utilise une seule route
+
+  from flask import Flask, render_template, request
+
+  app = Flask(__name__)
+
+  @app.route("/", methods=["GET", "POST"])
+  def index():
+      if request.method == "POST":
+          return render_template("greet.html", name=request.form.get("name", "world"))
+      return render_template("index.html")
+</code></pre>
+<p>Remarquez que <code>get</code> et <code>post</code> sont tous deux effectués dans un seul routage. Cependant, <code>request.method</code> est utilisé pour router correctement en fonction du type de routage demandé par l'utilisateur.</p>
+</li>
+</ul>
+<h2>Frosh IM</h2>
+<ul>
+<li>Frosh IM ou <em>froshims</em> est une application Web qui permet aux étudiants de s'inscrire à des sports intra-muros.</li>
+<li>
+<p>Créez un dossier en tapant <code>mkdir froshims</code> dans la fenêtre du terminal. Puis, tapez <code>cd froshims</code> pour naviguer vers ce dossier. À l'intérieur, créez un répertoire appelé templates en tapant <code>mkdir templates</code>. Enfin, tapez <code>code app.py</code> et écrivez le code suivant :</p>
+<pre><code>  # Implémente un formulaire d'inscription à l'aide d'un menu de sélection
+
+  from flask import Flask, render_template, request
+
+  app = Flask(__name__)
+
+  SPORTS = [
+      "Basketball",
+      "Soccer",
+      "Ultimate Frisbee"
+  ]
+
+  @app.route("/")
+  def index():
+      return render_template("index.html", sports=SPORTS)
+
+  @app.route("/register", methods=["POST"])
+  def register():
+
+      # Valider la soumission
+      if not request.form.get("name") or request.form.get("sport") not in SPORTS:
+          return render_template("failure.html")
+
+      # Confirmer l'inscription
+      return render_template("success.html")
+</code></pre>
+<p>Notez qu'une option <code>echec</code> est fournie, de telle sorte qu'un message d'échec s'affiche pour l'utilisateur si le champ <code>nom</code> ou <code>sport</code> n'est pas correctement rempli.</p>
+</li>
+<li>
+<p>Ensuite, créez un fichier dans le dossier <code>templates</code> appelé <code>index.html</code> en tapant <code>code templates/index.html</code> et écrivez le code suivant :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      &lt;h1&gt;Register&lt;/h1&gt;
+      &lt;form action="/register" method="post"&gt;
+          &lt;input autocomplete="off" autofocus name="name" placeholder="Name" type="text"&gt;
+          &lt;select name="sport"&gt;
+              &lt;option disabled selected&gt;Sport&lt;/option&gt;
+              {% for sport in sports %}
+                  &lt;option value="{{ sport }}"&gt;{{ sport }}&lt;/option&gt;
+              {% endfor %}
+          &lt;/select&gt;
+          &lt;button type="submit"&gt;Register&lt;/button&gt;
+      &lt;/form&gt;
+  {% endblock %}
+</code></pre>
+</li>
+<li>
+<p>Ensuite, créez un fichier appelé <code>layout.html</code> en tapant <code>code templates/layout.html</code> et écrivez le code suivant :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;froshims&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          {% block body %}{% endblock %}
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+</li>
+<li>
+<p>Quatrièmement, créez un fichier dans les modèles appelés <code>success.html</code> comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      You are registered!
+  {% endblock %}
+</code></pre>
+</li>
+<li>
+<p>Enfin, créez un fichier dans les modèles appelés <code>failure.html</code> comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      You are not registered!
+  {% endblock %}
+</code></pre>
+</li>
+<li>
+<p>Vous pouvez imaginer que nous pourrions accepter l'inscription de différents inscrits. Nous pouvons améliorer <code>app.py</code> comme suit :</p>
+<pre><code>  # Implémente un formulaire d'inscription, stockant les inscrits dans un dictionnaire, avec des messages d'erreur
+
+  de flask importe Flask, redirection, render_template, demande
+
+  application = Flacon (__name__)
+
+  INSCRITS = {}
+
+  SPORTS = [
+      « Basketball »,
+      « Football »,
+      « Ultimate Frisbee »
+  ]
+
+  @application.route (« / »)
+  def index() :
+      renvoyer render_template (« index.html », sports=SPORTS)
+
+  @application.route (« / inscrire »)
+  def enregistrer() :
+
+      # Valider le nom
+      nom = demander.formule.obtenir (« nom »)
+      si pas nom :
+          retourne render_template (« error.html », message=« Nom manquant »)
+
+      # Valider le sport
+      sport = demander.formule.obtenir (« sport »)
+      si pas sport :
+          retourne render_template (« error.html », message=« Sport manquant »)
+      si le sport n'est pas dans les SPORTS :
+          retourne render_template (« error.html », message=« Sport non valide »)
+
+      # Mémoriser l'inscrit
+      INSCRITS [nom] = sport
+
+      # Confirmer l'inscription
+      retourner la redirection (« / inscrits »)
+
+  @application.route (« / inscrits »)
+  def inscrits() :
+      renvoyer render_template (« registrants.html », registrants=REGISTRANTS)
+</code></pre>
+<p>Remarquez qu'un dictionnaire appelé <code>REGISTRANTS</code> est utilisé pour enregistrer le sport sélectionné par <code>REGISTRANTS[name]</code>. Remarquez également que <code>registrants=REGISTRANTS</code> transmet le dictionnaire à ce modèle.</p>
+</li>
+<li>
+<p>En outre, créez un nouveau modèle appelé <code>registrants.html</code> comme suit :</p>
+<pre><code>  {% étend « layout.html » %}
+
+  {% block body %}
+      &lt;h1&gt;Inscrits&lt;/h1&gt;
+      &lt;table&gt;
+          &lt;thead&gt;
+              &lt;tr&gt;
+                  &lt;th&gt;Nom&lt;/th&gt;
+                  &lt;th&gt;Sport&lt;/th&gt;
+              &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+              {% pour nom dans les inscrits %}
+                  &lt;tr&gt;
+                      &lt;td&gt;{{ nom }}&lt;/td&gt;
+                      &lt;td&gt;{{inscrits[nom]}}&lt;/td&gt;
+                  &lt;/tr&gt;
+              {% fin pour %}
+          &lt;/tbody&gt;
+      &lt;/table&gt;
+  {% fin du bloc %}
+</code></pre>
+<p>Remarquez que <code>{% pour nom dans les inscrits %}...{% fin pour %}</code> itérera sur chacun des inscrits. Très puissant de pouvoir itérer sur une page Web dynamique !</p>
+</li>
+<li>
+<p>En exécutant <code>flask run</code> et en saisissant de nombreux noms et sports, vous pouvez accéder à <code>/registrants</code> pour afficher les données qui ont été enregistrées.</p>
+</li>
+<li>Vous avez maintenant une application Web ! Cependant, il existe certaines failles de sécurité ! Étant donné que tout se trouve côté client, un adversaire pourrait modifier le HTML et pirater un site Web. De plus, ces données ne persisteront pas si le serveur est arrêté. Pourrait-il y avoir un moyen de faire en sorte que nos données persistent même lorsque le serveur redémarre ?</li>
+</ul>
+<h2>Flask et SQL</h2>
+<ul>
+<li>Tout comme nous avons vu comment Python peut s'interfacer avec une base de données SQL, nous pouvons combiner la puissance de Flask, Python et SQL pour créer une application web dans laquelle les données persisteront !</li>
+<li>Pour mettre cela en œuvre, vous devrez prendre un certain nombre de mesures.</li>
+<li>
+<p>Tout d'abord, modifiez requirements.txt comme suit :</p>
+<pre><code>  cs50
+  Flask
+</code></pre>
+</li>
+<li>
+<p>Modifiez index.html comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      &lt;h1&gt;S'inscrire&lt;/h1&gt;
+      &lt;form action="/register" method="post"&gt;
+          &lt;input autocomplete="off" autofocus name="name" placeholder="Nom" type="text"&gt;
+          {% for sport in sports %}
+              &lt;input name="sport" type="radio" value="{{ sport }}"&gt; {{ sport }}
+          {% endfor %}
+          &lt;button type="submit"&gt;S'inscrire&lt;/button&gt;
+      &lt;/form&gt;
+  {% endblock %}
+</code></pre>
+</li>
+<li>
+<p>Modifiez layout.html comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;froshims&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          {% block body %}{% endblock %}
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+</li>
+<li>
+<p>Assurez-vous que failure.html apparaît comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      Vous n'êtes pas inscrit !
+  {% endblock %}
+</code></pre>
+</li>
+<li>
+<p>Modifiez registrants.html pour qu'il apparaisse comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+      &lt;h1&gt;Inscrits&lt;/h1&gt;
+      &lt;table&gt;
+          &lt;thead&gt;
+              &lt;tr&gt;
+                  &lt;th&gt;Nom&lt;/th&gt;
+                  &lt;th&gt;Sport&lt;/th&gt;
+                  &lt;th&gt;&lt;/th&gt;
+              &lt;/tr&gt;
+          &lt;/thead&gt;
+          &lt;tbody&gt;
+              {% for registrant in registrants %}
+                  &lt;tr&gt;
+                      &lt;td&gt;{{ registrant.name }}&lt;/td&gt;
+                      &lt;td&gt;{{ registrant.sport }}&lt;/td&gt;
+                      &lt;td&gt;
+                          &lt;form action="/deregister" method="post"&gt;
+                              &lt;input name="id" type="hidden" value="{{ registrant.id }}"&gt;
+                              &lt;button type="submit"&gt;Se désinscrire&lt;/button&gt;
+                          &lt;/form&gt;
+                      &lt;/td&gt;
+                  &lt;/tr&gt;
+              {% endfor %}
+          &lt;/tbody&gt;
+      &lt;/table&gt;
+  {% endblock %}
+</code></pre>
+<p>Notez qu'une valeur cachée <code>registrant.id</code> est incluse pour qu'il soit possible d'utiliser cet <code>id</code> plus tard dans <code>app.py</code></p>
+</li>
+<li>
+<p>Enfin, modifiez <code>app.py</code> comme suit :</p>
+<pre><code>  # Implémente un formulaire d'inscriptions, stockant les inscrits dans une base de données SQLite, avec option de désinscription
+
+  de cs50 import SQL
+  de flask import Flask, redirect, render_template, request
+
+  app = Flask(__name__)
+
+  db = SQL("sqlite:///froshims.db")
+
+  SPORTS = [
+      "Basketball",
+      "Soccer",
+      "Ultimate Frisbee"
+  ]
+
+  @app.route("/")
+  def index():
+      return render_template("index.html", sports=SPORTS)
+
+  @app.route("/deregister", méthodes=["POST"])
+  def deregister():
+
+      # Oublie l'inscrit
+      id = request.form.get("id")
+      si id :
+          db.execute("DELETE FROM registrants WHERE id = ?", id)
+      return redirect("/registrants")
+
+  @app.route("/register", méthodes=["POST"])
+  def register():
+
+      # Valide la soumission
+      nom = request.form.get("nom")
+      sport = request.form.get("sport")
+      si pas nom ou sport pas dans SPORTS :
+          return render_template("failure.html")
+
+      # Se souviens de l'inscrit
+      db.execute("INSERT INTO registrants (nom, sport) VALUES(?, ?)", nom, sport)
+
+      # Confirme l'inscription
+      return redirect("/registrants")
+
+  @app.route("/registrants")
+  def registrants():
+      inscrits = db.execute("SELECT * FROM registrants")
+      return render_template("registrants.html", inscrits=inscrits)
+</code></pre>
+<p>Notez que la bibliothèque <code>cs50</code> est utilisée. Une route est incluse pour <code>register</code> pour la méthode <code>post</code>. Cette route prendra le nom et le sport pris dans le formulaire d'inscription et exécutera une requête SQL pour ajouter le <code>nom</code> et le <code>sport</code> à la table <code>registrants</code>. La route <code>deregister</code> est reliée à une requête SQL qui récupérera l'identifiant de l'utilisateur et utilisera cette information pour le désinscrire.</p>
+</li>
+<li>
+<p>Vous pouvez en lire plus dans la <a href="https://flask.palletsprojects.com">documentation Flask</a>.</p>
+</li>
+</ul>
+<h2>Séance</h2>
+<ul>
+<li>Bien que le code ci-dessus soit utile du point de vue administratif, où un administrateur du back-office pourrait ajouter et supprimer des personnes de la base de données, on peut imaginer que ce code n'est pas sûr à implémenter sur un serveur public.</li>
+<li>D'une part, de mauvais acteurs pourraient prendre des décisions au nom d'autres utilisateurs en appuyant sur le bouton de désinscription, supprimant ainsi efficacement leur réponse enregistrée du serveur.</li>
+<li>Les services Web comme Google utilisent les informations d'identification de connexion pour s'assurer que les utilisateurs n'ont accès qu'aux bonnes données.</li>
+<li>Nous pouvons en fait implémenter cela nous-mêmes à l'aide de <em>cookies</em>. Les cookies sont de petits fichiers qui sont stockés sur votre ordinateur, de sorte que votre ordinateur puisse communiquer avec le serveur et dire effectivement : « Je suis un utilisateur autorisé qui s'est déjà connecté ».</li>
+<li>Dans la forme la plus simple, nous pouvons implémenter cela en créant un dossier appelé <code>login</code>, puis en ajoutant les fichiers suivants.</li>
+<li>
+<p>Tout d'abord, créez un fichier appelé <code>requirements.txt</code> qui se lit comme suit :</p>
+<pre><code>  Flask
+  Flask-Session
+</code></pre>
+<p>Notez qu'en plus de <code>Flask</code>, nous incluons également <code>Flask-Session</code>, qui est nécessaire pour prendre en charge les sessions de connexion.</p>
+</li>
+<li>
+<p>Deuxièmement, dans un dossier <code>templates</code>, créez un fichier appelé <code>layout.html</code> qui apparaît comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;store&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          {% block body %}{% endblock %}
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que cela fournit une mise en page très simple avec un titre et un corps.</p>
+</li>
+<li>
+<p>Troisièmement, créez un fichier dans le dossier <code>templates</code> appelé <code>index.html</code> qui apparaît comme suit :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+
+      {% if session["name"] %}
+          Vous êtes connecté en tant que {{ session["name"] }}. &lt;a href="/logout"&gt;Déconnexion&lt;/a&gt;.
+      {% else %}
+          Vous n'êtes pas connecté. &lt;a href="/login"&gt;Connectez-vous&lt;/a&gt;.
+      {% endif %}
+
+  {% endblock %}
+</code></pre>
+<p>Notez que ce fichier regarde si <code>session["name"]</code> existe. Si c'est le cas, il affichera un message de bienvenue. Sinon, il vous recommandera de parcourir une page pour vous connecter.</p>
+</li>
+<li>
+<p>Quatrièmement, créez un fichier appelé <code>login.html</code> et ajoutez le code suivant :</p>
+<pre><code>  {% extends "layout.html" %}
+
+  {% block body %}
+
+      &lt;form action="/login" method="post"&gt;
+          &lt;input autocomplete="off" autofocus name="name" placeholder="Nom" type="text"&gt;
+          &lt;button type="submit"&gt;Connexion&lt;/button&gt;
+      &lt;/form&gt;
+
+  {% endblock %}
+</code></pre>
+<p>Notez qu'il s'agit de la mise en page d'une page de connexion basique.</p>
+</li>
+<li>
+<p>Finalement, créez un fichier dans le dossier <code>login</code> appelé <code>app.py</code> et écrivez le code comme suit :</p>
+<pre><code>  from flask import Flask, redirect, render_template, request, session
+  from flask_session import Session
+
+  # Configurer l'application
+  app = Flask(__name__)
+
+  # Configurer la session
+  app.config["SESSION_PERMANENT"] = False
+  app.config["SESSION_TYPE"] = "filesystem"
+  Session(app)
+
+  @app.route("/")
+  def index():
+      if not session.get("name"):
+          return redirect("/login")
+      return render_template("index.html")
+
+  @app.route("/login", methods=["GET", "POST"])
+  def login():
+      if request.method == "POST":
+          session["name"] = request.form.get("name")
+          return redirect("/")
+      return render_template("login.html")
+
+  @app.route("/logout")
+  def logout():
+      session["name"] = None
+      return redirect("/")
+</code></pre>
+<p>Notez les <em>imports</em> modifiés en haut du fichier, y compris <code>session</code>, qui vous permettra de prendre en charge les sessions. Le plus important, c'est comment <code>session["name"]</code> est utilisé dans les chemins <code>login</code> et <code>logout</code>. Le chemin <code>login</code> attribuera le nom de connexion fourni et l'attribuera à <code>session["name"]</code>. Cependant, dans le chemin <code>logout</code>, la déconnexion est implémentée en définissant simplement <code>session["name"]</code> à <code>None</code>.</p>
+</li>
+<li>
+<p>Vous pouvez en savoir plus sur les sessions dans la <a href="https://flask.palletsprojects.com/en/2.2.x/api/?highlight=session#flask.session">documentation Flask</a>.</p>
+</li>
+</ul>
+<h2>Magasin</h2>
+<ul>
+<li>Passons à un exemple final de l'utilisation de la capacité de Flask à activer une session.</li>
+<li>
+<p>Nous avons examiné le code suivant pour <code>store</code> dans <code>app.py</code>. Le code suivant était affiché :</p>
+<pre><code>  from cs50 import SQL
+  from flask import Flask, redirect, render_template, request, session
+  from flask_session import Session
+
+  # Configurer l'application
+  app = Flask(__name__)
+
+  # Se connecter à la base de données
+  db = SQL("sqlite:///store.db")
+
+  # Configurer la session
+  app.config["SESSION_PERMANENT"] = False
+  app.config["SESSION_TYPE"] = "filesystem"
+  Session(app)
+
+  @app.route("/")
+  def index():
+      books = db.execute("SELECT * FROM books")
+      return render_template("books.html", books=books)
+
+  @app.route("/cart", methods=["GET", "POST"])
+  def cart():
+
+      # S'assurer que le panier existe
+      if "cart" not in session:
+          session["cart"] = []
+
+      # POST
+      if request.method == "POST":
+          id = request.form.get("id")
+          if id:
+              session["cart"].append(id)
+          return redirect("/cart")
+
+      # GET
+      books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"])
+      return render_template("cart.html", books=books)
+</code></pre>
+<p>Notez que <code>cart</code> est implémenté à l'aide d'une liste. Les éléments peuvent être ajoutés à cette liste à l'aide des boutons <code>Ajouter au panier</code> dans <code>books.html</code>. Lorsque vous cliquez sur un tel bouton, la méthode <code>post</code> est invoquée, où le <code>id</code> de l'élément est ajouté au <code>panier</code>. Lors de la visualisation du panier, on invoque la méthode <code>get</code>, SQL est exécuté pour afficher une liste des livres dans le panier.</p>
+</li>
+</ul>
+<h2>API</h2>
+<ul>
+<li>Une <em>interface de programmation d'applications</em> ou <em>API</em> est une série de spécifications qui vous permettent d'interagir avec un autre service. Par exemple, nous pourrions utiliser l'API d'IMDB pour interagir avec leur base de données. Nous pourrions même intégrer des API pour gérer des types spécifiques de données téléchargeables depuis un serveur.</li>
+<li>Nous avons examiné un exemple appelé <code>shows</code>.</li>
+<li>
+<p>En examinant <code>app.py</code>, nous avons vu ce qui suit :</p>
+<pre><code>  # Recherches des séries à l'aide d'Ajax
+
+  from cs50 import SQL
+  from flask import Flask, render_template, request
+
+  app = Flask(__name__)
+
+  db = SQL("sqlite:///shows.db")
+
+  @app.route("/")
+  def index():
+      return render_template("index.html")
+
+  @app.route("/search")
+  def search():
+      q = request.args.get("q")
+      if q:
+          shows = db.execute("SELECT * FROM shows WHERE title LIKE ? LIMIT 50", "%" + q + "%")
+      else:
+          shows = []
+      return render_template("search.html", shows=shows)
+</code></pre>
+<p>Notez que la route <code>search</code> exécute une requête SQL.</p>
+</li>
+<li>
+<p>En examinant <code>search.html</code>, vous remarquerez que c'est très simple :</p>
+<pre><code>  {% for show in shows %}
+      &lt;li&gt;{{ show["title"] }}&lt;/li&gt;
+  {% endfor %}
+</code></pre>
+<p>Notez qu'il fournit une liste à puces.</p>
+</li>
+<li>
+<p>Enfin, en examinant <code>index.html</code>, notez que le code <em>AJAX</em> est utilisé pour alimenter la recherche :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;shows&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+
+          &lt;input autocomplete="off" autofocus placeholder="Requête" type="search"&gt;
+
+          &lt;ul&gt;&lt;/ul&gt;
+
+          &lt;script&gt;
+
+              let input = document.querySelector('input');
+              input.addEventListener('input', async function() {
+                  let response = await fetch('/search?q=' + input.value);
+                  let shows = await response.text();
+                  document.querySelector('ul').innerHTML = shows;
+              });
+
+          &lt;/script&gt;
+
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez qu'un écouteur d'événements est utilisé pour interroger dynamiquement le serveur afin de fournir une liste correspondant au titre fourni. Cela localisera la balise <code>ul</code> dans le code HTML et modifiera la page Web en conséquence pour inclure la liste des correspondances.</p>
+</li>
+<li>
+<p>Vous pouvez en savoir plus dans la <a href="https://api.jquery.com/category/ajax/">documentation AJAX</a>.</p>
+</li>
+</ul>
+<h2>JSON</h2>
+<ul>
+<li><em>JavaScript Object Notation</em> ou <em>JSON</em> est un fichier texte de dictionnaires avec des clés et des valeurs. C'est une manière brute et conviviale pour obtenir de nombreuses données.</li>
+<li>JSON est un moyen très utile de récupérer des données depuis le serveur.</li>
+<li>
+<p>Vous pouvez le voir en action dans le fichier <code>index.html</code> que nous avons examiné ensemble :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;shows&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+
+          &lt;input autocomplete="off" autofocus placeholder="Query" type="text"&gt;
+
+          &lt;ul&gt;&lt;/ul&gt;
+
+          &lt;script&gt;
+
+              let input = document.querySelector('input');
+              input.addEventListener('input', async function() {
+                  let response = await fetch('/search?q=' + input.value);
+                  let shows = await response.json();
+                  let html = '';
+                  for (let id in shows) {
+                      let title = shows[id].title.replace('&lt;', '&amp;lt;').replace('&amp;', '&amp;amp;');
+                      html += '&lt;li&gt;' + title + '&lt;/li&gt;';
+                  }
+                  document.querySelector('ul').innerHTML = html;
+              });
+
+          &lt;/script&gt;
+
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Bien que le code ci-dessus puisse sembler quelque peu cryptique, il vous fournit un point de départ pour que vous puissiez effectuer des recherches sur JSON par vous-même afin de voir comment celui-ci peut être implémenté dans vos propres applications Web.</p>
+</li>
+<li>
+<p>Vous pouvez en lire plus dans la <a href="https://www.json.org/json-en.html">documentation JSON</a>.</p>
+</li>
+</ul>
+<h2>Résumé</h2>
+<p>Dans cette leçon, vous avez appris comment utiliser Python, SQL et Flask pour créer des applications Web. Plus précisément, nous avons abordé…</p>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<li>Flask</li>
+<li>Session</li>
+<li>AJAX</li>
+<li>JSON</li>
+</ul>
+<p>À bientôt pour notre conférence finale !</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

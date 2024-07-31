@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Correcteur orthographique</h1>
+<h2>Problème à résoudre</h2>
+<p>Dans ce problème, vous implémenterez un programme qui vérifie l'orthographe d'un fichier, comme ci-dessous, en utilisant une table de hachage.</p>
+<h2>Démonstration</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-o01nuZNSBSH2khVokTs2GEPtP" src="https://asciinema.org/a/o01nuZNSBSH2khVokTs2GEPtP.js"></script>
+
+<h2>Code de distribution</h2>
+<p>Dans ce problème, vous allez étendre les fonctionnalités du code fourni par l’équipe de CS50.</p>
+<p>Connectez-vous à <a href="https://cs50.dev/">cs50.dev</a>, cliquez sur votre fenêtre de terminal et exécutez <code>cd</code> par lui-même. L'invite de votre fenêtre de terminal devrait ressembler à ce qui suit :</p>
+<pre><code>  $
+</code></pre>
+<p>Exécutez ensuite :</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/5/speller.zip
+</code></pre>
+<p>pour télécharger un ZIP appelé <code>speller.zip</code> dans votre espace de code.</p>
+<p>Ensuite, exécutez :</p>
+<pre><code>  unzip speller.zip
+</code></pre>
+<p>pour créer un dossier appelé <code>speller</code>. Vous n’avez plus besoin du fichier ZIP, vous pouvez donc exécuter :</p>
+<pre><code>  rm speller.zip
+</code></pre>
+<p>et répondre par « y » suivi de la touche Entrée à l’invite pour supprimer le fichier ZIP que vous avez téléchargé.</p>
+<p>Tapez maintenant :</p>
+<pre><code>  cd speller
+</code></pre>
+<p>suivi de la touche Entrée pour vous déplacer dans (c’est-à-dire ouvrir) ce répertoire. Votre invite devrait désormais ressembler à ce qui suit :</p>
+<pre><code>  speller/ $
+</code></pre>
+<p>Exécutez <code>ls</code> par lui-même, et vous devriez voir quelques fichiers et dossiers :</p>
+<pre><code>  dictionaries/  dictionary.c  dictionary.h  keys/  Makefile  speller.c  speller50  texts/
+</code></pre>
+<p>Si vous rencontrez des problèmes, suivez à nouveau ces mêmes étapes et essayez de déterminer où vous vous êtes trompé !</p>
+<h2>Contexte</h2>
+<div class="alert alert-danger" data-alert="danger" role="alert"><p><strong>Étant donné les nombreux fichiers dans ce programme, il est important de lire cette section dans son intégralité avant de commencer. Vous saurez alors quoi faire et comment le faire !</strong></p></div>
+
+<p>Théoriquement, sur une entrée de taille <em>n</em>, un algorithme avec un temps d'exécution de <em>n</em> est « asymptotiquement équivalent », en termes de <em>O</em>, à un algorithme avec un temps d'exécution de <em>2n</em>. En effet, lorsque l’on décrit le temps d’exécution d’un algorithme, on se concentre généralement sur le terme dominant (c’est-à-dire le plus impactant) (ici <em>n</em>, puisque <em>n</em> pourrait être bien plus grand que 2). Dans le monde réel, cependant, le fait est que <em>2n</em> semble deux fois plus lent que <em>n</em>.</p>
+<p>Le défi qui vous attend est d’implémenter le correcteur orthographique le plus rapide possible ! Par « plus rapide », nous parlons toutefois du temps d’horloge réel, et non asymptotique.</p>
+<p>Dans <code>speller.c</code>, nous avons mis au point un programme conçu pour vérifier l’orthographe d’un fichier après avoir chargé un dictionnaire de mots du disque vers la mémoire. Ce dictionnaire, quant à lui, est implémenté dans un fichier appelé <code>dictionary.c</code>. (Il pourrait simplement être implémenté dans <code>speller.c</code>, mais au fur et à mesure que les programmes deviennent plus complexes, il est souvent pratique de les diviser en plusieurs fichiers.) Les prototypes des fonctions qui s’y trouvent sont quant à eux définis non pas dans <code>dictionary.c</code> lui-même, mais dans <code>dictionary.h</code> à la place. De cette façon, <code>speller.c</code> et <code>dictionary.c</code> peuvent tous deux <code>#include</code> le fichier. Malheureusement, nous n’avons pas tout à fait réussi à implémenter la partie chargement. Ni la partie vérification. Les deux (et un peu plus) nous vous les laissons ! Mais d’abord, une visite guidée.</p>
+<h3>Compréhension</h3>
+<h4><code>dictionary.h</code></h4>
+<p>Ouvrez <code>dictionary.h</code>, et vous verrez une nouvelle syntaxe, y compris quelques lignes qui mentionnent <code>DICTIONARY_H</code>. Pas besoin de s’inquiéter à ce sujet, mais si vous êtes curieux, ces lignes garantissent simplement que, même si <code>dictionary.c</code> et <code>speller.c</code> (que vous verrez dans un instant) <code>#include</code> ce fichier, <code>clang</code> ne le compilera qu’une seule fois.</p>
+<p>Remarquez ensuite que l’on utilise <code>#include</code> sur un fichier appelé <code>stdbool.h</code>. C’est le fichier dans lequel <code>bool</code> lui-même est défini. Vous n’en aviez pas eu besoin auparavant, car la bibliothèque CS50 avait l’habitude de l’inclure pour vous.</p>
+<p>Remarquez également notre utilisation de <code>#define</code>, une « directive de préprocesseur » qui définit une « constante » appelée <code>LENGTH</code> qui a une valeur de <code>45</code>. C’est une constante dans le sens où vous ne pouvez pas (accidentellement) la modifier dans votre propre code. En fait, <code>clang</code> remplacera toute mention de <code>LENGTH</code> dans votre propre code par, littéralement, <code>45</code>. En d’autres termes, ce n’est pas une variable, juste une astuce de recherche et de remplacement.</p>
+<p>Enfin, remarquez les prototypes de cinq fonctions : <code>check</code>, <code>hash</code>, <code>load</code>, <code>size</code> et <code>unload</code>. Notez que trois d'entre elles prennent un pointeur comme argument, selon le <code>*</code> :</p>
+<pre><code>  bool check(const char *word);
+  unsigned int hash(const char *word);
+  bool load(const char *dictionary);
+</code></pre>
+<p>Rappelez-vous que <code>char *</code> est ce que nous appelions <code>string</code>. Ces trois prototypes sont donc essentiellement :</p>
+<pre><code>  bool check(const string word);
+  unsigned int hash(const string word);
+  bool load(const string dictionary);
+</code></pre>
+<p>Et <code>const</code>, en attendant, dit simplement que ces chaînes, lorsqu'elles sont transmises en tant qu'arguments, doivent rester constantes ; vous ne pourrez pas les modifier, accidentellement ou autrement !</p>
+<h4><code>dictionary.c</code></h4>
+<p>Ouvrez maintenant <code>dictionary.c</code>. Notez que, en haut du fichier, nous avons défini une <code>struct</code> appelée <code>node</code> qui représente un nœud dans une table de hachage. Et nous avons déclaré un tableau de pointeurs global, <code>table</code>, qui représentera (bientôt) la table de hachage que vous utiliserez pour suivre les mots dans le dictionnaire. Le tableau contient <code>N</code> pointeurs de nœuds, et nous avons défini <code>N</code> égal à <code>26</code> pour le moment, pour correspondre à la fonction <code>hash</code> par défaut comme décrit ci-dessous. Vous voudrez probablement l’augmenter en fonction de votre propre implémentation de <code>hash</code>.</p>
+<p>Ensuite, notez que nous avons implémenté <code>load</code>, <code>check</code>, <code>size</code> et <code>unload</code>, mais à peine, juste assez pour que le code se compile. Notez également que nous avons implémenté <code>hash</code> avec un exemple d'algorithme basé sur la première lettre du mot. Votre travail, en fin de compte, est de réimplémenter ces fonctions aussi intelligemment que possible afin que ce correcteur orthographique fonctionne comme annoncé. Et vite !</p>
+<h4><code>speller.c</code></h4>
+<p>D'accord, ouvrez maintenant <code>speller.c</code> et prenez le temps d'examiner le code et les commentaires qui s'y trouvent. Vous n'aurez rien à changer dans ce fichier, et vous n'avez pas besoin d'en comprendre l'intégralité, mais essayez néanmoins d'avoir une idée de sa fonctionnalité. Notez que, grâce à une fonction appelée <code>getrusage</code>, nous allons "comparer" (c'est-à-dire chronométrer l'exécution de) vos implémentations de <code>check</code>, <code>load</code>, <code>size</code> et <code>unload</code>. Notez également comment nous transmettons à <code>check</code> mot par mot le contenu d'un fichier à vérifier. En fin de compte, nous rapportons chaque faute d'orthographe dans ce fichier ainsi qu'un certain nombre de statistiques.</p>
+<p>Notez, accessoirement, que nous avons défini l'utilisation de <code>speller</code> comme suit :</p>
+<p><code>Usage : speller [dictionnaire] texte</code></p>
+<p>où <code>dictionnaire</code> est supposé être un fichier contenant une liste de mots en minuscules, un par ligne, et <code>texte</code> est un fichier à vérifier. Comme le suggèrent les crochets, la fourniture du <code>dictionnaire</code> est facultative ; si cet argument est omis, <code>speller</code> utilisera par défaut <code>dictionaries/large</code>. En d'autres termes, l'exécution de</p>
+<p><code>./speller texte</code></p>
+<p>équivaut à exécuter</p>
+<p><code>./speller dictionaries/large texte</code></p>
+<p>où <code>texte</code> est le fichier que vous souhaitez vérifier. Autant dire que le premier est plus facile à taper ! (Bien sûr, <code>speller</code> ne pourra charger aucun dictionnaire tant que vous n'aurez pas implémenté <code>load</code> dans `dictionary.c ! Jusque-là, vous verrez « Impossible de charger ».)</p>
+<p>Dans le dictionnaire par défaut, notez bien, il y a 143 091 mots, qui doivent tous être chargés en mémoire ! En fait, jetez un coup d'œil à ce fichier pour avoir une idée de sa structure et de sa taille. Notez que chaque mot dans ce fichier apparaît en minuscules (même, pour simplifier, les noms propres et les acronymes). De haut en bas, le fichier est trié lexicographiquement, avec un seul mot par ligne (chacun se terminant par <code>\n</code>). Aucun mot ne dépasse 45 caractères et aucun mot n'apparaît plus d'une fois. Pendant le développement, vous pouvez trouver utile de fournir à <code>speller</code> un <code>dictionnaire</code> contenant beaucoup moins de mots, de peur d'avoir du mal à déboguer une structure autrement énorme en mémoire. Dans <code>dictionaries/small</code> se trouve un tel dictionnaire. Pour l'utiliser, exécutez</p>
+<p><code>./speller dictionaries/small texte</code></p>
+<p>où <code>texte</code> est le fichier que vous souhaitez vérifier. Ne passez pas à autre chose tant que vous n'êtes pas sûr de comprendre comment fonctionne <code>speller</code> en lui-même !</p>
+<p>Il y a de fortes chances que vous n'ayez pas passé assez de temps à examiner <code>speller.c</code>. Revenez en arrière et relisez-le !</p>
+<h4><code>texts/</code></h4>
+<p>Afin que vous puissiez tester votre implémentation de <code>speller</code>, nous vous avons également fourni un grand nombre de textes, parmi lesquels le scénario de <em>La La Land</em>, le texte de l'Affordable Care Act, trois millions d'octets de Tolstoï, des extraits de <em>The Federalist Papers</em> et de Shakespeare, et plus encore. Afin que vous sachiez à quoi vous attendre, ouvrez et parcourez chacun de ces fichiers, qui se trouvent tous dans un répertoire appelé <code>texts</code> dans votre répertoire <code>pset5</code>.</p>
+<p>Maintenant, comme vous devez le savoir après avoir lu attentivement <code>speller.c</code>, la sortie de <code>speller</code>, si elle est exécutée avec, disons :</p>
+<p><code>./speller texts/lalaland.txt</code></p>
+<p>ressemblera éventuellement à ce qui suit.</p>
+<p>Voici quelques exemples de la sortie que vous verrez. Pour information, nous avons extrait quelques exemples de « fautes ». Et pour ne pas gâcher le plaisir, nous avons omis nos propres statistiques pour l'instant.</p>
+<p>```
+FAUTES D'ORTHOGRAPHE :</p>
+<p>[...]
+AHHHHHHHHHHHHHHHHHHHHHHHHHHHT
+[...]
+Shangri
+[...]
+fianc
+[...]
+Sebastian's
+[...]
+```</p>
+<p><code>MOTS MAL ÉPELÉS :
+MOTS DANS LE DICTIONNAIRE :
+MOTS DANS LE TEXTE :
+TEMPS EN chargement :
+TEMPS EN vérification :
+TEMPS EN taille :
+TEMPS EN déchargement :
+TEMPS EN TOTAL :</code></p>
+<p><code>TEMPS EN chargement</code> représente le nombre de secondes que <code>speller</code> passe à exécuter votre implémentation de <code>load</code>. <code>TEMPS EN vérification</code> représente le nombre de secondes que <code>speller</code> passe, au total, à exécuter votre implémentation de <code>check</code>. <code>TEMPS EN taille</code> représente le nombre de secondes que <code>speller</code> passe à exécuter votre implémentation de <code>size</code>. <code>TEMPS EN déchargement</code> représente le nombre de secondes que <code>speller</code> passe à exécuter votre implémentation de <code>unload</code>. <code>TEMPS EN TOTAL</code> est la somme de ces quatre mesures.</p>
+<p><strong>Notez que ces durées peuvent varier quelque peu entre les exécutions de <code>speller</code>, en fonction de ce que fait d'autre votre espace de code, même si vous ne modifiez pas votre code.</strong></p>
+<p>Incidemment, pour être clair, par « mal orthographié », nous entendons simplement qu'un mot n'est pas dans le <code>dictionnaire</code> fourni.</p>
+<h4><code>Makefile</code></h4>
+<p>Enfin, rappelez-vous que <code>make</code> automatise la compilation de votre code afin que vous n'ayez pas à exécuter <code>clang</code> manuellement avec un tas de commutateurs. Cependant, à mesure que vos programmes grandissent, <code>make</code> ne pourra plus déduire du contexte comment compiler votre code ; vous devrez commencer à indiquer à <code>make</code> comment compiler votre programme, en particulier lorsqu'il s'agit de fichiers source multiples (c'est-à-dire <code>.c</code>), comme c'est le cas pour ce problème. Nous utiliserons donc un <code>Makefile</code>, un fichier de configuration qui indique à <code>make</code> exactement ce qu'il doit faire. Ouvrez <code>Makefile</code> et vous devriez voir quatre lignes :</p>
+<ol>
+<li>La première ligne indique à <code>make</code> d'exécuter les lignes suivantes chaque fois que vous exécutez vous-même <code>make speller</code> (ou simplement <code>make</code>).</li>
+<li>La deuxième ligne indique à <code>make</code> comment compiler <code>speller.c</code> en code machine (c'est-à-dire <code>speller.o</code>).</li>
+<li>La troisième ligne indique à <code>make</code> comment compiler <code>dictionary.c</code> en code machine (c'est-à-dire <code>dictionary.o</code>).</li>
+<li>La quatrième ligne indique à <code>make</code> de lier <code>speller.o</code> et <code>dictionary.o</code> dans un fichier appelé <code>speller</code>.</li>
+</ol>
+<p><strong>Assurez-vous de compiler <code>speller</code> en exécutant <code>make speller</code> (ou simplement <code>make</code>). L'exécution de <code>make dictionary</code> ne fonctionnera pas !</strong></p>
+<h2>Spécifications</h2>
+<p>Bon, le défi qui vous est désormais proposé est d'implémenter, dans l'ordre, <code>load</code>, <code>hash</code>, <code>size</code>, <code>check</code> et <code>unload</code> aussi efficacement que possible en utilisant une table de hachage, de telle sorte que <code>TIME IN load</code>, <code>TIME IN check</code>, <code>TIME IN size</code> et <code>TIME IN unload</code> soient tous minimisés. À vrai dire, la notion même de minimisation n'est pas évidente, dans la mesure où ces indicateurs varieront sans doute en fonction des valeurs de <code>dictionary</code> et <code>text</code> fournies à <code>speller</code>. Mais c'est là que réside le défi, voire le plaisir, de ce problème. Ce problème est votre chance de concevoir. Bien que nous vous invitions à minimiser l'espace, votre pire ennemi reste le temps. Mais avant de vous lancer, voici quelques spécifications de notre part.</p>
+<ul>
+<li>Vous n'êtes pas autorisé à modifier <code>speller.c</code> ou <code>Makefile</code>.</li>
+<li>Vous êtes autorisé à modifier <code>dictionary.c</code> (et devez d'ailleurs le faire pour compléter les implémentations de <code>load</code>, <code>hash</code>, <code>size</code>, <code>check</code> et <code>unload</code>), mais vous n'êtes pas autorisé à modifier les déclarations (c'est-à-dire les prototypes) de <code>load</code>, <code>hash</code>, <code>size</code>, <code>check</code> ou <code>unload</code>. Vous pouvez cependant ajouter de nouvelles fonctions et variables (locales ou globales) à <code>dictionary.c</code>.</li>
+<li>Vous pouvez modifier la valeur de <code>N</code> dans <code>dictionary.c</code> pour que votre table de hachage puisse avoir plus de compartiments.</li>
+<li>Vous pouvez modifier <code>dictionary.h</code>, mais vous n'êtes pas autorisé à modifier les déclarations de <code>load</code>, <code>hash</code>, <code>size</code>, <code>check</code> ou <code>unload</code>.</li>
+<li>Votre implémentation de <code>check</code> doit être insensible à la casse. En d'autres termes, si <code>foo</code> se trouve dans le dictionnaire, alors <code>check</code> doit renvoyer « vrai » pour n'importe quelle capitalisation de ce terme ; aucun des termes <code>foo</code>, <code>foO</code>, <code>fOo</code>, <code>fOO</code>, <code>fOO</code>, <code>Foo</code>, <code>FoO</code>, <code>FOo</code> et <code>FOO</code> ne doit être considéré comme mal orthographié.</li>
+<li>La capitalisation mise à part, votre implémentation de <code>check</code> ne doit renvoyer « vrai » que pour les mots réellement présents dans <code>dictionary</code>. Méfiez-vous du hard-coding de mots courants (par exemple, « the »), de peur que nous transmettions à votre implémentation un <code>dictionary</code> dépourvu de ces mêmes mots. De plus, les seuls possessifs autorisés sont ceux qui se trouvent réellement dans <code>dictionary</code>. En d'autres termes, même si <code>foo</code> se trouve dans <code>dictionary</code>, <code>check</code> doit renvoyer « faux » pour <code>foo's</code> si <code>foo's</code> ne se trouve pas également dans <code>dictionary</code>.</li>
+<li>Vous pouvez supposer que tout <code>dictionary</code> transmis à votre programme sera structuré exactement comme le nôtre, trié alphabétiquement de haut en bas avec un mot par ligne, chacun se terminant par <code>\n</code>. Vous pouvez également supposer que <code>dictionary</code> contiendra au moins un mot, qu'aucun mot ne dépassera <code>LENGTH</code> (une constante définie dans <code>dictionary.h</code>) caractères, qu'aucun mot n'apparaîtra plus d'une fois, que chaque mot ne contiendra que des caractères alphabétiques minuscules et éventuellement des apostrophes, et qu'aucun mot ne commencera par une apostrophe.</li>
+<li>Vous pouvez supposer que <code>check</code> ne recevra que des mots qui contiennent des caractères alphabétiques (minuscules ou majuscules) et éventuellement des apostrophes.</li>
+<li>Votre correcteur orthographique ne peut prendre que <code>text</code> et, éventuellement, <code>dictionary</code> comme entrée. Bien que vous puissiez être tenté (en particulier si vous êtes parmi les plus à l'aise) de « prétraiter » notre dictionnaire par défaut afin d'en déduire une « fonction de hachage idéale », vous ne pouvez pas enregistrer la sortie d'un tel prétraitement sur le disque afin de la recharger en mémoire lors des exécutions ultérieures de votre correcteur orthographique dans le but d'obtenir un avantage.</li>
+<li>Votre correcteur orthographique ne doit pas laisser de fuite de mémoire. Assurez-vous de vérifier l'absence de fuite avec <code>valgrind</code>.</li>
+<li><strong>La fonction de hachage que vous écrivez doit être en fin de compte la vôtre, et non une fonction que vous recherchez en ligne.</strong></li>
+</ul>
+<p>Prêt à vous lancer ?</p>
+<ul>
+<li>Implémentez <code>load</code>.</li>
+<li>Implémentez <code>hash</code>.</li>
+<li>Implémentez <code>size</code>.</li>
+<li>Implémentez <code>check</code>.</li>
+<li>Implémentez <code>unload</code>.</li>
+</ul>
+<h2>Astuces</h2>
+<h3>Implémenter <code>load</code></h3>
+<p>Complétez la fonction <code>load</code>. <code>load</code> doit charger le dictionnaire en mémoire (en particulier, dans une table de hachage !). <code>load</code> doit renvoyer « vrai » en cas de succès et « faux » dans le cas contraire.</p>
+<p>Considérez que ce problème est simplement composé de problèmes plus petits :</p>
+<ol>
+<li>Ouvrir le fichier dictionnaire</li>
+<li>Lire chaque mot dans le fichier
+    1.  Ajouter chaque mot à la table de hachage</li>
+<li>Fermer le fichier dictionnaire</li>
+</ol>
+<p>Écrivez un peu de pseudo-code pour vous rappeler de faire exactement ça :</p>
+<pre><code>  bool load(const char *dictionary)
+  {
+      // Ouvrir le fichier dictionnaire
+
+      // Lire chaque mot dans le fichier
+
+          // Ajouter chaque mot à la table de hachage
+
+      // Fermer le fichier dictionnaire
+  }
+</code></pre>
+<p>Réfléchissez d'abord à la façon d'ouvrir le fichier dictionnaire. <a href="https://manual.cs50.io/3/fopen"><code>fopen</code></a> est un choix naturel. Vous pouvez utiliser le mode <code>r</code>, étant donné que vous n'avez besoin que de <em>lire</em> des mots dans le fichier dictionnaire (pas de les <em>écrire</em> ou de les <em>ajouter</em>).</p>
+<pre><code>  bool load(const char *dictionary)
+  {
+      // Ouvrir le fichier dictionnaire
+      FILE *source = fopen(dictionary, "r");
+
+      // Lire chaque mot dans le fichier
+
+          // Ajouter chaque mot à la table de hachage
+
+      // Fermer le fichier dictionnaire
+  }
+</code></pre>
+<p>Avant de poursuivre, vous devez écrire du code pour vérifier si le fichier s'est ouvert correctement. C'est à vous de décider ! Il est également préférable de s'assurer de fermer tous les fichiers que vous ouvrez, c'est donc le bon moment pour écrire le code pour fermer le fichier dictionnaire :</p>
+<pre><code>  bool load(const char *dictionary)
+  {
+      // Ouvrir le fichier dictionnaire
+      FILE *source = fopen(dictionary, "r");
+
+      // Lire chaque mot dans le fichier
+
+          // Ajouter chaque mot à la table de hachage
+
+      // Fermer le fichier dictionnaire
+      fclose(source);
+  }
+</code></pre>
+<p>Il reste à lire chaque mot dans le fichier et à ajouter chaque mot à la table de hachage. Renvoyez « vrai » lorsque l'opération entière est réussie et « faux » si elle échoue un jour. Envisagez de suivre la procédure pas à pas de ce problème et continuez à décomposer les sous-problèmes en problèmes encore plus petits. Par exemple, ajouter chaque mot à la table de hachage peut simplement consister à implémenter quelques étapes encore plus petites :</p>
+<ol>
+<li>Créer un espace pour un nouveau nœud de table de hachage</li>
+<li>Copier le mot dans le nouveau nœud</li>
+<li>Hacher le mot pour obtenir sa valeur de hachage</li>
+<li>Insérer le nouveau nœud dans la table de hachage (en utilisant l'index spécifié par sa valeur de hachage)</li>
+</ol>
+<p>Bien entendu, il existe plusieurs façons d'aborder ce problème, chacune présentant ses propres compromis de conception. Pour cette raison, le reste du code dépend de vous !</p>
+<h3>Implémenter <code>hash</code></h3>
+<p>Complétez la fonction <code>hash</code>. <code>hash</code> doit prendre une chaîne de caractères, <code>word</code>, en entrée et renvoyer un <code>int</code> « non signé » positif.</p>
+<p>La fonction de hachage qui vous est fournie renvoie un <code>int</code> compris entre 0 et 25, inclus, basé sur le premier caractère de <code>word</code>. Cependant, il existe de nombreuses façons d'implémenter une fonction de hachage au-delà de l'utilisation du premier caractère (ou des <em>caractères</em>) d'un mot. Envisagez une fonction de hachage qui utilise une somme de valeurs ASCII ou la longueur d'un mot. Une bonne fonction de hachage réduit les « collisions » et a une distribution (principalement !) uniforme dans les « compartiments » de la table de hachage.</p>
+<h3>Implémenter <code>size</code></h3>
+<p>Complétez la fonction <code>size</code>. <code>size</code> doit retourner le nombre de mots chargés dans le dictionnaire. Envisagez deux approches pour résoudre ce problème :</p>
+<ul>
+<li>Comptez chaque mot lorsque vous le chargez dans le dictionnaire. Renvoyez ce décompte lorsque <code>size</code> est appelée.</li>
+<li>Chaque fois que <code>size</code> est appelée, parcourez les mots de la table de hachage pour les compter. Renvoyez ce décompte.</li>
+</ul>
+<p>Laquelle vous semble la plus efficace ? Quelle que soit votre préférence, nous vous laissons choisir le code.</p>
+<h3>Implémenter <code>check</code></h3>
+<p>Complétez la fonction <code>check</code>. <code>check</code> doit renvoyer <code>true</code> si un mot se trouve dans le dictionnaire, et <code>false</code> dans le cas contraire.</p>
+<p>Considérez que ce problème est également composé de problèmes plus petits. Si vous avez implémenté une table de hachage, trouver un mot ne nécessite que quelques étapes :</p>
+<ol>
+<li>Hachez le mot pour obtenir sa valeur de hachage</li>
+<li>Recherchez le mot dans la table de hachage à l’emplacement spécifié par sa valeur de hachage
+    1.  Renvoyez <code>true</code> si le mot est trouvé</li>
+<li>Renvoyez <code>false</code> si aucun mot n’est trouvé</li>
+</ol>
+<p>Pour comparer des chaînes de caractères de façon insensible à la casse, vous trouverez peut-être <a href="https://man.cs50.io/3/strcasecmp"><code>strcasecmp</code></a> (déclarée dans <code>strings.h</code>) utile ! Vous voudrez probablement aussi vous assurer que votre fonction de hachage est insensible à la casse, de sorte que <code>foo</code> et <code>FOO</code> aient la même valeur de hachage.</p>
+<h3>Implémenter <code>unload</code></h3>
+<p>Complétez la fonction <code>unload</code>. Assurez-vous de <code>free</code> dans <code>unload</code> toute mémoire que vous avez allouée dans <code>load</code> !</p>
+<p>N'oubliez pas que <code>valgrind</code> est votre nouvel ami. Sachez que <code>valgrind</code> surveille les fuites pendant l’exécution de votre programme, alors assurez-vous de fournir des arguments de ligne de commande si vous souhaitez que <code>valgrind</code> analyse <code>speller</code> lorsque vous utilisez un <code>dictionnaire</code> et/ou un texte en particulier, comme dans l’exemple ci-dessous. Il est préférable d’utiliser un petit texte, sinon l’exécution de <code>valgrind</code> pourrait prendre un certain temps.</p>
+<pre><code>  valgrind ./speller texts/cat.txt
+</code></pre>
+<p>Si vous exécutez <code>valgrind</code> sans spécifier de <code>texte</code> pour <code>speller</code>, les implémentations de <code>load</code> et <code>unload</code> ne seront pas appelées (et donc analysées).</p>
+<p>Si vous n’êtes pas sûr de comment interpréter la sortie de <code>valgrind</code>, demandez simplement de l’aide à <code>help50</code> :</p>
+<pre><code>  help50 valgrind ./speller texts/cat.txt
+</code></pre>
+<h2>Procédure pas à pas</h2>
+<div class="alert alert-danger" data-alert="danger" role="alert"><p><strong>Notez qu’il y a 6 vidéos dans cette playlist.</strong></p></div>
+
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/_z57x5PGF4w?modestbranding=0&amp;rel=0&amp;showinfo=1&amp;list=PLhQjrBD2T382T4b6jjwX_qbU23E_Unwcz"></iframe></div>
+
+<h2>Comment tester</h2>
+<p>Comment vérifier si votre programme affiche les bons mots mal orthographiés ? Eh bien, vous pouvez consulter les « clés de réponse » qui se trouvent dans le répertoire <code>keys</code> de votre répertoire <code>speller</code>. Par exemple, dans <code>keys/lalaland.txt</code> se trouvent tous les mots que votre programme <em>devrait</em> penser mal orthographiés.</p>
+<p>Vous pouvez donc exécuter votre programme sur un texte dans une fenêtre, comme ci-dessous.</p>
+<pre><code>  ./speller texts/lalaland.txt
+</code></pre>
+<p>Et vous pouvez ensuite exécuter la solution de l’équipe dans une autre fenêtre, comme ci-dessous.</p>
+<pre><code>  ./speller50 texts/lalaland.txt
+</code></pre>
+<p>Et vous pouvez ensuite comparer visuellement les fenêtres côte à côte. Cela peut cependant vite devenir fastidieux. Vous pouvez donc plutôt « rediriger » la sortie de votre programme vers un fichier, comme ci-dessous.</p>
+<pre><code>  ./speller texts/lalaland.txt &gt; student.txt
+  ./speller50 texts/lalaland.txt &gt; staff.txt
+</code></pre>
+<p>Vous pouvez ensuite comparer les deux fichiers côte à côte dans la même fenêtre avec un programme comme <code>diff</code>, comme ci-dessous.</p>
+<pre><code>  diff -y student.txt staff.txt
+</code></pre>
+<p>Vous pouvez également, pour gagner du temps, comparer la sortie de votre programme (en supposant que vous l’ayez redirigée vers, par exemple, <code>student.txt</code>) avec l’une des clés de réponse sans exécuter la solution de l’équipe, comme ci-dessous.</p>
+<pre><code>  diff -y student.txt keys/lalaland.txt
+</code></pre>
+<p>Si la sortie de votre programme correspond à celle de l’équipe, <code>diff</code> affichera deux colonnes qui devraient être identiques, à l’exception peut-être des temps d’exécution en bas. Si les colonnes diffèrent, vous verrez un <code>&gt;</code> ou <code>|</code> à l’endroit de la différence. Par exemple, si vous voyez</p>
+<pre><code>  MISSPELLED WORDS                                                MISSPELLED WORDS
+
+  TECHNO                                                          TECHNO
+  L                                                               L
+                                                                &gt; Thelonious
+  Prius                                                           Prius
+                                                                &gt; MIA
+  L                                                               L
+</code></pre>
+<p>cela signifie que votre programme (dont la sortie est à gauche) ne pense pas que <code>Thelonious</code> ou <code>MIA</code> est mal orthographié, alors que la sortie de l’équipe (à droite) le pense, comme en témoigne l’absence de <code>Thelonious</code> dans la colonne de gauche et la présence de <code>Thelonious</code> dans la colonne de droite.</p>
+<p>Enfin, assurez-vous de tester avec les grands et les petits dictionnaires par défaut. Faites attention à ne pas supposer que si votre solution fonctionne avec le grand dictionnaire, elle fonctionnera aussi avec le petit. Voici comment essayer le petit dictionnaire :</p>
+<pre><code>  ./speller dictionaries/small texts/cat.txt
+</code></pre>
+<h3>Exactitude</h3>
+<pre><code>  check50 cs50/problems/2024/x/speller
+</code></pre>
+<h3>Style</h3>
+<pre><code>  style50 dictionary.c
+</code></pre>
+<h2>Solution de l’équipe</h2>
+<p>Comment évaluer à quel point votre code est rapide (et correct) ? Eh bien, comme toujours, n’hésitez pas à utiliser la solution de l’équipe, comme ci-dessous, et comparez ses chiffres aux vôtres.</p>
+<pre><code>  ./speller50 texts/lalaland.txt
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/speller
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

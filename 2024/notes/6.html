@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Leçon 6</h1>
+<ul>
+<li><a href="#python-basics">Les bases de Python</a></li>
+<li><a href="#examples">Exemples</a></li>
+<li><a href="#more-features">Plus de fonctionnalités</a></li>
+<li><a href="#files">Les fichiers</a></li>
+<li><a href="#new-features">Nouvelles fonctionnalités</a></li>
+</ul>
+<h2>Les bases de Python</h2>
+<ul>
+<li>Aujourd'hui, nous allons apprendre un nouveau langage de programmation appelé Python. Gardez à l'esprit que l'un des objectifs généraux du cours n'est pas d'apprendre des langages particuliers, mais comment programmer en général.</li>
+<li>
+<p>Le code Python semble beaucoup plus simple que le C, mais il est capable de résoudre des problèmes dans des domaines comme la science des données. En fait, pour afficher "bonjour le monde", il suffit d'écrire :</p>
+<pre><code>  print("bonjour, le monde")
+</code></pre>
+<ul>
+<li>Notez que, contrairement au C, nous n'avons pas besoin d'importer une bibliothèque standard, de déclarer une fonction <code>main</code>, de spécifier un saut de ligne dans la fonction <code>print</code> ou d'utiliser des points-virgules.</li>
+</ul>
+</li>
+<li>
+<p>Python est un langage interprété, ce qui signifie que nous exécutons en fait un autre programme (un interpréteur) qui lit notre code source et l'exécute de haut en bas. Par exemple, nous pouvons enregistrer le code ci-dessus sous la forme <code>hello.py</code> et exécuter la commande <code>python hello.py</code> pour exécuter notre code, sans avoir à le compiler.</p>
+</li>
+<li>
+<p>Nous pouvons obtenir des chaînes d'un utilisateur :</p>
+<pre><code>  answer = get_string("Quel est votre nom ?\n")
+  print("bonjour, " + answer)
+</code></pre>
+<ul>
+<li>Nous créons une variable appelée <code>answer</code>, sans spécifier le type (l'interpréteur le détermine à partir du contexte pour nous), et nous pouvons facilement combiner deux chaînes avec l'opérateur <code>+</code> avant de la passer à <code>print</code>.</li>
+<li>Nous pouvons également transmettre plusieurs arguments à <code>print</code>, avec <code>print("bonjour,", answer)</code>, et il les joindra automatiquement avec des espaces pour nous aussi.</li>
+<li><code>print</code> accepte également les chaînes de format telles que <code>f"bonjour, {answer}"</code>, qui substituent les variables entre accolades dans une chaîne.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons créer des variables avec juste <code>counter = 0</code>. Pour incrémenter une variable, nous pouvons utiliser <code>counter = counter + 1</code> ou <code>counter += 1</code>.</p>
+</li>
+<li>
+<p>Les conditions ressemblent à :</p>
+<pre><code>  if x &lt; y:
+      print("x est inférieur à y")
+  elif x &gt; y:
+      print("x est supérieur à y")
+  else:
+      print("x est égal à y")
+</code></pre>
+<ul>
+<li>Contrairement au C et au JavaScript (où les accolades <code>{``}</code> sont utilisées pour indiquer des blocs de code), l'indentation exacte de chaque ligne est ce qui détermine le niveau d'imbrication en Python.</li>
+<li>Et au lieu de <code>else if</code>, nous disons simplement <code>elif</code>.</li>
+</ul>
+</li>
+<li>
+<p>Les expressions booléennes sont également légèrement différentes :</p>
+<pre><code>  while True:
+      print("bonjour, le monde")
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons écrire une boucle avec une variable :</p>
+<pre><code>  i = 3
+  while i &gt; 0:
+      print("tousse")
+      i -= 1
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons également utiliser une boucle <code>for</code>, où nous pouvons faire quelque chose pour chaque élément d'une liste :</p>
+<pre><code>  for i in [0, 1, 2]:
+      print("tousse")
+</code></pre>
+<ul>
+<li>Les listes en Python sont comme les tableaux en C, mais elles peuvent facilement grandir et rétrécir, l'interpréteur gérant pour nous l'implémentation et la mémoire.</li>
+<li>Cette boucle <code>for</code> définira la variable <code>i</code> sur le premier élément, <code>0</code>, s'exécutera, puis sur le deuxième élément, <code>1</code>, s'exécutera, etc.</li>
+<li>Et nous pouvons utiliser une fonction spéciale, <code>range</code>, pour obtenir un certain nombre de valeurs, comme dans <code>for i in range(3)</code>. Cela nous donnera 0, 1 et 2, pour un total de trois valeurs.</li>
+</ul>
+</li>
+<li>
+<p>En Python, il existe de nombreux types de données :</p>
+<ul>
+<li><code>bool</code>, <code>True</code> ou <code>False</code></li>
+<li><code>float</code>, nombres réels</li>
+<li><code>int</code>, des entiers</li>
+<li><code>str</code>, des chaînes</li>
+<li><code>range</code>, une séquence de nombres</li>
+<li><code>list</code>, une séquence de valeurs modifiables, que nous pouvons modifier, ajouter ou supprimer</li>
+<li><code>tuple</code>, une séquence de valeurs immuables, que nous ne pouvons pas modifier</li>
+<li><code>dict</code>, une collection de paires clé/valeur, comme une table de hachage</li>
+<li><code>set</code>, une collection de valeurs uniques</li>
+</ul>
+</li>
+<li><a href="https://docs.python.org">docs.python.org</a> est la source officielle de documentation, mais Google et StackOverflow disposeront également de ressources utiles lorsque nous aurons besoin de savoir comment faire quelque chose en Python. En fait, les programmeurs dans le monde réel connaissent rarement tout ce qui est dans la documentation, mais plutôt comment trouver ce dont ils ont besoin quand ils en ont besoin.</li>
+</ul>
+<h2>Exemples</h2>
+<ul>
+<li>
+<p>On peut flouter une image avec :</p>
+<pre><code>  from PIL import Image, ImageFilter
+
+  before = Image.open("pont.bmp")
+  after = before.filter(ImageFilter.BLUR)
+  after.save("out.bmp")
+</code></pre>
+<ul>
+<li>En Python, on inclut d’autres bibliothèques avec <code>import</code>, et ici on va <code>import</code> les noms <code>Image</code> et <code>ImageFilter</code> depuis la bibliothèque <code>PIL</code>.</li>
+<li>En fait, si on cherche la documentation pour la bibliothèque <code>PIL</code>, on peut utiliser les trois lignes de code suivantes pour ouvrir une image appelée <code>pont.bmp</code>, appliquer un filtre de flou dessus et l’enregistrer dans un fichier appelé <code>out.bmp</code>.</li>
+<li>Et on peut exécuter ça avec <code>python flou.py</code> après avoir enregistré dans un fichier appelé <code>flou.py</code>.</li>
+</ul>
+</li>
+<li>
+<p>On peut implémenter un dictionnaire avec :</p>
+<pre><code>  mots = set()
+
+  def vérifier(mot):
+      if mot.lower() in mots:
+          return True
+      else:
+          return False
+
+  def charger(dictionnaire):
+      fichier = open(dictionnaire, "r")
+      pour chaque ligne dans fichier:
+          mots.add(ligne.rstrip("\n"))
+      fichier.close()
+      return True
+
+  def taille():
+      return len(mots)
+
+  def décharger():
+      return True
+</code></pre>
+<ul>
+<li>D’abord, on crée un nouvel ensemble nommé <code>mots</code>. Ensuite, pour <code>vérifier</code>, on peut juste demander <code>if mot.lower() in mots</code>. Pour <code>charger</code>, on ouvre le fichier et on utilise <code>mots.add</code> pour ajouter chaque ligne à notre ensemble. Pour <code>taille</code>, on peut utiliser <code>len</code> pour compter le nombre d’éléments dans notre ensemble, et enfin, pour <code>décharger</code>, on n’a rien à faire !</li>
+</ul>
+</li>
+<li>
+<p>Il s'avère que, même si l'implémentation d'un programme en Python est plus simple pour nous, le temps d'exécution de notre programme en Python est plus lent que notre programme en C puisque notre interpréteur doit faire plus de travail pour nous. Donc, en fonction de nos objectifs, nous devrons également prendre en compte le compromis du temps humain d'écriture d'un programme plus efficace, par rapport au temps d'exécution du programme.</p>
+</li>
+<li>
+<p>En Python, nous pouvons aussi inclure la bibliothèque CS50, mais notre syntaxe sera :</p>
+<pre><code>  from cs50 import get_string
+</code></pre>
+<ul>
+<li>Notez que nous spécifions les fonctions que nous voulons utiliser.</li>
+</ul>
+</li>
+<li>
+<p>Maintenant, nous pouvons obtenir des chaînes d'un utilisateur :</p>
+<pre><code>  from cs50 import get_string
+
+  s = get_string("Comment vous appelez-vous ? :\n")
+  print("bonjour, " + s)
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons aussi substituer des expressions dans nos chaînes de format :</p>
+<pre><code>  from cs50 import get_int
+
+  age = get_int("Quel âge avez-vous ?\n")
+  print(f"Vous avez au moins {age * 365} jours.")
+</code></pre>
+</li>
+<li>
+<p>Et nous pouvons montrer des conditions :</p>
+<pre><code>  from cs50 import get_int
+
+  x = get_int("x : ")
+  y = get_int("y : ")
+
+  if x &lt; y:
+      print("x est inférieur à y")
+  elif x &gt; y:
+      print("x est supérieur à y")
+  else:
+      print("x est égal à y")
+</code></pre>
+</li>
+<li>
+<p>Pour vérifier des conditions, nous pouvons dire :</p>
+<pre><code>  from cs50 import get_string
+
+  s = get_string("Êtes-vous d'accord ?\n")
+
+  if s == "O" ou s == "o":
+      print("D'accord.")
+  elif s == "N" ou s == "n":
+      print("Pas d'accord.")
+</code></pre>
+<ul>
+<li>Python n'a pas de caractères, donc nous pouvons les vérifier directement en tant que chaînes.</li>
+<li>Nous pouvons également dire <code>if s in ["O", "o"]:</code>, ou <code>if s.lower() in ["o"]:</code>. Il s'avère que les chaînes en Python sont comme des structs en C, où nous avons non seulement des variables mais aussi des fonctions que nous pouvons appeler. Par exemple, étant donné une chaîne <code>s</code>, nous pouvons appeler sa fonction <code>lower</code> avec <code>s.lower()</code> pour obtenir la version minuscule de la chaîne.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons également améliorer les versions de <code>cough</code> :</p>
+<pre><code>  print("cough")
+  print("cough")
+  print("cough")
+</code></pre>
+<ul>
+<li>Nous n'avons pas besoin de déclarer une fonction <code>main</code>, nous écrivons donc simplement la même ligne de code trois fois.</li>
+</ul>
+</li>
+<li>
+<p>Mais nous pouvons faire mieux :</p>
+<pre><code>  for i in range(3):
+      cough()
+
+  def cough():
+      print("cough")
+</code></pre>
+<ul>
+<li>Notez que nous n'avons pas besoin de spécifier le type de retour d'une nouvelle fonction, que nous pouvons définir avec <code>def</code>.</li>
+<li>
+<p>Mais cela provoque une erreur lorsque nous essayons de l'exécuter : <code>NameError : le nom 'cough' n'est pas défini</code>. Il s'avère que nous devons définir notre fonction avant de l'utiliser, nous pouvons donc soit déplacer notre définition de <code>cough</code> vers le haut, soit créer une fonction main :</p>
+<pre><code>  def main():
+      for i in range(3):
+          cough()
+
+  def cough():
+      print("cough")
+
+  main()
+</code></pre>
+</li>
+<li>
+<p>Désormais, au moment où nous appelons notre fonction <code>main</code>, la fonction <code>cough</code> aura été lue par notre interprète.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Nos fonctions peuvent également prendre des entrées :</p>
+<pre><code>  def main ():
+      cough(3)
+
+  def cough(n ):
+      for i in range(n ):
+          print("toux")
+
+  main()
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons définir une fonction pour obtenir un entier positif :</p>
+<pre><code>  from cs50 import get_int
+
+  def main ():
+      i = get_positive_int()
+      print(i)
+
+  def get_positive_int ():
+      while True :
+          n = get_int("Entier positif : ")
+          if n &gt; 0 :
+              break
+      return n
+
+  main()
+</code></pre>
+</li>
+<li>
+<p>Comme il n’y a pas de boucle do-while en Python comme en C, on utilise une boucle <code>while</code> qui continue à l’infini et on utilise <code>break</code> pour quitter la boucle dès que <code>n &gt; 0</code>. Ensuite, notre fonction retourne simplement <code>n</code>.</p>
+</li>
+<li>
+<p>Remarquez que les variables en Python ont une portée de fonction par défaut, ce qui signifie que <code>n</code> peut être initialisé dans une boucle et toujours accessible plus tard dans la fonction.</p>
+</li>
+<li>
+<p>Nous pouvons afficher une ligne de points d’interrogation à l’écran :</p>
+<pre><code>  for i in range(4 ):
+      print("?", end="")
+  print()
+</code></pre>
+</li>
+<li>
+<p>Lorsque nous imprimons chaque bloc, nous ne voulons pas de nouvelle ligne automatique. Nous pouvons donc passer un paramètre ou un argument nommé à la fonction <code>print</code>. Ici, nous disons <code>end=""</code> pour spécifier que rien ne doit être imprimé à la fin de notre chaîne. Ensuite, après avoir imprimé notre ligne, nous pouvons appeler <code>print</code> pour obtenir une nouvelle ligne.</p>
+</li>
+<li>
+<p>Nous pouvons également « multiplier » une chaîne de caractères et l'afficher directement avec : <code>print("?" * 4)</code>.</p>
+</li>
+<li>
+<p>Nous pouvons afficher une colonne avec une boucle :</p>
+<pre><code>  for i in range(3):
+      print("#")
+</code></pre>
+</li>
+<li>
+<p>Et sans boucle : <code>print("#\n" * 3, end="")</code>.</p>
+</li>
+<li>
+<p>Nous pouvons implémenter des boucles imbriquées :</p>
+<pre><code>  for i in range(3):
+      for j in range(3):
+          print("#", end="")
+      print()
+</code></pre>
+</li>
+<li>
+<p>Nous n'avons pas besoin d'utiliser la fonction <code>get_string</code> de la bibliothèque CS50 ; nous pouvons simplement utiliser la fonction <code>input</code> intégrée à Python pour obtenir une chaîne de caractères de l'utilisateur. Mais si nous voulons obtenir un autre type de donnée, comme un entier, de l'utilisateur, nous devrons le « caster » avec <code>int()</code>.</p>
+</li>
+<li>Mais notre programme plantera si la chaîne de caractères ne peut pas être convertie en un entier ; nous pouvons donc utiliser <code>get_string</code> qui redemandera simplement la saisie.</li>
+<li>
+<p>En Python, essayer de dépasser la capacité d'un entier ne fonctionnera pas :</p>
+<pre><code>  from time import sleep
+
+  i = 1
+  while True:
+      print(i)
+      sleep(1)
+      i *= 2
+</code></pre>
+<ul>
+<li>Nous appelons la fonction <code>sleep</code> pour mettre notre programme en pause pendant une seconde entre chaque itération.</li>
+<li>Cela continuera jusqu'à ce que l'entier ne puisse plus tenir dans la mémoire de votre ordinateur.</li>
+</ul>
+</li>
+<li>
+<p>L'imprécision en virgule flottante peut également être évitée grâce à des bibliothèques qui peuvent représenter des nombres décimaux avec autant de bits que nécessaire.</p>
+</li>
+<li>
+<p>Nous pouvons créer une liste :</p>
+<pre><code>  scores = []
+  scores.append(72)
+  scores.append(73)
+  scores.append(33)
+
+  print(f"Moyenne : {sum(scores) / len(scores)}")
+</code></pre>
+<ul>
+<li>Avec <code>append</code>, nous pouvons ajouter des éléments à notre liste en l'utilisant comme une liste chaînée.</li>
+<li>Nous pouvons également déclarer une liste avec certaines valeurs, comme <code>scores = [72, 73, 33]</code>.</li>
+</ul>
+</li>
+<li>
+<p>Nous pouvons itérer sur chaque caractère d'une chaîne de caractères :</p>
+<pre><code>  from cs50 import get_string
+
+  s = get_string("Entrée : ")
+  print("Sortie : ", end="")
+  for c in s:
+      print(c, end="")
+  print()
+</code></pre>
+<ul>
+<li>Python obtiendra chaque caractère de la chaîne pour nous.</li>
+</ul>
+</li>
+<li>
+<p>Pour mettre une chaîne de caractères en majuscules, nous pouvons également simplement appeler <code>s.upper()</code> pour obtenir la version en majuscules de la chaîne entière, sans avoir à itérer nous-mêmes sur chaque caractère.</p>
+</li>
+</ul>
+<h2>Plus de fonctionnalités</h2>
+<ul>
+<li>
+<p>On peut prendre des arguments de ligne de commande avec :</p>
+<pre><code>  from sys import argv
+
+  for i in range(len(argv)):
+      print(argv[i])
+</code></pre>
+<ul>
+<li>Puisque <code>argv</code> est une liste de chaînes de caractères, on peut utiliser <code>len()</code> pour obtenir sa longueur, et <code>range()</code> pour obtenir une plage de valeurs que l'on peut utiliser comme index pour chaque élément de la liste.</li>
+</ul>
+</li>
+<li>
+<p>Mais on peut aussi laisser Python itérer sur la liste pour nous :</p>
+<pre><code>  from sys import argv
+
+  for arg in argv:
+      print(arg)
+</code></pre>
+</li>
+<li>
+<p>On peut aussi retourner des codes de sortie lorsque notre programme se termine :</p>
+<pre><code>  from sys import argv, exit
+
+  if len(argv) != 2:
+      print("argument de ligne de commande manquant")
+      exit(1)
+  print(f"bonjour, {argv[1]}")
+  exit(0)
+</code></pre>
+<ul>
+<li>On importe la fonction <code>exit</code>, et on l'appelle avec le code avec lequel on souhaite que le programme se termine.</li>
+</ul>
+</li>
+<li>
+<p>On peut implémenter une recherche linéaire en vérifiant simplement chaque élément d'une liste :</p>
+<pre><code>  import sys
+
+  names = ["EMMA", "RODRIGO", "BRIAN", "DAVID"]
+
+  if "EMMA" in names:
+      print("Trouvé")
+      sys.exit(0)
+  print("Non trouvé")
+  sys.exit(1)
+</code></pre>
+</li>
+<li>
+<p>Si nous avons un dictionnaire, un ensemble de paires clé:valeur, nous pouvons également vérifier chaque clé :</p>
+<pre><code>  import sys
+
+  people = {
+      "EMMA": "617-555-0100",
+      "RODRIGO": "617-555-0101",
+      "BRIAN": "617-555-0102",
+      "DAVID": "617-555-0103"
+  }
+
+  if "EMMA" in people:
+      print(f"Trouvé {people['EMMA']}")
+      sys.exit(0)
+  print("Introuvable")
+  sys.exit(1)
+</code></pre>
+<ul>
+<li>Notez que nous pouvons obtenir la valeur d'une clé particulière dans un dictionnaire avec <code>people['EMMA']</code>. Ici, nous utilisons des guillemets simples (les guillemets simples et doubles sont autorisés, tant qu'ils correspondent à une chaîne) pour différencier la chaîne interne de la chaîne externe.</li>
+<li>Et nous déclarons des dictionnaires avec des accolades, <code>{}</code>, et des listes avec des crochets <code>[]</code>.</li>
+</ul>
+</li>
+<li>
+<p>En Python, nous pouvons comparer des chaînes directement avec juste <code>==</code> :</p>
+<pre><code>  from cs50 import get_string
+
+  s = get_string("s: ")
+  t = get_string("t: ")
+
+  if s == t:
+      print("Identique")
+  else:
+      print("Différent")
+</code></pre>
+</li>
+<li>
+<p>Copier des chaînes fonctionne aussi sans aucun travail supplémentaire de notre part :</p>
+<pre><code>  from cs50 import get_string
+
+  s = get_string("s: ")
+
+  t = s
+
+  t = t.capitalize()
+
+  print(f"s: {s}")
+  print(f"t: {t}")
+</code></pre>
+</li>
+<li>
+<p>L'échange de deux variables peut également se faire en attribuant les deux valeurs en même temps :</p>
+<pre><code>  x = 1
+  y = 2
+
+  print(f"x vaut {x}, y vaut {y}")
+  x, y = y, x
+  print(f"x vaut {x}, y vaut {y}")
+</code></pre>
+</li>
+</ul>
+<h2>Fichiers</h2>
+<ul>
+<li>
+<p>Ouvrons un fichier CSV :</p>
+<pre><code>  import csv
+  from cs50 import get_string
+
+  file = open("phonebook.csv", "a")
+
+  name = get_string("Nom : ")
+  number = get_string("Numéro : ")
+
+  writer = csv.writer(file)
+  writer.writerow((name, number))
+
+  file.close()
+</code></pre>
+</li>
+<li>
+<p>Il s'avère que Python dispose également d'un package (bibliothèque) <code>csv</code> qui nous aide à travailler avec les fichiers CSV. Ainsi, après avoir ouvert le fichier pour l'ajout, nous pouvons appeler <code>csv.writer</code> pour créer un <code>writer</code> à partir du fichier, puis <code>writer.writerow</code> pour écrire une ligne. Avec les parenthèses internes, nous créons un tuple avec les valeurs que nous voulons écrire. Nous faisons donc passer un seul argument qui contient toutes les valeurs de notre ligne.</p>
+</li>
+<li>
+<p>Nous pouvons utiliser le mot-clé <code>with</code> qui fermera le fichier à notre place :</p>
+<pre><code>  ...
+  with open("phonebook.csv", "a") as file:
+      writer = csv.writer(file)
+      writer.writerow((name, number))
+</code></pre>
+</li>
+</ul>
+<h2>Nouvelles fonctionnalités</h2>
+<ul>
+<li>Une fonctionnalité de Python que C ne possède pas est celle des <strong>expressions régulières</strong>, ou motifs sur lesquels nous pouvons faire correspondre des chaînes. Par exemple, sa syntaxe comprend :<ul>
+<li><code>.</code>, pour n'importe quel caractère</li>
+<li><code>.*</code>, pour 0 caractère ou plus</li>
+<li><code>.+</code>, pour 1 caractère ou plus</li>
+<li><code>?</code>, pour une option</li>
+<li><code>^</code>, pour le début de la saisie</li>
+<li><code>$</code>, pour la fin de la saisie</li>
+</ul>
+</li>
+<li>
+<p>Par exemple, nous pouvons faire correspondre des chaînes avec :</p>
+<pre><code>  import re
+  from cs50 import get_string
+
+  s = get_string("Êtes-vous d'accord  ?\n")
+
+  if re.search("^y(es)?$", s, re.IGNORECASE):
+      print("D'accord.")
+  elif re.search("^no?$", s, re.IGNORECASE):
+      print("Pas d'accord.")
+</code></pre>
+<ul>
+<li>Tout d'abord, nous avons besoin du package, ou bibliothèque, <code>re</code> pour les expressions régulières.</li>
+<li>Ensuite, pour <code>y</code> ou <code>yes</code>, nous avons l'expression régulière <code>^y(es)?$</code>. Nous voulons nous assurer que la chaîne commence par <code>y</code> et qu'elle est éventuellement suivie par <code>es</code> juste après <code>y</code>, puis qu'elle se termine.</li>
+<li>De même, pour <code>n</code> et <code>no</code>, nous voulons que notre chaîne commence par la lettre <code>n</code>, qu'elle soit éventuellement suivie par la lettre <code>o</code>, puis qu'elle se termine. L'expression régulière pour cela serait <code>^no?$</code>.</li>
+<li>Nous transmettons un autre argument, <code>re.IGNORECASE</code>, pour ignorer les majuscules et minuscules dans la chaîne.</li>
+<li>Si aucune expression régulière ne correspond, nous n'imprimons rien.</li>
+</ul>
+</li>
+<li>
+<p>Sur notre propre Mac ou PC, nous pouvons ouvrir un terminal après l'installation de Python, et utiliser le micro pour convertir notre discours en texte :</p>
+<pre><code>  import speech_recognition
+
+  recognizer = speech_recognition.Recognizer()
+  with speech_recognition.Microphone() as source:
+      print("Dites quelque chose !")
+      audio = recognizer.listen(source)
+
+  print("Google Speech Recognition pense que vous avez dit :")
+  print(recognizer.recognize_google(audio))
+</code></pre>
+<ul>
+<li>Il s'avère qu'il existe une autre bibliothèque que nous pouvons télécharger, appelée <code>speech_recognition</code>, qui permet d'écouter l'audio et de le convertir en chaîne de caractères.</li>
+</ul>
+</li>
+<li>
+<p>Et maintenant, nous pouvons comparer l'audio pour imprimer autre chose :</p>
+<pre><code>  ...
+  words = recognizer.recognize_google(audio)
+
+  # Répondre au discours
+  if "hello" in words:
+      print("Hello to you too!")
+  elif "how are you" in words:
+      print("I am well, thanks!")
+  elif "goodbye" in words:
+      print("Goodbye to you too!")
+  else:
+      print("Huh?")
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons même utiliser des expressions régulières, pour comparer une partie d'une chaîne :</p>
+<pre><code>  ...
+  words = recognizer.recognize_google(audio)
+
+  matches = re.search("my name is (.*)", words)
+  if matches:
+      print(f"Hey, {matches[1]}.")
+  else:
+      print("Hey, you.")
+</code></pre>
+<ul>
+<li>Ici, nous pouvons obtenir tous les caractères après <code>my name is</code> avec <code>.*</code>, and les imprimer.</li>
+</ul>
+</li>
+<li>
+<p>Nous exécutons <a href="https://cdn.cs50.net/2019/fall/lectures/6/src6/6/faces/">detect.py et faces.py</a>, qui trouve chaque visage (ou même un visage spécifique) sur une photo.</p>
+</li>
+<li><a href="https://cdn.cs50.net/2019/fall/lectures/6/src6/6/qr/">qr.py</a> créera également un code QR vers une URL particulière.</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

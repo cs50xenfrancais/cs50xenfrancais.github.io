@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Honnêteté Académique</h1>
+<p>La philosophie de ce cours sur l'honnêteté académique peut se résumer comme suit : « soyez raisonnable ». Le cours reconnaît que les interactions avec les camarades de classe et les autres peuvent faciliter la maîtrise du contenu du cours. Cependant, il existe une limite entre demander l'aide d'une autre personne et soumettre le travail d'une autre personne. La <a href="#politique">politique</a> du cours caractérise les deux côtés de cette limite.</p>
+<details>
+    <summary>Regardez cette vidéo pour le contexte</summary>
+    <div class="ratio ratio-16x9" data-video="">
+            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/r0z-yIp1PnE?modestbranding=0&amp;rel=0&amp;showinfo=0" scrolling="no" id="iFrameResizer0" style="overflow: hidden;"></iframe>
+    </div>
+</details>
+
+<p>Ou <a href="https://cs50.ly/sigcse20-paper">lisez ce document</a> pour le contexte.</p>
+<h2>Politique</h2>
+<p>L'essentiel de tous les travaux que vous soumettez dans le cadre de ce cours doit être le vôtre. Sauf indication contraire, la collaboration sur les évaluations (par exemple, les devoirs, les laboratoires, les ensembles de problèmes, les projets, les questionnaires ou les tests) n'est pas autorisée, sauf dans la mesure où vous pouvez demander de l'aide à des camarades de classe et à d'autres personnes, tant que cette aide ne se réduit pas à faire faire votre travail par quelqu'un d'autre. En règle générale, lorsque vous demandez de l'aide, vous pouvez montrer votre travail à d'autres, mais vous ne pouvez pas voir le leur, tant que vous et eux respectez les autres contraintes de cette politique.</p>
+<p><strong>Clause de regret.</strong> Si vous commettez un acte qui n'est pas raisonnable, mais que vous le portez à l'attention des responsables du cours en envoyant un courriel à <a href="mailto:certificates@cs50.harvard.edu">certificates@cs50.harvard.edu</a> dans les 72 heures, le cours peut imposer des sanctions locales qui peuvent inclure une note insatisfaisante ou un échec pour le travail soumis, mais le cours ne transmettra pas l'affaire pour des mesures disciplinaires supplémentaires, sauf en cas d'actes répétés.</p>
+<p>Vous trouverez ci-dessous des règles empiriques qui caractérisent (de manière non exhaustive) les actes que le cours considère comme raisonnables et non raisonnables. En cas de doute quant au caractère raisonnable d'un acte, ne le commettez pas tant que vous n'avez pas demandé et reçu l'approbation écrite des responsables du cours. Les actes considérés comme non raisonnables par le cours sont traités sévèrement. Si le cours renvoie une affaire pour une action disciplinaire et que le résultat est punitif, le cours se réserve le droit d'imposer des sanctions locales en sus de ce résultat, qui peuvent inclure une note insatisfaisante ou un échec pour le travail soumis ou pour le cours lui-même. Le cours recommande généralement l'exclusion (c'est-à-dire le retrait obligatoire) du cours lui-même.</p>
+<h3>Raisonnable</h3>
+<ul>
+<li>Communiquer avec les camarades de classe au sujet des évaluations en anglais (ou dans une autre langue parlée), et citer correctement ces discussions.</li>
+<li>Discuter du contenu du cours avec d'autres afin de mieux le comprendre.</li>
+<li>Aider un camarade de classe à identifier un bug dans son code, par exemple en visualisant, en compilant ou en exécutant son code après avoir soumis vous-même cette partie de la série d'exercices.</li>
+<li>Intégrer quelques lignes de code que vous trouvez en ligne ou ailleurs dans votre propre code, à condition que ces lignes ne soient pas elles-mêmes des solutions au travail assigné et que vous citiez l'origine de ces lignes.</li>
+<li>Envoyer ou montrer le code que vous avez écrit à quelqu'un, peut-être un camarade de classe, afin qu'il vous aide à identifier et à corriger un bug.</li>
+<li>Soumettre le même travail ou un travail similaire à celui que vous avez soumis précédemment dans ce cours.</li>
+<li>Consulter le web ou d'autres sources pour obtenir des instructions au-delà de celles du cours, des références et des solutions à des difficultés techniques, mais pas pour des solutions directes au travail assigné.</li>
+<li>Utiliser les propres logiciels basés sur l'IA de CS50 (y compris <a href="https://cs50.ai">cs50.ai</a>, <code>ddb</code>, et al.) pour poser des questions, mais ne pas présenter leurs réponses comme étant les vôtres.</li>
+<li>Présenter des solutions sur un tableau blanc avec d'autres personnes en utilisant des diagrammes ou du pseudo-code, mais pas du code réel.</li>
+<li>Travailler avec (et même payer) un tuteur pour vous aider dans le cours, à condition que le tuteur ne fasse pas le travail à votre place.</li>
+</ul>
+<h3>Non Raisonnable</h3>
+<ul>
+<li>Accéder à une solution à une évaluation avant de (re)soumettre la vôtre.</li>
+<li>Accéder ou tenter d'accéder, sans autorisation, à un compte qui n'est pas le vôtre.</li>
+<li>Demander à un camarade de classe de voir sa solution à une évaluation avant de (re)soumettre la vôtre.</li>
+<li>Découvrir des bugs dans le logiciel du cours qui affectent les scores, mais ne pas les divulguer aux responsables du cours.</li>
+<li>Décompiler, désobfusquer ou désassembler les solutions du personnel.</li>
+<li>Ne pas citer (comme avec des commentaires) les origines du code ou des techniques que vous découvrez en dehors des leçons du cours et que vous intégrez dans votre propre travail, même en respectant les autres contraintes de cette politique.</li>
+<li>Donner ou montrer à un camarade de classe la solution à une évaluation alors que c'est lui, et non vous, qui a du mal à la résoudre.</li>
+<li>Manipuler ou tenter de manipuler des scores artificiellement, par exemple en exploitant des bugs ou des formules dans le logiciel du cours.</li>
+<li>Payer ou proposer de payer un individu pour un travail que vous pouvez soumettre comme (partie) le vôtre.</li>
+<li>Fournir ou mettre à disposition des solutions aux évaluations à quiconque, qu'il s'agisse d'un étudiant passé, présent ou futur.</li>
+<li>Rechercher ou solliciter des solutions directes aux évaluations en ligne ou ailleurs.</li>
+<li>Diviser la charge de travail d'une évaluation avec une autre personne et combiner votre travail.</li>
+<li>Soumettre (après l'avoir éventuellement modifié) le travail d'une autre personne au-delà des quelques lignes autorisées ici.</li>
+<li>Soumettre le même travail ou un travail similaire à celui que vous avez soumis ou soumettrez à un autre cours, sauf autorisation explicite.</li>
+<li>Utiliser des logiciels tiers basés sur l'IA (notamment ChatGPT, GitHub Copilot, le nouveau Bing, et al.) qui suggèrent des réponses ou des lignes de code.</li>
+<li>Voir la solution d'une autre personne à une évaluation et fonder votre propre solution sur celle-ci.</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

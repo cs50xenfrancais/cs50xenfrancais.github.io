@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Argent</h1>
+<p><img alt="Pièces américaines" src="https://cs50.harvard.edu/x/2024/psets/1/cash/coins.jpg" /></p>
+<h2>Problème à résoudre</h2>
+<p>Imaginez que vous travailliez dans un commerce et qu'un client vous donne 1,00 $ (100 cents) pour des bonbons qui coûtent 0,50 $ (50 cents). Vous devrez lui rendre sa « monnaie », la somme restante après avoir payé le prix des bonbons. Vous voudrez probablement rendre le moins de pièces possible à chaque client afin de ne pas en manquer (ou de ne pas l'énerver !). Dans un fichier appelé <code>cash.c</code> dans un dossier appelé <code>cash</code>, implémentez un programme en C qui imprime le nombre minimal de pièces nécessaires pour rendre le montant de monnaie indiqué, en cents, comme dans les exemples ci-dessous :</p>
+<pre><code>  Monnaie due : 25
+  1
+</code></pre>
+<p>Mais invitez l'utilisateur à saisir un nombre entier supérieur à 0, afin que le programme fonctionne pour n'importe quel montant de monnaie :</p>
+<pre><code>  Monnaie due : 70
+  4
+</code></pre>
+<p>Réinvitez l'utilisateur à saisir un nombre, autant de fois que nécessaire, si son entrée n'est pas supérieure ou égale à 0 (ou s'il ne s'agit pas d'un nombre entier).</p>
+<h2>Démonstration</h2>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-p6PlFqQgSWNWn4ggpIIaBOvIq" src="https://asciinema.org/a/p6PlFqQgSWNWn4ggpIIaBOvIq.js"></script>
+
+<h2>Algorithmes gloutons</h2>
+<p>Heureusement, l'informatique a fourni aux caissiers du monde entier des moyens de minimiser le nombre de pièces dues : les algorithmes gloutons.</p>
+<p>Selon l'Institut national des normes et de la technologie (NIST), un algorithme glouton est un algorithme « qui prend toujours la meilleure solution immédiate ou locale tout en trouvant une réponse. Les algorithmes gloutons trouvent la solution globale ou optimale pour certains problèmes d'optimisation, mais peuvent trouver des solutions moins qu'optimales pour certaines instances d'autres problèmes ».</p>
+<p>Qu'est-ce que cela signifie ? Eh bien, supposons qu'un caissier doive rendre de la monnaie à un client et que dans le tiroir de ce caissier se trouvent des pièces de 25 cents (25 ¢), 10 cents (10 ¢), 5 cents (5 ¢) et 1 cent (1 ¢). Le problème à résoudre est de décider quelles pièces et combien de chaque pièce doivent être rendues au client. Imaginez un caissier « glouton » comme quelqu'un qui veut prendre la plus grosse bouchée possible de ce problème à chaque fois qu'il prend une pièce dans le tiroir. Par exemple, si un client doit recevoir 41 ¢, la première bouchée la plus importante (c'est-à-dire la meilleure solution immédiate ou locale) possible est de 25 ¢. (Cette bouchée est « meilleure » dans la mesure où elle nous rapproche de 0 ¢ plus rapidement que n'importe quelle autre pièce). Notez qu'une bouchée de cette taille réduirait le problème de 41 ¢ à un problème de 16 ¢, car 41 - 25 = 16. C'est-à-dire que le reste est un problème similaire mais plus petit. Inutile de dire qu'une autre bouchée de 25 ¢ serait trop importante (en supposant que le caissier préfère ne pas perdre d'argent), et notre caissier glouton passerait donc à une bouchée de 10 ¢, ce qui lui laisserait un problème de 6 ¢. À ce stade, la gloutonnerie appelle une bouchée de 5 ¢ suivie d'une bouchée de 1 ¢, auquel cas le problème est résolu. Le client reçoit une pièce de 25 cents, une pièce de 10 cents, une pièce de 5 cents et une pièce de 1 cent : quatre pièces au total.</p>
+<p>Il s'avère que cette approche gloutonne (c'est-à-dire l'algorithme) n'est pas seulement optimale localement mais aussi globalement pour la monnaie américaine (et aussi pour celle de l'Union européenne). Autrement dit, tant qu'un caissier a suffisamment de chaque pièce, cette approche du plus grand au plus petit donnera le moins de pièces possible. Combien de pièces ? Eh bien, c'est à vous de nous le dire !</p>
+<h2>Conseils</h2>
+<h3>Écrivez du code dont vous savez qu'il va compiler</h3>
+<p>Même si ce programme ne fera rien, il doit au moins compiler avec <code>make</code> !</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+
+  }
+</code></pre>
+<p>Remarquez que vous avez maintenant inclus <code>cs50.h</code> et <code>stdio.h</code>, deux « fichiers d'en-tête » qui vous donneront accès à des fonctions qui pourraient vous aider à résoudre ce problème.</p>
+<h3>Écrivez du pseudo-code avant d'écrire plus de code</h3>
+<p>Si vous ne savez pas comment résoudre le problème lui-même, décomposez-le en plus petits problèmes que vous pouvez probablement résoudre en premier. Par exemple, ce problème n'est en réalité qu'une poignée de problèmes :</p>
+<ol>
+<li>Invitez l'utilisateur à saisir la monnaie due, en cents.</li>
+<li>Calculez le nombre de pièces de 25 cents que vous devez donner au client. Soustrayez la valeur de ces pièces de 25 cents aux cents.</li>
+<li>Calculez le nombre de pièces de 10 cents que vous devez donner au client. Soustrayez la valeur de ces pièces de 10 cents aux cents restants.</li>
+<li>Calculez le nombre de pièces de 5 cents que vous devez donner au client. Soustrayez la valeur de ces pièces de 5 cents aux cents restants.</li>
+<li>Calculez le nombre de pièces de 1 cent que vous devez donner au client. Soustrayez la valeur de ces pièces de 1 cent aux cents restants.</li>
+<li>Faites la somme du nombre de pièces de 25 cents, 10 cents, 5 cents et 1 cent utilisées.</li>
+<li>Imprimez cette somme.</li>
+</ol>
+<p>Voici l'algorithme glouton que vous pouvez utiliser pour résoudre ce problème, alors écrivons du pseudo-code sous forme de commentaires pour vous rappeler de faire exactement cela :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Invitez l'utilisateur à saisir la monnaie due, en cents
+
+      // Calculez le nombre de pièces de 25 cents que vous devez donner au client
+      // Soustrayez la valeur de ces pièces de 25 cents aux cents
+
+      // Calculez le nombre de pièces de 10 cents que vous devez donner au client
+      // Soustrayez la valeur de ces pièces de 10 cents aux cents restants
+
+      // Calculez le nombre de pièces de 5 cents que vous devez donner au client
+      // Soustrayez la valeur de ces pièces de 5 cents aux cents restants
+
+      // Calculez le nombre de pièces de 1 cent que vous devez donner au client
+      // Soustrayez la valeur de ces pièces de 1 cent aux cents restants
+
+      // Faites la somme du nombre de pièces de 25 cents, 10 cents, 5 cents et 1 cent utilisées
+      // Imprimez cette somme
+  }
+</code></pre>
+<h3>Convertir le pseudo-code en code</h3>
+<p>Premièrement, pensez à la manière dont vous pourriez demander à l'utilisateur les centimes qui lui sont dus. Rappelez-vous qu'une boucle <code>do while</code> est utile lorsque vous voulez faire quelque chose au moins une fois, et peut-être encore et encore, comme dans l'exemple ci-dessous :</p>
+<p>```c
+    #include <cs50.h>
+    #include <stdio.h></p>
+<pre><code>  int main(void)
+  {
+      // Demander à l'utilisateur le montant de la monnaie due, en centimes
+      int cents;
+      do
+      {
+          cents = get_int("Monnaie due : ");
+      }
+      while (cents &lt; 0);
+  }
+</code></pre>
+<p>```</p>
+<p>Il est judicieux de vous arrêter ici et de <code>faire</code> votre programme. Testez pour être sûr que votre programme se compile et qu'il vous redemande si vous entrez moins de 0 centime (ou si vous entrez une valeur comme « chat »).</p>
+<p>Ensuite, réfléchissez à la manière de calculer le nombre de quarts à donner au client. Puisque nous utilisons un algorithme glouton, cette question devient : « quel est le <em>plus grand</em> nombre de quarts que vous pourriez lui donner ?». Vous <em>pourriez</em> écrire une solution à ce problème dans votre fonction <code>main</code>. Mais cela pourrait éclaircir votre réflexion si vous écriviez une nouvelle fonction : une appelée <code>calculate_quarters</code>. De cette façon, vous pouvez mieux vous concentrer sur la logique de calcul des quarts. Plus tard, vous pouvez intégrer cette fonction dans votre solution plus large.</p>
+<p><code>c
+int calculate_quarters(int cents)
+{
+    // Calculer le nombre de quarts à donner au client
+}</code></p>
+<p>Notez que cette fonction est en effet nommée <code>calculate_quarters</code>. Par <code>int cents</code> entre parenthèses, elle prend un <code>int</code> appelé <code>cents</code> en entrée. Et, selon le <code>int</code> devant son nom, elle doit également « retourner » un <code>int</code>. Autrement dit, la sortie de cette fonction est un entier : le nombre de quarts qui entrent dans les centimes. Si cette idée vous intrigue, rappelez-vous qu'il existe plusieurs exemples de programmes dans le <a href="https://github.com/cs50/lectures/tree/2023/fall/1/src1">Code source</a> de la semaine 1 qui illustrent comment les fonctions peuvent retourner une valeur.</p>
+<p>Maintenant, considérez cette façon d'implémenter <code>calculate_quarters</code> en ajoutant au nombre de quarts jusqu'à ce que nous n'ayons plus de centimes à convertir en quarts :</p>
+<p><code>c
+int calculate_quarters(int cents)
+{
+    // Calculer le nombre de quarts à donner au client
+    int quarters = 0;
+    while (cents &gt;= 25)
+    {
+        quarters++;
+        cents = cents - 25;
+    }
+    return quarters;
+}</code></p>
+<p>Certes, il existe au moins une façon plus simple de résoudre ce problème <code>calculate_quarters</code>. Mais nous vous laissons le soin de la découvrir !</p>
+<p>Avec <code>calculate_quarters</code> fonctionnant comme prévu, vous pouvez intégrer cette fonction dans votre programme. Prenez soin de « déclarer » la « signature » de la fonction (c'est-à-dire <code>int calculate_quarters(int cents)</code>) au-dessus de votre fonction <code>main</code>, afin que vous puissiez effectivement utiliser <code>calculate_quarters</code> là-bas tout en la définissant plus tard, en dessous de <code>main</code>.</p>
+<p>```c</p>
+<h1>include <cs50.h></h1>
+<h1>include <stdio.h></h1>
+<p>int calculate_quarters(int cents);</p>
+<p>int main(void)
+{
+    // Demander à l'utilisateur le montant de la monnaie due, en centimes
+    int cents;
+    do
+    {
+        cents = get_int("Monnaie due : ");
+    }
+    while (cents &lt; 0);</p>
+<pre><code>  // Calculer le nombre de quarts à donner au client
+  int quarters = calculate_quarters(cents);
+
+  // Soustraire la valeur de ces quarts des centimes
+  cents = cents - (quarters * 25);
+</code></pre>
+<p>}</p>
+<p>int calculate_quarters(int cents)
+{
+    // Calculer le nombre de quarts à donner au client
+    int quarters = 0;
+    while (cents &gt;= 25)
+    {
+        quarters++;
+        cents = cents - 25;
+    }
+    return quarters;
+}
+```</p>
+<p>Quelques problèmes résolus, et quelques autres à venir ! Vous remarquez un modèle que vous pourriez réutiliser ici ?</p>
+<h2>Comment tester</h2>
+<p>Pour ce programme, essayez de tester votre code manuellement. C'est une bonne pratique :</p>
+<ul>
+<li>Si vous saisissez <code>-1</code>, votre programme vous le demande-t-il à nouveau ?</li>
+<li>Si vous saisissez <code>0</code>, votre programme affiche-t-il <code>0</code> ?</li>
+<li>Si vous saisissez <code>1</code>, votre programme affiche-t-il <code>1</code> (c'est-à-dire un sou )?</li>
+<li>Si vous saisissez <code>4</code>, votre programme affiche-t-il <code>4</code> (c'est-à-dire quatre sous )?</li>
+<li>Si vous saisissez <code>5</code>, votre programme affiche-t-il <code>1</code> (c'est-à-dire un nickel )?</li>
+<li>Si vous saisissez <code>24</code>, votre programme affiche-t-il <code>6</code> (c'est-à-dire deux pièces de dix cents et quatre sous )?</li>
+<li>Si vous saisissez <code>25</code>, votre programme affiche-t-il <code>1</code> (c'est-à-dire un quart )?</li>
+<li>Si vous saisissez <code>26</code>, votre programme affiche-t-il <code>2</code> (c'est-à-dire un quart et un sou )?</li>
+<li>Si vous saisissez <code>99</code>, votre programme affiche-t-il <code>9</code> (c'est-à-dire trois quarts, deux pièces de dix cents et quatre sous )?</li>
+</ul>
+<h3>Justesse</h3>
+<p>Dans votre terminal, exécutez ce qui suit pour vérifier l'exactitude de votre travail :</p>
+<p><code>bash
+check50 cs50/problems/2024/x/cash</code></p>
+<h3>Style</h3>
+<p>Exécutez ce qui suit pour évaluer le style de votre code à l'aide de <code>style50</code> :</p>
+<p><code>bash
+style50 cash.c</code></p>
+<h2>Comment soumettre</h2>
+<p>Dans votre terminal, exécutez ce qui suit pour soumettre votre travail :</p>
+<p><code>bash
+submit50 cs50/problems/2024/x/cash</code></p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

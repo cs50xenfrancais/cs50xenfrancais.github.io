@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Leçon 8</h1>
+<ul>
+<li><a href="#welcome">Bienvenue !</a></li>
+<li><a href="#routers">Routeurs</a></li>
+<li><a href="#dns">DNS</a></li>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#frameworks">Framework</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+<li><a href="#summing-up">Récapitulatif</a></li>
+</ul>
+<h2>Bienvenue !</h2>
+<ul>
+<li>Au cours des semaines précédentes, nous vous avons présenté Python, un langage de programmation de haut niveau qui utilise les mêmes blocs de construction que ceux que nous avons appris en C. Aujourd'hui, nous allons étendre ces blocs de construction en HTML, CSS et JavaScript.</li>
+<li>Internet est une technologie que nous utilisons tous.</li>
+<li>En utilisant nos compétences acquises au cours des semaines précédentes, nous pouvons créer nos propres pages Web et applications.</li>
+<li><em>ARPANET</em> a connecté les premiers points de l'Internet entre eux.</li>
+<li>Les points entre deux points pourraient être considérés comme des <em>routeurs</em>.</li>
+</ul>
+<h2>Routeurs</h2>
+<ul>
+<li>Pour acheminer des données d’un endroit à un autre, nous avons besoin de prendre des <em>décisions de routage</em>. Autrement dit, quelqu'un doit programmer la manière dont les données sont transférées du point A au point B.</li>
+<li>Vous pouvez imaginer que les données pourraient emprunter plusieurs chemins entre le point A et le point B, de sorte que lorsqu'un routeur est congestionné, les données puissent transiter par un autre chemin.</li>
+<li><em>TCP/IP</em> sont deux protocoles qui permettent aux ordinateurs de transférer des données entre eux sur Internet.</li>
+<li>
+<p><em>IP</em> ou <em>Internet Protocol</em> est un moyen par lequel les ordinateurs peuvent s'identifier les uns les autres sur Internet. Chaque ordinateur a une adresse unique dans le monde. Les adresses sont de cette forme :</p>
+<pre><code>    #.#.#.#
+</code></pre>
+</li>
+<li>
+<p>Les nombres vont de <code>0</code> à <code>255</code>. Les adresses IP sont de 32 bits, ce qui signifie que ces adresses pourraient accueillir plus de 4 milliards d'adresses. Les nouvelles versions d'adresses IP peuvent accueillir beaucoup plus d'ordinateurs !</p>
+</li>
+<li>Dans le monde réel, les serveurs font beaucoup de travail pour nous.</li>
+<li><em>TCP</em>, ou Transmission Control Protocol, est utilisé pour distinguer les services Web les uns des autres. Par exemple, <code>80</code> est utilisé pour désigner HTTP et <code>443</code> est utilisé pour désigner HTTPS. Ces nombres sont des <em>numéros de port</em>.</li>
+<li>Lorsqu'une information est envoyée d’un endroit à un autre, une adresse IP et un numéro de port TCP sont envoyés.</li>
+<li>Ces protocoles sont également utilisés pour fragmenter des fichiers volumineux en plusieurs parties appelées <em>paquets</em>. Par exemple, une grande photo d’un chat peut être envoyée en plusieurs paquets. Lorsqu'un paquet est perdu, TCP/IP peut demander à nouveau les paquets manquants au serveur d'origine.</li>
+<li>TCP reconnaîtra lorsque toutes les données auront été transmises et reçues.</li>
+</ul>
+<h2>DNS</h2>
+<ul>
+<li>Il serait fastidieux de devoir mémoriser un numéro d'adresse pour visiter un site Web.</li>
+<li><em>DNS</em>, ou <em>Domain Name Systems</em>, est une collection de serveurs sur Internet qui sont utilisés pour router les adresses de sites Web comme <em>harvard.edu</em> vers une adresse IP spécifique.</li>
+<li>Le DNS contient simplement une table ou une base de données qui relie des noms de domaine spécifiques et complets à des adresses IP spécifiques.</li>
+</ul>
+<h2>HTTP</h2>
+<ul>
+<li><em>HTTP</em>, ou <em>hypertext transfer protocol</em>, est un protocole de niveau application que les développeurs utilisent pour concevoir des créations puissantes et utiles.</li>
+<li>Lorsque vous voyez une adresse comme <code>https://www.example.com</code>, vous consultez implicitement cette adresse en lui ajoutant un <code>/</code> à la fin.</li>
+<li>Le <em>chemin</em> se trouve après ce slash. Par exemple, <code>https://www.example.com/folder/file.html</code> visite <code>example.com</code>, navigue vers le dossier <code>folder</code> puis se rend sur le fichier <code>file.html</code>.</li>
+<li><code>https</code> est le protocole utilisé pour se connecter à cette adresse Web. Par protocole, nous entendons que HTTP utilise des <em>requêtes</em> <code>GET</code> ou <code>POST</code> pour demander des informations à un serveur. Par exemple, vous pouvez lancer Google Chrome, faire un clic droit, puis cliquer sur « Inspecter ». Lorsque vous ouvrez les « Outils de développement » et que vous consultez « Réseau », en sélectionnant « Conserver le journal », vous verrez « En-têtes de requête ». Vous verrez des mentions de « GET ». Cela est également possible dans d'autres navigateurs, en utilisant des méthodes légèrement différentes.</li>
+<li>
+<p>En général, après avoir formulé une demande à un serveur, vous recevez les éléments suivants dans « En-têtes de réponse » :</p>
+<pre><code>    HTTP/1.1 200 OK
+    Content-Type: text/html
+</code></pre>
+</li>
+<li>
+<p>Cette approche d'inspection de ces journaux peut être un peu plus complexe qu’elle ne le devrait. Vous pouvez analyser le travail des protocoles HTTP sur <a href="https://code.cs50.io">code.cs50.io</a>. Par exemple, entrez ce qui suit dans votre fenêtre de terminal :</p>
+<pre><code>    curl -I https://www.harvard.edu
+</code></pre>
+</li>
+</ul>
+<p>Remarquez que la sortie de cette commande renvoie toutes les valeurs d'en-tête des réponses du serveur.</p>
+<ul>
+<li>De même, exécutez ce qui suit dans votre fenêtre de terminal :<pre><code>    curl -I http://www.harvard.edu
+</code></pre>
+</li>
+</ul>
+<p>Remarquez que le « s » dans « https » a été supprimé. La réponse du serveur indiquera que la réponse est « 301 » au lieu de « 100 », ce qui signifie que le site Web a déménagé de manière permanente.</p>
+<ul>
+<li>Ensuite, exécutez la commande suivante dans votre fenêtre de terminal :<pre><code>    curl -I https://harvard.edu
+</code></pre>
+</li>
+</ul>
+<p>Vous remarquerez que vous verrez la même réponse « 301 », qui fournit à un navigateur un indice sur l'endroit où trouver le site Web correct.</p>
+<ul>
+<li>
+<p>Semblable à « 301 », un code « 404 » signifie qu'une URL spécifiée n'a pas été trouvée. Il existe de nombreux autres codes de réponse, tels que :</p>
+<pre><code>    200 OK
+    301 Moved Permanently
+    302 Found
+    304 Not Modified
+    304 Temporary Redirect
+    401 Unauthorized
+    403 Forbidden
+    404 Not Found
+    418 I'm a Teapot
+    500 Internal Server Error
+    503 Service Unavailable
+</code></pre>
+</li>
+<li>
+<p>Il est important de mentionner que les erreurs « 500 » sont toujours de votre faute en tant que développeur. Cela sera particulièrement important pour le « pset » de la semaine prochaine, et potentiellement pour votre projet final !</p>
+</li>
+<li>Nous pouvons envoyer des commandes plus complexes au serveur. Par exemple, nous pouvons essayer ce qui suit :<pre><code>    GET /search?q=cats HTTP/1.1
+    Host: www.google.com
+</code></pre>
+</li>
+</ul>
+<p>Remarquez que nous spécifions non seulement un chemin, mais également une entrée utilisateur à l'aide du point d'interrogation « ? ». « q » est utilisé pour désigner « query » (requête), en lui transmettant « cats ».</p>
+<ul>
+<li>Si vous tapez manuellement « google.com/search?=cats » dans la barre d'adresse de votre navigateur Web, il effectuera une requête manuelle sur Google pour obtenir les résultats liés à « cats ».</li>
+</ul>
+<h2>HTML</h2>
+<ul>
+<li><em>HTML</em> ou <em>hypertext markup language</em> est constitué de <em>balises</em>, chacune peut avoir des <em>attributs</em> qui la désignent.</li>
+<li>
+<p>Dans votre terminal, tapez <code>code hello.html</code> et écrivez le code suivant :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Montre du HTML --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;hello, title&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          hello, body
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que la balise <code>html</code> ouvre et ferme ce fichier. Notez aussi l'attribut <code>lang</code> qui modifie le comportement de la balise <code>html</code>. De plus, notez qu'il y a à la fois des balises <code>head</code> et <code>body</code>. L'indentation n'est pas requise mais suggère une hiérarchie.</p>
+</li>
+<li>
+<p>Vous pouvez lancer votre code en tapant <code>http-server</code>. Ce serveur est maintenant disponible sur une très longue URL. Si vous cliquez dessus, vous pouvez accéder au site Web avec votre propre code.</p>
+</li>
+<li>Lorsque vous accédez à cette URL, notez que le nom du fichier <code>hello.html</code> apparaît à la fin de cette URL.</li>
+<li>
+<p>La hiérarchie des balises peut être représentée comme suit :</p>
+<p><img alt="code html à côté d'une hiérarchie montrant les nœuds parents et enfants" src="https://cs50.harvard.edu/x/2023/notes/8/cs50Week8Slide065.png" title="DOM" /></p>
+</li>
+<li>
+<p>Le navigateur lira votre fichier HTML de haut en bas et de gauche à droite.</p>
+</li>
+<li>
+<p>Comme les espaces blancs sont effectivement ignorés en HTML, vous devrez utiliser les balises de paragraphe <code>&lt;p&gt;</code> pour ouvrir et fermer un paragraphe. Considérez ce qui suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Montre les paragraphes --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;paragraphs&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;p&gt;
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis scelerisque quam, vel hendrerit lectus viverra eu. Praesent posuere eget lectus ut faucibus. Etiam eu velit laoreet, gravida lorem in, viverra est. Cras ut purus neque. In porttitor non lorem id lobortis. Mauris gravida metus libero, quis maximus dui porta at. Donec lacinia felis consectetur venenatis scelerisque. Nulla eu nisl sollicitudin, varius velit sit amet, vehicula erat. Curabitur sollicitudin felis sit amet orci mattis, a tempus nulla pulvinar. Aliquam erat volutpat.
+          &lt;/p&gt;
+          &lt;p&gt;
+              Mauris ut dui in eros semper hendrerit. Morbi vel elit mi. Sed sit amet ex non quam dignissim dignissim et vel arcu. Pellentesque eget elementum orci. Morbi ac cursus ex. Pellentesque quis turpis blandit orci dapibus semper sed non nunc. Nulla et dolor nec lacus finibus volutpat. Sed non lorem diam. Donec feugiat interdum interdum. Vivamus et justo in enim blandit fermentum vel at elit. Phasellus eu ante vitae ligula varius aliquet. Etiam id posuere nibh.
+          &lt;/p&gt;
+          &lt;p&gt;
+              Aenean venenatis convallis ante a rhoncus. Nullam in metus vel diam vehicula tincidunt. Donec lacinia metus sem, sit amet egestas elit blandit sit amet. Nunc egestas sem quis nisl mattis semper. Pellentesque ut magna congue lorem eleifend sodales. Donec tortor tortor, aliquam vitae mollis sed, interdum ut lectus. Mauris non purus quis ipsum lacinia tincidunt.
+          &lt;/p&gt;
+          &lt;p&gt;
+              Integer at justo lacinia libero blandit aliquam ut ut dui. Quisque tincidunt facilisis venenatis. Nullam dictum odio quis lorem luctus, vel malesuada dolor luctus. Aenean placerat faucibus enim a facilisis. Maecenas eleifend quis massa sed eleifend. Ut ultricies, dui ac vulputate hendrerit, ex metus iaculis diam, vitae fermentum libero dui et ante. Phasellus suscipit, arcu ut consequat sagittis, massa urna accumsan massa, eu aliquet nulla lorem vitae arcu. Pellentesque rutrum felis et metus porta semper. Nam ac consectetur mauris.
+          &lt;/p&gt;
+          &lt;p&gt;
+              Suspendisse rutrum vestibulum odio, sed venenatis purus condimentum sed. Morbi ornare tincidunt augue eu auctor. Vivamus sagittis ac lectus at aliquet. Nulla urna mauris, interdum non nibh in, vehicula porta enim. Donec et posuere sapien. Pellentesque ultrices scelerisque ipsum, vel fermentum nibh tincidunt et. Proin gravida porta ipsum nec scelerisque. Vestibulum fringilla erat at turpis laoreet, nec hendrerit nisi scelerisque.
+          &lt;/p&gt;
+          &lt;p&gt;
+              Sed quis malesuada mi. Nam id purus quis augue sagittis pharetra. Nulla facilisi. Maecenas vel fringilla ante. Cras tristique, arcu sit amet blandit auctor, urna elit ultricies lacus, a malesuada eros dui id massa. Aliquam sem odio, pretium vel cursus eget, scelerisque at urna. Vestibulum posuere a turpis consectetur consectetur. Cras consequat, risus quis tempor egestas, nulla ipsum ornare erat, nec accumsan nibh lorem nec risus. Integer at iaculis lacus. Integer congue nunc massa, quis molestie felis pellentesque vestibulum. Nulla odio tortor, aliquam nec quam in, ornare aliquet sapien.
+          &lt;/p&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que les paragraphes commencent par une balise <code>&lt;p&gt;</code> et se terminent par une balise <code>&lt;/p&gt;</code>.</p>
+</li>
+<li>
+<p>Le HTML permet la représentation de titres :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Cela démontre les titres (pour chapitres, sections, sous-sections, etc.) --&gt;
+
+  &lt;html lang="en"&gt;
+
+      &lt;head&gt;
+          &lt;title&gt;titres&lt;/title&gt;
+      &lt;/head&gt;
+
+      &lt;body&gt;
+
+          &lt;h1&gt;Un&lt;/h1&gt;
+          &lt;p&gt;
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis scelerisque quam, vel hendrerit lectus viverra eu. Praesent posuere eget lectus ut faucibus. Etiam eu velit laoreet, gravida lorem in, viverra est. Cras ut purus neque. In porttitor non lorem id lobortis. Mauris gravida metus libero, quis maximus dui porta at. Donec lacinia felis consectetur venenatis scelerisque. Nulla eu nisl sollicitudin, varius velit sit amet, vehicula erat. Curabitur sollicitudin felis sit amet orci mattis, a tempus nulla pulvinar. Aliquam erat volutpat.
+          &lt;/p&gt;
+
+          &lt;h2&gt;Deux&lt;/h2&gt;
+          &lt;p&gt;
+              Mauris ut dui in eros semper hendrerit. Morbi vel elit mi. Sed sit amet ex non quam dignissim dignissim et vel arcu. Pellentesque eget elementum orci. Morbi ac cursus ex. Pellentesque quis turpis blandit orci dapibus semper sed non nunc. Nulla et dolor nec lacus finibus volutpat. Sed non lorem diam. Donec feugiat interdum interdum. Vivamus et justo in enim blandit fermentum vel at elit. Phasellus eu ante vitae ligula varius aliquet. Etiam id posuere nibh.
+          &lt;/p&gt;
+
+          &lt;h3&gt;Trois&lt;/h3&gt;
+          &lt;p&gt;
+              Aenean venenatis convallis ante a rhoncus. Nullam in metus vel diam vehicula tincidunt. Donec lacinia metus sem, sit amet egestas elit blandit sit amet. Nunc egestas sem quis nisl mattis semper. Pellentesque ut magna congue lorem eleifend sodales. Donec tortor tortor, aliquam vitae mollis sed, interdum ut lectus. Mauris non purus quis ipsum lacinia tincidunt.
+          &lt;/p&gt;
+
+          &lt;h4&gt;Quatre&lt;/h4&gt;
+          &lt;p&gt;
+              Integer at justo lacinia libero blandit aliquam ut ut dui. Quisque tincidunt facilisis venenatis. Nullam dictum odio quis lorem luctus, vel malesuada dolor luctus. Aenean placerat faucibus enim a facilisis. Maecenas eleifend quis massa sed eleifend. Ut ultricies, dui ac vulputate hendrerit, ex metus iaculis diam, vitae fermentum libero dui et ante. Phasellus suscipit, arcu ut consequat sagittis, massa urna accumsan massa, eu aliquet nulla lorem vitae arcu. Pellentesque rutrum felis et metus porta semper. Nam ac consectetur mauris.
+          &lt;/p&gt;
+
+          &lt;h5&gt;Cinq&lt;/h5&gt;
+          &lt;p&gt;
+              Suspendisse rutrum vestibulum odio, sed venenatis purus condimentum sed. Morbi ornare tincidunt augue eu auctor. Vivamus sagittis ac lectus at aliquet. Nulla urna mauris, interdum non nibh in, vehicula porta enim. Donec et posuere sapien. Pellentesque ultrices scelerisque ipsum, vel fermentum nibh tincidunt et. Proin gravida porta ipsum nec scelerisque. Vestibulum fringilla erat at turpis laoreet, nec hendrerit nisi scelerisque.
+          &lt;/p&gt;
+
+          &lt;h6&gt;Six&lt;/h6&gt;
+          &lt;p&gt;
+              Sed quis malesuada mi. Nam id purus quis augue sagittis pharetra. Nulla facilisi. Maecenas vel fringilla ante. Cras tristique, arcu sit amet blandit auctor, urna elit ultricies lacus, a malesuada eros dui id massa. Aliquam sem odio, pretium vel cursus eget, scelerisque at urna. Vestibulum posuere a turpis consectetur consectetur. Cras consequat, risus quis tempor egestas, nulla ipsum ornare erat, nec accumsan nibh lorem nec risus. Integer at iaculis lacus. Integer congue nunc massa, quis molestie felis pellentesque vestibulum. Nulla odio tortor, aliquam nec quam in, ornare aliquet sapien.
+          &lt;/p&gt;
+
+      &lt;/body&gt;
+
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code> et <code>&lt;h3&gt;</code> indiquent les différents niveaux d’en-tête.</p>
+</li>
+<li>
+<p>Nous pouvons également créer des listes dans HTML :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Illustre les listes (ordonnées) --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;list&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;ol&gt;
+              &lt;li&gt;foo&lt;/li&gt;
+              &lt;li&gt;bar&lt;/li&gt;
+              &lt;li&gt;baz&lt;/li&gt;
+          &lt;/ol&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que la balise <code>&lt;ol&gt;</code> crée une liste ordonnée contenant trois éléments.</p>
+</li>
+<li>
+<p>Nous pouvons également créer un tableau dans HTML :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Illustration d'un tableau --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;table&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;table&gt;
+              &lt;tr&gt;
+                  &lt;td&gt;1&lt;/td&gt;
+                  &lt;td&gt;2&lt;/td&gt;
+                  &lt;td&gt;3&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                  &lt;td&gt;4&lt;/td&gt;
+                  &lt;td&gt;5&lt;/td&gt;
+                  &lt;td&gt;6&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                  &lt;td&gt;7&lt;/td&gt;
+                  &lt;td&gt;8&lt;/td&gt;
+                  &lt;td&gt;9&lt;/td&gt;
+              &lt;/tr&gt;
+              &lt;tr&gt;
+                  &lt;td&gt;*&lt;/td&gt;
+                  &lt;td&gt;0&lt;/td&gt;
+                  &lt;td&gt;#&lt;/td&gt;
+              &lt;/tr&gt;
+          &lt;/table&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Les tableaux ont également des balises qui ouvrent et ferment chaque élément à l'intérieur.</p>
+</li>
+<li>
+<p>Les images peuvent également être utilisées dans HTML :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Illustration d'une image --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;image&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;!-- https://www.harvard.edu/ --&gt;
+          &lt;img alt="Université Harvard" src="harvard.jpg"&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que <code>src="harvard.jpg"</code> indique le chemin où le fichier image peut être localisé.</p>
+</li>
+<li>
+<p>Les vidéos peuvent également être incluses dans du HTML :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Démonstration de la vidéo --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;vidéo&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;!-- https://www.harvard.edu/ --&gt;
+          &lt;video autoplay loop muted playsinline width="1280"&gt;
+              &lt;source src="halloween.mp4" type="video/mp4"&gt;
+          &lt;/video&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que l'attribut <code>width</code> définit la largeur de la vidéo.</p>
+</li>
+<li>
+<p>Vous pouvez également créer des liens entre diverses pages web :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Démonstration du lien --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;lien&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+         Visitez &lt;a href="image.html"&gt;Harvard&lt;/a&gt;.
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que la balise <code>&lt;a&gt;</code> ou balise <em>d'ancre</em> est utilisée pour transformer <code>Harvard</code> en texte cliquable.</p>
+</li>
+<li>
+<p>Les balises meta sont utilisées pour contenir des informations sur les données dans le fichier HTML. Prenons en compte ce qui suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Démonstration d'une conception réactive --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta name="viewport" content="initial-scale=1, width=device-width"&gt;
+          &lt;title&gt;meta&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis scelerisque quam, vel hendrerit lectus viverra eu. Praesent posuere eget lectus ut faucibus. Etiam eu velit laoreet, gravida lorem in, viverra est. Cras ut purus neque. In porttitor non lorem id lobortis. Mauris gravida metus libero, quis maximus dui porta at. Donec lacinia felis consectetur venenatis scelerisque. Nulla eu nisl sollicitudin, varius velit sit amet, vehicula erat. Curabitur sollicitudin felis sit amet orci mattis, a tempus nulla pulvinar. Aliquam erat volutpat.
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que cet ensemble d'attributs <code>meta</code> rend cette page adaptée aux mobiles.</p>
+</li>
+<li>
+<p>Il existe de nombreuses paires clé-valeur <code>meta</code> que vous pouvez utiliser :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Démonstration des balises Open Graph --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;meta property="og:title" content="CS50"&gt;
+          &lt;meta property="og:description" content="Introduction aux entreprises intellectuelles de l'informatique et à l'art de la programmation."&gt;
+          &lt;meta property="og:image" content="cat.jpg"&gt;
+          &lt;title&gt;meta&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          ...
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que ces paires clé-valeur sont liées au <code>titre</code> et à la <code>description</code> de la page Web.</p>
+</li>
+<li>
+<p>Vous pouvez également créer des formulaires similaires à la recherche Google :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Démonstration de formulaire --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;recherche&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;form action="https://www.google.com/search" method="get"&gt;
+              &lt;input name="q" type="search"&gt;
+              &lt;input type="submit" value="Recherche Google"&gt;
+          &lt;/form&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Remarquez que la balise <code>form</code> s'ouvre et fournit l'attribut de son action (<code>action</code>). Le champ <code>input</code> est inclus, transmettant le nom <code>q</code> et le type <code>search</code>.</p>
+</li>
+<li>
+<p>Nous pouvons améliorer cette recherche comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Démonstration d'attributs de formulaire supplémentaires --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;recherche&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;form action="https://www.google.com/search" method="get"&gt;
+              &lt;input autocomplete="off" autofocus name="q" placeholder="Requête" type="search"&gt;
+              &lt;button&gt;Recherche Google&lt;/button&gt;
+          &lt;/form&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Remarquez que <code>autocomplete</code> est désactivé (<code>off</code>). <code>autofocus</code> est activé.</p>
+</li>
+<li>
+<p>Nous avons vu seulement quelques-uns des nombreux éléments HTML que vous pouvez ajouter à votre site. Si vous avez une idée de quelque chose à ajouter à votre site que nous n'avons pas encore vue (un bouton, un fichier audio, etc.), essayez de saisir « X dans HTML » dans Google pour trouver la syntaxe appropriée !</p>
+</li>
+</ul>
+<h2>CSS</h2>
+<ul>
+<li><code>CSS</code>, ou feuille de style en cascade, est un langage de balisage qui permet de peaufiner l’esthétique de vos fichiers HTML.</li>
+<li>
+<p>Dans votre terminal, saisissez <code>code home.html</code> et écrivez le code suivant :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Illustre le style CSS en ligne avec les balises P --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;css&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;p style="font-size: large; text-align: center;"&gt;
+              John Harvard
+          &lt;/p&gt;
+          &lt;p style="font-size: medium; text-align: center;"&gt;
+              Bienvenue sur ma page d’accueil !
+          &lt;/p&gt;
+          &lt;p style="font-size: small; text-align: center;"&gt;
+              Copyright &amp;#169; John Harvard
+          &lt;/p&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+
+  Remarquez que certains attributs `style` sont fournis aux balises `&lt;p&gt;`. `font-size` est défini sur `large`, `medium` ou `small`. Ensuite, `text-align` est défini sur centré.
+</code></pre>
+</li>
+<li>
+<p>Bien que correct, le texte ci-dessus n’est pas bien conçu. Nous pouvons supprimer les redondances en modifiant notre code comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Supprime le DIV externe --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;css&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body style="text-align: center"&gt;
+          &lt;div style="font-size: large"&gt;
+              John Harvard
+          &lt;/div&gt;
+          &lt;div style="font-size: medium"&gt;
+              Bienvenue sur ma page d’accueil !
+          &lt;/div&gt;
+          &lt;div style="font-size: small"&gt;
+              Copyright &amp;#169; John Harvard
+          &lt;/div&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+
+  Remarquez que les balises `&lt;div&gt;` sont utilisées pour diviser ce fichier HTML en régions spécifiques. `text-align: center` est invoqué sur tout le corps du fichier HTML.
+</code></pre>
+</li>
+<li>
+<p>Il s’avère qu’un nouveau texte sémantique est inclus dans le HTML. Nous pouvons modifier notre code comme suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Utilise des balises sémantiques au lieu des DIV --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;css&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body style="text-align: center"&gt;
+          &lt;header style="font-size: large"&gt;
+              John Harvard
+          &lt;/header&gt;
+          &lt;main style="font-size: medium"&gt;
+              Bienvenue sur ma page d’accueil !
+          &lt;/main&gt;
+          &lt;footer style="font-size: small"&gt;
+              Copyright &amp;#169; John Harvard
+          &lt;/footer&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+
+  Remarquez que les éléments `header` et `footer` ont tous deux des styles différents qui leur sont attribués.
+</code></pre>
+</li>
+<li>
+<p>Cette pratique qui consiste à placer le style et les informations au même endroit n'est pas une bonne pratique. Nous pourrions déplacer les éléments du style en haut du fichier comme ceci :</p>
+<pre><code>  &lt;!-- Les sélecteurs de classe de démonstration --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;style&gt;
+
+              .centered
+              {
+                  text-align: center;
+              }
+
+              .large
+              {
+                  font-size: large;
+              }
+
+              .medium
+              {
+                  font-size: medium;
+              }
+
+              .small
+              {
+                  font-size: small;
+              }
+
+          &lt;/style&gt;
+          &lt;title&gt;css&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body class="centered"&gt;
+          &lt;header class="large"&gt;
+              John Harvard
+          &lt;/header&gt;
+          &lt;main class="medium"&gt;
+              Bienvenue sur ma page d'accueil !
+          &lt;/main&gt;
+          &lt;footer class="small"&gt;
+              Copyright &amp;#169; John Harvard
+          &lt;/footer&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Vous remarquerez que toutes les balises de style sont placées dans la <code>tête</code> dans l'encapsuleur de balises <code>style</code>. Notez aussi que nous avons assigné des <em>classes</em>, appelées <code>centré</code>, <code>grand</code>, <code>moyen</code> et <code>petit</code> à nos éléments, et que nous sélectionnons ces classes en plaçant un point avant le nom, comme dans <code>.centered</code></p>
+</li>
+<li>
+<p>Il s'avère que nous pouvons déplacer tout notre code de style dans un fichier spécial appelé fichier <em>CSS</em>. Nous pouvons créer un fichier appelé <code>style.css</code> et y coller nos classes :</p>
+<pre><code>  .centered
+  {
+      text-align: center;
+  }
+
+  .large
+  {
+      font-size: large;
+  }
+
+  .medium
+  {
+      font-size: medium;
+  }
+
+  .small
+  {
+      font-size: small;
+  }
+</code></pre>
+<p>Notez qu'il s'agit de la copie conforme de ce qui est apparu dans notre fichier HTML.</p>
+</li>
+<li>
+<p>Nous pouvons alors indiquer au navigateur où localiser la feuille CSS pour ce fichier HTML :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- Illustre les feuilles de style externes --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;link href="style.css" rel="stylesheet"&gt;
+          &lt;title&gt;css&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body class="centered"&gt;
+          &lt;header class="large"&gt;
+              John Harvard
+          &lt;/header&gt;
+          &lt;main class="medium"&gt;
+              Bienvenue sur ma page d'accueil !
+          &lt;/main&gt;
+          &lt;footer class="small"&gt;
+              Copyright &amp;#169; John Harvard
+          &lt;/footer&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que <code>style.css</code> est lié à ce fichier HTML en tant que feuille de style, indiquant au navigateur où localiser les styles que nous avons créés.</p>
+</li>
+</ul>
+<h2>Frameworks</h2>
+<ul>
+<li>Tout comme les bibliothèques tierces que nous pouvons exploiter en Python, il existe des bibliothèques tierces appelées <em>frameworks</em> que nous pouvons utiliser avec nos fichiers HTML.</li>
+<li><em>Bootstrap</em> est l'un de ces frameworks que nous pouvons utiliser pour embellir notre HTML et perfectionner facilement les éléments de conception de sorte que nos pages soient plus lisibles.</li>
+<li>Bootstrap peut être utilisé en ajoutant la balise <code>link</code> suivante dans le <code>head</code> de votre fichier html :</li>
+</ul>
+<p><code>&lt;head&gt;
+          &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"&gt;
+          &lt;title&gt;favorites&lt;/title&gt;
+      &lt;/head&gt;</code></p>
+<ul>
+<li>Vous pouvez en apprendre davantage sur ce sujet dans la <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/">documentation de Bootstrap</a>.</li>
+</ul>
+<h2>JavaScript</h2>
+<ul>
+<li>JavaScript est un autre langage de programmation qui permet l'interactivité au sein des pages Web.</li>
+<li>
+<p>JavaScript prend en charge les conditionnels :</p>
+<pre><code>  if (x &lt; y)
+  {
+
+  }
+  else
+  {
+
+  }
+</code></pre>
+</li>
+<li>
+<p>Les variables sont également prises en charge :</p>
+<pre><code>  let counter = 0;
+</code></pre>
+</li>
+<li>
+<p>Vous pouvez également incrémenter :</p>
+<pre><code>  counter++
+</code></pre>
+</li>
+<li>
+<p>Les boucles sont très similaires à ce que vous avez vu auparavant en C :</p>
+<pre><code>  for (let i = 0; i &lt; 3; i++)
+  {
+
+  }
+</code></pre>
+</li>
+<li>
+<p>JavaScript vous permet de lire et de modifier dynamiquement le document HTML chargé en mémoire afin que l'utilisateur n'ait pas besoin de le recharger pour voir les modifications.</p>
+</li>
+<li>
+<p>Considérez le code HTML suivant :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;!-- This demonstrates programmatic changes to style --&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;background&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;button id="red"&gt;R&lt;/button&gt;
+          &lt;button id="green"&gt;G&lt;/button&gt;
+          &lt;button id="blue"&gt;B&lt;/button&gt;
+          &lt;script&gt;
+
+              let body = document.querySelector('body');
+              document.querySelector('#red').addEventListener('click', function() {
+                  body.style.backgroundColor = 'red';
+              });
+              document.querySelector('#green').addEventListener('click', function() {
+                  body.style.backgroundColor = 'green';
+              });
+              document.querySelector('#blue').addEventListener('click', function() {
+                  body.style.backgroundColor = 'blue';
+              });
+
+          &lt;/script&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que JavaScript écoute le moment où un bouton spécifique est cliqué. Lors d'un tel clic, certains attributs de style de la page sont modifiés. <code>body</code> est défini comme le corps de la page. Puis, un écouteur d'événement attend le clic d'un des boutons. Ensuite, le <code>body.style.backgroundColor</code> est modifié.</p>
+</li>
+<li>
+<p>De même, considérez ce qui suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;script&gt;
+
+              // Active et désactive la visibilité de la salutation
+              function blink()
+              {
+                  let body = document.querySelector('body');
+                  if (body.style.visibility == 'hidden')
+                  {
+                      body.style.visibility = 'visible';
+                  }
+                  else
+                  {
+                      body.style.visibility = 'hidden';
+                  }
+              }
+
+              // Clignote toutes les 500 ms
+              window.setInterval(blink, 500);
+
+          &lt;/script&gt;
+          &lt;title&gt;blink&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          hello, world
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Cet exemple fait clignoter un texte à intervalle régulier. Notez que <code>window.setInterval</code> prend deux arguments : 1) Une fonction à appeler et 2) un temps d'attente (en millisecondes) entre les appels de fonction.</p>
+</li>
+<li>
+<p>De même, considérez ce qui suit :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+
+      &lt;head&gt;
+          &lt;title&gt;autocomplete&lt;/title&gt;
+      &lt;/head&gt;
+
+      &lt;body&gt;
+
+          &lt;input autocomplete="off" autofocus placeholder="Requête" type="text"&gt;
+
+          &lt;ul&gt;&lt;/ul&gt;
+
+          &lt;script src="large.js"&gt;&lt;/script&gt;
+          &lt;script&gt;
+
+              let input = document.querySelector('input');
+              input.addEventListener('keyup', function(event) {
+                  let html = '';
+                  if (input.value) {
+                      for (word of WORDS) {
+                          if (word.startsWith(input.value)) {
+                              html += `&lt;li&gt;${word}&lt;/li&gt;`;
+                          }
+                      }
+                  }
+                  document.querySelector('ul').innerHTML = html;
+              });
+
+          &lt;/script&gt;
+
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Ceci est une implémentation JavaScript de la saisie semi-automatique.</p>
+</li>
+<li>
+<p>Fait intéressant, nous pouvons aussi géolocaliser en utilisant JavaScript :</p>
+<pre><code>  &lt;!DOCTYPE html&gt;
+
+  &lt;html lang="en"&gt;
+      &lt;head&gt;
+          &lt;title&gt;géolocalisation&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;script&gt;
+
+              navigator.geolocation.getCurrentPosition(function(position) {
+                  document.write(position.coords.latitude + ", " + position.coords.longitude);
+              });
+
+          &lt;/script&gt;
+      &lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p>Notez que <code>navigator.geolocation</code> est utilisé pour <code>getCurrentPosition</code>. Cela ne fonctionnera pas si votre ordinateur ou votre navigateur n'autorise pas le suivi de l'emplacement.</p>
+</li>
+<li>
+<p>JavaScript possède de nombreuses fonctionnalités, et vous pouvez les trouver dans la <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">documentation de JavaScript</a>.</p>
+</li>
+</ul>
+<h2>Récapitulatif</h2>
+<p>Dans cette leçon, vous avez appris à créer vos propres fichiers HTML, à les personnaliser, à exploiter des frameworks tiers et à utiliser JavaScript. Plus précisément, nous avons abordé :</p>
+<ul>
+<li>TCP/IP</li>
+<li>DNS</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>Frameworks</li>
+<li>JavaScript</li>
+</ul>
+<p>À la prochaine !</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Mario</h1>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/cWOkHQXw0JQ?modestbranding=0&amp;rel=0&amp;showinfo=0&amp;start=11"></iframe></div>
+
+<h2>Problème à résoudre</h2>
+<p>Vers la fin du monde 1-1 dans le jeu <a href="https://fr.wikipedia.org/wiki/Super_Mario_Bros.">Super Mario Bros.</a> de Nintendo, Mario doit escalader une pyramide de briques alignées à droite, comme dans l'image ci-dessous :</p>
+<p><img alt="capture d'écran de Mario sautant sur une pyramide alignée à droite" src="https://cs50.harvard.edu/x/2024/psets/1/mario/less/pyramid.png" /></p>
+<p>Dans un fichier nommé <code>mario.c</code> dans un dossier appelé <code>mario-less</code>, implémentez un programme en C qui recrée cette pyramide en utilisant les dièses (<code>#</code>) pour les briques, comme dans l'image ci-dessous :</p>
+<pre><code>         #
+        ##
+       ###
+      ####
+     #####
+    ######
+   #######
+  ########
+</code></pre>
+<p>Mais demandez à l'utilisateur de fournir un <code>int</code> pour la hauteur réelle de la pyramide, afin que le programme puisse également produire des pyramides plus courtes comme celle-ci :</p>
+<pre><code>    #
+   ##
+  ###
+</code></pre>
+<p>Redemandez à l'utilisateur, autant de fois que nécessaire, si sa saisie n'est pas supérieure à 0 ou n'est pas un <code>int</code>.</p>
+<h4>Astuces</h4>
+<ul>
+<li>Rappelez-vous que vous pouvez obtenir un <code>int</code> d'un utilisateur avec <code>get_int</code>, qui est déclaré dans <code>cs50.h</code>.</li>
+<li>Rappelez-vous que vous pouvez imprimer une <code>string</code> avec <code>printf</code>, qui est déclaré dans <code>stdio.h</code>.</li>
+</ul>
+<h2>Démo</h2>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-WPrv7PFVLaLkJ2BU96uTEQKuA" src="https://asc
+iinema.org/a/WPrv7PFVLaLkJ2BU96uTEQKuA.js"></script>
+
+<h2>Conseil</h2>
+<h3>Écrivez du code que vous savez compiler</h3>
+<p>Même si ce programme ne fait rien, il doit au moins se compiler avec <code>make</code> !</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+
+  }
+</code></pre>
+<h3>Écrivez du pseudo-code avant d'écrire plus de code</h3>
+<p>Si vous ne savez pas comment résoudre le problème lui-même, décomposez-le en plus petits problèmes que vous pourrez probablement résoudre en premier. Par exemple, ce problème se résume en fait à deux problèmes :</p>
+<ol>
+<li>Demander à l'utilisateur la hauteur de la pyramide</li>
+<li>Imprimer une pyramide de cette hauteur</li>
+</ol>
+<p>Écrivez donc du pseudo-code sous forme de commentaires qui vous rappelleront de faire cela :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+
+      // Imprimer une pyramide de cette hauteur
+  }
+</code></pre>
+<h3>Convertissez le pseudo-code en code</h3>
+<p>D'abord, réfléchissez à la façon dont vous pourriez demander à l'utilisateur la hauteur de la pyramide. Rappelez-vous qu'une boucle <code>do while</code> est utile lorsque vous souhaitez faire quelque chose au moins une fois, et éventuellement encore et encore, comme dans l'exemple ci-dessous :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+      int n;
+      do
+      {
+          n = get_int("Hauteur : ");
+      }
+      while (n &lt; 1);
+
+      // Imprimer une pyramide de cette hauteur
+  }
+</code></pre>
+<p>Ensuite, réfléchissez à la façon dont vous pourriez imprimer une pyramide de cette hauteur, de haut en bas. Remarquez que la première ligne doit comporter une brique, la deuxième deux briques, et ainsi de suite. Il est probable que vous ayez besoin d'une boucle, comme dans l'exemple ci-dessous, même si vous ne savez pas encore (pour l'instant !) ce que vous allez mettre dans cette boucle. Ajoutez donc un peu plus de pseudo-code sous forme de commentaire pour le moment :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+      int n;
+      do
+      {
+          n = get_int("Hauteur : ");
+      }
+      while (n &lt; 1);
+
+      // Imprimer une pyramide de cette hauteur
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprimer une ligne de briques
+      }
+  }
+</code></pre>
+<p>Comment imprimer cette ligne de briques ? Ne serait-il pas pratique d'avoir une fonction appelée <code>print_row</code> qui pourrait faire cela ? Supposons qu'il en existe une :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int bricks);
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+      int n;
+      do
+      {
+          n = get_int("Hauteur : ");
+      }
+      while (n &lt; 1);
+
+      // Imprimer une pyramide de cette hauteur
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprimer une ligne de briques
+      }
+  }
+
+  void print_row(int bricks)
+  {
+      // Imprimer une ligne de briques
+  }
+</code></pre>
+<p>Nous pourrions alors appeler cette fonction depuis <code>main</code>, comme dans l'exemple ci-dessous :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int bricks);
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+      int n;
+      do
+      {
+          n = get_int("Hauteur : ");
+      }
+      while (n &lt; 1);
+
+      // Imprimer une pyramide de cette hauteur
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprimer une ligne de briques
+          print_row(i + 1);
+      }
+  }
+
+  void print_row(int bricks)
+  {
+      // Imprimer une ligne de briques
+  }
+</code></pre>
+<p>Mais pourquoi <code>i + 1</code> ?</p>
+<p>Implémentons maintenant <code>print_row</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int bricks);
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+      int n;
+      do
+      {
+          n = get_int("Hauteur : ");
+      }
+      while (n &lt; 1);
+
+      // Imprimer une pyramide de cette hauteur
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprimer une ligne de briques
+          print_row(i + 1);
+      }
+  }
+
+  void print_row(int bricks)
+  {
+      for (int i = 0; i &lt; bricks; i++)
+      {
+          printf("#");
+      }
+      printf("\n");
+  }
+</code></pre>
+<p>Mais pourquoi le <code>\n</code> à la fin ?</p>
+<p>Malheureusement, ce code imprime une pyramide alignée à gauche, mais vous en avez besoin d'une alignée à droite ! Peut-être devrions-nous imprimer des espaces vides avant certaines des briques, pour les déplacer vers la droite ? Modifions <code>print_row</code> comme suit afin de pouvoir imprimer les deux :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void print_row(int spaces, int bricks);
+
+  int main(void)
+  {
+      // Demander à l'utilisateur la hauteur de la pyramide
+      int n;
+      do
+      {
+          n = get_int("Hauteur : ");
+      }
+      while (n &lt; 1);
+
+      // Imprimer une pyramide de cette hauteur
+      for (int i = 0; i &lt; n; i++)
+      {
+          // Imprimer une ligne de briques
+      }
+  }
+</code></pre>
+<h2>Procédure pas à pas</h2>
+<div class="alert alert-info" data-alert="info" role="alert"><p>Remarque, cette procédure indique que votre programme doit inviter l’utilisateur à indiquer la hauteur d’une pyramide et doit <em>de nouveau</em> l’inviter si l’utilisateur saisit une valeur inférieure à 1 ou supérieure à 8. La spécification ne requiert que de redemander à l’utilisateur s’il saisit une valeur inférieure à 1.</p></div>
+
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/NAs4FIWkJ4s?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Procédure de test</h2>
+<p>Votre code fonctionne-t-il comme prévu lorsque vous saisissez&nbsp;:</p>
+<ul>
+<li><code>-1</code> ou d’autres nombres négatifs&nbsp;?</li>
+<li><code>0</code>&nbsp;?</li>
+<li><code>1</code> ou d’autres nombres positifs&nbsp;?</li>
+<li>des lettres ou des mots&nbsp;?</li>
+<li>aucune entrée (en appuyant seulement sur Entrée)&nbsp;?</li>
+</ul>
+<h3>Exactitude</h3>
+<p>Dans votre terminal, exécutez la commande suivante pour vérifier l’exactitude de votre travail.</p>
+<pre><code>  check50 cs50/problems/2024/x/mario/less
+</code></pre>
+<h3>Style</h3>
+<p>Exécutez la commande suivante pour évaluer le style de votre code à l’aide de <code>style50</code>.</p>
+<pre><code>  style50 mario.c
+</code></pre>
+<h2>Procédure d’envoi</h2>
+<p>Dans votre terminal, exécutez la commande suivante pour soumettre votre travail.</p>
+<pre><code>  submit50 cs50/problems/2024/x/mario/less
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

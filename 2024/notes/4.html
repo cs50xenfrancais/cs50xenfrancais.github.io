@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Leçon 4</h1>
+<ul>
+<li><a href="#hexadecimal">Hexadecimal</a></li>
+<li><a href="#pointeurs">Pointers</a></li>
+<li><a href="#chaînes-de-caractères">Chaînes de caractères</a></li>
+<li><a href="#comparaisons-et-copies">Comparaisons et copies</a></li>
+<li><a href="#valgrind">Valgrind</a></li>
+<li><a href="#échanges">Échanges</a></li>
+<li><a href="#disposition-en-mémoire">Disposition en mémoire</a></li>
+<li><a href="#get_int">get_int</a></li>
+<li><a href="#fichiers">Fichiers</a></li>
+<li><a href="#jpeg">JPEG</a></li>
+</ul>
+<h2>Hexadecimal</h2>
+<ul>
+<li>Durant la semaine 0, nous avons appris le système binaire, un système de comptage avec des 0 et des 1.</li>
+<li>Durant la semaine 2, nous avons parlé de la mémoire et de la façon dont chaque octet possède une adresse, ou identifiant, pour que nous puissions référencer l’endroit où nos variables sont réellement stockées.</li>
+<li>Il s’avère que, par convention, les adresses pour la mémoire utilisent le système de comptage <strong>hexadécimal</strong>, dans lequel il y a 16 chiffres : 0-9 et A-F.</li>
+<li>
+<p>Rappelons que, en binaire, chaque chiffre correspondait à une puissance de 2 :</p>
+<pre><code>  128 64 32 16  8  4  2  1
+    1  1  1  1  1  1  1  1
+</code></pre>
+<ul>
+<li>Avec 8 bits, nous pouvons compter jusqu’à 255.</li>
+</ul>
+</li>
+<li>
+<p>Il s’avère qu’en hexadécimal, nous pouvons parfaitement compter jusqu’à 8 bits binaires avec seulement 2 chiffres :</p>
+<pre><code>  16^1 16^0
+     F    F
+</code></pre>
+<ul>
+<li>Ici, « F » est une valeur de 15 en décimal, et chaque place est une puissance de 16. Donc le premier « F » est 16^1 _ 15 = 240, plus le deuxième « F » avec une valeur de 16^0 _ 15 = 15, pour un total de 255.</li>
+</ul>
+</li>
+<li>
+<p>Et « 0A » est la même chose que 10 en décimal, et « 0F » la même chose que 15. « 10 » en hexadécimal serait 16, et nous le prononcerions « un zéro en hexadécimal » plutôt que « dix », pour éviter toute confusion.</p>
+</li>
+<li>Le système de couleurs RVB utilise également traditionnellement l’hexadécimal pour décrire la quantité de chaque couleur. Par exemple, « 000000 » en hexadécimal signifie 0 pour chaque couleur rouge, verte et bleue, pour une couleur noire. Et « FF0000 » serait 255, ou la quantité la plus élevée possible, de rouge. Avec des valeurs différentes pour chaque couleur, nous pouvons représenter des millions de couleurs différentes.</li>
+<li>À l’écrit, nous pouvons aussi indiquer qu’une valeur est en hexadécimal en la faisant précéder de « 0x », comme dans « 0x10 », où la valeur est égale à 16 en décimal, par opposition à 10.</li>
+</ul>
+<h2>Pointeurs</h2>
+<ul>
+<li>
+<p>Nous pouvons créer une valeur <code>n</code> et l'imprimer&nbsp;:</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int n = 50;
+      printf("%i\n", n);
+  }
+</code></pre>
+</li>
+<li>
+<p>Dans la mémoire de notre ordinateur, il y a maintenant 4 octets quelque part qui ont la valeur binaire 50, étiquetés <code>n</code>&nbsp;:
+  <img alt="grille représentant des octets, avec quatre boîtes ensemble contenant 50 avec un petit n en dessous" src="https://cs50.harvard.edu/x/2020/notes/4/n.png" /></p>
+</li>
+<li>Il s'avère qu'avec les milliards d'octets en mémoire, ces octets pour la variable <code>n</code> commencent à une adresse unique qui pourrait ressembler à <code>0x12345678</code>.</li>
+<li>
+<p>En C, nous pouvons réellement voir l'adresse avec l'opérateur <code>&amp;</code>, qui signifie « obtenir l'adresse de cette variable » :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int n = 50;
+      printf("%p\n", &amp;n);
+  }
+</code></pre>
+<ul>
+<li>Et dans l'IDE CS50, nous pourrions voir une adresse comme <code>0x7ffe00b3adbc</code>, où il s'agit d'un emplacement spécifique dans la mémoire du serveur.</li>
+</ul>
+</li>
+<li>
+<p>L'adresse d'une variable est appelée un <strong>pointeur</strong>, que nous pouvons considérer comme une valeur qui « pointe » vers un emplacement en mémoire. L'opérateur <code>*</code> nous permet « d'aller » à l'emplacement vers lequel pointe un pointeur.</p>
+</li>
+<li>
+<p>Par exemple, nous pouvons imprimer <code>*&amp;n</code>, où nous « allons » à l'adresse de <code>n</code>, et cela imprimera la valeur de <code>n</code>, <code>50</code>, puisque c'est la valeur à l'adresse de <code>n</code> :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      int n = 50;
+      printf("%i\n", *&amp;n);
+  }
+</code></pre>
+</li>
+<li>
+<p>Nous devons également utiliser l'opérateur <code>*</code> (d'une manière malheureusement déroutante) pour déclarer une variable que nous voulons être un pointeur :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+     int n = 50;
+     int *p = &amp;n;
+     printf("%p\n", p);
+  }
+</code></pre>
+<ul>
+<li>Ici, nous utilisons <code>int *p</code> pour déclarer une variable, <code>p</code>, qui a le type de <code>*</code>, un pointeur, vers une valeur de type <code>int</code>, un entier. Ensuite, nous pouvons imprimer sa valeur (quelque chose comme <code>0x12345678</code>), ou imprimer la valeur à son emplacement avec <code>printf("%i\n", *p);</code>.</li>
+</ul>
+</li>
+<li>
+<p>Dans la mémoire de notre ordinateur, les variables pourraient ressembler à ceci :
+  <img alt="grille représentant des octets, avec quatre boîtes ensemble contenant 50 avec un petit 0x12345678 en dessous, et huit boîtes ensemble contenant 0x12345678 avec un petit p en dessous" src="https://cs50.harvard.edu/x/2020/notes/4/p.png" /></p>
+<ul>
+<li>Nous avons un pointeur, <code>p</code>, avec l'adresse d'une variable.</li>
+</ul>
+</li>
+<li>Nous pouvons maintenant faire abstraction de la valeur réelle des adresses, car elles seront différentes lorsque nous déclarerons des variables dans nos programmes, et simplement penser à <code>p</code> comme « pointant vers » une valeur :
+  <img alt="une boîte contenant p pointant vers une boîte plus petite contenant 50" src="https://cs50.harvard.edu/x/2020/notes/4/pointing.png" /></li>
+<li>Supposons que nous ayons une boîte aux lettres étiquetée « 123 », avec le numéro « 50 » à l'intérieur. La boîte aux lettres serait <code>int n</code>, car elle stocke un entier. Nous pourrions avoir une autre boîte aux lettres avec l'adresse « 456 », à l'intérieur de laquelle se trouve la valeur « 123 », qui est l'adresse de notre autre boîte aux lettres. Ce serait <code>int *p</code>, puisqu'il s'agit d'un pointeur vers un entier.</li>
+<li>Grâce à la possibilité d'utiliser des pointeurs, nous pouvons créer différentes structures de données, ou différentes manières d'organiser les données en mémoire que nous verrons la semaine prochaine.</li>
+<li>De nombreux systèmes informatiques modernes sont « 64 bits », ce qui signifie qu'ils utilisent 64 bits pour adresser la mémoire. Un pointeur fera donc 8 octets, soit deux fois plus qu'un entier de 4 octets.</li>
+</ul>
+<h2>string</h2>
+<ul>
+<li>On pourrait avoir une variable <code>string s</code> pour un nom tel que <code>EMMA</code> et pouvoir accéder à chaque caractère avec <code>s[0]</code> et ainsi de suite :<br />
+<img alt="cases côte à côte, contenant : E étiqueté s[0], M étiqueté s[1], M étiqueté s[2], A étiqueté s[3], \0 étiqueté s[4]" src="https://cs50.harvard.edu/x/2020/notes/4/s_array.png" /></li>
+<li>Mais il s’avère que chaque caractère est stocké en mémoire dans un octet avec une adresse donnée, et <code>s</code> est en fait juste un pointeur avec l’adresse du premier caractère :<br />
+<img alt="case contenant 0x123 étiqueté s, cases côte à côte contenant E étiqueté 0x123, M étiqueté 0x124, M étiqueté 0x125, A étiqueté 0x126, \0 étiqueté 0x127" src="https://cs50.harvard.edu/x/2020/notes/4/s_pointer.png" /></li>
+<li>Et puisque <code>s</code> est juste un pointeur vers le début, seul le <code>\0</code> indique la fin de la chaîne.</li>
+<li>En fait, la CS50 Library définit une <code>string</code> avec <code>typedef char *string</code>, qui dit juste que nous voulons nommer un nouveau type, <code>string</code>, comme un <code>char *</code>, ou un pointeur vers un caractère.</li>
+<li>
+<p>Imprimons une chaîne :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string s = "EMMA";
+      printf("%s\n", s);
+  }
+</code></pre>
+</li>
+<li>
+<p>C’est familier, mais nous pouvons simplement dire :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      char *s = "EMMA";
+      printf("%s\n", s);
+  }
+</code></pre>
+<ul>
+<li>Cela imprimera également <code>EMMA</code>.</li>
+</ul>
+</li>
+<li>
+<p>Avec <code>printf("%p\n", s);</code>, nous pouvons imprimer <code>s</code> comme sa valeur en tant que pointeur, comme <code>0x42ab52</code>. (<code>printf</code> sait aller à l’adresse et imprimer la chaîne entière lorsque nous utilisons <code>%s</code> et transmettons <code>s</code>, même si <code>s</code> pointe uniquement vers le premier caractère.)</p>
+</li>
+<li>Nous pouvons également essayer <code>printf("%p\n", &amp;s[0]);</code>, qui est l’adresse du premier caractère de <code>s</code>, et c’est exactement la même chose que d’imprimer <code>s</code>. Et l'impression de <code>&amp;s[1]</code>, <code>&amp;s[2]</code> et <code>&amp;s[3]</code> nous donne les adresses qui sont les caractères suivants en mémoire après <code>&amp;s[0]</code>, comme <code>0x42ab53</code>, <code>0x42ab54</code> et <code>0x42ab55</code>, exactement un octet après l'autre.</li>
+<li>Et enfin, si on essaie de <code>printf("%c\n", *s);</code>, on obtient un seul caractère <code>E</code>, puisqu'on va à l'adresse contenue dans <code>s</code>, qui contient le premier caractère de la chaîne.</li>
+<li>En fait, <code>s[0]</code>, <code>s[1]</code> et <code>s[2]</code> sont réellement mappés directement sur <code>*s</code>, <code>*(s+1)</code> et <code>*(s+2)</code>, puisque chacun des caractères suivants se trouve juste à l'adresse de l'octet suivant.</li>
+</ul>
+<h2>Comparer et copier</h2>
+<ul>
+<li>
+<p>Examinons <code>compare0</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Obtenir deux entiers
+      int i = get_int("i : ");
+      int j = get_int("j : ");
+
+      // Comparer les entiers
+      if (i == j)
+      {
+          printf("Identique\n");
+      }
+      else
+      {
+          printf("Différent\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Nous pouvons compiler et exécuter ce code, et notre programme fonctionne comme prévu : si les deux entiers sont identiques, le résultat est « Identique », et s'ils sont différents, le résultat est « Différent ».</li>
+</ul>
+</li>
+<li>
+<p>Dans <code>compare1</code>, nous constatons que des valeurs de chaîne identiques font que notre programme affiche « Différent » :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Obtenir deux chaînes
+      string s = get_string("s : ");
+      string t = get_string("t : ");
+
+      // Comparer les adresses des chaînes
+      if (s == t)
+      {
+          printf("Identique\n");
+      }
+      else
+      {
+          printf("Différent\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Compte tenu de ce que nous savons à présent sur les chaînes, cela est logique parce que chaque variable de « chaîne » pointe vers un emplacement différent en mémoire, où est stocké le premier caractère de chaque chaîne. Ainsi, même si les valeurs des chaînes sont identiques, l'affichage sera toujours « Différent ».</li>
+<li>Par exemple, notre première chaîne peut être à l'adresse 0x123, notre seconde à l'adresse 0x456, et <code>s</code> sera <code>0x123</code> et <code>t</code> sera <code>0x456</code>, donc ces valeurs seront différentes.</li>
+<li>Et <code>get_string</code>, pendant tout ce temps, n'a renvoyé qu'un <code>char *</code>, ou un pointeur vers le premier caractère d'une chaîne provenant de l'utilisateur.</li>
+</ul>
+</li>
+<li>
+<p>Essayons à présent de copier une chaîne :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;ctype.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      string s = get_string("s : ");
+
+      string t = s;
+
+      t[0] = toupper(t[0]);
+
+      // Afficher la chaîne deux fois
+      printf("s : %s\n", s);
+      printf("t : %s\n", t);
+  }
+</code></pre>
+<ul>
+<li>Nous obtenons une chaîne <code>s</code>, et copions la valeur de <code>s</code> dans <code>t</code>. Ensuite, nous mettons en majuscule la première lettre dans <code>t</code>.</li>
+<li>Mais lorsque nous exécutons notre programme, nous constatons que <code>s</code> et <code>t</code> sont à présent tous les deux en majuscules.</li>
+<li>Dans la mesure où nous définissons <code>s</code> et <code>t</code> avec les mêmes valeurs, ils sont en réalité des pointeurs vers le même caractère, et nous venons donc de mettre en majuscule le même caractère !</li>
+</ul>
+</li>
+<li>
+<p>Pour effectuer une véritable copie d'une chaîne, nous devons fournir un effort un peu plus important :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;ctype.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      char *s = get_string("s : ");
+
+      char *t = malloc(strlen(s) + 1);
+
+      for (int i = 0, n = strlen(s); i &lt; n + 1; i++)
+      {
+          t[i] = s[i];
+      }
+
+      t[0] = toupper(t[0]);
+
+      printf("s : %s\n", s);
+      printf("t : %s\n", t);
+  }
+</code></pre>
+<ul>
+<li>Nous créons une nouvelle variable, <code>t</code>, de type <code>char *</code>, avec <code>char *t</code>. À présent, nous souhaitons la faire pointer vers un nouveau bloc de mémoire suffisamment volumineux pour stocker la copie de la chaîne. Avec <code>malloc</code>, nous pouvons allouer un certain nombre d'octets en mémoire (qui ne sont pas déjà utilisés pour stocker d'autres valeurs), et nous faisons passer le nombre d'octets que nous souhaiterions. Nous connaissons déjà la longueur de <code>s</code>, nous ajoutons donc 1 pour le caractère null de terminaison. Ainsi, notre dernière ligne de code est <code>char *t = malloc(strlen(s) + 1);</code>.</li>
+<li>Ensuite, nous copions chaque caractère, un à la fois, et à présent, nous pouvons mettre en majuscule uniquement la première lettre de <code>t</code>. Et nous utilisons <code>i &lt; n + 1</code>, car nous souhaitons en réalité atteindre <code>n</code>, afin de garantir de copier le caractère de terminaison dans la chaîne.</li>
+<li>Nous pouvons également utiliser la fonction de bibliothèque <code>strcpy</code> avec <code>strcpy(t, s)</code> à la place de notre boucle pour copier la chaîne <code>s</code> dans <code>t</code>. Pour être clair, le concept d'une « chaîne » vient du langage C et est bien pris en charge ; les seules roulettes d'entraînement de CS50 sont le type <code>string</code> à la place de <code>char *</code> et la fonction <code>get_string</code>.</li>
+</ul>
+</li>
+<li>
+<p>Si nous ne copions pas le caractère null de terminaison, <code>\0</code>, et essayons d'imprimer notre chaîne <code>t</code>, <code>printf</code> continuera et imprimera les valeurs inconnues, ou indésirables, que nous avons en mémoire, jusqu'à atteindre un <code>\0</code>, ou s'arrêtera complètement, dans la mesure où notre programme pourrait se mettre à essayer de lire de la mémoire qui ne lui appartient pas !</p>
+</li>
+</ul>
+<h2>valgrind</h2>
+<ul>
+<li>Il s'avère qu'après avoir terminé avec la mémoire que nous avons allouée avec <code>malloc</code>, nous devrions appeler <code>free</code> (comme dans <code>free(t)</code>), ce qui indique à notre ordinateur que ces octets ne sont plus utiles à notre programme, permettant ainsi à ces octets en mémoire d'être réutilisés.</li>
+<li>Si nous continuions à exécuter notre programme et à allouer de la mémoire avec <code>malloc</code>, mais que nous ne libérions jamais la mémoire après l'avoir utilisée, nous aurions une <strong>fuite de mémoire</strong>, ce qui ralentirait notre ordinateur et utiliserait de plus en plus de mémoire jusqu'à ce que notre ordinateur manque de mémoire.</li>
+<li><code>valgrind</code> est un outil en ligne de commande que nous pouvons utiliser pour exécuter notre programme et vérifier s'il présente des fuites de mémoire. Nous pouvons exécuter valgrind sur notre programme ci-dessus avec <code>help50 valgrind ./copy</code> et constater, à partir du message d'erreur, que la ligne 10 montre que nous avons alloué de la mémoire que nous n'avons jamais libérée (ou "perdue").</li>
+<li>Ainsi, à la fin, nous pouvons ajouter une ligne <code>free(t)</code>, ce qui ne changera pas le fonctionnement de notre programme, mais ne générera plus d'erreurs avec valgrind.</li>
+<li>
+<p>Regardons le fichier <code>memory.c</code> :</p>
+<pre><code>  // http://valgrind.org/docs/manual/quick-start.html#quick-start.prepare
+
+  #include &lt;stdlib.h&gt;
+
+  void f(void)
+  {
+      int *x = malloc(10 * sizeof(int));
+      x[10] = 0;
+  }
+
+  int main(void)
+  {
+      f();
+      return 0;
+  }
+</code></pre>
+<ul>
+<li>Il s'agit d'un exemple provenant de la documentation de valgrind (valgrind est un véritable outil, tandis que help50 a été spécialement écrit pour nous aider dans ce cours).</li>
+<li>La fonction <code>f</code> alloue suffisamment de mémoire pour 10 entiers et stocke l'adresse dans un pointeur appelé <code>x</code>. Ensuite, nous essayons de définir la 11ème valeur de <code>x</code> avec <code>x[10]</code> à <code>0</code>, ce qui dépasse le tableau de mémoire que nous avons alloué pour notre programme. Cela s'appelle un <strong>dépassement de tampon</strong>, où nous dépassons les limites de notre tampon, ou tableau, et accédons à une mémoire inconnue.</li>
+</ul>
+</li>
+<li>
+<p>valgrind nous indiquera également qu'il y a une "Écriture invalide de taille 4" pour la ligne 8, où nous essayons en effet de modifier la valeur d'un entier (de taille 4 octets).</p>
+</li>
+<li>Et pendant tout ce temps, la bibliothèque CS50 a libéré la mémoire qu'elle a allouée dans <code>get_string</code>, lorsque notre programme se termine !</li>
+</ul>
+<h2>Inversion</h2>
+<ul>
+<li>Nous avons deux boissons colorées, violette et verte, chacune dans une tasse. Nous voulons intervertir les boissons entre les deux tasses, mais nous ne pouvons pas le faire sans une troisième tasse dans laquelle verser d'abord une des boissons.</li>
+<li>
+<p>Maintenant, disons que nous voulons intervertir les valeurs de deux entiers.</p>
+<pre><code>  void swap(int a, int b)
+  {
+      int tmp = a;
+      a = b;
+      b = tmp;
+  }
+</code></pre>
+</li>
+<li>
+<p>Avec une troisième variable à utiliser comme espace de stockage temporaire, nous pouvons le faire assez facilement, en mettant <code>a</code> dans <code>tmp</code>, puis <code>b</code> dans <code>a</code>, et enfin la valeur d'origine de <code>a</code>, maintenant dans <code>tmp</code>, dans <code>b</code>.</p>
+</li>
+<li>
+<p>Mais, si nous essayions d'utiliser cette fonction dans un programme, nous ne verrions aucun changement :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  void swap(int a, int b);
+
+  int main(void)
+  {
+      int x = 1;
+      int y = 2;
+
+      printf("x est %i, y est %i\n", x, y);
+      swap(x, y);
+      printf("x est %i, y est %i\n", x, y);
+  }
+
+  void swap(int a, int b)
+  {
+      int tmp = a;
+      a = b;
+      b = tmp;
+  }
+</code></pre>
+</li>
+<li>
+<p>Il s'avère que la fonction <code>swap</code> obtient ses propres variables, <code>a</code> et <code>b</code> lorsqu'elles sont passées, qui sont des copies de <code>x</code> et <code>y</code>, et donc changer ces valeurs ne change pas <code>x</code> et <code>y</code> dans la fonction <code>main</code>.</p>
+</li>
+</ul>
+<h2>Disposition en mémoire</h2>
+<ul>
+<li>Dans la mémoire de notre ordinateur, les différents types de données qui doivent être stockés pour notre programme sont organisés dans différentes sections :
+  <img alt="Grille avec sections, du haut vers le bas : code machine, globales, tas (avec flèche pointant vers le bas), pile (avec flèche pointant vers le haut)" src="https://cs50.harvard.edu/x/2020/notes/4/memory_layout.png" /><ul>
+<li>La section de <em>code machine</em> est le code binaire de notre programme compilé. Lorsque nous exécutons notre programme, ce code est chargé dans la « partie supérieure » de la mémoire.</li>
+<li>Les <em>globales</em> sont des variables globales que nous déclarons dans notre programme ou d’autres variables partagées auxquelles tout notre programme peut accéder.</li>
+<li>La section <em>heap</em> est une zone vide dans laquelle <code>malloc</code> peut obtenir de la mémoire libre, pour que notre programme puisse l’utiliser.</li>
+<li>La section <em>stack</em> est utilisée par des fonctions de notre programme lorsqu’elles sont appelées. Par exemple, notre fonction <code>main</code> est tout en bas de la pile et possède les variables locales <code>x</code> et <code>y</code>. Lorsque la fonction <code>swap</code> est appelée, elle possède son propre cadre ou tranche de mémoire qui se trouve au-dessus de la mémoire de <code>main</code>, avec les variables locales <code>a</code>, <code>b</code> et <code>tmp</code> :
+  <img alt="Section de pile avec (a, b, tmp) au-dessus de (x, y)" src="https://cs50.harvard.edu/x/2020/notes/4/stack.png" /><ul>
+<li>Une fois que la fonction <code>swap</code> renvoie, la mémoire qu’elle utilisait est libérée pour l’appel de fonction suivant, et nous perdons tout ce que nous avons fait, mis à part les valeurs renvoyées, et notre programme revient à la fonction qui a appelé <code>swap</code>.</li>
+<li>Par conséquent, en transmettant les adresses de <code>x</code> et <code>y</code> de <code>main</code> à <code>swap</code>, nous pouvons réellement modifier les valeurs de <code>x</code> et <code>y</code> : <img alt="Section de pile avec (a, b, tmp) au-dessus de (x, y), et a pointant vers x et b pointant vers y" src="https://cs50.harvard.edu/x/2020/notes/4/pointers.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>En transmettant l’adresse de <code>x</code> et de <code>y</code>, notre fonction <code>swap</code> peut réellement fonctionner :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  void swap(int *a, int *b) ;
+
+  int main(void)
+  {
+      int x = 1 ;
+      int y = 2 ;
+
+      printf("x est %i, y est %i\n", x, y) ;
+      swap(&amp;x, &amp;y) ;
+      printf("x est %i, y est %i\n", x, y) ;
+  }
+
+  void swap(int *a, int *b)
+  {
+      int tmp = *a ;
+      *a = *b ;
+      *b = tmp ;
+  }
+</code></pre>
+<ul>
+<li>Les adresses de <code>x</code> et de <code>y</code> sont transmises dans <code>main</code> à <code>swap</code>, et nous utilisons la syntaxe <code>int *a</code> pour déclarer que notre fonction <code>swap</code> prend des pointeurs. Nous enregistrons la valeur de <code>x</code> dans <code>tmp</code> en suivant le pointeur <code>a</code>, puis nous prenons la valeur de <code>y</code> en suivant le pointeur <code>b</code> et nous la stockons dans l’emplacement vers lequel <code>a</code> pointe (<code>x</code>). Enfin, nous stockons la valeur de <code>tmp</code> dans l’emplacement pointé par <code>b</code> (<code>y</code>), et nous avons terminé.</li>
+</ul>
+</li>
+<li>
+<p>Si nous appelons <code>malloc</code> trop souvent, nous aurons un <strong>dépassement de segment</strong>, où nous finissons par dépasser notre segment. Ou bien, si nous avons trop de fonctions appelées, nous aurons un <strong>dépassement de pile</strong>, où notre pile a également trop de cadres de mémoire allouée. Et ces deux types de dépassement sont généralement appelés dépassements de tampon, après quoi notre programme (ou ordinateur entier) peut planter.</p>
+</li>
+</ul>
+<h2>get_int</h2>
+<ul>
+<li>Nous pouvons implémenter <code>get_int</code> nous-mêmes avec une fonction de la bibliothèque C, <code>scanf</code> :</li>
+</ul>
+<p>```</p>
+<h1>include <stdio.h></h1>
+<p>int main(void)
+{
+    int x;
+    printf("x : ");
+    scanf("%i", &amp;x);
+    printf("x : %i\n", x);
+}
+```</p>
+<ul>
+<li>
+<p><code>scanf</code> prend un format, <code>%i</code>, donc l'entrée est « scannée » pour ce format, ainsi que l'adresse en mémoire où nous voulons que cette entrée aille. Mais <code>scanf</code> ne vérifie pas beaucoup les erreurs, donc nous n'obtiendrons peut-être pas un entier.</p>
+</li>
+<li>
+<p>Nous pouvons essayer d'obtenir une chaîne de la même manière :</p>
+</li>
+</ul>
+<p>```</p>
+<h1>include <stdio.h></h1>
+<p>int main(void)
+{
+    char *s = NULL;
+    printf("s : ");
+    scanf("%s", s);
+    printf("s : %s\n", s);
+}
+```</p>
+<ul>
+<li>Mais nous n'avons en fait alloué aucune mémoire pour <code>s</code> (<code>s</code> est <code>NULL</code>, ou ne pointe vers rien), donc nous pourrions vouloir appeler <code>char s[5]</code> pour allouer un tableau de 5 caractères pour notre chaîne. Ensuite, <code>s</code> sera traité comme un pointeur dans <code>scanf</code> et <code>printf</code>.</li>
+<li>Maintenant, si l'utilisateur tape une chaîne d'une longueur de 4 ou moins, notre programme fonctionnera en toute sécurité. Mais si l'utilisateur tape une chaîne plus longue, <code>scanf</code> pourrait essayer d'écrire au-delà de la fin de notre tableau dans une mémoire inconnue, provoquant la soudaine perte de contrôle de notre programme.</li>
+</ul>
+<h2>Fichiers</h2>
+<ul>
+<li>Avec la possibilité d'utiliser des pointeurs, nous pouvons également ouvrir des fichiers :</li>
+</ul>
+<p>```</p>
+<h1>include <cs50.h></h1>
+<h1>include <stdio.h></h1>
+<h1>include <string.h></h1>
+<p>int main(void)
+{
+    // Ouvrir le fichier
+    FILE *file = fopen("phonebook.csv", "a");</p>
+<pre><code>  // Obtenir des chaînes de l'utilisateur
+  char *name = get_string("Nom : ");
+  char *number = get_string("Numéro : ");
+
+  // Imprimer (écrire) des chaînes dans le fichier
+  fprintf(file, "%s,%s\n", name, number);
+
+  // Fermer le fichier
+  fclose(file);
+</code></pre>
+<p>}
+```</p>
+<ul>
+<li><code>fopen</code> est une nouvelle fonction que nous pouvons utiliser pour ouvrir un fichier. Elle retournera un pointeur vers un nouveau type, <code>FILE</code>, à partir duquel nous pouvons lire et écrire. Le premier argument est le nom du fichier et le second argument est le mode dans lequel nous souhaitons ouvrir le fichier (<code>r</code> pour lecture, <code>w</code> pour écriture et <code>a</code> pour ajout).</li>
+<li>Après avoir obtenu des chaînes, nous pouvons utiliser <code>fprintf</code> pour imprimer dans un fichier.</li>
+<li>
+<p>Finalement, nous fermons le fichier avec <code>fclose</code>.</p>
+</li>
+<li>
+<p>Nous pouvons désormais créer nos propres fichiers CSV (valeurs séparées par des virgules), comme de mini-tableurs, par programmation.</p>
+</li>
+</ul>
+<h1>JPEG</h1>
+<ul>
+<li>
+<p>Nous pouvons aussi écrire un programme qui ouvre un fichier et qui nous dit si c'est un fichier JPEG (une image) :</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(int argc, char *argv[])
+  {
+      // Vérifie l'utilisation
+      if (argc != 2)
+      {
+          return 1;
+      }
+
+      // Ouvre le fichier
+      FILE *file = fopen(argv[1], "r");
+      if (!file)
+      {
+          return 1;
+      }
+
+      // Lit les trois premiers octets
+      unsigned char bytes[3];
+      fread(bytes, 3, 1, file);
+
+      // Vérifie les trois premiers octets
+      if (bytes[0] == 0xff &amp;&amp; bytes[1] == 0xd8 &amp;&amp; bytes[2] == 0xff)
+      {
+          printf("Peut-être\n");
+      }
+      else
+      {
+          printf("Non\n");
+      }
+
+      // Ferme le fichier
+      fclose(file);
+  }
+</code></pre>
+</li>
+<li>
+<p>Maintenant, si on exécute ce programme avec <code>./jpeg brian.jpg</code>, notre programme va essayer d'ouvrir le fichier que nous spécifions (en vérifiant qu'on obtient un fichier non-NULL), et lit les trois premiers octets du fichier avec <code>fread</code>.</p>
+</li>
+<li>
+<p>On peut comparer les trois premiers octets (en hexadécimal) aux trois octets requis pour commencer un fichier JPEG. S'ils sont identiques, alors notre fichier est probablement un fichier JPEG (bien que d'autres types de fichiers peuvent aussi commencer par ces octets). Mais si les octets ne sont pas les mêmes, alors on sait que ce n'est définitivement pas un fichier JPEG.</p>
+</li>
+<li>
+<p>On peut utiliser ces capacités pour lire et écrire des fichiers, en particulier des images, et de les modifier en changeant les octets qu'ils contiennent, dans le problème de cette semaine !</p>
+</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

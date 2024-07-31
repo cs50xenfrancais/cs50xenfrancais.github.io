@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Leçon 3</h2>
+<ul>
+<li><a href="#recherche">Recherche</a></li>
+<li><a href="#big-o">Big O</a></li>
+<li><a href="#recherche-linéaire">Recherche linéaire</a></li>
+<li><a href="#structures">Structures</a></li>
+<li><a href="#tri">Tri</a></li>
+<li><a href="#tri-par-sélection">Tri par sélection</a></li>
+<li><a href="#récursivité">Récursivité</a></li>
+<li><a href="#tri-fusion">Tri fusion</a></li>
+</ul>
+<h2>Recherche</h2>
+<ul>
+<li>La dernière fois, nous avons parlé de la mémoire d'un ordinateur, ou RAM, et comment nos données peuvent être stockées sous forme de variables individuelles ou sous forme de tableaux de plusieurs éléments.</li>
+<li>Nous pouvons considérer un tableau contenant un certain nombre d'éléments comme une rangée de casiers, où un ordinateur ne peut ouvrir qu'un casier à la fois pour examiner un élément.</li>
+<li>Par exemple, si nous voulons vérifier si un nombre se trouve dans un tableau, avec un algorithme qui prend en entrée un tableau et produit un booléen en résultat, nous pourrions :
+    - regarder dans chaque casier, ou dans chaque élément, un à la fois, du début à la fin.
+        - Cela s'appelle <strong>recherche linéaire</strong>, où nous nous déplaçons en ligne, car notre tableau n'est pas trié.
+    - commencer au milieu et se déplacer à gauche ou à droite en fonction de ce que nous recherchons, si notre tableau d'éléments est trié.
+        - Cela s'appelle <strong>recherche binaire</strong>, car nous pouvons diviser notre problème en deux à chaque étape, comme ce que David a fait avec l'annuaire téléphonique à la semaine 0.</li>
+<li>
+<p>Nous pourrions écrire un pseudo-code pour la recherche linéaire avec :</p>
+<pre><code>  Pour i de 0 à n-1
+      Si le i-ème élément est 50
+          Retourner vrai
+  Retourner faux
+</code></pre>
+<ul>
+<li>Nous pouvons étiqueter chacun des <code>n</code> casiers de <code>0</code> à <code>n-1</code> et les cocher chacun dans l'ordre.</li>
+</ul>
+</li>
+<li>
+<p>Pour la recherche binaire, notre algorithme pourrait ressembler à :</p>
+<pre><code>  Si aucun élément
+      Retourner faux
+  Si l'élément du milieu est 50
+      Retourner vrai
+  Sinon si 50 &lt; élément du milieu
+      Rechercher dans la moitié gauche
+  Sinon si 50 &gt; élément du milieu
+      Rechercher dans la moitié droite
+</code></pre>
+<ul>
+<li>Éventuellement, il ne nous restera aucune partie du tableau (si l'élément que nous recherchons n'y était pas), nous pouvons donc retourner <code>faux</code>.</li>
+<li>Sinon, nous pouvons rechercher dans chaque moitié en fonction de la valeur de l'élément du milieu.</li>
+</ul>
+</li>
+</ul>
+<h2>Notation O (grand O)</h2>
+<ul>
+<li>Pendant la semaine 0, nous avons vu différents types d'algorithmes et leurs temps d'exécution : <img alt="graphics with: &quot;size of a problem&quot; as x–axis; &quot;time to solve&quot; as y–axis; red, steep straight line from origin to top of graph labeled &quot;n&quot;; yellow, less steep straight line from origin to top of graph labeled &quot;n/2&quot;; green, curved line that gets less and less steep from origin to right of graph labeled &quot;log_2 n&quot;" src="https://cs50.harvard.edu/x/2020/notes/3/running_time.png" /></li>
+<li>Une manière plus formelle de décrire cela est d'utiliser la notation O, que nous pouvons comprendre comme « de l'ordre de ». Par exemple, si notre algorithme est une recherche linéaire, il prendra environ O(n) mesures, « de l'ordre de n ». En fait, même un algorithme qui examine deux éléments à la fois et prend n/2 mesures a O(n). En effet, à mesure que n devient de plus en plus grand, seul le terme le plus grand, n, a de l'importance.</li>
+<li>De même, un temps d'exécution logarithmique est O(log n), quelle que soit la base, car il ne s'agit que d'une approximation de ce qui se passe lorsque n est très grand.</li>
+<li>Voici quelques temps d'exécution courants :<ul>
+<li>O(n²)</li>
+<li>O(n log n)</li>
+<li>O(n)<ul>
+<li>(recherche linéaire)</li>
+</ul>
+</li>
+<li>O(log n)<ul>
+<li>(recherche binaire)</li>
+</ul>
+</li>
+<li>O(1)</li>
+</ul>
+</li>
+<li>Les informaticiens peuvent également utiliser la notation Oméga majuscule, qui représente la borne inférieure du nombre d'étapes de notre algorithme. (O majuscule est la borne supérieure du nombre d'étapes, ou le pire des cas, et généralement ce qui nous importe le plus.) Avec la recherche linéaire, par exemple, le pire des cas est de n étapes, mais le meilleur cas est de 1 étape puisque notre élément pourrait être le premier élément que nous vérifions. Le meilleur cas pour la recherche binaire est également de 1, car notre élément peut se trouver au milieu du tableau.</li>
+<li>Et nous avons un ensemble similaire des temps d'exécution Oméga majuscule les plus courants :<ul>
+<li>Ω(n²)</li>
+<li>Ω(n log n)</li>
+<li>Ω(n)<ul>
+<li>(comptage du nombre d'éléments)</li>
+</ul>
+</li>
+<li>Ω(log n)</li>
+<li>Ω(1)<ul>
+<li>(recherche linéaire, recherche binaire)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Recherche linéaire</h2>
+<ul>
+<li>
+<p>Jetons un coup d'œil à <code>numbers.c</code> :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      // Un tableau de nombres
+      int numbers[] = {4, 8, 15, 16, 23, 42};
+
+      // Rechercher 50
+      for (int i = 0; i &lt; 6; i++)
+      {
+          if (numbers[i] == 50)
+          {
+              printf("Trouvé\n");
+              return 0;
+          }
+      }
+      printf("Non trouvé\n");
+      return 1;
+  }
+</code></pre>
+</li>
+<li>
+<p>Ici, nous initialisons un tableau avec quelques valeurs, et nous vérifions les éléments du tableau un par un, dans l'ordre.</p>
+</li>
+<li>
+<p>Et dans chaque cas, selon que la valeur a été trouvée ou non, nous pouvons renvoyer un code de sortie de 0 (pour le succès) ou de 1 (pour l'échec).</p>
+</li>
+<li>
+<p>Nous pouvons faire la même chose pour les noms :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      // Un tableau de noms
+      string names[] = {"EMMA", "RODRIGO", "BRIAN", "DAVID"};
+
+      // Rechercher EMMA
+      for (int i = 0; i &lt; 4; i++)
+      {
+          if (strcmp(names[i], "EMMA") == 0)
+          {
+              printf("Trouvé\n");
+              return 0;
+          }
+      }
+      printf("Non trouvé\n");
+      return 1;
+  }
+</code></pre>
+</li>
+<li>
+<p>Nous ne pouvons pas comparer directement des chaînes de caractères, car ce ne sont pas des types de données simples mais plutôt un tableau de plusieurs caractères, et nous devons les comparer différemment. Heureusement, la bibliothèque <code>string</code> a une fonction <code>strcmp</code> qui compare les chaînes de caractères pour nous et renvoie <code>0</code> si elles sont identiques. Nous pouvons donc l'utiliser.</p>
+</li>
+<li>
+<p>Essayons d'implémenter un annuaire téléphonique avec les mêmes idées :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  int main(void)
+  {
+      string names[] = {"EMMA", "RODRIGO", "BRIAN", "DAVID"};
+      string numbers[] = {"617–555–0100", "617–555–0101", "617–555–0102", "617–555–0103"};
+
+      for (int i = 0; i &lt; 4; i++)
+      {
+          if (strcmp(names[i], "EMMA") == 0)
+          {
+              printf("Trouvé %s\n", numbers[i]);
+              return 0;
+          }
+      }
+      printf("Non trouvé\n");
+      return 1;
+  }
+</code></pre>
+</li>
+<li>
+<p>Nous utiliserons des chaînes de caractères pour les numéros de téléphone, car ils peuvent inclure un formatage ou être trop longs pour un nombre.</p>
+</li>
+<li>Maintenant, si le nom à un certain index dans le tableau <code>names</code> correspond à celui que nous recherchons, nous renverrons le numéro de téléphone dans le tableau <code>numbers</code>, au même index. Mais cela signifie que nous devons être particulièrement attentifs pour nous assurer que chaque numéro correspond au nom à chaque index, surtout si nous ajoutons ou supprimons des noms et des numéros.</li>
+</ul>
+<h2>Structures</h2>
+<ul>
+<li>
+<p>Il s'avère que nous pouvons créer nos propres types de données personnalisés appelés <strong>structures </strong>:</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+
+  typedef struct
+  {
+      string name;
+      string number;
+  }
+  person;
+
+  int main(void)
+  {
+      person people[4];
+
+      people[0].name = "EMMA";
+      people[0].number = "617–555–0100";
+
+      people[1].name = "RODRIGO";
+      people[1].number = "617–555–0101";
+
+      people[2].name = "BRIAN";
+      people[2].number = "617–555–0102";
+
+      people[3].name = "DAVID";
+      people[3].number = "617–555–0103";
+
+      // Recherche EMMA
+      for (int i = 0; i &lt; 4; i++)
+      {
+          if (strcmp(people[i].name, "EMMA") == 0)
+          {
+              printf("Found %s\n", people[i].number);
+              return 0;
+          }
+      }
+      printf("Not found\n");
+      return 1;
+  }
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons considérer les structures comme des conteneurs, à l'intérieur desquels se trouvent plusieurs autres types de données.</p>
+</li>
+<li>Ici, nous créons notre propre type avec une structure appelée <code>personne</code>, qui aura une <code>chaîne</code> appelée <code>nom</code> et une <code>chaîne</code> appelée <code>numéro</code>. Ensuite, nous pouvons créer un tableau de ces types de structure et initialiser les valeurs à l'intérieur de chacun d'eux, en utilisant une nouvelle syntaxe, <code>.</code>, pour accéder aux propriétés de chaque <code>personne</code>.</li>
+<li>Dans notre boucle, nous pouvons maintenant être plus certains que le <code>numéro</code> correspond au <code>nom</code> puisqu'ils proviennent du même élément <code>personne</code>.</li>
+</ul>
+<h2>Tri</h2>
+<ul>
+<li>Si notre entrée est une liste non triée de nombres, il existe de nombreux algorithmes que nous pourrions utiliser pour produire une liste triée en sortie.</li>
+<li>Avec huit volontaires sur scène ayant les numéros suivants, nous pourrions envisager d'échanger les paires de nombres voisins comme première étape.</li>
+<li>
+<p>Nos volontaires commencent dans l'ordre aléatoire suivant :</p>
+<pre><code>  6 3 8 5 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>Nous examinons les deux premiers nombres et les échangeons pour qu'ils soient dans l'ordre :</p>
+<pre><code>  6 3 8 5 2 7 4 1
+  – –
+  3 6 8 5 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>La paire suivante, <code>6</code> et <code>8</code>, est dans l'ordre, nous n'avons donc pas besoin de les échanger.</p>
+</li>
+<li>
+<p>La paire suivante, <code>8</code> et <code>5</code>, doit être échangée :</p>
+<pre><code>  3 6 8 5 2 7 4 1
+      – –
+  3 6 5 8 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>Nous continuons jusqu'à ce que nous atteignions la fin de la liste :</p>
+<pre><code>  3 6 5 2 8 7 4 1
+          – –
+  3 6 5 2 7 8 4 1
+            – –
+  3 6 5 2 7 4 8 1
+              – –
+  3 6 5 2 7 4 1 8
+</code></pre>
+</li>
+<li>
+<p>Notre liste n'est pas encore triée, mais nous sommes un peu plus près de la solution parce que la plus grande valeur, <code>8</code>, a été déplacée complètement vers la droite.</p>
+</li>
+<li>
+<p>Nous répétons ceci avec un autre passage sur la liste :</p>
+<pre><code>  3 6 5 2 7 4 1 8
+  – –
+  3 6 5 2 7 4 1 8
+    – –
+  3 5 6 2 7 4 1 8
+      – –
+  3 5 2 6 7 4 1 8
+        – –
+  3 5 2 6 7 4 1 8
+          – –
+  3 5 2 6 4 7 1 8
+              – –
+  3 5 2 6 4 1 7 8
+</code></pre>
+<ul>
+<li>Notez que nous n'avions pas besoin d'échanger le 3 et le 6, ou le 6 et le 7.</li>
+</ul>
+</li>
+<li>
+<p>Maintenant, la deuxième plus grande valeur, <code>7</code>, est déplacée complètement vers la droite. Si nous répétons cela, de plus en plus de la liste sera triée et assez rapidement, nous aurons une liste entièrement triée.</p>
+</li>
+<li>
+<p>Cet algorithme est appelé <strong>tri à bulles</strong>, où les grandes valeurs « bullent » vers la droite. Le pseudo-code pour cela pourrait ressembler à :</p>
+<pre><code>  Répéter n–1 fois
+      Pour i de 0 à n–2
+          Si le ième et le i+1ème éléments sont désordonnés
+              Les échanger
+</code></pre>
+<ul>
+<li>Puisque nous comparons le ième et le i+1ème élément, nous n'avons besoin d'aller que jusqu'à <em>n</em> – 2 pour <code>i</code>. Ensuite, nous échangeons les deux éléments s'ils sont désordonnés.</li>
+<li>Et nous pouvons arrêter après avoir fait <em>n</em> – 1 passages, puisque nous savons que les n–1 plus grands éléments auront bullé vers la droite.</li>
+</ul>
+</li>
+<li>
+<p>Nous avons <em>n</em> – 2 étapes pour la boucle interne et <em>n</em> – 1 boucles, nous obtenons donc <em>n_2 – 3_n</em> + 2 étapes au total. Mais le plus grand facteur, ou terme dominant, est <em>n_2, car <code>n</code> devient de plus en plus grand, donc nous pouvons dire que le tri à bulles est _O</em>(_n_2).</p>
+</li>
+<li>Nous avons vu des temps d'exécution comme ce qui suit, et donc même si la recherche binaire est beaucoup plus rapide que la recherche linéaire, cela pourrait ne pas valoir la peine de trier d'abord la liste, à moins que nous ne fassions beaucoup de recherches au fil du temps :<ul>
+<li><em>O</em>(_n_2)<ul>
+<li>Tri à bulles</li>
+</ul>
+</li>
+<li><em>O</em>(<em>n</em> log <em>n</em>)</li>
+<li><em>O</em>(<em>n</em>)<ul>
+<li>Recherche linéaire</li>
+</ul>
+</li>
+<li><em>O</em>(log <em>n</em>)<ul>
+<li>Recherche binaire</li>
+</ul>
+</li>
+<li><em>O</em>(1)</li>
+</ul>
+</li>
+<li>Et Ω pour le tri à bulles est toujours <em>n_2, puisque nous vérifions toujours chaque paire d'éléments pour _n</em> – 1 passages.</li>
+</ul>
+<h2>Tri par sélection</h2>
+<ul>
+<li>
+<p>Adoptons une autre approche avec le même ensemble de nombres :</p>
+<pre><code>  6 3 8 5 2 7 4 1
+</code></pre>
+</li>
+<li>
+<p>D'abord, examinons chaque nombre et mémorisons le plus petit rencontré. Ensuite, nous pouvons l'échanger avec le premier nombre de notre liste, puisque nous savons que c'est le plus petit :</p>
+<pre><code>  6 3 8 5 2 7 4 1
+  –             –
+  1 3 8 5 2 7 4 6
+</code></pre>
+</li>
+<li>
+<p>Nous savons désormais qu'au moins le premier élément de notre liste est à la bonne place. Nous pouvons donc rechercher le plus petit élément parmi le reste et l'échanger avec l'élément non trié suivant (maintenant le deuxième élément) :</p>
+<pre><code>  1 3 8 5 2 7 4 6
+    –     –
+  1 2 8 5 3 7 4 6
+</code></pre>
+</li>
+<li>
+<p>Nous pouvons répéter cette opération encore et encore, jusqu'à obtenir une liste triée.</p>
+</li>
+<li>
+<p>Cet algorithme est appelé <strong>tri par sélection</strong>, et voici le pseudo-code que nous pourrions écrire :</p>
+<pre><code>  Pour i de 0 à n–1
+      Trouver le plus petit élément entre l'élément ième et le dernier élément
+      Échanger le plus petit élément avec l'élément ième
+</code></pre>
+</li>
+<li>
+<p>Avec la notation <em>O</em> grande, nous avons toujours un temps d'exécution de <em>O</em>(<em>n_2), car nous avons examiné environ tous les _n</em> éléments pour trouver le plus petit, et effectué <em>n</em> passes pour trier tous les éléments.</p>
+</li>
+<li>
+<p>Plus formellement, nous pouvons utiliser certaines formules pour montrer que le plus grand facteur est en effet _n_2 :</p>
+<pre><code>  n + (n – 1) + (n – 2) + ... + 1
+  n(n + 1)/2
+  (n^2 + n)/2
+  n^2/2 + n/2
+  O(n^2)
+</code></pre>
+</li>
+<li>
+<p>Il s'avère donc que le tri par sélection fonctionne fondamentalement de la même manière que le tri à bulles en termes de temps d'exécution :</p>
+<ul>
+<li><em>O</em>(_n_2)<ul>
+<li>tri à bulles, tri par sélection</li>
+</ul>
+</li>
+<li><em>O</em>(<em>n</em> log <em>n</em>)</li>
+<li><em>O</em>(<em>n</em>)<ul>
+<li>recherche linéaire</li>
+</ul>
+</li>
+<li><em>O</em>(log <em>n</em>)<ul>
+<li>recherche binaire</li>
+</ul>
+</li>
+<li><em>O</em>(1)</li>
+</ul>
+</li>
+<li>Le meilleur cas, Ω, est également _n_2.</li>
+<li>
+<p>Nous pouvons revenir au tri à bulles et modifier son algorithme pour obtenir quelque chose comme ceci, ce qui nous permettra d'arrêter tôt si tous les éléments sont triés :</p>
+<pre><code>  Répéter jusqu'à ce qu'il n'y ait plus d'échanges
+      Pour i de 0 à n–2
+          Si les ième et i+1ème éléments ne sont pas dans l'ordre
+              Les échanger
+</code></pre>
+<ul>
+<li>Maintenant, nous n'avons besoin d'examiner chaque élément qu'une seule fois, donc le meilleur cas est maintenant Ω(<em>n</em>) :<ul>
+<li>Ω(_n_2)<ul>
+<li>tri par sélection</li>
+</ul>
+</li>
+<li>Ω(<em>n</em> log <em>n</em>)</li>
+<li>Ω(<em>n</em>)<ul>
+<li>tri à bulles</li>
+</ul>
+</li>
+<li>Ω(log <em>n</em>)</li>
+<li>Ω(1)<ul>
+<li>recherche linéaire, recherche binaire</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nous examinons une visualisation en ligne <a href="https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html">comparaison des algorithmes de tri</a> avec des animations montrant comment les éléments se déplacent dans les tableaux pour le tri à bulles et le tri par sélection.</p>
+</li>
+</ul>
+<h2>Récursivité</h2>
+<ul>
+<li>
+<p>Rappelons que pour la semaine 0, nous avions un pseudo-code pour trouver un nom dans un annuaire téléphonique, où des lignes nous disaient de "revenir en arrière" et de répéter certaines étapes :</p>
+<pre><code>  1 Prendre l'annuaire téléphonique
+  2 Ouvrir l'annuaire téléphonique au milieu
+  3 Regarder la page
+  4 Si Smith est sur la page
+  5 Appeler Mike
+  6 Sinon si Smith est plus tôt dans l'annuaire
+  7 Ouvrir au milieu de la moitié gauche de l'annuaire
+  8 **Revenir à la ligne 3**
+  9 Sinon si Smith est plus tard dans l'annuaire
+  10 Ouvrir au milieu de la moitié droite de l'annuaire
+  11 **Revenir à la ligne 3**
+  12 Sinon
+  13 Arrêter
+</code></pre>
+</li>
+<li>
+<p>Nous pourrions simplement répéter tout notre algorithme sur la moitié de l'annuaire qu'il nous reste :</p>
+<pre><code>  1 Prendre l'annuaire téléphonique
+  2 Ouvrir l'annuaire téléphonique au milieu
+  3 Regarder la page
+  4 Si Smith est sur la page
+  5 Appeler Mike
+  6 Sinon si Smith est plus tôt dans l'annuaire
+  7 **Chercher dans la moitié gauche de l'annuaire**
+  8
+  9 Sinon si Smith est plus tard dans l'annuaire
+  10 **Chercher dans la moitié droite de l'annuaire**
+  11
+  12 Sinon
+  13 Arrêter
+</code></pre>
+<ul>
+<li>Cela ressemble à un processus cyclique qui ne finira jamais, mais nous divisons en réalité le problème par deux à chaque fois, et nous arrêtons lorsqu'il n'y a plus d'annuaire.</li>
+</ul>
+</li>
+<li>
+<p>La <strong>récursivité</strong> se produit lorsqu'une fonction ou un algorithme fait référence à lui-même, comme dans le nouveau pseudo-code ci-dessus.</p>
+</li>
+<li>
+<p>De même, pour la semaine 1, nous avons implémenté une "pyramide" de blocs sous la forme suivante :</p>
+<pre><code>  #
+  ##
+  ###
+  ####
+</code></pre>
+<ul>
+<li>
+<p>Et nous aurions pu avoir un code itératif comme celui-ci :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void draw(int h);
+
+  int main(void)
+  {
+      // Obtenir la hauteur de la pyramide
+      int height = get_int("Height: ");
+
+      // Dessiner la pyramide
+      draw(height);
+  }
+
+  void draw(int h)
+  {
+      // Dessiner une pyramide de hauteur h
+      for (int i = 1; i &lt;= h; i++)
+      {
+          for (int j = 1; j &lt;= i; j++)
+          {
+              printf("#");
+          }
+          printf("\n");
+      }
+  }
+</code></pre>
+<ul>
+<li>Ici, nous utilisons des boucles <code>for</code> pour imprimer chaque bloc de chaque rangée.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Mais notez qu'une pyramide de hauteur 4 est en réalité une pyramide de hauteur 3, avec une rangée supplémentaire de 4 blocs ajoutée. Et une pyramide de hauteur 3 est une pyramide de hauteur 2, avec une rangée supplémentaire de 3 blocs. Une pyramide de hauteur 2 est une pyramide de hauteur 1, avec une rangée supplémentaire de 2 blocs. Et enfin, une pyramide de hauteur 1 est juste une pyramide de hauteur 0, ou rien, avec une autre rangée d'un seul bloc ajoutée.</p>
+</li>
+<li>
+<p>Avec cette idée en tête, nous pouvons écrire :</p>
+<pre><code>  #include &lt;cs50.h&gt;
+  #include &lt;stdio.h&gt;
+
+  void draw(int h);
+
+  int main(void)
+  {
+      // Obtenir la hauteur de la pyramide
+      int height = get_int("Height: ");
+
+      // Dessiner la pyramide
+      draw(height);
+  }
+
+  void draw(int h)
+  {
+      // Si rien à dessiner
+      if (h == 0)
+      {
+          return;
+      }
+
+      // Dessiner une pyramide de hauteur h - 1
+      draw(h - 1);
+
+      // Dessiner une rangée supplémentaire de largeur h
+      for (int i = 0; i &lt; h; i++)
+      {
+          printf("#");
+      }
+      printf("\n");
+  }
+</code></pre>
+<ul>
+<li>Maintenant, notre fonction <code>draw</code> appelle d'abord elle-même <strong>récursivement</strong>, dessinant une pyramide de hauteur <code>h - 1</code>. Mais avant même cela, nous devons nous arrêter si <code>h</code> est 0, car il n'y aura plus rien à dessiner.</li>
+<li>Ensuite, nous dessinons la rangée suivante, ou une rangée de largeur <code>h</code>.</li>
+</ul>
+</li>
+</ul>
+<h2>Tri fusion</h2>
+<ul>
+<li>
+<p>On peut appliquer l'idée de récursion au tri, avec un autre algorithme appelé tri fusion. Voici à quoi pourrait ressembler le pseudo-code :</p>
+<pre><code>  Si un seul élément
+    Retourner
+  Sinon
+      Trier la moitié gauche des éléments
+      Trier la moitié droite des éléments
+      Fusionner les moitiés triées
+</code></pre>
+</li>
+<li>
+<p>On verra cela plus facilement en pratique avec une liste non triée :</p>
+<pre><code>  7 4 5 2 6 3 8 1
+</code></pre>
+</li>
+<li>
+<p>Tout d'abord, on trie la moitié gauche (les quatre premiers éléments) :</p>
+<pre><code>  7 4 5 2 | 6 3 8 1
+  – – – –
+</code></pre>
+</li>
+<li>
+<p>Bon, pour trier cela, on doit d'abord trier la moitié gauche de la moitié gauche :</p>
+<pre><code>  7 4 | 5 2 | 6 3 8 1
+  – –
+</code></pre>
+</li>
+<li>
+<p>Maintenant, on a juste un élément, <code>7</code>, dans la moitié gauche, et un élément, <code>4</code>, dans la moitié droite. Donc on fusionnera cela en prenant le plus petit élément de chaque liste en premier :</p>
+<pre><code>  – – | 5 2 | 6 3 8 1
+  4 7
+</code></pre>
+</li>
+<li>
+<p>Et maintenant on revient à la moitié droite de la moitié gauche et on la trie :</p>
+<pre><code>  – – | – – | 6 3 8 1
+  4 7 | 2 5
+</code></pre>
+</li>
+<li>
+<p>Maintenant, les deux moitiés de la moitié gauche sont triées, donc on peut fusionner les deux. On regarde le début de chaque liste et on prend <code>2</code> puisqu'il est plus petit que <code>4</code>. Ensuite, on prend <code>4</code>, puisque c'est maintenant le plus petit élément au début des deux listes. Puis, on prend <code>5</code>, et enfin <code>7</code>, pour obtenir :</p>
+<pre><code>  – – – – | 6 3 8 1
+  – – – –
+  2 4 5 7
+</code></pre>
+</li>
+<li>
+<p>Maintenant on trie la moitié droite de la même manière. D'abord, la moitié gauche de la moitié droite :</p>
+<pre><code>  – – – – | – – | 8 1
+  – – – – | 3 6 |
+  2 4 5 7
+</code></pre>
+</li>
+<li>
+<p>Ensuite, la moitié droite de la moitié droite :</p>
+<pre><code>  – – – – | – – | – –
+  – – – – | 3 6 | 1 8
+  2 4 5 7
+</code></pre>
+</li>
+<li>
+<p>On peut maintenant fusionner la moitié droite :</p>
+<pre><code>  – – – – | – – – –
+  – – – – | – – – –
+  2 4 5 7 | 1 3 6 8
+</code></pre>
+</li>
+<li>
+<p>Enfin, on peut fusionner les deux moitiés de la liste entière en suivant les mêmes étapes que précédemment. Remarquez que nous n'avons pas besoin de vérifier tous les éléments de chaque moitié pour trouver le plus petit, puisque nous savons que chaque moitié est déjà triée. Au lieu de cela, il suffit de prendre le plus petit élément sur deux au début de chaque moitié :</p>
+<pre><code>  – – – – | – – – –
+  – – – – | – – – –
+  2 4 5 7 | – 3 6 8
+  1
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – 4 5 7 | – 3 6 8
+  1 2
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – 4 5 7 | – – 6 8
+  1 2 3
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – – 5 7 | – – 6 8
+  1 2 3 4
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – – – 7 | – – 6 8
+  1 2 3 4   5
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – – – 7 | – – – 8
+  1 2 3 4   5 6
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – – – – | – – – 8
+  1 2 3 4   5 6 7
+
+  – – – – | – – – –
+  – – – – | – – – –
+  – – – – | – – – –
+  1 2 3 4   5 6 7 8
+</code></pre>
+</li>
+<li>
+<p>Il y a pas mal d'étapes, mais en réalité il en faut moins que pour les autres algorithmes vus jusqu'à présent. On divise la liste en deux à chaque fois, jusqu'à "trier" huit listes avec un seul élément chacune :</p>
+<pre><code>  7 | 4 | 5 | 2 | 6 | 3 | 8 | 1
+  4   7 | 2   5 | 3   6 | 1   8
+  2   4   5   7 | 1   3   6   8
+  1   2   3   4   5   6   7   8
+</code></pre>
+</li>
+<li>
+<p>Comme notre algorithme divise le problème en deux à chaque fois, sa durée d'exécution est logarithmique, avec O(log n). Après avoir trié chaque moitié (ou la moitié d'une moitié), on assemble tous les éléments, en n étapes, puisque l'on doit regarder chaque élément une fois.</p>
+</li>
+<li>La durée d'exécution totale est donc O(n log n) :<ul>
+<li>O(n²)<ul>
+<li>tri à bulles, tri par sélection</li>
+</ul>
+</li>
+<li>O(n log n)<ul>
+<li>tri fusion</li>
+</ul>
+</li>
+<li>O(n)<ul>
+<li>recherche linéaire</li>
+</ul>
+</li>
+<li>O(log n)<ul>
+<li>recherche dichotomique</li>
+</ul>
+</li>
+<li>O(1)</li>
+</ul>
+</li>
+<li>Comme log n est supérieur à 1 mais inférieur à n, n log n se situe entre n (fois 1) et n².</li>
+<li>Le meilleur cas, Ω, reste n log n, puisqu'on continue à trier chaque moitié d'abord puis à les fusionner :<ul>
+<li>Ω(n²)<ul>
+<li>tri par sélection</li>
+</ul>
+</li>
+<li>Ω(n log n)<ul>
+<li>tri fusion</li>
+</ul>
+</li>
+<li>Ω(n)<ul>
+<li>tri à bulles</li>
+</ul>
+</li>
+<li>Ω(log n)</li>
+<li>Ω(1)<ul>
+<li>recherche linéaire, recherche dichotomique</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Enfin, il y a une autre notation, Θ, Theta, que l'on utilise pour décrire les durées d'exécution des algorithmes si la borne supérieure et la borne inférieure sont identiques. Par exemple, le tri fusion est noté Θ(n log n) puisque le meilleur et le pire cas nécessitent le même nombre d'étapes. Et le tri par sélection est Θ(n²).</li>
+<li>On regarde une <a href="https://www.youtube.com/watch?v=ZZuD6iUe3Pc">visualisation finale</a> des algorithmes de tri avec un plus grand nombre d'entrées, exécutés en même temps.</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

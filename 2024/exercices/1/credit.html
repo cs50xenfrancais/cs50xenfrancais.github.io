@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Crédit</h1>
+<p><img alt="Personne tenant des cartes de crédit" src="https://cs50.harvard.edu/x/2024/psets/1/credit/credit_cards.jpeg" /></p>
+<h2>Problème à résoudre</h2>
+<p>Une carte de crédit (ou de débit) est bien entendu une carte en plastique qui vous permet de payer des biens et des services. Un numéro est imprimé sur cette carte. Il est également stocké dans une base de données quelque part, ainsi, lorsque votre carte est utilisée pour acheter quelque chose, le créancier sait à qui envoyer la facture. Il y a beaucoup de personnes qui ont des cartes de crédit dans ce monde, donc ces numéros sont assez longs : American Express utilise des numéros à 15 chiffres, MasterCard utilise des numéros à 16 chiffres et Visa utilise des numéros à 13 et 16 chiffres. Et ce sont des nombres décimaux (de 0 à 9), pas binaires, ce qui signifie, par exemple, qu’American Express pourrait imprimer jusqu’à 10^15 = 1 000 000 000 000 000 de cartes différentes ! (C’est, euh, un quadrillion.)</p>
+<p>En réalité, c’est un peu une exagération, parce que les numéros de carte de crédit ont en réalité une certaine structure. Tous les numéros American Express commencent par 34 ou 37 ; la plupart des numéros MasterCard commencent par 51, 52, 53, 54 ou 55 (ils ont également d’autres nombres de départ potentiels dont nous ne nous occuperons pas pour ce problème) ; et tous les numéros Visa commencent par 4. Mais les numéros de carte de crédit ont également une « somme de contrôle » intégrée, une relation mathématique entre au moins un nombre et d’autres. Cette somme de contrôle permet aux ordinateurs (ou aux humains qui aiment les maths) de détecter les fautes de frappe (par exemple, les transpositions), voire les numéros frauduleux, sans avoir à interroger une base de données, ce qui peut être lent. Bien sûr, un mathématicien malhonnête pourrait certainement créer un faux numéro qui respecte néanmoins la contrainte mathématique, donc une recherche dans la base de données reste nécessaire pour des vérifications plus rigoureuses.</p>
+<p>Dans un fichier appelé <code>credit.c</code> dans un dossier appelé <code>credit</code>, implémentez un programme en C qui vérifie la validité d’un numéro de carte de crédit donné.</p>
+<h2>Algorithme de Luhn</h2>
+<p>Alors, quelle est la formule secrète ? Eh bien, la plupart des cartes utilisent un algorithme inventé par Hans Peter Luhn d'IBM. Selon l’algorithme de Luhn, vous pouvez déterminer si un numéro de carte de crédit est (syntaxiquement) valide comme suit :</p>
+<ol>
+<li>Multipliez tous les deux chiffres par 2, en commençant par l’avant-dernier chiffre du numéro, puis additionnez les chiffres de ces produits.</li>
+<li>Ajoutez la somme à la somme des chiffres qui n’ont pas été multipliés par 2.</li>
+<li>Si le dernier chiffre du total est 0 (ou, plus formellement, si le total modulo 10 est congru à 0), le numéro est valide !</li>
+</ol>
+<p>C’est un peu déroutant, alors essayons un exemple avec la carte Visa de David : 4003600000000014.</p>
+<ol>
+<li>Pour la discussion, soulignons d'abord tous les deux chiffres, en commençant par l'avant-dernier chiffre du numéro :</li>
+</ol>
+<p>4003600000000014</p>
+<p>D'accord, multiplions chacun des chiffres soulignés par 2 :</p>
+<p>1•2 + 0•2 + 0•2 + 0•2 + 0•2 + 6•2 + 0•2 + 4•2</p>
+<p>Cela nous donne :</p>
+<p>2 + 0 + 0 + 0 + 0 + 12 + 0 + 8</p>
+<p>Additionnons maintenant les chiffres de ces produits (c'est-à-dire, pas les produits eux-mêmes) :</p>
+<p>2 + 0 + 0 + 0 + 0 + 1 + 2 + 0 + 8 = 13</p>
+<ol>
+<li>Ajoutons maintenant cette somme (13) à la somme des chiffres qui n'ont pas été multipliés par 2 (en partant de la fin) :</li>
+</ol>
+<p>13 + 4 + 0 + 0 + 0 + 0 + 0 + 3 + 0 = 20</p>
+<ol>
+<li>Ouais, le dernier chiffre de cette somme (20) est un 0, donc la carte de David est légitime !</li>
+</ol>
+<p>Donc, valider les numéros de carte de crédit n’est pas difficile, mais cela devient un peu fastidieux à la main. Écrivons un programme.</p>
+<h2>Détails de l’implémentation</h2>
+<p>Dans le fichier appelé <code>credit.c</code> dans le répertoire <code>credit</code>, écrivez un programme qui invite l’utilisateur à saisir un numéro de carte de crédit, puis indique (via <code>printf</code>) s’il s’agit d’un numéro de carte American Express, MasterCard ou Visa valide, selon les définitions de chaque format. Afin que nous puissions automatiser certains tests de votre code, nous vous demandons que la dernière ligne de sortie de votre programme soit <code>AMEX\n</code> ou <code>MASTERCARD\n</code> ou <code>VISA\n</code> ou <code>INVALID\n</code>, rien de plus, rien de moins. Pour plus de simplicité, vous pouvez supposer que l'entrée de l'utilisateur sera entièrement numérique (c'est-à-dire, dépourvue de tirets, comme cela pourrait être imprimé sur une carte réelle) et qu'elle n'aura pas de zéros non significatifs. Mais ne supposez pas que l'entrée de l'utilisateur tiendra dans un <code>int</code> ! Il est préférable d'utiliser <code>get_long</code> de la bibliothèque de CS50 pour obtenir l'entrée des utilisateurs. (Pourquoi ?)</p>
+<p>Considérez l'exemple ci-dessous de la façon dont votre propre programme devrait se comporter lorsqu'un numéro de carte de crédit valide (sans tirets) lui est passé.</p>
+<pre><code>  $ ./credit
+  Numéro : 4003600000000014
+  VISA
+</code></pre>
+<p>Maintenant, <code>get_long</code> lui-même rejettera les tirets (et plus) de toute façon :</p>
+<pre><code>  $ ./credit
+  Numéro : 4003-6000-0000-0014
+  Numéro : foo
+  Numéro : 4003600000000014
+  VISA
+</code></pre>
+<p>Mais c'est à vous de saisir les entrées qui ne sont pas des numéros de carte de crédit (par exemple, un numéro de téléphone), même si elles sont numériques :</p>
+<pre><code>  $ ./credit
+  Numéro : 6176292929
+  INVALID
+</code></pre>
+<p>Testez votre programme avec de nombreuses entrées valides et non valides. (Nous le ferons certainement !) Voici quelques <a href="https://developer.paypal.com/api/nvp-soap/payflow/integration-guide/test-transactions/#standard-test-cards">numéros de carte</a> recommandés par PayPal pour les tests.</p>
+<p>Si votre programme ne se comporte pas correctement sur certaines entrées (ou ne se compile pas du tout), il est temps de déboguer !</p>
+<h3>Procédure pas à pas</h3>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/dF7wNjsRBjI?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h3>Comment tester votre code</h3>
+<p>Vous pouvez également exécuter ce qui suit pour évaluer l'exactitude de votre code à l'aide de <code>check50</code>. Mais assurez-vous de le compiler et de le tester vous-même !</p>
+<h3>Exactitude</h3>
+<p>Dans votre terminal, exécutez ce qui suit pour vérifier l'exactitude de votre travail.</p>
+<pre><code>  check50 cs50/problems/2024/x/credit
+</code></pre>
+<h3>Style</h3>
+<p>Exécutez ce qui suit pour évaluer le style de votre code à l’aide de <code>style50</code>.</p>
+<pre><code>  style50 credit.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<p>Dans votre terminal, exécutez ce qui suit pour soumettre votre travail.</p>
+<pre><code>  submit50 cs50/problems/2024/x/credit
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

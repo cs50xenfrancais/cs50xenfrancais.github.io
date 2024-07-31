@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Argent</h1>
+<h2>Problème à résoudre</h2>
+<p>Dans un fichier appelé <code>cash.py</code> dans un dossier appelé <code>sentimental-cash</code>, écrivez un programme qui demande à l'utilisateur combien d'argent il lui est dû, puis affiche le nombre minimal de pièces avec lesquelles cette monnaie peut être rendue. Vous pouvez le faire exactement comme vous l'avez fait dans <a href="../../1/">l'ensemble des problèmes 1</a>, sauf que votre programme doit cette fois être écrit en Python et que vous devez supposer que l'utilisateur saisira son argent en dollars (par exemple, 0,50 dollar au lieu de 50 cents).</p>
+<h2>Démonstration</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-eoFGGVR2gwl2jvyj7sHchxUmW" src="https://asciinema.org/a/eoFGGVR2gwl2jvyj7sHchxUmW.js"></script>
+
+<h2>Spécification</h2>
+<ul>
+<li>Utilisez <code>get_float</code> de la bibliothèque CS50 pour obtenir l'entrée de l'utilisateur et <code>print</code> pour afficher votre réponse. Supposez que les seules pièces disponibles sont les quarts (25&cent;), les dimes (10&cent;), les nickels (5&cent;) et les pennies (1&cent;).<ul>
+<li>Nous vous demandons d'utiliser <code>get_float</code> afin que vous puissiez gérer les dollars et les cents, même sans signe dollar. En d'autres termes, si un client a une dette de 9,75 $ (comme dans le cas où un journal coûte 25 &cent; mais que le client paie avec un billet de 10 $), supposons que l'entrée de votre programme sera <code>9,75</code> et non <code>9,75 $ ' ou</code>975<code>. Cependant, si un client a une dette de 9 $ exactement, supposons que l'entrée de votre programme sera</code>9,00<code>ou simplement</code>9<code>mais, encore une fois, pas</code>9 $<code>ou</code>900<code>. Bien sûr, de par la nature des valeurs à virgule flottante, votre programme fonctionnera probablement également avec des entrées comme</code>9,0<code>et</code>9,000`; vous n'avez pas à vous soucier de vérifier si l'entrée de l'utilisateur est « formatée » comme il se doit pour l'argent.</li>
+</ul>
+</li>
+<li>Si l'utilisateur ne parvient pas à fournir une valeur non négative, votre programme doit redemander à l'utilisateur un montant valide, encore et encore, jusqu'à ce que l'utilisateur s'y conforme.</li>
+<li>Incidemment, afin que nous puissions automatiser certains tests de votre code, nous demandons que la dernière ligne de sortie de votre programme soit uniquement le nombre minimum de pièces possible : un entier suivi d'une nouvelle ligne.</li>
+</ul>
+<h2>Comment tester</h2>
+<p>Bien que <code>check50</code> soit disponible pour ce problème, nous vous encourageons à d'abord tester votre code vous-même pour chacun des éléments suivants.</p>
+<ul>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>0,41</code> et appuyez sur Entrée. Votre programme devrait sortir <code>4</code>.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>0,01</code> et appuyez sur Entrée. Votre programme devrait sortir <code>1</code>.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>0,15</code> et appuyez sur Entrée. Votre programme devrait sortir <code>2</code>.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>1,60</code> et appuyez sur Entrée. Votre programme devrait sortir <code>7</code>.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>23</code> et appuyez sur Entrée. Votre programme devrait sortir <code>92</code>.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>4,2</code> et appuyez sur Entrée. Votre programme devrait sortir <code>18</code>.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>-1</code> et appuyez sur Entrée. Votre programme doit rejeter cette entrée comme non valide, en demandant à l'utilisateur de saisir un autre nombre.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. Tapez <code>foo</code> et appuyez sur Entrée. Votre programme doit rejeter cette entrée comme non valide, en demandant à l'utilisateur de saisir un autre nombre.</li>
+<li>Exécutez votre programme en tant que <code>python cash.py</code>, et attendez une invite pour la saisie. N'écrivez rien et appuyez sur Entrée. Votre programme doit rejeter cette entrée comme non valide, en demandant à l'utilisateur de saisir un autre nombre.</li>
+</ul>
+<h3>Exactitude</h3>
+<pre><code>  check50 cs50/problems/2024/x/sentimental/cash
+</code></pre>
+<h3>Style</h3>
+<pre><code>  style50 cash.py
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/sentimental/cash
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>Bonjour tout le monde</h2>
+<h2>Problème à résoudre</h2>
+<p>Grâce au Professeur <a href="https://en.wikipedia.org/wiki/David_J._Malan">David Malan</a> (qui enseignait CS50 lorsque Ramon le suivit !), "bonjour tout le monde" a été implémenté dans des centaines de langues. Ajoutons votre implémentation à la liste !</p>
+<p>Dans un fichier appelé <code>hello.c</code>, dans un dossier appelé <code>world</code>, implémentez un programme en C qui imprime <code>bonjour tout le monde\n</code>, et c'est tout !</p>
+<h4>Astuce</h4>
+<p>Voici le code réel que vous devez écrire ! (Sacrée astuce, hein ?) Il est cependant préférable de le saisir vous-même plutôt que de le copier/coller, afin de commencer à développer votre "mémoire musculaire" dans l'écriture de code.</p>
+<pre><code>  #include &lt;stdio.h&gt;
+
+  int main(void)
+  {
+      printf("hello, world\n");
+  }
+</code></pre>
+<h2>Démonstration</h2>
+<p>Voici une démonstration de ce qui doit se produire lorsque vous compilez et exécutez votre programme.</p>
+<script async="" data-autoplay="1" data-cols="80" data-loop="1" data-rows="12" id="asciicast-C5rag3703OZpKxGJ6dSwHnUEF" src="https://asciinema.org/a/C5rag3703OZpKxGJ6dSwHnUEF.js"></script>
+
+<h2>Comment commencer</h2>
+<p>Ouvrez <a href="https://cs50.dev/">VS Code</a>.</p>
+<p>Commencez par cliquer dans votre fenêtre de terminal, puis exécutez <code>cd</code> tout seul. Vous devriez constater que son "invite" ressemble à ce qui suit :</p>
+<pre><code>  $
+</code></pre>
+<p>Exécutez ensuite :</p>
+<pre><code>  mkdir world
+</code></pre>
+<p>pour créer un dossier appelé <code>world</code> dans votre espace de code.</p>
+<p>Exécutez ensuite :</p>
+<pre><code>  cd world
+</code></pre>
+<p>pour changer de répertoire et entrer dans ce dossier. Vous devriez maintenant voir l'invite de votre terminal comme : <code>world/ $</code>. Vous pouvez désormais exécuter :</p>
+<pre><code>  code hello.c
+</code></pre>
+<p>pour créer un fichier appelé <code>hello.c</code> dans lequel vous pouvez écrire votre code.</p>
+<h2>Comment tester</h2>
+<p>Rappelez-vous que vous pouvez compiler <code>hello.c</code> avec :</p>
+<pre><code>  make hello
+</code></pre>
+<p>Si vous ne voyez pas de message d'erreur, la compilation a réussi ! Vous pouvez confirmer cela avec :</p>
+<pre><code>  ls
+</code></pre>
+<p>qui devrait lister non seulement <code>hello.c</code> (qui est un code source), mais aussi <code>hello</code> (qui est un code machine).</p>
+<p>Si vous voyez un message d'erreur, essayez de corriger votre code et de le recompiler. Toutefois, si vous ne comprenez pas le message d'erreur, essayez d'exécuter :</p>
+<pre><code>  help50 make hello
+</code></pre>
+<p>pour des conseils.</p>
+<p>Une fois que votre code est correctement compilé, vous pouvez exécuter votre programme avec :</p>
+<pre><code>  ./hello
+</code></pre>
+<h3>Justesse</h3>
+<p>Exécutez ce qui suit pour évaluer la justesse de votre code à l'aide de <code>check50</code>, un programme en ligne de commande qui affichera des visages heureux chaque fois que votre code réussira les tests automatisés de CS50 et des visages tristes chaque fois qu'il échouera !</p>
+<pre><code>  check50 cs50/problems/2024/x/world
+</code></pre>
+<h3>Style</h3>
+<p>Exécutez ce qui suit pour évaluer le style de votre code à l'aide de <code>style50</code>, un programme en ligne de commande qui affichera des ajouts (en vert) et des suppressions (en rouge) que vous devez apporter à votre programme afin d'améliorer son style. Si vous avez du mal à voir ces couleurs, <code>style50</code> prend également en charge d'autres <a href="https://cs50.readthedocs.io/style50/">modes</a> !</p>
+<pre><code>  style50 hello.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<p>Inutile de soumettre celui-ci !</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

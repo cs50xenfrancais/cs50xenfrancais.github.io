@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Le scrutin majoritaire à plusieurs tours</h1>
+<h2>Problème à résoudre</h2>
+<p>Vous connaissez déjà les élections à scrutin majoritaire uninominal qui suivent un algorithme très simple pour déterminer le vainqueur : chaque électeur dispose d'une voix et le candidat ayant obtenu le plus de voix gagne.</p>
+<p>Mais le scrutin majoritaire présente quelques inconvénients. Que se passe-t-il, par exemple, lors d'une élection avec trois candidats et que les bulletins suivants sont déposés ?</p>
+<p><img alt="Cinq bulletins, égalité entre Alice et Bob" src="https://cs50.harvard.edu/x/2024/psets/3/fptp_ballot_1.png" /></p>
+<p>Un scrutin majoritaire déclarerait ici une égalité entre Alice et Bob, puisque chacun a obtenu deux voix. Mais est-ce le bon résultat ?</p>
+<p>Il existe un autre type de système électoral connu sous le nom de vote préférentiel. Dans un système de vote préférentiel, les électeurs peuvent voter pour plusieurs candidats. Au lieu de voter uniquement pour leur premier choix, ils peuvent classer les candidats par ordre de préférence. Les bulletins résultants pourraient donc ressembler à ceux ci-dessous.</p>
+<p><img alt="Cinq bulletins, avec préférences classées" src="https://cs50.harvard.edu/x/2024/psets/3/ranked_ballot_1.png" /></p>
+<p>Ici, chaque électeur, en plus de préciser son candidat de première préférence, a également indiqué ses deuxième et troisième choix. Et maintenant, ce qui était auparavant une élection à égalité pourrait maintenant avoir un gagnant. La course était à l'origine une égalité entre Alice et Bob, donc Charlie était hors course. Mais l'électeur qui a choisi Charlie a préféré Alice à Bob, donc Alice pourrait ici être déclarée gagnante.</p>
+<p>Le vote préférentiel peut également résoudre un autre inconvénient potentiel du scrutin majoritaire. Regardez les bulletins suivants.</p>
+<p><img alt="Neuf bulletins, avec préférences classées" src="https://cs50.harvard.edu/x/2024/psets/3/ranked_ballot_3.png" /></p>
+<p>Qui devrait gagner cette élection ? Lors d'un scrutin majoritaire où chaque électeur choisit uniquement sa première préférence, Charlie remporte cette élection avec quatre voix contre seulement trois pour Bob et deux pour Alice. Mais une majorité des électeurs (5 sur 9) seraient plus heureux avec Alice ou Bob qu'avec Charlie. En tenant compte des préférences classées, un système électoral peut être en mesure de choisir un gagnant qui reflète mieux les préférences des électeurs.</p>
+<p>L'un de ces systèmes de vote préférentiel est le scrutin majoritaire à deux tours. Lors d'une élection à deux tours, les électeurs peuvent classer autant de candidats qu'ils le souhaitent. Si un candidat obtient la majorité (plus de 50 %) des voix de première préférence, ce candidat est déclaré vainqueur de l'élection.</p>
+<p>Si aucun candidat n'a obtenu plus de 50 % des voix, un « deuxième tour » a lieu. Le candidat qui a reçu le moins de voix est éliminé de l'élection, et toute personne ayant initialement choisi ce candidat comme première préférence voit désormais sa seconde préférence prise en compte. Pourquoi s'y prendre ainsi ? En effet, cela simule ce qui se serait passé si le candidat le moins populaire n'avait pas été dans l'élection au départ.</p>
+<p>Le processus se répète : si aucun candidat n'obtient la majorité des voix, le candidat de la dernière place est éliminé, et toute personne ayant voté pour lui votera à la place pour sa prochaine préférence (qui n'a pas elle-même déjà été éliminée). Une fois qu'un candidat a la majorité, ce candidat est déclaré vainqueur.</p>
+<p>Ça a l'air un peu plus compliqué qu'un scrutin majoritaire, n'est-ce pas ? Mais il a sans doute l'avantage d'être un système électoral où le vainqueur de l'élection représente plus précisément les préférences des électeurs. Dans un fichier appelé <code>runoff.c</code> dans un dossier appelé <code>runoff</code>, créez un programme pour simuler une élection à deux tours.</p>
+<h2>Démo</h2>
+<script async="" data-autoplay="1" data-cols="100" data-loop="1" data-rows="12" id="asciicast-4rhSKgaZQsY93RLj0xgu7nwKB" src="https://asciinema.org/a/4rhSKgaZQsY93RLj0xgu7nwKB.js"></script>
+
+<h2>Code de distribution</h2>
+<h3>Télécharger le code de distribution</h3>
+<p>Connectez-vous à <a href="https://cs50.dev/">cs50.dev</a>, cliquez sur votre fenêtre de terminal et exécutez <code>cd</code> tout seul. Vous devriez constater que l'invite de votre fenêtre de terminal ressemble à ce qui suit :</p>
+<pre><code>  $
+</code></pre>
+<p>Ensuite, exécutez</p>
+<pre><code>  wget https://cdn.cs50.net/2023/fall/psets/3/runoff.zip
+</code></pre>
+<p>pour télécharger un fichier ZIP appelé <code>runoff.zip</code> dans votre codespace.</p>
+<p>Puis exécutez</p>
+<pre><code>  unzip runoff.zip
+</code></pre>
+<p>pour créer un dossier appelé <code>runoff</code>. Vous n'avez plus besoin du fichier ZIP, vous pouvez donc exécuter</p>
+<pre><code>  rm runoff.zip
+</code></pre>
+<p>et répondre par « y » suivi d'Entrée à l'invite pour supprimer le fichier ZIP que vous avez téléchargé.</p>
+<p>Maintenant, tapez</p>
+<pre><code>  cd runoff
+</code></pre>
+<p>suivi d'Entrée pour vous déplacer dans (c'est-à-dire ouvrir) ce répertoire. Votre invite devrait maintenant ressembler à ce qui suit.</p>
+<pre><code>  runoff/ $
+</code></pre>
+<p>Si tout s'est bien passé, vous devez exécuter</p>
+<pre><code>  ls
+</code></pre>
+<p>et voir un fichier nommé <code>runoff.c</code>. L'exécution de <code>code runoff.c</code> devrait ouvrir le fichier dans lequel vous taperez votre code pour ce problème. Sinon, revenez sur vos pas et voyez si vous pouvez déterminer où vous vous êtes trompé !</p>
+<h3>Comprenez le code dans <code>runoff.c</code></h3>
+<p>Chaque fois que vous étendez les fonctionnalités d'un code existant, il est préférable de d'abord s'assurer que vous le comprenez dans son état actuel.</p>
+<p>Regardez d'abord le haut de <code>runoff.c</code>. Deux constantes sont définies : <code>MAX_CANDIDATES</code> pour le nombre maximum de candidats à l'élection et <code>MAX_VOTERS</code> pour le nombre maximum d'électeurs à l'élection.</p>
+<pre><code>  // Max électeurs et candidats
+  #define MAX_VOTERS 100
+  #define MAX_CANDIDATES 9
+</code></pre>
+<p>Notez que <code>MAX_CANDIDATES</code> est utilisé pour dimensionner un tableau, <code>candidates</code>.</p>
+<pre><code>  // Tableau de candidats
+  candidate candidates[MAX_CANDIDATES];
+</code></pre>
+<p><code>candidates</code> est un tableau de <code>candidate</code>s. Dans <code>runoff.c</code>, un <code>candidate</code> est une <code>struct</code>. Chaque <code>candidate</code> a un champ <code>string</code> pour son <code>name</code>, un <code>int</code> représentant le nombre de <code>votes</code> qu'il a actuellement et une valeur <code>bool</code> appelée <code>eliminated</code> qui indique si le candidat a été éliminé de l'élection. Le tableau <code>candidates</code> suivra tous les candidats à l'élection.</p>
+<pre><code>  // Les candidats ont un nom, un nombre de voix, un statut éliminé
+  typedef struct
+  {
+      string name;
+      int votes;
+      bool eliminated;
+  }
+  candidate;
+</code></pre>
+<p>Vous pouvez maintenant mieux comprendre <code>preferences</code>, le tableau bidimensionnel. Le tableau <code>preferences[i]</code> représentera toutes les préférences de l'électeur numéro <code>i</code>. L'entier, <code>preferences[i][j]</code>, stockera l'index du candidat, du tableau <code>candidates</code>, qui est la <code>j</code>ème préférence de l'électeur <code>i</code>.</p>
+<pre><code>  // preferences[i][j] est la jème préférence pour l'électeur i
+  int preferences[MAX_VOTERS][MAX_CANDIDATES];
+</code></pre>
+<p>Le programme a également deux variables globales : <code>voter_count</code> et <code>candidate_count</code>.</p>
+<pre><code>  // Nombre d'électeurs et de candidats
+  int voter_count;
+  int candidate_count;
+</code></pre>
+<p>Passons maintenant à <code>main</code>. Notez qu'après avoir déterminé le nombre de candidats et le nombre d'électeurs, la boucle de vote principale commence, donnant à chaque électeur une chance de voter. Lorsque l'électeur entre ses préférences, la fonction <code>vote</code> est appelée pour suivre toutes les préférences. Si, à un moment quelconque, le bulletin de vote est jugé invalide, le programme se termine.</p>
+<p>Une fois que tous les votes sont rentrés, une autre boucle commence, celle-ci va continuer à boucler dans le processus de ruissellement de vérification d'un gagnant et d'élimination du candidat de la dernière place jusqu'à ce qu'il y ait un gagnant.</p>
+<p>Le premier appel ici est à une fonction appelée <code>tabulate</code>, qui devrait examiner toutes les préférences des électeurs et calculer le nombre total de votes actuels, en regardant le candidat de premier choix de chaque électeur qui n'a pas encore été éliminé. Ensuite, la fonction <code>print_winner</code> doit imprimer le gagnant s'il y en a un ; s'il y en a un, le programme est terminé. Mais sinon, le programme doit déterminer le plus petit nombre de votes que toute personne toujours dans l'élection a reçu (via un appel à <code>find_min</code>). S'il s'avère que tout le monde dans l'élection est à égalité avec le même nombre de voix (comme déterminé par la fonction <code>is_tie</code>), l'élection est déclarée à égalité ; sinon, le candidat (ou les candidats) de la dernière place est éliminé de l'élection via un appel à la fonction <code>eliminate</code>.</p>
+<p>Si vous regardez un peu plus loin dans le fichier, vous verrez que le reste des fonctions — <code>vote</code>, <code>tabulate</code>, <code>print_winner</code>, <code>find_min</code>, <code>is_tie</code> et <code>eliminate</code> — sont toutes à vous de compléter ! <strong>Vous ne devez rien modifier d'autre dans <code>runoff.c</code> (et l'inclusion de fichiers d'en-tête supplémentaires, si vous le souhaitez).</strong></p>
+<h2>Astuces</h2>
+<h3>Complétez la fonction <code>vote</code></h3>
+<ul>
+<li>La fonction prend trois arguments : <code>voter</code>, <code>rank</code> et <code>name</code>.</li>
+<li>Si <code>name</code> correspond au nom d'un candidat valide, vous devez mettre à jour le tableau des préférences globales pour indiquer que l'électeur <code>voter</code> a ce candidat comme préférence <code>rank</code>. Gardez à l'esprit que <code>0</code> est la première préférence, <code>1</code> est la deuxième préférence, etc. Vous pouvez supposer qu'aucun candidat n'aura le même nom.</li>
+<li>Si la préférence est enregistrée avec succès, la fonction doit renvoyer <code>true</code>. Sinon, la fonction doit renvoyer <code>false</code>. Considérez, par exemple, lorsque <code>name</code> n'est pas le nom de l'un des candidats.</li>
+</ul>
+<p>Au fur et à mesure que vous écrivez votre code, tenez compte de ces astuces :</p>
+<ul>
+<li>Rappelez-vous que <code>candidate_count</code> stocke le nombre de candidats à l'élection.</li>
+<li>Rappelez-vous que vous pouvez utiliser <a href="https://man.cs50.io/3/strcmp"><code>strcmp</code></a> pour comparer deux chaînes de caractères.</li>
+<li>Rappelez-vous que <code>preferences[i][j]</code> stocke l'index du candidat qui est la préférence classée <code>j</code> pour l'<code>i</code>ème électeur.</li>
+</ul>
+<h3>Compléter la fonction <code>tabulate</code></h3>
+<ul>
+<li>La fonction doit mettre à jour le nombre de <code>votes</code> que chaque candidat possède à ce stade du second tour.</li>
+<li>Rappelons qu'à chaque étape du second tour, chaque électeur vote effectivement pour son candidat préféré qui n'a pas encore été éliminé.</li>
+</ul>
+<p>Pendant que vous écrivez votre code, tenez compte de ces conseils :</p>
+<ul>
+<li>Rappelez-vous que <code>voter_count</code> stocke le nombre d'électeurs dans l'élection et que, pour chaque électeur dans notre élection, nous voulons compter un bulletin.</li>
+<li>Rappelez-vous que pour un électeur <code>i</code>, son candidat de premier choix est représenté par <code>preferences[i][0]</code>, son candidat de deuxième choix par <code>preferences[i][1]</code>, etc.</li>
+<li>Rappelez-vous que la <code>structure</code> <code>candidate</code> a un champ appelé <code>eliminated</code>, qui sera <code>true</code> si le candidat a été éliminé de l'élection.</li>
+<li>Rappelez-vous que la <code>structure</code> <code>candidate</code> a un champ appelé <code>votes</code>, que vous voudrez probablement mettre à jour pour le candidat préféré de chaque électeur.</li>
+<li>Rappelez-vous qu'une fois que vous avez exprimé un vote pour le premier candidat non éliminé d'un électeur, vous voudrez vous arrêter, et non pas continuer dans son bulletin de vote. Vous pouvez sortir d'une boucle précocement en utilisant <code>break</code> à l'intérieur d'une condition.</li>
+</ul>
+<h3>Compléter la fonction <code>print_winner</code></h3>
+<ul>
+<li>Si un candidat obtient plus de la moitié des voix, son nom doit être imprimé et la fonction doit renvoyer <code>true</code>.</li>
+<li>Si personne n'a encore remporté l'élection, la fonction doit renvoyer <code>false</code>.</li>
+</ul>
+<p>Pendant que vous écrivez votre code, tenez compte de cet indice :</p>
+<ul>
+<li>Rappelez-vous que <code>voter_count</code> stocke le nombre d'électeurs dans l'élection. Compte tenu de cela, comment exprimeriez-vous le nombre de votes nécessaires pour remporter l'élection ?</li>
+</ul>
+<h3>Compléter la fonction <code>find_min</code></h3>
+<ul>
+<li>La fonction doit renvoyer le nombre minimum de voix pour tout candidat participant encore à l'élection.</li>
+</ul>
+<p>Pendant que vous écrivez votre code, tenez compte de cet indice :</p>
+<ul>
+<li>Vous voudrez probablement parcourir les candidats pour trouver celui qui est toujours dans l'élection et qui possède le plus petit nombre de voix. Quelles informations devez-vous suivre pendant que vous parcourez les candidats ?</li>
+</ul>
+<h3>Compléter la fonction <code>is_tie</code></h3>
+<ul>
+<li>La fonction prend un argument <code>min</code>, qui sera le nombre minimum de voix que n'importe qui dans l'élection possède actuellement.</li>
+<li>La fonction doit renvoyer <code>true</code> si tous les candidats restants dans l'élection ont le même nombre de voix, et doit renvoyer <code>false</code> sinon.</li>
+</ul>
+<p>Pendant que vous écrivez votre code, tenez compte de cet indice :</p>
+<ul>
+<li>Rappelez-vous qu'une égalité se produit si tous les candidats restant dans l'élection ont le même nombre de voix. Notez également que la fonction <code>is_tie</code> prend un argument <code>min</code>, qui est le plus petit nombre de voix que n'importe quel candidat possède actuellement. Comment pourriez-vous utiliser <code>min</code> pour déterminer si l'élection est à égalité (ou, inversement, pas une égalité )?</li>
+</ul>
+<h3>Compléter la fonction <code>eliminate</code></h3>
+<ul>
+<li>La fonction prend un argument <code>min</code>, qui sera le nombre minimum de voix que n'importe qui dans l'élection possède actuellement.</li>
+<li>La fonction doit éliminer le ou les candidats qui ont <code>min</code> nombre de voix.</li>
+</ul>
+<h2>Instructions pas à pas</h2>
+<div class="ratio ratio-16x9" data-video=""><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="border" data-video="" src="https://www.youtube.com/embed/-Vc5aGywKxo?modestbranding=0&amp;rel=0&amp;showinfo=0"></iframe></div>
+
+<h2>Comment tester</h2>
+<p>Assurez-vous de tester votre code pour vous assurer qu'il gère...</p>
+<ul>
+<li>Une élection avec n'importe quel nombre de candidats (jusqu'au <code>MAX</code> de <code>9</code>)</li>
+<li>Voter pour un candidat par son nom</li>
+<li>Votes non valables pour les candidats qui ne figurent pas sur le bulletin de vote</li>
+<li>Impression du vainqueur de l'élection s'il n'y en a qu'un</li>
+<li>Ne pas éliminer quelqu'un dans le cas d'une égalité entre tous les candidats restants.</li>
+</ul>
+<h3>Exactitude</h3>
+<pre><code>  check50 cs50/problems/2024/x/runoff
+</code></pre>
+<h3>Style</h3>
+<pre><code>  style50 runoff.c
+</code></pre>
+<h2>Comment soumettre</h2>
+<pre><code>  submit50 cs50/problems/2024/x/runoff
+</code></pre>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

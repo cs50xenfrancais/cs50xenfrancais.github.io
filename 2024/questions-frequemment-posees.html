@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h2>FAQ</h2>
+<p>Voici des réponses aux questions les plus fréquentes à propos de ce cours. Pour des réponses à d'autres questions, demandez simplement à n'importe quelle <a href="../communities/">communauté</a>!</p>
+<ul>
+<li><a href="#dois-je-suivre-ce-cours">Dois-je suivre ce cours ?</a><ul>
+<li><a href="#suis-je-trop-jeune-ou-mon-enfant-est-il-trop-jeune-pour-suivre-ce-cours">Suis-je trop jeune ou mon enfant est-il trop jeune pour suivre ce cours ?</a></li>
+<li><a href="#y-a-t-il-des-prérequis-pour-ce-cours">Y a-t-il des prérequis pour ce cours ?</a></li>
+<li><a href="#ce-cours-peut-il-être-utilisé-pour-remplir-les-conditions-académiques-officielles-de-mon-université-de-mon-collège-ou-de-mon-école">Ce cours peut-il être utilisé pour remplir les conditions académiques officielles de mon université, de mon collège ou de mon école ?</a></li>
+<li><a href="#puis-je-obtenir-une-lettre-confirmant-mon-inscription-et-les-détails-du-cours">Puis-je obtenir une lettre confirmant mon inscription et les détails du cours ?</a></li>
+</ul>
+</li>
+<li><a href="#inscription">Inscription</a><ul>
+<li><a href="#comment-puis-je-m-inscrire-au-cours">Comment puis-je m'inscrire au cours ?</a></li>
+<li><a href="#quelle-est-la-différence-entre-un-certificat-vérifié-et-un-certificat-cs50">Quelle est la différence entre un certificat vérifié et un certificat CS50 ?</a></li>
+<li><a href="#si-je-m-inscris-pour-un-certificat-vérifié-puis-je-également-obtenir-un-certificat-gratuit">Si je m'inscris pour un certificat vérifié, puis-je également obtenir un certificat gratuit ?</a></li>
+<li><a href="#l-inscription-à-edx-est-elle-obligatoire">L'inscription à edX est-elle obligatoire ?</a></li>
+<li><a href="#edx-me-demande-de-payer-pour-m-inscrire-au-cours-comment-obtenir-un-certificat-gratuit">edX me demande de payer pour m'inscrire au cours : comment obtenir un certificat gratuit ?</a></li>
+<li><a href="#si-je-souhaite-un-certificat-vérifié-edx-à-l-avenir-dois-je-payer-pour-la-vérification-avant-de-commencer-le-cours">Si je souhaite un certificat vérifié edX à l'avenir, dois-je payer pour la vérification avant de commencer le cours ?</a></li>
+<li><a href="#si-j-ai-payé-pour-un-certificat-vérifié-après-avoir-terminé-le-cours-dois-je-vous-le-dire">Si j'ai payé pour un certificat vérifié après avoir terminé le cours, dois-je vous le dire ?</a></li>
+<li><a href="#si-j-ai-payé-pour-un-certificat-vérifié-avant-cette-année-civile-dois-je-payer-à-nouveau">Si j'ai payé pour un certificat vérifié avant cette année civile, dois-je payer à nouveau ?</a></li>
+</ul>
+</li>
+<li><a href="#suivre-vos-progrès">Suivre vos progrès</a><ul>
+<li><a href="#comment-savoir-si-j-ai-rempli-toutes-les-conditions-requises-pour-obtenir-un-certificat">Comment savoir si j'ai rempli toutes les conditions requises pour obtenir un certificat ?</a></li>
+<li><a href="#qu-est-ce-que-le-bulletin-de-notes-de-ce-cours">Qu'est-ce que le bulletin de notes de ce cours ?</a></li>
+<li><a href="#pourquoi-le-bulletin-de-notes-indique-t-il-que-je-ne-suis-pas-inscrit">Pourquoi le bulletin de notes indique-t-il que je ne suis pas inscrit ?</a></li>
+<li><a href="#ce-cours-a-t-il-des-notes">Ce cours a-t-il des notes ?</a></li>
+<li><a href="#mon-bulletin-de-notes-indique-t-il-seulement-si-j-ai-obtenu-une-note-suffisamment-élevée-pour-réussir-un-problème-comment-puis-je-voir-mes-notes-numériques-réelles">Mon bulletin de notes indique-t-il seulement si j'ai obtenu une note suffisamment élevée pour réussir un problème ? Comment puis-je voir mes notes numériques réelles ?</a></li>
+<li><a href="#j-ai-terminé-un-devoir-ou-ce-cours-une-année-précédente-pourquoi-mon-bulletin-de-notes-ne-montre-t-il-plus-ma-progression-antérieure">J'ai terminé un devoir ou ce cours une année précédente. Pourquoi mon bulletin de notes ne montre-t-il plus ma progression antérieure ?</a></li>
+<li><a href="#pourquoi-edx-pense-que-ma-note-est-de-0">Pourquoi edX pense que ma note est de 0 % ?</a></li>
+<li><a href="#j-ai-regardé-toutes-les-vidéos-dans-edx-ou-sur-youtube-pourquoi-n-ai-je-pas-de-certificat">J'ai regardé toutes les vidéos dans edX ou sur YouTube : pourquoi n'ai-je pas de certificat ?</a></li>
+<li><a href="#pourquoi-mon-tableau-de-bord-edx-indique-t-il-que-je-peux-reprendre-le-cours-alors-que-je-l-ai-terminé">Pourquoi mon tableau de bord edX indique-t-il que je peux « reprendre » le cours alors que je l'ai terminé ?</a></li>
+<li><a href="#github-a-désactivé-mon-compte-que-dois-je-faire">GitHub a désactivé mon compte. Que dois-je faire ?</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#exercices-pratiques-devoirs-et-évaluations">Exercices pratiques, devoirs et évaluations</a></p>
+<ul>
+<li><a href="#ce-cours-comporte-t-il-un-test">Ce cours comporte-t-il un test ?</a></li>
+<li><a href="#quelle-est-la-différence-entre-les-problèmes-moins-à-l-aise-et-plus-à-l-aise-dois-je-faire-les-deux">Quelle est la différence entre les problèmes « moins à l’aise » et « plus à l’aise » ? Dois-je faire les deux ?</a></li>
+<li><a href="#avez-vous-reçu-mon-envoi">Avez-vous reçu mon envoi ?</a></li>
+<li><a href="#j-ai-soumis-un-projet-mais-rien-n-apparaît-encore-dans-mon-bulletin-de-notes-indiquant-que-je-l-ai-soumis-pourquoi">J'ai soumis un projet, mais rien n'apparaît encore dans mon bulletin de notes indiquant que je l'ai soumis. Pourquoi ?</a></li>
+<li><a href="#si-j-ai-soumis-un-problème-et-que-je-n-ai-pas-atteint-la-note-de-passage-de-70-puis-je-le-soumettre-à-nouveau">Si j'ai soumis un problème et que je n'ai pas atteint la note de passage de 70 %, puis-je le soumettre à nouveau ?</a></li>
+<li><a href="#si-mon-score-check50-n-est-pas-celui-attendu-pourquoi">Si mon score check50 n'est pas celui attendu, pourquoi ?</a></li>
+<li><a href="#si-mon-score-de-style-n-est-pas-celui-attendu-pourquoi">Si mon score de style n'est pas celui attendu, pourquoi ?</a></li>
+<li><a href="#pourquoi-n-ai-je-pas-réussi-mon-projet-final">Pourquoi n'ai-je pas réussi mon projet final ?</a></li>
+<li><a href="#si-j-ai-fait-70-des-problèmes-est-ce-que-j-obtiens-un-certificat">Si j'ai fait 70 % des problèmes, est-ce que j'obtiens un certificat ?</a></li>
+<li><a href="#est-ce-que-je-triche">Est-ce que je triche ?</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#deadlines">Dates limites</a></p>
+<ul>
+<li><a href="#when-are-the-deadlines">Quand les dates limites sont-elles ?</a></li>
+<li><a href="#if-i-dont-finish-the-course-before-end-of-day-31-december-2024-what-will-happen">Si je ne finis pas le cours avant la fin de la journée du 31 décembre 2024, qu'arrivera-t-il ?</a></li>
+<li><a href="#if-i-started-cs50x-before-2024-can-i-resume">Si j'ai commencé CS50x avant 2024, puis-je le reprendre ?</a></li>
+<li><a href="#how-was-the-work-i-completed-as-part-of-cs50x-2023-carried-forward-into-cs50x-2024">Comment mes travaux terminés dans le cadre de CS50x 2023 ont-ils été reportés en CS50x 2024 ?</a></li>
+<li><a href="#will-the-work-i-complete-for-cs50x-2024-or-prior-carry-forward-into-cs50x-2025">Les travaux que je termine pour CS50x 2024 (ou avant) seront-ils reportés vers CS50x 2025 ?</a></li>
+<li><a href="#will-the-work-i-complete-for-cs50x-2024-carry-forward-into-cs50x-2025">Les travaux que je termine pour CS50x 2024 seront-ils reportés vers CS50x 2025 ?</a></li>
+</ul>
+</li>
+<li><a href="#obtaining-your-certificate">Obtenir votre certificat</a><ul>
+<li><a href="#how-do-i-get-my-free-cs50-certificate">Comment obtenir mon certificat CS50 gratuit ?</a></li>
+<li><a href="#how-do-i-get-my-verified-certificate-from-edx">Comment obtenir mon certificat vérifié de edX ?</a></li>
+<li><a href="#can-you-rush-the-issuance-of-my-verified-certificate-from-edx">Pouvez-vous accélérer la délivrance de mon certificat vérifié de edX ?</a></li>
+<li><a href="#why-did-i-not-get-my-verified-certificate-after-30-days">Pourquoi n'ai-je pas reçu mon certificat vérifié après 30 jours ?</a></li>
+<li><a href="#can-i-change-the-name-on-my-certificate">Puis-je modifier le nom figurant sur mon certificat ?</a></li>
+<li><a href="#do-you-offer-a-printed-certificate">Proposez-vous un certificat imprimé ?</a></li>
+</ul>
+</li>
+<li><a href="#using-your-certificate">Utiliser votre certificat</a><ul>
+<li><a href="#how-should-i-describe-my-verified-certificate-on-my-resume-or-elsewhere">Comment décrire mon certificat vérifié sur mon CV ou ailleurs ?</a></li>
+</ul>
+</li>
+<li><a href="#software-and-hardware">Logiciels et matériels</a><ul>
+<li><a href="#my-codespace-is-behaving-strangely-what-should-i-do">Mon espace de codage se comporte étrangement. Que dois-je faire ?</a></li>
+<li><a href="#why-does-it-seem-like-content-or-third-party-services-related-to-this-course-seem-blocked">Pourquoi est-il bloqué de consulter les contenus ou les services tiers liés à ce cours ?</a></li>
+<li><a href="#can-you-help-me-circumvent-content-blocking-that-is-preventing-me-from-accessing-your-course-and-its-associated-third-party-services">Pouvez-vous m'aider à contourner le blocage de contenus qui m'empêche d'accéder à votre cours et à ses services tiers associés ?</a></li>
+<li><a href="#can-i-change-my-github-or-edx-username-while-taking-the-course">Puis-je modifier mon nom d'utilisateur GitHub ou edX pendant que je suis le cours ?</a></li>
+</ul>
+</li>
+<li><a href="#support">Assistance</a><ul>
+<li><a href="#does-this-course-have-office-hours">Ce cours propose-t-il des heures de bureau ?</a></li>
+<li><a href="#does-this-course-have-sections">Ce cours est-il divisé en sections ?</a></li>
+<li><a href="#can-you-help-me-with-my-code">Pouvez-vous m'aider avec mon code ?</a></li>
+</ul>
+</li>
+<li><a href="#beyond-this-course">Au-delà de ce cours</a><ul>
+<li><a href="#which-course-should-i-take">Quel cours devrais-je suivre ?</a></li>
+<li><a href="#can-i-teach-this-course-to-my-students">Puis-je enseigner ce cours à mes élèves ?</a></li>
+</ul>
+</li>
+</ul>
+<h2>Dois-je suivre ce cours ?</h2>
+<h3>Mon enfant ou moi sommes-nous trop jeunes pour suivre ce cours ?</h3>
+<p>Nos cours sont peut-être mieux adaptés aux apprenants âgés de 12 ans et plus. Les apprenants plus jeunes pourraient avoir besoin de l'aide d'un parent. Veuillez noter qu'en fonction de votre lieu géographique, les lois et les politiques peuvent interdire aux apprenants de moins d'un certain âge d'utiliser des services tiers gratuits associés à ce cours. Par conséquent, les apprenants plus jeunes peuvent avoir besoin de votre aide pour s'inscrire à ces services gratuits.</p>
+<h3>Ce cours a-t-il des prérequis ?</h3>
+<p>Bien qu'il ne soit pas nécessaire de suivre ou de prouver que vous avez réussi un cours précédent, il est fortement recommandé de consulter notre <a href="#quel-cours-devrais-je-suivre">parcours de cours</a> pour déterminer si ce cours vous convient à ce stade de votre développement en tant qu'apprenant.</p>
+<h3>Ce cours peut-il être utilisé pour remplir les conditions académiques officielles de mon université, collège ou école ?</h3>
+<p>Nos certificats gratuits et vérifiés ne sont pas des offres académiques accréditées de Harvard ou de ses établissements affiliés. Nous offrons ces certificats à des fins d'autoformation et d'orientation professionnelle.</p>
+<p>Les écoles et les universités du monde entier ont des règles différentes sur ce qu'elles accepteront précisément pour les crédits de transfert académique. En conséquence, vous devez parler à vos conseillers pédagogiques spécifiques de votre situation individuelle. Il est possible (même si vous devrez vérifier auprès de vos conseillers) que notre certificat satisfasse à leurs exigences.</p>
+<p>Si vous recherchez un cours ou un certificat universitaire accrédité au niveau de premier cycle ou des cycles supérieurs, envisagez d'explorer <a href="https://extension.harvard.edu">Harvard Extension</a>.</p>
+<p>Si vous êtes un élève du secondaire à la recherche de crédits académiques, montrez votre enseignant ou conseiller pédagogique <a href="https://cs50.harvard.edu/ap">CS50 AP</a>. Vous devrez obtenir leur autorisation pour obtenir des crédits académiques officiels. Vous êtes le bienvenu pour suivre ce cours ou l'un de nos cours. Cependant, seuls vos représentants officiels de l'école peuvent vous fournir des crédits académiques pour avoir terminé l'un de nos cours.</p>
+<h3>Puis-je obtenir une lettre confirmant mon inscription et les détails du cours ?</h3>
+<p>Nous ne pouvons pas fournir un e-mail personnalisé détaillant votre inscription à ce cours. Cependant, vous pouvez vous inscrire à un <a href="https://www.edx.org/verified-certificate">certificat vérifié</a> edx afin de fournir la preuve que vous êtes inscrit au cours. De plus, vous pouvez obtenir des détails sur ce cours à partir de la <a href="..">page du cours</a>. Enfin, concernant les exigences de temps pour le cours, vous pouvez additionner vous-même le temps de chaque cours hebdomadaire. Pour le temps requis pour les devoirs obligatoires, il est préférable d'estimer entre 10 et 20 heures pour les séries de problèmes de chaque semaine.</p>
+<h2>Inscription</h2>
+<h3>Comment s'inscrire au cours ?</h3>
+<p>Pour vous inscrire, suivez les instructions sur la <a href="..">page du cours</a>.</p>
+<h3>Quelle est la différence entre un certificat vérifié et un certificat CS50 ?</h3>
+<p>Un <a href="https://www.edx.org/verified-certificate">certificat vérifié</a>, que vous pouvez acheter auprès d'edX, "peut constituer une preuve pour un employeur, une école ou une autre institution attestant que vous avez suivi avec succès un cours en ligne".</p>
+<p>Un <a href="../certificate/">certificat CS50</a> est un certificat gratuit délivré par CS50.</p>
+<h3>Si je m'inscris pour un certificat vérifié, puis-je également obtenir un certificat gratuit ?</h3>
+<p>Oui.</p>
+<h3>L'inscription à edX est-elle obligatoire ?</h3>
+<p>Oui. Que vous souhaitiez obtenir un certificat gratuit ou vérifié, vous devez vous inscrire auprès d'edX.</p>
+<h3>edX me demande de payer pour m'inscrire au cours : comment obtenir un certificat gratuit ?</h3>
+<p>Il est préférable de relire attentivement les questions d'edX sur leur site Web lorsque vous vous inscrivez. Il existe une option "gratuite" ou "audit" qui ne nécessite aucun paiement.</p>
+<h3>Si je souhaite obtenir un certificat vérifié edX à l'avenir, dois-je payer pour la vérification avant de commencer le cours ?</h3>
+<p>Non ! Si vous souhaitez obtenir un certificat vérifié d'edX, vous pouvez payer la vérification à tout moment jusqu'à 10 jours avant la date limite finale du cours, même après avoir terminé tous les travaux. Cependant, nous vous recommandons fortement, afin d'éviter tout problème logistique pouvant retarder la délivrance du certificat, de procéder à la vérification avant la fin du cours. Sinon, l'attente de 30 jours mentionnée <a href="#how-do-i-get-my-verified-certificate-from-edx">ci-dessous</a> ne commence qu'une fois votre identité vérifiée par edX. Ainsi, attendre pour vous inscrire à un certificat vérifié après avoir terminé le cours peut entraîner des retards de 30 jours ou plus dans la réception de votre certificat.</p>
+<h3>Si j'ai payé un certificat vérifié après avoir terminé le cours, dois-je vous le faire savoir ?</h3>
+<p>Non. Tant que votre <a href="https://cs50.me/cs50x">carnet de notes</a> indique que vous avez terminé le cours, vous recevrez votre certificat jusqu'à 30 jours après la vérification de votre identité par edX.</p>
+<h3>Si j'ai payé un certificat vérifié avant cette année civile, dois-je payer à nouveau ?</h3>
+<p>Non, votre vérification devrait être valable pendant une année entière, mais si elle a expiré, vous devriez pouvoir vous revérifier via le <a href="https://courses.edx.org/dashboard">tableau de bord</a> d'edX.</p>
+<h2>Suivi de vos progrès</h2>
+<h3>Comment savoir si j'ai rempli toutes les conditions pour obtenir un certificat ?</h3>
+<p>Votre <a href="https://cs50.me/cs50x">carnet de notes</a> affiche le résultat de chaque devoir remis pour la version la plus récente du cours. Le haut de votre <a href="https://cs50.me/cs50x">carnet de notes</a> indique votre statut actuel dans le cours, montrant le nombre de devoirs obligatoires que vous avez complétés. Si votre <a href="https://cs50.me/cs50x">carnet de notes</a> indique que vous n'êtes pas inscrit dans le cours, il est préférable de vous inscrire et de commencer à faire les devoirs obligatoires.</p>
+<p>Ce cours nécessite la soumission de plusieurs devoirs certaines semaines, et d'un seul devoir les autres semaines. Lorsque vous avez rempli les conditions pour une semaine donnée (en obtenant un score de 70 % ou plus à tous les problèmes obligatoires), le numéro de la semaine apparaît en vert, et votre indicateur de progression est mis à jour pour refléter cela.</p>
+<p>Une fois que vous avez obtenu au moins 70 % à tous les devoirs obligatoires, vous verrez une bannière verte en haut de cette page, confirmant la réussite du cours.</p>
+<h3>Qu'est-ce que le carnet de notes de ce cours et où le trouver ?</h3>
+<p>CS50x utilise notre propre <a href="https://cs50.me/cs50x">carnet de notes</a>. Si vous n'avez jamais visité ce lien auparavant, vous devez cliquer sur le lien pour « vous inscrire », ce qui vous permet simplement d'accéder à votre <a href="https://cs50.me/cs50x">carnet de notes</a> ! L'inscription sur edX, que ce soit pour un certificat gratuit ou vérifié, est obligatoire.</p>
+<h3>Pourquoi le <a href="https://cs50.me/cs50x">carnet de notes</a> indique-t-il que je ne suis pas inscrit ?</h3>
+<p>Il existe de nombreuses raisons potentielles à cela. Voici les raisons les plus courantes. Premièrement, il est possible que vous ne vous soyez jamais inscrit au cours. Deuxièmement, il est possible que vous n'ayez jamais lié votre compte edX à votre carnet de notes. Le mieux est de suivre les instructions à l'écran dans votre <a href="https://cs50.me/cs50x">carnet de notes</a> pour résoudre ce problème et vous inscrire.</p>
+<h3>Ce cours comporte-t-il des notes ?</h3>
+<p>Non. Ce cours comporte des scores numériques. Un devoir qui obtient un score de 70 % ou plus est considéré comme réussi.</p>
+<h3>Mon carnet de notes indique-t-il uniquement si j'ai obtenu un score suffisamment élevé pour réussir un problème ? Comment puis-je voir mes notes numériques réelles ?</h3>
+<p>Votre <a href="https://cs50.me/cs50x">carnet de notes</a> affiche une coche verte si vous avez réussi un devoir soumis et une coche rouge si vous n'avez pas réussi un devoir soumis.</p>
+<p>Votre score global pour un problème est pondéré à 75 % pour l'exactitude et à 25 % pour le style. Pour obtenir la coche verte indiquant la réussite, votre score global doit être de 70 % ou plus. Par exemple, si votre score check50 est de 7/8 et votre score de style de 0,95, votre score global sera (7/8 * 0,75) + (0,95 * 0,25) = 89 %. Vous pouvez cliquer sur le nom du problème dans votre <a href="https://cs50.me/cs50x">carnet de notes</a> pour voir vos scores individuels check50 et style50.</p>
+<h3>J'ai complété un devoir ou ce cours l'année précédente. Pourquoi mon carnet de notes n'affiche-t-il plus mes progrès antérieurs ?</h3>
+<p>Au début de chaque année civile, nous nettoyons notre <a href="https://cs50.me/cs50x">carnet de notes</a> et le « réinitialisons ». Ce qui arrive à vos progrès dépend du moment où vous avez soumis votre dernier devoir pour le cours.</p>
+<h3>Pourquoi edX pense-t-il que ma note est de 0 % ?</h3>
+<p>Ce cours n'utilise pas le carnet de notes intégré d'edX, donc les scores de tous les étudiants apparaissent toujours (dans le carnet de notes d'edX) comme 0 %. Ne vous inquiétez pas, consultez votre <a href="https://cs50.me/cs50x">carnet de notes</a> pour voir vos résultats réels.</p>
+<h3>J'ai regardé toutes les vidéos sur edX ou sur YouTube : pourquoi n'ai-je pas de certificat ?</h3>
+<p>Ce cours comporte de nombreux devoirs qui doivent être réalisés en plus de regarder les cours magistraux. Il est préférable de consulter le menu du cours, qui répertorie les différents devoirs du cours.</p>
+<h3>Pourquoi mon tableau de bord edX indique-t-il que je peux « reprendre » le cours même si je l'ai terminé ?</h3>
+<p>Une fois que vous commencez le cours, sur votre tableau de bord, le bouton « Afficher le cours » se transforme en « Reprendre le cours ». Ce bouton est là pour vous permettre de revenir au cours et n'indique pas que vous l'avez terminé ou non.</p>
+<h3>GitHub a désactivé mon compte. Que dois-je faire ?</h3>
+<p>Il est préférable de consulter la <a href="https://docs.github.com/en/site-policy/acceptable-use-policies/github-appeal-and-reinstatement">documentation</a> de GitHub concernant la réactivation du compte. Nous ne pouvons pas transférer vos progrès antérieurs vers un nouveau compte GitHub. De plus, nous ne pouvons pas accéder à vos fichiers depuis un compte GitHub désactivé. Si vous ne pouvez pas récupérer l'accès à votre compte GitHub, vous devrez recommencer le cours.</p>
+<h2>Séries de problèmes, exercices et évaluations</h2>
+<h3>Ce cours a-t-il un test ?</h3>
+<p>Ce cours n’a pas d’évaluation récapitulative ou de « finale ». Bien que nos cours à Harvard College et Harvard Extension aient souvent des examens finaux, ce cours n’en a pas. Il suffit de réaliser les exercices listés dans chaque semaine ou module du cours.</p>
+<h3>Quelle est la différence entre les problèmes « moins confortables » et les problèmes « plus confortables » ? Dois-je faire les deux ?</h3>
+<p>Dans certains premiers ensembles de problèmes, vous aurez le choix entre un problème « moins confortable » et un problème « plus confortable ».</p>
+<p>Les problèmes « moins confortables » sont ce que vous pourriez considérer comme la version « standard » du problème, conçue pour les étudiants qui ont peu ou pas d’expérience préalable. Les problèmes « plus confortables » sont la version « défi », conçue pour les étudiants qui se considèrent plus à l’aise grâce à des études/expériences antérieures à ce cours. Par conséquent, ils peuvent nécessiter plus de concepts que ceux couverts dans le cours jusqu’à présent.</p>
+<p>Si vous vous sentez vraiment en difficulté avec la version « plus confortable », vous devez passer à la version « moins » (ou si vous l’avez déjà terminée, passez simplement à autre chose et revenez-y peut-être dans une semaine ultérieure). Il serait préférable pour vous de sauter le problème plutôt que de devenir tellement frustré que vous abandonnez complètement le cours. Pour référence, dans la classe de Harvard de l’automne 2019, seulement 20 à 30 % des étudiants ont soumis les problèmes « plus confortables ».</p>
+<p>Vous n’obtenez aucun point supplémentaire pour avoir fait les problèmes « plus confortables ». Si vous soumettez les deux, celui qui a la note la plus élevée comptera dans votre progression générale dans le cours.</p>
+<h3>Avez-vous reçu ma soumission ?</h3>
+<p>Une fois que vous exécutez la commande <code>submit50</code> avec le <em>slug</em> approprié comme indiqué par la spécification des devoirs, votre <a href="https://cs50.me/cs50x">carnet de notes</a> sera immédiatement mis à jour avec votre statut de réussite, à condition que votre soumission soit correcte ! Avant d’utiliser <code>submit50</code>, il est préférable d’utiliser <code>check50</code> pour vous assurer que vous avez terminé l’ensemble du problème avant de le soumettre.</p>
+<h3>J’ai soumis un projet, mais rien n’apparaît encore dans mon carnet de notes indiquant que j’ai soumis. Pourquoi ?</h3>
+<p>À condition que vous ayez exécuté la commande <code>submit50</code> avec le slug approprié comme indiqué dans la spécification des devoirs, votre statut de réussite doit être immédiatement affiché sur votre <a href="https://cs50.me/cs50x">carnet de notes</a>. Tout d’abord, il est préférable d’exécuter <code>check50</code> sur votre devoir pour vous assurer qu’il remplit les conditions requises. Deuxièmement, si cela ne fonctionne toujours pas, assurez-vous que le nom d’utilisateur GitHub que vous utilisez pour vous connecter à <a href="https://cs50.dev">CS50.dev</a> est le même nom d’utilisateur GitHub qui apparaît en haut de votre <a href="https://cs50.me/cs50x">carnet de notes</a>.</p>
+<h3>Si j’ai soumis un problème et que je n’ai pas atteint la note de passage de 70 %, puis-je le soumettre à nouveau ?</h3>
+<p>Oui ! Vous pouvez le soumettre à nouveau ; nous ne compterons que votre soumission la plus récente dans votre progression. Voir la section Notes ci-dessous pour plus de détails.</p>
+<h3>Si mon score check50 n’est pas celui attendu, pourquoi est-ce ?</h3>
+<p>Votre score check50 est exact. Après avoir exécuté check50, notez qu’une URL sera fournie vous renvoyant vers vos résultats. Notez que check50 recherchera une exécution précise des contrôles. Par conséquent, s’il attend un saut de ligne après une sortie et qu’aucun saut de ligne de ce type n’existe, le contrôle sera indiqué comme non exécuté. Dans certains cas, la sortie attendue et réelle peut sembler exactement la même dans les résultats check50. Dans un tel cas, il est préférable de considérer comment les espaces et autres caractères non visibles peuvent jouer un rôle. Bien sûr, il est également possible que vous ayez mal compris une partie du devoir et que vous deviez relire la spécification de l’ensemble de problèmes.</p>
+<h3>Si mon style n’est pas celui attendu, pourquoi est-ce ?</h3>
+<p>Votre note de style sera basée sur les résultats style50 pour chaque fichier de code source dans votre soumission. Lorsque vous exécutez submit50, assurez-vous que votre dossier comprend uniquement les fichiers nécessaires à l’ensemble de problèmes. Si vous avez des fichiers de test supplémentaires, ils seront pris en compte dans votre note. Supprimez les fichiers supplémentaires du dossier et soumettez à nouveau pour obtenir un score de style mis à jour.</p>
+<h3>Pourquoi n’ai-je pas réussi mon projet final ?</h3>
+<p>Après avoir soumis votre projet final, vous pouvez afficher votre soumission dans votre <a href="https://cs50.me/cs50x">carnet de notes</a> pour connaître les détails de votre score et les raisons pour lesquelles vous n’avez pas réussi.</p>
+<p>La raison la plus courante pour ne pas recevoir une note de passage dans votre projet final est que vous n’avez pas suivi la <a href="../projet/">spécification du projet final</a>.</p>
+<p>La deuxième raison la plus courante pour ne pas recevoir une note de réussite dans votre projet final est liée à votre documentation (le fichier README ou DESIGN de votre projet final). Lorsque votre documentation README ou DESIGN ne répond pas aux exigences indiquées, vous ne réussirez pas le projet final. Le fichier de documentation doit être assez robuste. Les étudiants qui ne remplissent pas un fichier de documentation robuste, comprenant DE NOMBREUX paragraphes, ne recevront pas la note de passage. Il est fortement conseillé de créer un fichier de documentation robuste, y compris les sections précises mentionnées par la <a href="../projet/">spécification du projet final</a>. De plus, notez que la <a href="../projet/">spécification du projet final</a> inclut un nombre approximatif de mots pour votre documentation. Suivre ces spécifications vous assurera que votre fichier de documentation comprend tous les détails requis pour que vous puissiez réussir.</p>
+<h3>Si j’ai fait 70 % des problèmes, est-ce que j’obtiens un certificat ?</h3>
+<p>Non. Vous devez faire tous les devoirs requis et recevoir une note d’au moins 70 % sur chacun d’eux.</p>
+<h3>Est-ce que je triche ?</h3>
+<p>Consultez notre politique <a href="../honesty/">d’honnêteté académique</a> pour le savoir.</p>
+<h2>Délais</h2>
+<h3>Quelles sont les dates limites ?</h3>
+<p>CS50x n’impose pas de délais individuels pour les devoirs. Vous êtes invités à travailler et à soumettre vos devoirs à votre rythme.</p>
+<p>La date limite globale du cours est actuellement fixée à la fin de la journée de l’heure de l’Est, le 31 décembre 2024 à 23 h 59. Pour plus de commodité, nous vous fournirons souvent cette heure dans votre fuseau horaire local : (<a href="https://time.cs50.io/20241231T235900-0500">2024-12-31T23:59:00-05:00</a>).</p>
+<p>Si tous les travaux requis sont remis avant l’heure indiquée ci-dessus et obtiennent finalement une note satisfaisante (avant ou peu après cette date limite), vous serez considéré comme ayant terminé le cours CS50x.</p>
+<h3>Que se passera-t-il si je ne termine pas le cours avant la fin de la journée du 31 décembre 2024 ?</h3>
+<p>Le 1er janvier 2025, le cours sera mis à jour vers une version 2025. Votre progression de 2024 sera reportée sur la version 2025 (voir ci-dessous). Après le 31 décembre 2024, vous ne pourrez soumettre que les problem sets de la version 2025 et vous devrez satisfaire aux exigences en vigueur pour CS50x 2025. Votre progression reportée (telle que décrite ci-dessous) à partir de 2023 ou des années antérieures <strong>ne</strong> sera cependant pas reportée sur 2025.</p>
+<h3>Si j’ai commencé CS50x avant 2024, puis-je reprendre ?</h3>
+<p>Oui, toute progression que vous avez réalisée sur les problem sets des années précédentes a été reportée sur votre carnet de notes CS50x 2024. Veuillez noter que les résultats des problèmes individuels des années précédentes ne sont pas affichés, mais si le problem <em>set</em> et le laboratoire correspondants ont été terminés, vous le verrez marqué d’un cercle vert et inclus dans votre barre de progression en haut. <strong>Toutefois, pour la suite, vous devez soumettre les problem sets de CS50x 2024</strong>. Les travaux des versions précédentes du cours ne peuvent pas être soumis pour crédits.</p>
+<p>Voici comment vous devez passer du cours 2023 au cours 2024 :</p>
+<table>
+<thead>
+<tr>
+<th>Terminé en 2023</th>
+<th>Reprenez vos études avec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zéro problem set</td>
+<td><a href="../weeks/0/">Semaine 0 et problem set 0</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem set 0</td>
+<td><a href="../weeks/1/">Semaine 1 et problem set 1</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 1</td>
+<td><a href="../weeks/2/">Semaine 2 et problem set 2</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 2</td>
+<td><a href="../weeks/3/">Semaine 3 et problem set 3</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 3</td>
+<td><a href="../weeks/4/">Semaine 4 et problem set 4</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 4</td>
+<td><a href="../weeks/5/">Semaine 5 et problem set 5</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 5</td>
+<td><a href="../weeks/6/">Semaine 6 et problem set 6</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 6</td>
+<td><a href="../weeks/7/">Semaine 7 et problem set 7</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 7</td>
+<td><a href="../weeks/8/">Semaine 8 et problem set 8</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 8</td>
+<td><a href="../weeks/9/">Semaine 9 et problem set 9</a> de CS50x 2024.</td>
+</tr>
+<tr>
+<td>Problem sets 0 – 9</td>
+<td><a href="../weeks/10/">Semaine 10 et le projet final</a> de CS50x 2024.</td>
+</tr>
+</tbody>
+</table>
+<h3>Comment le travail que j’ai effectué dans le cadre de CS50x 2023 a-t-il été reporté sur CS50x 2024 ?</h3>
+<p>Les crédits pour le travail réalisé dans CS50x 2023 ont été attribués comme suit. Veuillez noter que vous devez avoir complété <strong>chaque ligne</strong> d’une case de la colonne de gauche avant le 1er janvier 2024 pour recevoir les crédits pour les problem sets et les laboratoires correspondants dans la colonne de droite. Si vous n’avez complété que <em>certains</em> des éléments d’une case de la colonne de gauche, aucun crédit ne sera attribué pour ce travail. (Le report s’effectue sur une base hebdomadaire, pas sur une base de problème.) Consultez votre <a href="https://cs50.me/cs50x">carnet de notes CS50x</a> pour voir les semaines qui ont été créditées, le cas échéant.</p>
+<table>
+<thead>
+<tr>
+<th>Terminé dans CS50x 2023</th>
+<th>Équivalent crédits dans CS50x 2024</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scratch</td>
+<td>Problème Série 0</td>
+</tr>
+<tr>
+<td>Labo 1 : Population <br>Bonjour <br>Mario (Moins) <em>OU</em> Mario (Plus) <br>Espèces <em>OU</em> Crédit</td>
+<td>Semaine 1</td>
+</tr>
+<tr>
+<td>Labo 2 : Scrabble <br>Lisibilité <br>Ampoules <em>OU</em> César <em>OU</em> Substitution <em>OU</em> Wordle50</td>
+<td>Semaine 2</td>
+</tr>
+<tr>
+<td>Labo 3 : Trier <br>Pluralité <br>Ruissellement <em>OU</em> Tideman</td>
+<td>Semaine 3</td>
+</tr>
+<tr>
+<td>Labo 4 : Volume <em>OU</em> Smiley <br>Filtrer (Moins) <em>OU</em> Filtrer (Plus) <br>Récupérer <em>OU</em> Inverser</td>
+<td>Semaine 4</td>
+</tr>
+<tr>
+<td>Labo 5 : Héritage <br>Épelage</td>
+<td>Semaine 5</td>
+</tr>
+<tr>
+<td>Labo 6 : Coupe du monde <br>Bonjour (Python) <br>Mario (Moins) (Python) <em>OU</em> Mario (Plus) (Python) <br>Espèces (Python) <em>OU</em> Crédit (Python) <br>Lisibilité (Python) <br>ADN</td>
+<td>Semaine 6</td>
+</tr>
+<tr>
+<td>Labo 7 : Chansons <br>Fiftyville <br>Films</td>
+<td>Semaine 7</td>
+</tr>
+<tr>
+<td>Labo 8 : Trivia <br>Page d'accueil</td>
+<td>Semaine 8</td>
+</tr>
+<tr>
+<td>Labo 9 : Anniversaires <br>Finances</td>
+<td>Semaine 9</td>
+</tr>
+<tr>
+<td>Projet final</td>
+<td>Projet final</td>
+</tr>
+</tbody>
+</table>
+<p>1 Par « terminé », nous entendons que vous avez obtenu un score égal ou supérieur à 70 % sur le problème avant le 1er janvier 2024.</p>
+<h3>Le travail que j'effectue dans CS50x 2024 (ou avant) sera-t-il reporté dans CS50x 2025 ?</h3>
+<p>Pour CS50x 2025, le travail effectué dans CS50x 2023 ou avant <strong>n'est pas</strong> sujet à un report de progression. Seul le travail effectué dans CS50x 2024 sera reporté. Cela signifie que si vous avez reçu un crédit pour un travail passé reporté dans CS50x 2024, ce crédit ne sera plus valide à compter du 1er janvier 2025 et vous devrez peut-être refaire (ou au moins soumettre à nouveau !) certains devoirs. Cela signifie effectivement que, selon le moment de l'année où vous commencez, vous disposez de 12 à 24 mois pour terminer CS50x sans avoir à revenir en arrière et à soumettre à nouveau les devoirs. Nous savons que cela peut être difficile, en particulier pour les personnes qui tentent de terminer le cours juste à la fin du mois de décembre, mais malheureusement, nous ne pouvons faire aucune exception à cette règle, quelle qu'en soit la raison. Par conséquent, nous vous encourageons, si possible, à éviter d'essayer de vous précipiter pour terminer le cours au moment de l'échéance et à répartir plutôt vos études sur une période raisonnable.</p>
+<h3>Le travail que j'effectue dans CS50x 2024 sera-t-il reporté dans CS50x 2025 ?</h3>
+<p>Oui. Toutefois, les détails sur la façon dont votre travail sera reporté sont en attente. Revenez en novembre ou décembre 2024 pour plus de détails.</p>
+<h2>Obtenir votre certificat</h2>
+<h3>Comment obtenir mon certificat CS50 gratuit ?</h3>
+<p>Une fois que vous avez terminé le cours et rempli toutes les conditions requises (conformément à ce qui précède), vous verrez un lien sur votre page <a href="https://cs50.me/cs50x">Carnet de notes</a> vous permettant de demander un certificat CS50 gratuit, semblable à celui <a href="../certificate/">présenté ici</a>. Ce lien sera disponible environ quatre heures après que vous ayez reçu votre note pour votre dernière tâche requise et que votre barre de progression dans votre <a href="https://cs50.me/cs50x">Carnet de notes</a> indique que vous avez terminé le cours. Une fois que ce lien apparaît, vous devez vous connecter à l'aide de vos informations d'identification <strong>GitHub</strong>. Si vous rencontrez des difficultés pour y accéder, essayez de vous déconnecter de GitHub, puis de vous reconnecter, puis revisitez le lien pour télécharger votre certificat. Assurez-vous de demander votre certificat <strong>avant</strong> le 1er janvier.</p>
+<h3>Comment obtenir mon certificat vérifié auprès d'edX ?</h3>
+<p>Toutes les trois semaines, l'équipe de CS50 fournit à edX une liste des étudiants qui ont satisfait aux exigences du cours (en obtenant des notes d'au moins 70 % sur chacun des problèmes requis). En règle générale, dans la semaine qui suit, edX génère alors les certificats vérifiés des étudiants (pour les étudiants ayant une vérification active), auquel moment ils doivent apparaître automatiquement sur le <a href="https://courses.edx.org/dashboard">tableau de bord</a> d'edX. Ainsi, une fois que vous avez satisfait aux exigences du cours, la génération de votre certificat vérifié par edX peut prendre jusqu'à 30 jours. Notez qu'edX ne vous <strong>n'informera pas</strong>, alors assurez-vous de vérifier votre tableau de bord régulièrement.</p>
+<p>Si <strong>plus de 30 jours</strong> se sont écoulés depuis que vous avez rempli toutes les conditions requises et que vous n'avez toujours pas reçu votre certificat malgré une vérification active pendant tout ce temps, envoyez un e-mail à certificates@cs50.harvard.edu avec vos coordonnées. Veuillez ne pas envoyer d'e-mail plus tôt ; nous ne pouvons pas accepter les demandes de traitement accéléré des certificats vérifiés.</p>
+<h3>Pouvez-vous accélérer la délivrance de mon certificat vérifié auprès d'edX ?</h3>
+<p>Non.</p>
+<h3>Pourquoi n'ai-je pas reçu mon certificat vérifié après 30 jours ?</h3>
+<p>Tout d'abord, rappelez-vous que votre certificat edX vérifié sera émis par edX jusqu'à 30 jours après que trois critères soient remplis : (a) votre <a href="https://cs50.me/cs50x">Carnet de notes</a> indique que vous avez terminé toutes les tâches requises avec un score d'au moins 70 % ou plus sur chacune d'entre elles, (b) vous avez effectué un paiement à edX et terminé leur processus de vérification, ce qui a donné lieu à un badge vérifié sur votre tableau de bord edX ; et (c) vous avez lié votre <a href="https://cs50.me/cs50x">Carnet de notes</a> à votre compte edX. Vous devez donc vous assurer que 30 jours se sont écoulés depuis que ces trois critères ci-dessus se sont produits.</p>
+<p>Deuxièmement, nous ne pouvons informer edX de votre réussite que si vous avez lié votre <a href="https://cs50.me/cs50x">Carnet de notes</a> à edX. Consultez votre <a href="https://cs50.me/cs50x">Carnet de notes</a> et assurez-vous qu'aucune barre dorée n'apparaît en haut de la page indiquant que vous devez lier votre <a href="https://cs50.me/cs50x">Carnet de notes</a> à votre compte edX. Si vous voyez une telle barre dorée, terminez le processus de liaison. Ensuite, relisez ce qui précède concernant le délai dans lequel vous pouvez vous attendre à recevoir votre certificat.</p>
+<p>Enfin, si vous n'avez toujours pas reçu votre certificat edX, assurez-vous que le nom d'utilisateur edX qui apparaît en haut de votre <a href="https://cs50.me/cs50x">Carnet de notes</a> est le même que le nom d'utilisateur edX qui apparaît en haut de votre <a href="https://courses.edx.org/dashboard">tableau de bord edX</a>. S'il y a une discordance entre ces noms d'utilisateur, vous devrez informer edX qu'il doit transférer votre paiement de vérification vers le nom d'utilisateur correct, car nous les avons probablement déjà informés que le nom d'utilisateur edX qui apparaît en haut de votre <a href="https://cs50.me/cs50x">Carnet de notes</a> a réussi le cours.</p>
+<h3>Puis-je modifier le nom sur mon certificat ?</h3>
+<p>Non, nous ne pouvons pas modifier le nom sur votre certificat. Parce que nous comptons sur vous pour taper le nom correctement et en raison du grand nombre d'étudiants avec lesquels nous travaillons, il ne nous est pas possible de fournir des changements de nom. Vous êtes invité à passer à un certificat vérifié et à communiquer avec edX au sujet du nom qui apparaîtra sur votre certificat edX vérifié en leur envoyant un e-mail à <a href="mailto:info@edx.org">info@edX.org</a>.</p>
+<h3>Offrez-vous un certificat imprimé ?</h3>
+<p>Non : il est préférable d'apporter votre certificat numérique dans une imprimerie locale qui l'imprimera pour vous.</p>
+<h2>Utiliser votre certificat</h2>
+<h3>Comment dois-je décrire mon certificat vérifié sur mon CV ou ailleurs ?</h3>
+<p>Lorsque vous citez vos informations d'identification HarvardX sur votre CV ou votre profil LinkedIn concernant votre certificat edX vérifié, veuillez utiliser ce modèle :</p>
+<p>Pour votre CV, utilisez la formulation suivante : <em>HarvardX</em> <em>[Nom du cours]</em></p>
+<p>Pour inscrire votre certificat sur votre profil LinkedIn, saisissez les détails sous la rubrique « Éducation » comme suit : <em>École : HarvardX</em> <em>Dates : [L'année où vous avez participé au programme]</em> <em>Diplôme : Autre ; Certificat dans [Nom du cours]</em> <em>Domaine d'études : Laisser vide</em> <em>Note : Terminé</em> <em>Activités et sociétés : Laisser vide</em></p>
+<p>En outre, edX fournit les articles de blog suivants qui peuvent également être utiles :</p>
+<ul>
+<li><a href="https://blog.edx.org/3-reasons-add-online-courses-cv-how-to-do-it">3 raisons d'ajouter des cours en ligne à votre CV et comment le faire</a>. Plus précisément, à la fin de l'article, il explique comment vous devez ajouter ces informations à votre CV.</li>
+<li><a href="https://support.edx.org/hc/en-us/articles/206501938-How-can-I-add-my-certificate-to-my-LinkedIn-profile-">Comment puis-je ajouter mon certificat à mon profil LinkedIn ?</a></li>
+</ul>
+<h2>Logiciel et matériel</h2>
+<h3>Mon codespace se comporte étrangement. Que dois-je faire ?</h3>
+<p>La première étape consiste toujours à tenter de redémarrer votre conteneur Codespace. Des problèmes peuvent apparaître pour diverses raisons, mais un redémarrage, par exemple en visitant <a href="[cs50.dev/restart]">cs50.dev/restart</a>, résout généralement le problème. Soyez très patient pendant la reconstruction et le redémarrage, car cela peut prendre plusieurs minutes.</p>
+<p>Si cela ne résout pas le problème, il est préférable de consulter notre documentation technique pour <a href="https://cs50.readthedocs.io/cs50.dev/#faqs">Visual Studio Code pour CS50</a>.</p>
+<h3>Pourquoi semble-t-il que le contenu ou les services tiers liés à ce cours soient bloqués ?</h3>
+<p>Votre ordinateur, votre réseau ou votre administration locale peuvent bloquer votre accès à notre contenu ou à un outil tiers lié à ce cours. Tout d’abord, essayez d’utiliser un autre appareil connecté à un autre réseau pour voir si votre appareil bloque votre accès. Tenez compte des antivirus, des pare-feu et d’autres outils et logiciels de sécurité susceptibles de bloquer votre accès.</p>
+<p>Ensuite, tenez compte du fait que le réseau sur lequel vous essayez d’accéder à ces ressources peut vous bloquer. Vous devrez peut-être contacter votre administrateur réseau ou, à tout le moins, essayer de trouver une autre connexion réseau qui vous permette d’y accéder.</p>
+<p>Enfin, il est possible que votre administration locale bloque l’accès en raison de lois liées au commerce ou au contenu.</p>
+<p>Dans tous les cas ci-dessus, il est préférable de contacter l’une de nos nombreuses <a href="../communities/">communautés</a> pour obtenir de l’aide.</p>
+<h3>Pouvez-vous m’aider à contourner le blocage de contenu qui m’empêche d’accéder à votre cours et à ses services tiers associés ?</h3>
+<p>Non.</p>
+<h3>Puis-je modifier mon nom d’utilisateur GitHub ou edX pendant que je suis le cours ?</h3>
+<p>Non. Si vous changez votre nom d’utilisateur GitHub ou edX, vous perdrez votre progression dans le cours. Une fois perdue, nous ne pourrons pas la récupérer pour vous. Si vous avez déjà modifié l’un de vos noms d’utilisateur, il est préférable de le modifier à nouveau.</p>
+<h2>Soutien</h2>
+<h3>Des heures de bureau sont-elles prévues pour ce cours ?</h3>
+<p>Pas régulièrement ! Mais vous pouvez toujours poser des questions dans l’une des <a href="../communities/">communautés</a> de CS50 ! En outre, consultez les prochaines <a href="../zoom/">réunions</a> qui auront lieu prochainement.</p>
+<h3>Ce cours est-il divisé en sections ?</h3>
+<p>Oui ! Bien que le cours soit trop important pour organiser des sections en direct pour les étudiants actuels, des sections préenregistrées sont <a href="https://cs50.harvard.edu/x/2023/sections/">disponibles ici</a> pour que les étudiants complètent les autres supports de cours. En outre, consultez les prochaines <a href="../zoom/">réunions</a> qui auront lieu prochainement.</p>
+<h3>Pouvez-vous m’aider avec mon code ?</h3>
+<p>Pour obtenir de l’aide sur les ensembles de problèmes ou les concepts de cours, nous vous demandons de contacter l’une de nos nombreuses <a href="../communities/">communautés</a>. Si vous n’êtes pas encore un utilisateur de l’une de ces communautés répertoriées sur le lien ci-dessus, permettez-nous de vous suggérer de commencer avec <a href="https://cs50.edx.org/ed">Ed</a> !</p>
+<h2>Au-delà de ce cours</h2>
+<h3>Quel cours devrais-je suivre ?</h3>
+<p>Nous proposons de nombreux <a href="../courses/">cours</a>. Pour chacun, nous proposons des certificats vérifiés moyennant un supplément et un certificat gratuit. Les certificats vérifiés impliquent un processus de vérification via edX et peuvent donc être considérés par d’autres comme plus authentiques. Les certificats gratuits sont délivrés à l’aide d’une URL unique. Certains de nos <a href="../courses/">cours</a> s’adressent à ceux qui souhaitent en savoir plus sur la programmation et la science des données. Certains de nos <a href="../courses/">cours</a> sont destinés aux professionnels qui ne souhaitent pas se lancer immédiatement dans la programmation.</p>
+<h3>Puis-je enseigner ce cours à mes élèves ?</h3>
+<p>Si vous êtes enseignant, vous pouvez adopter ou adapter ces supports pour votre propre cours, conformément à la <a href="../license/">licence</a>. Consultez également l’<a href="https://cs50.harvard.edu/x/workshop/">atelier éducateur CS50</a>.</p>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>

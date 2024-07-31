@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CS50x en Français</title>
+
+    <!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/moment-timezone-with-data.min.js"></script>
+    <script src="/static/js/luxon.min.js"></script>
+
+    <!-- https://www.algolia.com/doc/guides/building-search-ui/installation/js/ -->
+    <script src="/static/js/algoliasearchLite.min.js"></script>
+    <script src="/static/js/instantsearch.production.min.js"></script>
+    <script src="/static/js/jekyll-theme-cs50.js"></script>
+
+    <script id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="/static/highlight/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/highlight/styles/vs.min.css"/>
+    <link rel="stylesheet" href="/static/css/page.css">
+
+    <style>
+      code {
+        color: black;
+        border: 1px solid #dee2e6;
+      }
+
+      pre > code {
+        padding: 0 !important;
+      }
+
+      pre {
+        border: 1px solid #dee2e6;
+      }
+
+      .mermaid {
+        background-color: white !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Markdown Flux Diagrams -->
+    <script type="module">
+      mermaid.initialize({startOnLoad: true});
+    </script>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-md" style="background-color: darkblue">
+  <header>
+    <h1>
+      <a href="">CS50x en Français</a>
+    </h1>
+
+    <p>
+      <a target="_blank" href=""></a>
+      <br/>
+      2024
+    </p>
+  </header>
+
+  <button class="btn btn-sm collapsed d-md-none" aria-controls="nav" aria-expanded="false" data-target="aside &gt; nav" data-toggle="collapse">
+    Menu
+  </button>
+
+  <nav class="collapse d-md-block" id="nav">
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/semaines/0.html">Semaine
+          0</a>
+        Scratch 😺
+      </li>
+      <li>
+        <a href="/2024/semaines/1.html">Semaine
+          1</a>
+        C
+      </li>
+      <li>
+        <a href="/2024/semaines/2.html">Semaine
+          2</a>
+        Tableaux
+      </li>
+      <li>
+        <a href="/2024/semaines/3.html">Semaine
+          3</a>
+        Algorithmes
+      </li>
+      <li>
+        <a href="/2024/semaines/4.html">Semaine
+          4</a>
+        Mémoire
+      </li>
+      <li>
+        <a href="/2024/semaines/5.html">Semaine
+          5</a>
+        Structures de Données
+      </li>
+      <li>
+        <a href="/2024/semaines/6.html">Semaine
+          6</a>
+        Python
+      </li>
+      <li>
+        <a href="/2024/semaines/7.html">Semaine
+          7</a>
+        SQL
+      </li>
+      <li>
+        <a href="/2024/semaines/8.html">Semaine
+          8</a>
+        HTML, CSS, JavaScript
+      </li>
+      <li>
+        <a href="/2024/semaines/9.html">Semaine
+          9</a>
+        Flask
+      </li>
+      <li>
+        <a href="/2024/semaines/10.html">Semaine
+          10</a>
+        Cybersécurité
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/projet.html">Projet Final</a>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/2024/honn%C3%AAtet%C3%A9.html">Honnêteté Académique</a>
+      </li>
+      <li>
+        <a href="/2024/certificat.html">Certificat CS50</a>
+      </li>
+      <li>
+        <a href="/2024/questions-frequemment-posees.html">Questions Fréquemment Posées</a>
+      </li>
+      <li>
+        <a href="https://cs50.me/cs50x">Carnet de Notes</a>
+      </li>
+      <li>
+        <a href="/2024/equipe.html">Équipe</a>
+      </li>
+      <li>
+        <a href="/2024/plan-de-cours.html">Plan de Cours</a>
+      </li>
+    </ul>
+    <hr/>
+
+    <ul>
+      <li>
+        <a href="/manual/index.html">Pages du Manuel</a>
+      </li>
+      <li>
+        <a href="/2024/style.html">Guide de Style</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <main class="col-md markdown-body">
+          
+
+  <h1>Cybersécurité</h1>
+<ul>
+<li><a href="#recap">Récapitulatif</a></li>
+<li><a href="#looking-ahead">Perspectives d'avenir</a></li>
+<li><a href="#cybersecurity-1">Cybersécurité</a></li>
+<li><a href="#passwords">Mots de passe</a></li>
+<li><a href="#phone-security">Sécurité du téléphone</a></li>
+<li><a href="#password-managers">Gestionnaires de mots de passe</a></li>
+<li><a href="#two-factor-authentication">Authentification à deux facteurs</a></li>
+<li><a href="#hashing">Hachage</a></li>
+<li><a href="#cryptography">Cryptographie</a></li>
+<li><a href="#passkeys">Passkeys</a></li>
+<li><a href="#encryption">Cryptage</a></li>
+<li><a href="#deletion">Suppression</a></li>
+<li><a href="#summing-up">Résumé</a></li>
+</ul>
+<h2>Récapitulatif</h2>
+<ul>
+<li>Au cours de ces dix dernières semaines, vous avez bu à la lance à incendie proverbiale.</li>
+<li>Bien que dans ce cours, vous ayez appris à programmer dans de nombreux langages de programmation ; en effet, notre grand espoir est que vous ayez <em>appris à programmer</em> en tout : Quel que soit le langage de programmation.</li>
+<li>De plus, nous espérons que vous ayez <em>appris à résoudre des problèmes</em> avant tout.</li>
+</ul>
+<h2>Perspectives d'avenir</h2>
+<ul>
+<li>Alors que vous passez du travail de ce cours au monde extérieur à CS50, vous voudrez peut-être prendre un certain nombre de mesures pour vous préparer.</li>
+<li>Pour pouvoir exécuter des commandes sur le terminal, comme vous l'avez fait sur <a href="https://cs50.dev">CS50.dev</a>, vous pouvez installer des outils de ligne de commande sur votre <a href="https://developer.apple.com /xcode/">Mac</a> ou <a href="https://learn.microsoft.com/en-us/windows/wsl/about">PC</a>.</li>
+<li>Vous pouvez en savoir plus sur <a href="https://youtu.be/MJUJ4wbFm_A">Git</a>.</li>
+<li>Vous pouvez <a href="https://code.visualstudio.com/">télécharger</a> et <a href="https://cs50.readthedocs.io/cs50.dev/">en savoir plus</a> sur VS Code.</li>
+<li>Vous pouvez héberger un site Web à l'aide de <a href="https://pages.github.com/">GitHub</a> ou <a href="https://www.netlify.com/">Netlify</a>.</li>
+<li>Vous pouvez héberger une application Web à l'aide de <a href="https://aws.amazon.com/education/awseducate/">AWS</a>, <a href="https://azure.microsoft.com/en-us/free/students/">Azure</a> ou <a href="https://cloud.google.com/edu/students">Google Cloud </a>.</li>
+<li>Vous pouvez poser des questions dans des communautés en ligne pertinentes.</li>
+<li>Vous pouvez poser des questions à l'aide d'outils basés sur l'IA comme <a href="https://chat.openai.com/">OpenAI</a> et <a href="https://github.com/features/copilot">GitHub Copilot</a>.</li>
+<li>Vous pouvez suivre n'importe lequel de nos autres cours CS50.</li>
+<li>Vous pouvez rejoindre l'une de nos nombreuses <a href="https://cs50.harvard.edu/communities">communautés</a>.</li>
+</ul>
+<h2>Cybersécurité</h2>
+<ul>
+<li>Aujourd'hui, nous allons passer en revue quelques sujets liés à la cybersécurité.</li>
+<li>La cybersécurité consiste à comprendre comment nos données sont sécurisées ou non.</li>
+</ul>
+<h2>Mots de passe</h2>
+<ul>
+<li>Un des points sur lesquels la cybersécurité se penche, ce sont nos mots de passe.</li>
+<li>Les mots de passe sont un moyen d'assurer la sécurité des données en ligne.</li>
+<li>
+<p>Les gens utilisent souvent des mots de passe courants :</p>
+<pre><code>  1. 123456
+  2. admin
+  3. 12345678
+  4. 123456789
+  5. 1234
+  6. 12345
+  7. password
+  8. 123
+  9. Aa123456
+  10. 1234567890
+</code></pre>
+</li>
+<li>
+<p>Si votre mot de passe figure dans la liste ci-dessus, il y a fort à parier que des millions de personnes ont choisi le même !</p>
+</li>
+<li>Les pirates informatiques commenceront par cette liste.</li>
+<li>Les méchants peuvent également deviner la plupart des astuces que vous utilisez pour ajouter des symboles à votre mot de passe.</li>
+<li>Les pirates peuvent recourir à des « attaques par force brute », c'est-à-dire qu'ils utilisent un dictionnaire de mots de passe pour essayer tous les mots de passe possibles.</li>
+<li>Votre mot de passe n'est probablement pas aussi sécurisé que vous le pensez.</li>
+</ul>
+<h2>Sécurité des téléphones</h2>
+<ul>
+<li>De nombreux téléphones sont sécurisés par un code à quatre chiffres.</li>
+<li>La forme d'attaque la plus simple consisterait à essayer de manière brutale tous les mots de passe possibles.</li>
+<li>Il existe 10 000 mots de passe possibles lorsque vous utilisez un code à quatre chiffres.</li>
+<li>S'il faut une conjecture par seconde, il faudra 10 000 secondes pour casser le mot de passe.</li>
+<li>
+<p>Cependant, si un programmateur crée un programme pour générer tous les codes possibles, le temps requis serait minime. Pensez au code suivant en Python :</p>
+<pre><code>  from string import digits
+  from itertools import product
+
+  for passcode in product(digits, repeat=4):
+      print(passcode)
+</code></pre>
+</li>
+<li>
+<p>Il devrait être assez déconcertant que le code ci-dessus ne prenne que quelques secondes (au maximum !) pour découvrir votre mot de passe.</p>
+</li>
+<li>Nous pourrions améliorer notre sécurité en passant à un mot de passe à quatre lettres. Cela donnerait 7 311 616 mots de passe possibles.</li>
+<li>Inclure des caractères majuscules et minuscules créerait plus de 78 millions de possibilités.</li>
+<li>
+<p>Pensez à la façon dont nous pourrions modifier votre code pour découvrir ces mots de passe :</p>
+<pre><code>  from string import ascii_letters
+  from itertools import product
+
+  for passcode in product(ascii_letters, repeat=4):
+      print(passcode)
+</code></pre>
+</li>
+<li>
+<p>Nous pourrions même ajouter la possibilité de regarder tous les mots de passe possibles à huit chiffres avec des lettres, des chiffres et des signes de ponctuation :</p>
+<pre><code>  from string import ascii_letters, digits, punctuation
+  from itertools import product
+
+  for passcode in product(ascii_letters + digits + punctuation, repeat=8):
+      print(passcode)
+</code></pre>
+</li>
+<li>
+<p>Passer à huit caractères, y compris les lettres majuscules et minuscules, les chiffres et les symboles, donnerait 6 095 689 385 410 816 combinaisons possibles.</p>
+</li>
+<li>Dans le monde numérique, vous voulez simplement que votre mot de passe soit meilleur que celui des autres personnes, de sorte que les autres soient attaqués bien avant vous : vous êtes une cible beaucoup moins pratique.</li>
+<li>L'inconvénient d'utiliser un mot de passe aussi long est l'inconvénient de devoir s'en souvenir.</li>
+<li>Par conséquent, d'autres défenses pourraient être employées pour ralentir un attaquant. Par exemple, certains fabricants de téléphones bloquent ceux qui devinent un mot de passe incorrectement.</li>
+<li>La sécurité consiste à trouver un « juste milieu » entre les compromis d'une sécurité accrue tout en maintenant la commodité.</li>
+</ul>
+<h2>Gestionnaires de mots de passe</h2>
+<ul>
+<li>Les gestionnaires de mots de passe peuvent être utilisés pour créer des mots de passe très complexes et s'en souvenir pour vous.</li>
+<li>La probabilité qu'un mot de passe sécurisé par un gestionnaire de mots de passe soit piraté est très, très faible.</li>
+<li>Vous espérez que ces gestionnaires de mots de passe sont sécurisés. Cependant, si quelqu'un accède à votre gestionnaire de mots de passe, il aurait accès à tous vos mots de passe.</li>
+<li>En fin de compte, vous êtes beaucoup moins susceptible d'être mis en danger par ceux avec qui vous vivez, et beaucoup plus susceptible d'être mis en danger par les milliards d'autres personnes sur Internet.</li>
+<li>Comme mentionné précédemment, vous pouvez prendre une décision basée sur un équilibre entre sécurité et commodité.</li>
+</ul>
+<h2>Authentification à deux facteurs</h2>
+<ul>
+<li>Ajouter un autre moyen par lequel vous devez vous authentifier ajoute une sécurité supplémentaire. Cependant, il y a un coût humain car vous pourriez ne pas avoir accès à votre deuxième facteur.</li>
+<li>Celles-ci sont implémentées sous forme de mots de passe à usage unique qui sont envoyés à un e-mail, un appareil ou un numéro de téléphone.</li>
+<li>Les politiques de sécurité tentent toujours d'équilibrer les besoins de sécurité et de commodité humaine.</li>
+</ul>
+<h2>Hachage</h2>
+<ul>
+<li>Les informations de votre compte et d'autres données sensibles ne doivent pas être stockées sous forme de texte brut dans une base de données en ligne.</li>
+<li>Si une base de données est compromise et que toutes les informations d'identification sont stockées en texte clair, les informations d'identification pour d'autres services sur d'autres sites Web sont probablement également compromises.</li>
+<li>Par conséquent, les algorithmes de hachage, comme indiqué précédemment dans ce cours, sont utilisés pour stocker uniquement des valeurs hachées de mots de passe.</li>
+<li>Le hachage unidirectionnel permet aux services en ligne de ne jamais stocker le mot de passe d'origine tapé par l'utilisateur : uniquement la valeur hachée de ces mots de passe. En conséquence, en cas de violation, seule la valeur hachée sera connue.</li>
+<li>Les « tables arc-en-ciel » sont d'énormes dictionnaires que les adversaires utilisent pour tenter de pré-hacher des mots de passe possibles afin de tenter de casser l'algorithme de hachage.</li>
+<li>
+<p>En tant que processus supplémentaire pour renforcer la sécurité, les programmeurs peuvent parfois introduire du « salage » où il devient peu probable que plusieurs utilisateurs aient la même valeur de hachage pour représenter leurs mots de passe. Vous pouvez l'imaginer comme suit :</p>
+<p><img alt="le sel et le mot de passe sont transmis à un algorithme générant un hachage" src="https://cs50.harvard.edu/x/2024/notes/cybersecurity/cs50Week10Slide106.png" /></p>
+</li>
+</ul>
+<h2>Cryptographie</h2>
+<ul>
+<li>À l'instar du hachage, un algorithme de chiffrement peut utiliser une <em>clé publique</em> et du texte pour créer du texte chiffré.</li>
+<li>À son tour, une <em>clé privée</em> et le texte chiffré peuvent être fournis à l'algorithme pour déchiffrer le texte.</li>
+</ul>
+<h2>Clés d'accès</h2>
+<ul>
+<li>Les clés d'accès sont une nouvelle technologie qui n'a émergé que ces derniers mois.</li>
+<li>
+<p>Grâce à des clés privées et à un défi fourni à un algorithme, les sites Web peuvent vous authentifier grâce à la signature unique créée par votre appareil.</p>
+<p><img alt="clé publique et défi fournis à un algorithme, aboutissant à une signature" src="https://cs50.harvard.edu/x/2024/notes/cybersecurity/cs50Week10Slide125.png" /></p>
+</li>
+<li>
+<p>Par conséquent, les mots de passe et les noms d'utilisateur pourraient bientôt devenir obsolètes.</p>
+</li>
+</ul>
+<h2>Cryptage</h2>
+<ul>
+<li>Le cryptage est un moyen par lequel les données sont obscurcies de telle sorte que seuls l'expéditeur et le destinataire prévu puissent être lus.</li>
+<li>Au début de ce cours, nous avons appris un algorithme très simple pour « déplacer » le texte d'un ou plusieurs caractères comme une forme rudimentaire de cryptage.</li>
+<li>Le <em>cryptage de bout en bout</em> est un moyen par lequel le cryptage et le décryptage se produisent sur le même système sans intermédiaire. Cela empêche l'intermédiaire ou un acteur malveillant de pouvoir espionner vos données. Zoom et Apple Messages peuvent tous deux utiliser le cryptage de bout en bout.</li>
+</ul>
+<h2>Suppression</h2>
+<ul>
+<li>Mettre un fichier à la corbeille sur votre ordinateur ou vider la corbeille ne supprime pas réellement les bits réels du fichier sur votre ordinateur.</li>
+<li>
+<p>Au lieu de cela, des restes des fichiers sont laissés.</p>
+<p><img alt="restes d'un fichier sur un disque dur" src="https://cs50.harvard.edu/x/2024/notes/cybersecurity/cs50Week10Slide136.png" /></p>
+</li>
+<li>
+<p>La <em>suppression sécurisée</em> est l'endroit où les restes de ces fichiers sont transformés en zéros et en uns.</p>
+</li>
+<li>Néanmoins, certains restes peuvent subsister en raison de ce qui est rendu inaccessible par le système d'exploitation.</li>
+<li>Le <em>cryptage de disque complet</em> permet de crypter l'intégralité de votre disque dur. Ainsi, vos fichiers supprimés sont moins accessibles aux adversaires.</li>
+<li>Envisager le cryptage, c'est cette même technologie que les adversaires utilisent pour créer des <em>rançongiciels</em> qui peuvent, littéralement, rançonner votre disque dur.</li>
+</ul>
+<h2>Résumé</h2>
+<ul>
+<li>Utilisez un gestionnaire de mots de passe.</li>
+<li>Utilisez l'authentification à deux facteurs.</li>
+<li>Utilisez le cryptage (de bout en bout).</li>
+</ul>
+
+
+        </main>
+      </div>
+    </div>
+  </body>
+
+</html>
